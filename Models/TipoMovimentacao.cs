@@ -1,0 +1,11 @@
+namespace API_.Net.Models
+{
+    public class TipoMovimentacao
+    {
+        public int ID_TIPO_MOVIMENTACAO { get; set; }
+        public string DESCRICAO { get; set; } = string.Empty;
+        
+        // Propriedades de navegação
+        public ICollection<Movimentacao>? Movimentacoes { get; set; }
+    }
+}

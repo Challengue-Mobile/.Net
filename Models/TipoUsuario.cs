@@ -1,0 +1,11 @@
+namespace API_.Net.Models
+{
+    public class TipoUsuario
+    {
+        public int ID_TIPO_USUARIO { get; set; }
+        public string DESCRICAO { get; set; } = string.Empty;
+        
+        // Propriedades de navegação
+        public ICollection<Usuario>? Usuarios { get; set; }
+    }
+}
