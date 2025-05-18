@@ -114,5 +114,5 @@ namespace API.Net.Controllers
         {
             return _context.Usuarios.Any(e => e.ID_USUARIO == id);
         }
-    }
+    }  
 }
