@@ -233,6 +233,15 @@ namespace API_.Net.Data
                 .IsRequired();
 
             // Configurações adicionais para colunas
+            // Configurações de precisão para propriedades decimais
+            modelBuilder.Entity<Localizacao>()
+                .Property(l => l.POSICAO_X)
+                .HasPrecision(18, 6);
+                
+            modelBuilder.Entity<Localizacao>()
+                .Property(l => l.POSICAO_Y)
+                .HasPrecision(18, 6);
+                
             modelBuilder.Entity<Moto>().Property(m => m.PLACA).HasMaxLength(10).IsRequired();
             modelBuilder.Entity<Cliente>().Property(c => c.NOME).HasMaxLength(100).IsRequired();
             modelBuilder.Entity<Cliente>().Property(c => c.CPF).HasMaxLength(14).IsRequired();

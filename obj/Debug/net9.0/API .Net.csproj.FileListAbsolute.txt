@@ -124,3 +124,4 @@
 /home/arthur/RiderProjects/API .Net/API .Net/obj/Debug/net9.0/API .Net.pdb
 /home/arthur/RiderProjects/API .Net/API .Net/obj/Debug/net9.0/API .Net.genruntimeconfig.cache
 /home/arthur/RiderProjects/API .Net/API .Net/obj/Debug/net9.0/ref/API .Net.dll
+/home/arthur/RiderProjects/API .Net/API .Net/obj/Debug/net9.0/API .Net.sourcelink.json

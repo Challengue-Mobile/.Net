@@ -17,9 +17,8 @@ builder.Services.AddControllers()
 // Adicionar o DbContext com Oracle
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection"),
-        b => b.MigrationsAssembly("API_.Net")));
+        b => b.MigrationsAssembly("API .Net")));  // Note o espaço aqui// Learn more about configuring Swagger/OpenAPI
 
-// Learn more about configuring Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
