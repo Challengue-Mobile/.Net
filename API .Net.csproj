@@ -7,7 +7,10 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.5">
@@ -20,6 +23,8 @@
       </PackageReference>
       <PackageReference Include="Oracle.EntityFrameworkCore" Version="9.23.80" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="8.1.1" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.3" />
     </ItemGroup>
 
 </Project>

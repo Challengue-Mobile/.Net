@@ -125,3 +125,9 @@
 /home/arthur/RiderProjects/API .Net/API .Net/obj/Debug/net9.0/API .Net.genruntimeconfig.cache
 /home/arthur/RiderProjects/API .Net/API .Net/obj/Debug/net9.0/ref/API .Net.dll
 /home/arthur/RiderProjects/API .Net/API .Net/obj/Debug/net9.0/API .Net.sourcelink.json
+/home/arthur/RiderProjects/API .Net/API .Net/bin/Debug/net9.0/API .Net.xml
+/home/arthur/RiderProjects/API .Net/API .Net/bin/Debug/net9.0/Scrutor.dll
+/home/arthur/RiderProjects/API .Net/API .Net/bin/Debug/net9.0/Swashbuckle.AspNetCore.Annotations.dll
+/home/arthur/RiderProjects/API .Net/API .Net/bin/Debug/net9.0/Swashbuckle.AspNetCore.Filters.dll
+/home/arthur/RiderProjects/API .Net/API .Net/bin/Debug/net9.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll
+/home/arthur/RiderProjects/API .Net/API .Net/obj/Debug/net9.0/API .Net.xml

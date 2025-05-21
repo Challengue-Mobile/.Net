@@ -1,113 +1,73 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using API_.Net.Models;
-using API_.Net.Data;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Swashbuckle.AspNetCore.Filters;
+using System;
 
-namespace API.Net.Controllers
+namespace API_.Net.Examples
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class DepartamentosController : ControllerBase
+    /// <summary>
+    /// Exemplo de requisição para criar um departamento
+    /// </summary>
+    public class DepartamentoRequestExample : IExamplesProvider<Departamento>
     {
-        private readonly AppDbContext _context;
-
-        public DepartamentosController(AppDbContext context)
+        public Departamento GetExamples()
         {
-            _context = context;
-        }
-
-        // GET: api/Departamentos
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Departamento>>> GetDepartamentos()
-        {
-            return Ok(await _context.Departamentos.ToListAsync());
-        }
-
-        // GET: api/Departamentos/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Departamento>> GetDepartamento(int id)
-        {
-            var departamento = await _context.Departamentos.FindAsync(id);
-
-            if (departamento == null)
+            return new Departamento
             {
-                return NotFound();
-            }
-
-            return departamento;
+                NOME = "Recursos Humanos",
+                ID_FILIAL = 1
+            };
         }
+    }
 
-        // GET: api/Departamentos/filial/5
-        [HttpGet("filial/{filialId}")]
-        public async Task<ActionResult<IEnumerable<Departamento>>> GetDepartamentosByFilial(int filialId)
+    /// <summary>
+    /// Exemplo de resposta ao obter um departamento
+    /// </summary>
+    public class DepartamentoResponseExample : IExamplesProvider<Departamento>
+    {
+        public Departamento GetExamples()
         {
-            return await _context.Departamentos
-                .Where(d => d.ID_FILIAL == filialId)
-                .ToListAsync();
-        }
-
-        // POST: api/Departamentos
-        [HttpPost]
-        public async Task<ActionResult<Departamento>> PostDepartamento(Departamento departamento)
-        {
-            _context.Departamentos.Add(departamento);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetDepartamento", new { id = departamento.ID_DEPARTAMENTO }, departamento);
-        }
-
-        // PUT: api/Departamentos/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutDepartamento(int id, Departamento departamento)
-        {
-            if (id != departamento.ID_DEPARTAMENTO)
+            return new Departamento
             {
-                return BadRequest();
-            }
-
-            _context.Entry(departamento).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DepartamentoExists(id))
+                ID_DEPARTAMENTO = 1,
+                NOME = "Recursos Humanos",
+                ID_FILIAL = 1,
+                Filial = new Filial
                 {
-                    return NotFound();
+                    ID_FILIAL = 1,
+                    NOME = "Filial São Paulo"
                 }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            };
         }
+    }
 
-        // DELETE: api/Departamentos/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteDepartamento(int id)
+    /// <summary>
+    /// Exemplo de lista de departamentos
+    /// </summary>
+    public class DepartamentosListResponseExample : IExamplesProvider<Departamento[]>
+    {
+        public Departamento[] GetExamples()
         {
-            var departamento = await _context.Departamentos.FindAsync(id);
-            if (departamento == null)
+            return new Departamento[]
             {
-                return NotFound();
-            }
-
-            _context.Departamentos.Remove(departamento);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool DepartamentoExists(int id)
-        {
-            return _context.Departamentos.Any(e => e.ID_DEPARTAMENTO == id);
+                new Departamento
+                {
+                    ID_DEPARTAMENTO = 1,
+                    NOME = "Recursos Humanos",
+                    ID_FILIAL = 1
+                },
+                new Departamento
+                {
+                    ID_DEPARTAMENTO = 2,
+                    NOME = "Financeiro",
+                    ID_FILIAL = 1
+                },
+                new Departamento
+                {
+                    ID_DEPARTAMENTO = 3,
+                    NOME = "Operações",
+                    ID_FILIAL = 2
+                }
+            };
         }
     }
 }
