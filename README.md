@@ -160,14 +160,6 @@ https://localhost:5001/
 }
 ```
 
-## 📊 Modelo do Banco de Dados
-
-O diagrama do banco de dados pode ser visualizado na imagem abaixo:
-
-![Diagrama ER](https://via.placeholder.com/800x600?text=Diagrama+ER)
 
 
-## 🙏 Agradecimentos
 
-- FIAP pela oportunidade de desenvolvimento do projeto
-- Professores e colegas que contribuíram com ideias e sugestões
