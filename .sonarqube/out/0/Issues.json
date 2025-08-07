@@ -1,0 +1,5301 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador do Microsoft (R) Visual C#",
+        "version": "4.12.0.0",
+        "fileVersion": "4.12.0-3.25275.3 (2d8506e0)",
+        "semanticVersion": "4.12.0",
+        "language": "pt-BR"
+      },
+      "results": [
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Motos' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 28,
+                  "endLine": 14,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'ModelosMotos' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 34,
+                  "endLine": 15,
+                  "endColumn": 46
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Clientes' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 31,
+                  "endLine": 16,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Localizacoes' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 35,
+                  "endLine": 17,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Movimentacoes' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 36,
+                  "endLine": 18,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'TiposMovimentacao' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 40,
+                  "endLine": 19,
+                  "endColumn": 57
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Beacons' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 30,
+                  "endLine": 20,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'ModelosBeacon' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 36,
+                  "endLine": 21,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'RegistrosBateria' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 39,
+                  "endLine": 22,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Usuarios' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 31,
+                  "endLine": 23,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'TiposUsuario' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 35,
+                  "endLine": 24,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Funcionarios' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 35,
+                  "endLine": 25,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Departamentos' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 36,
+                  "endLine": 26,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Filiais' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 30,
+                  "endLine": 27,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Patios' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 29,
+                  "endLine": 28,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Logradouros' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 34,
+                  "endLine": 29,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Bairros' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 30,
+                  "endLine": 30,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Cidades' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 30,
+                  "endLine": 31,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Estados' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 30,
+                  "endLine": 32,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Paises' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 28,
+                  "endLine": 33,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'LogsSistema' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 16,
+                  "endLine": 8,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Data/AppDbContext.cs",
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 34,
+                  "endLine": 34,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2068",
+          "level": "warning",
+          "message": "\"password\" detected here, make sure this is not a hard-coded credential.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/appsettings.json",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 27,
+                  "endLine": 3,
+                  "endColumn": 172
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'NUMBER(10)' 44 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 58,
+                  "endLine": 18,
+                  "endColumn": 70
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 64,
+                  "endLine": 35,
+                  "endColumn": 76
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 62,
+                  "endLine": 49,
+                  "endColumn": 74
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 55,
+                  "endLine": 63,
+                  "endColumn": 67
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 68,
+                  "endLine": 76,
+                  "endColumn": 80
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 89,
+                  "startColumn": 63,
+                  "endLine": 89,
+                  "endColumn": 75
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 55,
+                  "endLine": 102,
+                  "endColumn": 67
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 106,
+                  "startColumn": 58,
+                  "endLine": 106,
+                  "endColumn": 70
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 107,
+                  "startColumn": 62,
+                  "endLine": 107,
+                  "endColumn": 74
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 129,
+                  "startColumn": 57,
+                  "endLine": 129,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 132,
+                  "startColumn": 55,
+                  "endLine": 132,
+                  "endColumn": 67
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 149,
+                  "startColumn": 58,
+                  "endLine": 149,
+                  "endColumn": 70
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 155,
+                  "startColumn": 63,
+                  "endLine": 155,
+                  "endColumn": 75
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 172,
+                  "startColumn": 57,
+                  "endLine": 172,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 175,
+                  "startColumn": 55,
+                  "endLine": 175,
+                  "endColumn": 67
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 176,
+                  "startColumn": 55,
+                  "endLine": 176,
+                  "endColumn": 67
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 177,
+                  "startColumn": 64,
+                  "endLine": 177,
+                  "endColumn": 76
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 200,
+                  "startColumn": 57,
+                  "endLine": 200,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 203,
+                  "startColumn": 57,
+                  "endLine": 203,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 220,
+                  "startColumn": 54,
+                  "endLine": 220,
+                  "endColumn": 66
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 224,
+                  "startColumn": 58,
+                  "endLine": 224,
+                  "endColumn": 70
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 241,
+                  "startColumn": 63,
+                  "endLine": 241,
+                  "endColumn": 75
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 245,
+                  "startColumn": 58,
+                  "endLine": 245,
+                  "endColumn": 70
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 246,
+                  "startColumn": 55,
+                  "endLine": 246,
+                  "endColumn": 67
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 247,
+                  "startColumn": 68,
+                  "endLine": 247,
+                  "endColumn": 80
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 276,
+                  "startColumn": 59,
+                  "endLine": 276,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 279,
+                  "startColumn": 61,
+                  "endLine": 279,
+                  "endColumn": 73
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 280,
+                  "startColumn": 57,
+                  "endLine": 280,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 297,
+                  "startColumn": 57,
+                  "endLine": 297,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 300,
+                  "startColumn": 57,
+                  "endLine": 300,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 317,
+                  "startColumn": 61,
+                  "endLine": 317,
+                  "endColumn": 73
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 320,
+                  "startColumn": 57,
+                  "endLine": 320,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 337,
+                  "startColumn": 56,
+                  "endLine": 337,
+                  "endColumn": 68
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 340,
+                  "startColumn": 61,
+                  "endLine": 340,
+                  "endColumn": 73
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 357,
+                  "startColumn": 57,
+                  "endLine": 357,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 360,
+                  "startColumn": 56,
+                  "endLine": 360,
+                  "endColumn": 68
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 377,
+                  "startColumn": 62,
+                  "endLine": 377,
+                  "endColumn": 74
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 382,
+                  "startColumn": 55,
+                  "endLine": 382,
+                  "endColumn": 67
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 383,
+                  "startColumn": 56,
+                  "endLine": 383,
+                  "endColumn": 68
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 405,
+                  "startColumn": 63,
+                  "endLine": 405,
+                  "endColumn": 75
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 408,
+                  "startColumn": 57,
+                  "endLine": 408,
+                  "endColumn": 69
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 425,
+                  "startColumn": 62,
+                  "endLine": 425,
+                  "endColumn": 74
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 431,
+                  "startColumn": 58,
+                  "endLine": 431,
+                  "endColumn": 70
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 432,
+                  "startColumn": 63,
+                  "endLine": 432,
+                  "endColumn": 75
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "14": null,
+              "15": null,
+              "16": null,
+              "17": null,
+              "18": null,
+              "19": null,
+              "2": null,
+              "20": null,
+              "21": null,
+              "22": null,
+              "23": null,
+              "24": null,
+              "25": null,
+              "26": null,
+              "27": null,
+              "28": null,
+              "29": null,
+              "3": null,
+              "30": null,
+              "31": null,
+              "32": null,
+              "33": null,
+              "34": null,
+              "35": null,
+              "36": null,
+              "37": null,
+              "38": null,
+              "39": null,
+              "4": null,
+              "40": null,
+              "41": null,
+              "42": null,
+              "5": null,
+              "6": null,
+              "7": null,
+              "8": null,
+              "9": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'Oracle:Identity' 21 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 37,
+                  "endLine": 19,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 37,
+                  "endLine": 36,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 37,
+                  "endLine": 50,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 37,
+                  "endLine": 64,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 77,
+                  "startColumn": 37,
+                  "endLine": 77,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 90,
+                  "startColumn": 37,
+                  "endLine": 90,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 103,
+                  "startColumn": 37,
+                  "endLine": 103,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 130,
+                  "startColumn": 37,
+                  "endLine": 130,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 150,
+                  "startColumn": 37,
+                  "endLine": 150,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 173,
+                  "startColumn": 37,
+                  "endLine": 173,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 201,
+                  "startColumn": 37,
+                  "endLine": 201,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 221,
+                  "startColumn": 37,
+                  "endLine": 221,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 242,
+                  "startColumn": 37,
+                  "endLine": 242,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 277,
+                  "startColumn": 37,
+                  "endLine": 277,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 298,
+                  "startColumn": 37,
+                  "endLine": 298,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 318,
+                  "startColumn": 37,
+                  "endLine": 318,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 338,
+                  "startColumn": 37,
+                  "endLine": 338,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 358,
+                  "startColumn": 37,
+                  "endLine": 358,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 378,
+                  "startColumn": 37,
+                  "endLine": 378,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 406,
+                  "startColumn": 37,
+                  "endLine": 406,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 426,
+                  "startColumn": 37,
+                  "endLine": 426,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "14": null,
+              "15": null,
+              "16": null,
+              "17": null,
+              "18": null,
+              "19": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": null,
+              "8": null,
+              "9": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'START WITH 1 INCREMENT BY 1' 21 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 56,
+                  "endLine": 19,
+                  "endColumn": 85
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 56,
+                  "endLine": 36,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 56,
+                  "endLine": 50,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 56,
+                  "endLine": 64,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 77,
+                  "startColumn": 56,
+                  "endLine": 77,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 90,
+                  "startColumn": 56,
+                  "endLine": 90,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 103,
+                  "startColumn": 56,
+                  "endLine": 103,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 130,
+                  "startColumn": 56,
+                  "endLine": 130,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 150,
+                  "startColumn": 56,
+                  "endLine": 150,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 173,
+                  "startColumn": 56,
+                  "endLine": 173,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 201,
+                  "startColumn": 56,
+                  "endLine": 201,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 221,
+                  "startColumn": 56,
+                  "endLine": 221,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 242,
+                  "startColumn": 56,
+                  "endLine": 242,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 277,
+                  "startColumn": 56,
+                  "endLine": 277,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 298,
+                  "startColumn": 56,
+                  "endLine": 298,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 318,
+                  "startColumn": 56,
+                  "endLine": 318,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 338,
+                  "startColumn": 56,
+                  "endLine": 338,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 358,
+                  "startColumn": 56,
+                  "endLine": 358,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 378,
+                  "startColumn": 56,
+                  "endLine": 378,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 406,
+                  "startColumn": 56,
+                  "endLine": 406,
+                  "endColumn": 85
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 426,
+                  "startColumn": 56,
+                  "endLine": 426,
+                  "endColumn": 85
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "14": null,
+              "15": null,
+              "16": null,
+              "17": null,
+              "18": null,
+              "19": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": null,
+              "8": null,
+              "9": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'NVARCHAR2(100)' 18 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 55,
+                  "endLine": 20,
+                  "endColumn": 71
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 56,
+                  "endLine": 23,
+                  "endColumn": 72
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 55,
+                  "endLine": 37,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 61,
+                  "endLine": 38,
+                  "endColumn": 77
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 55,
+                  "endLine": 51,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 61,
+                  "endLine": 52,
+                  "endColumn": 77
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 65,
+                  "startColumn": 55,
+                  "endLine": 65,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 131,
+                  "startColumn": 55,
+                  "endLine": 131,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 151,
+                  "startColumn": 55,
+                  "endLine": 151,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 154,
+                  "startColumn": 56,
+                  "endLine": 154,
+                  "endColumn": 72
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 174,
+                  "startColumn": 55,
+                  "endLine": 174,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 202,
+                  "startColumn": 55,
+                  "endLine": 202,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 222,
+                  "startColumn": 55,
+                  "endLine": 222,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 299,
+                  "startColumn": 55,
+                  "endLine": 299,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 339,
+                  "startColumn": 55,
+                  "endLine": 339,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 359,
+                  "startColumn": 55,
+                  "endLine": 359,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 407,
+                  "startColumn": 55,
+                  "endLine": 407,
+                  "endColumn": 71
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 427,
+                  "startColumn": 55,
+                  "endLine": 427,
+                  "endColumn": 71
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "10": null,
+              "11": null,
+              "12": null,
+              "13": null,
+              "14": null,
+              "15": null,
+              "16": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": null,
+              "8": null,
+              "9": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TIMESTAMP(7)' 8 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 66,
+                  "endLine": 22,
+                  "endColumn": 80
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 105,
+                  "startColumn": 66,
+                  "endLine": 105,
+                  "endColumn": 80
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 153,
+                  "startColumn": 66,
+                  "endLine": 153,
+                  "endColumn": 80
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 223,
+                  "startColumn": 62,
+                  "endLine": 223,
+                  "endColumn": 76
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 243,
+                  "startColumn": 70,
+                  "endLine": 243,
+                  "endColumn": 84
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 278,
+                  "startColumn": 62,
+                  "endLine": 278,
+                  "endColumn": 76
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 381,
+                  "startColumn": 62,
+                  "endLine": 381,
+                  "endColumn": 76
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 430,
+                  "startColumn": 66,
+                  "endLine": 430,
+                  "endColumn": 80
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_MOTO' 7 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 99,
+                  "startColumn": 23,
+                  "endLine": 99,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 41,
+                  "endLine": 191,
+                  "endColumn": 50
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 255,
+                  "startColumn": 41,
+                  "endLine": 255,
+                  "endColumn": 50
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 391,
+                  "startColumn": 41,
+                  "endLine": 391,
+                  "endColumn": 50
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 519,
+                  "startColumn": 24,
+                  "endLine": 519,
+                  "endColumn": 33
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 524,
+                  "startColumn": 24,
+                  "endLine": 524,
+                  "endColumn": 33
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 598,
+                  "startColumn": 23,
+                  "endLine": 598,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_ESTADO' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 126,
+                  "startColumn": 23,
+                  "endLine": 126,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 211,
+                  "startColumn": 41,
+                  "endLine": 211,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 477,
+                  "startColumn": 24,
+                  "endLine": 477,
+                  "endColumn": 35
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 619,
+                  "startColumn": 23,
+                  "endLine": 619,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_USUARIO' 6 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 146,
+                  "startColumn": 23,
+                  "endLine": 146,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 232,
+                  "startColumn": 41,
+                  "endLine": 232,
+                  "endColumn": 53
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 267,
+                  "startColumn": 41,
+                  "endLine": 267,
+                  "endColumn": 53
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 446,
+                  "startColumn": 41,
+                  "endLine": 446,
+                  "endColumn": 53
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 554,
+                  "startColumn": 24,
+                  "endLine": 554,
+                  "endColumn": 36
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 583,
+                  "startColumn": 23,
+                  "endLine": 583,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_BEACON' 5 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 169,
+                  "startColumn": 23,
+                  "endLine": 169,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 288,
+                  "startColumn": 41,
+                  "endLine": 288,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 457,
+                  "startColumn": 24,
+                  "endLine": 457,
+                  "endColumn": 35
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 462,
+                  "startColumn": 24,
+                  "endLine": 462,
+                  "endColumn": 35
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 586,
+                  "startColumn": 23,
+                  "endLine": 586,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'ID_MOTO' 6 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 192,
+                  "startColumn": 42,
+                  "endLine": 192,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 256,
+                  "startColumn": 42,
+                  "endLine": 256,
+                  "endColumn": 51
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 392,
+                  "startColumn": 42,
+                  "endLine": 392,
+                  "endColumn": 51
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 463,
+                  "startColumn": 25,
+                  "endLine": 463,
+                  "endColumn": 34
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 500,
+                  "startColumn": 25,
+                  "endLine": 500,
+                  "endColumn": 34
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 530,
+                  "startColumn": 25,
+                  "endLine": 530,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_CIDADE' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 197,
+                  "startColumn": 23,
+                  "endLine": 197,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 308,
+                  "startColumn": 41,
+                  "endLine": 308,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 467,
+                  "startColumn": 24,
+                  "endLine": 467,
+                  "endColumn": 35
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 616,
+                  "startColumn": 23,
+                  "endLine": 616,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'ID_USUARIO' 6 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 233,
+                  "startColumn": 42,
+                  "endLine": 233,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 268,
+                  "startColumn": 42,
+                  "endLine": 268,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 447,
+                  "startColumn": 42,
+                  "endLine": 447,
+                  "endColumn": 54
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 493,
+                  "startColumn": 25,
+                  "endLine": 493,
+                  "endColumn": 37
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 510,
+                  "startColumn": 25,
+                  "endLine": 510,
+                  "endColumn": 37
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 540,
+                  "startColumn": 25,
+                  "endLine": 540,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_MOVIMENTACAO' 5 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 238,
+                  "startColumn": 23,
+                  "endLine": 238,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 529,
+                  "startColumn": 24,
+                  "endLine": 529,
+                  "endColumn": 41
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 534,
+                  "startColumn": 24,
+                  "endLine": 534,
+                  "endColumn": 41
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 539,
+                  "startColumn": 24,
+                  "endLine": 539,
+                  "endColumn": 41
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 571,
+                  "startColumn": 23,
+                  "endLine": 571,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_BAIRRO' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 294,
+                  "startColumn": 23,
+                  "endLine": 294,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 328,
+                  "startColumn": 41,
+                  "endLine": 328,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 452,
+                  "startColumn": 24,
+                  "endLine": 452,
+                  "endColumn": 35
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 613,
+                  "startColumn": 23,
+                  "endLine": 613,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_LOGRADOURO' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 314,
+                  "startColumn": 23,
+                  "endLine": 314,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 348,
+                  "startColumn": 41,
+                  "endLine": 348,
+                  "endColumn": 56
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 514,
+                  "startColumn": 24,
+                  "endLine": 514,
+                  "endColumn": 39
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 610,
+                  "startColumn": 23,
+                  "endLine": 610,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_PATIO' 5 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 334,
+                  "startColumn": 23,
+                  "endLine": 334,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 368,
+                  "startColumn": 41,
+                  "endLine": 368,
+                  "endColumn": 51
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 397,
+                  "startColumn": 41,
+                  "endLine": 397,
+                  "endColumn": 51
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 544,
+                  "startColumn": 24,
+                  "endLine": 544,
+                  "endColumn": 34
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 601,
+                  "startColumn": 23,
+                  "endLine": 601,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_FILIAL' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 354,
+                  "startColumn": 23,
+                  "endLine": 354,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 416,
+                  "startColumn": 41,
+                  "endLine": 416,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 482,
+                  "startColumn": 24,
+                  "endLine": 482,
+                  "endColumn": 35
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 589,
+                  "startColumn": 23,
+                  "endLine": 589,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'ID_PATIO' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 369,
+                  "startColumn": 42,
+                  "endLine": 369,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 398,
+                  "startColumn": 42,
+                  "endLine": 398,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 483,
+                  "startColumn": 25,
+                  "endLine": 483,
+                  "endColumn": 35
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 505,
+                  "startColumn": 25,
+                  "endLine": 505,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_LOCALIZACAO' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 374,
+                  "startColumn": 23,
+                  "endLine": 374,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 499,
+                  "startColumn": 24,
+                  "endLine": 499,
+                  "endColumn": 40
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 504,
+                  "startColumn": 24,
+                  "endLine": 504,
+                  "endColumn": 40
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 565,
+                  "startColumn": 23,
+                  "endLine": 565,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_DEPARTAMENTO' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 402,
+                  "startColumn": 23,
+                  "endLine": 402,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 440,
+                  "startColumn": 41,
+                  "endLine": 440,
+                  "endColumn": 58
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 472,
+                  "startColumn": 24,
+                  "endLine": 472,
+                  "endColumn": 41
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 577,
+                  "startColumn": 23,
+                  "endLine": 577,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_FUNCIONARIO' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 422,
+                  "startColumn": 23,
+                  "endLine": 422,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 487,
+                  "startColumn": 24,
+                  "endLine": 487,
+                  "endColumn": 40
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 492,
+                  "startColumn": 24,
+                  "endLine": 492,
+                  "endColumn": 40
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520210355_InitialMigration.cs",
+                "region": {
+                  "startLine": 562,
+                  "startColumn": 23,
+                  "endLine": 562,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'TB_LOCALIZACAO' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520211643_ConfigurarPrecisaoLocalizacao.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 24,
+                  "endLine": 15,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520211643_ConfigurarPrecisaoLocalizacao.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 24,
+                  "endLine": 25,
+                  "endColumn": 40
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520211643_ConfigurarPrecisaoLocalizacao.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 24,
+                  "endLine": 39,
+                  "endColumn": 40
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520211643_ConfigurarPrecisaoLocalizacao.cs",
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 24,
+                  "endLine": 49,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'DECIMAL(18,6)' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520211643_ConfigurarPrecisaoLocalizacao.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520211643_ConfigurarPrecisaoLocalizacao.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 23,
+                  "endLine": 26,
+                  "endColumn": 38
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520211643_ConfigurarPrecisaoLocalizacao.cs",
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 26,
+                  "endLine": 43,
+                  "endColumn": 41
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520211643_ConfigurarPrecisaoLocalizacao.cs",
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 26,
+                  "endLine": 53,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'DECIMAL(18,2)' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520211643_ConfigurarPrecisaoLocalizacao.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 26,
+                  "endLine": 21,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520211643_ConfigurarPrecisaoLocalizacao.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 26,
+                  "endLine": 31,
+                  "endColumn": 41
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520211643_ConfigurarPrecisaoLocalizacao.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 23,
+                  "endLine": 40,
+                  "endColumn": 38
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Migrations/20250520211643_ConfigurarPrecisaoLocalizacao.cs",
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 23,
+                  "endLine": 50,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'BeaconDTO' to match pascal case naming rules, consider using 'BeaconDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/BeaconDTO.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'CreateBeaconDTO' to match pascal case naming rules, consider using 'CreateBeaconDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/BeaconDTO.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 18,
+                  "endLine": 18,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'UpdateBeaconDTO' to match pascal case naming rules, consider using 'UpdateBeaconDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/BeaconDTO.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 18,
+                  "endLine": 36,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'ClienteDTO' to match pascal case naming rules, consider using 'ClienteDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/ClienteDTO.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'CreateClienteDTO' to match pascal case naming rules, consider using 'CreateClienteDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/ClienteDTO.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 18,
+                  "endLine": 18,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'UpdateClienteDTO' to match pascal case naming rules, consider using 'UpdateClienteDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/ClienteDTO.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 18,
+                  "endLine": 38,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'LocalizacaoDTO' to match pascal case naming rules, consider using 'LocalizacaoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/LocalizacaoDTO.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'CreateLocalizacaoDTO' to match pascal case naming rules, consider using 'CreateLocalizacaoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/LocalizacaoDTO.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 18,
+                  "endLine": 19,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'ModeloMotoDTO' to match pascal case naming rules, consider using 'ModeloMotoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/ModeloMotoDTO.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'CreateModeloMotoDTO' to match pascal case naming rules, consider using 'CreateModeloMotoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/ModeloMotoDTO.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 18,
+                  "endLine": 15,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'UpdateModeloMotoDTO' to match pascal case naming rules, consider using 'UpdateModeloMotoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/ModeloMotoDTO.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 18,
+                  "endLine": 27,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'MotoDTO' to match pascal case naming rules, consider using 'MotoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/MotoDTO.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'CreateMotoDTO' to match pascal case naming rules, consider using 'CreateMotoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/MotoDTO.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 18,
+                  "endLine": 19,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'UpdateMotoDTO' to match pascal case naming rules, consider using 'UpdateMotoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/MotoDTO.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 18,
+                  "endLine": 32,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'MovimentacaoDTO' to match pascal case naming rules, consider using 'MovimentacaoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/MovimentacaoDTO.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'CreateMovimentacaoDTO' to match pascal case naming rules, consider using 'CreateMovimentacaoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/MovimentacaoDTO.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 18,
+                  "endLine": 20,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'UpdateMovimentacaoDTO' to match pascal case naming rules, consider using 'UpdateMovimentacaoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/MovimentacaoDTO.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 18,
+                  "endLine": 36,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'TipoMovimentacaoDTO' to match pascal case naming rules, consider using 'TipoMovimentacaoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/TipoMovimentacaoDTO.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'CreateTipoMovimentacaoDTO' to match pascal case naming rules, consider using 'CreateTipoMovimentacaoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/TipoMovimentacaoDTO.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 18,
+                  "endLine": 13,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'UpdateTipoMovimentacaoDTO' to match pascal case naming rules, consider using 'UpdateTipoMovimentacaoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/TipoMovimentacaoDTO.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 18,
+                  "endLine": 21,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'UsuarioDTO' to match pascal case naming rules, consider using 'UsuarioDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/UsuarioDTO.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'CreateUsuarioDTO' to match pascal case naming rules, consider using 'CreateUsuarioDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/UsuarioDTO.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 18,
+                  "endLine": 17,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'UpdateUsuarioDTO' to match pascal case naming rules, consider using 'UpdateUsuarioDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/UsuarioDTO.cs",
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 18,
+                  "endLine": 37,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'ChangePasswordDTO' to match pascal case naming rules, consider using 'ChangePasswordDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/UsuarioDTO.cs",
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 18,
+                  "endLine": 51,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Usuario.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Usuario.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 25,
+                  "endLine": 8,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Usuario.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 20,
+                  "endLine": 10,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/TipoUsuario.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Beacon.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Beacon.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 20,
+                  "endLine": 7,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Beacon.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 20,
+                  "endLine": 8,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Beacon.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Moto.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Moto.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 25,
+                  "endLine": 7,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Moto.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Cliente.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Cliente.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 25,
+                  "endLine": 8,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/ModeloMoto.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/ModeloBeacon.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/TipoMovimentacao.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/RegistroBateria.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/RegistroBateria.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 25,
+                  "endLine": 6,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/RegistroBateria.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 20,
+                  "endLine": 7,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/RegistroBateria.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 20,
+                  "endLine": 8,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await RunAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Program.cs",
+                "region": {
+                  "startLine": 89,
+                  "startColumn": 1,
+                  "endLine": 89,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Patio.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Patio.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 20,
+                  "endLine": 7,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Logradouro.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Logradouro.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 20,
+                  "endLine": 7,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Bairro.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Bairro.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 20,
+                  "endLine": 7,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Cidade.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Cidade.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 20,
+                  "endLine": 7,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Estado.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Estado.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 20,
+                  "endLine": 7,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Pais.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Movimentacao.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Movimentacao.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 25,
+                  "endLine": 6,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Movimentacao.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 20,
+                  "endLine": 8,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Movimentacao.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Movimentacao.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 20,
+                  "endLine": 10,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 24,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 24,
+                  "endLine": 7,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 25,
+                  "endLine": 8,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6580",
+          "level": "warning",
+          "message": "Use a format provider when parsing date and time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 37,
+                  "endLine": 102,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6580",
+          "level": "warning",
+          "message": "Use a format provider when parsing date and time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
+                "region": {
+                  "startLine": 110,
+                  "startColumn": 37,
+                  "endLine": 110,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6580",
+          "level": "warning",
+          "message": "Use a format provider when parsing date and time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
+                "region": {
+                  "startLine": 118,
+                  "startColumn": 37,
+                  "endLine": 118,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6580",
+          "level": "warning",
+          "message": "Use a format provider when parsing date and time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 33,
+                  "endLine": 38,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6580",
+          "level": "warning",
+          "message": "Use a format provider when parsing date and time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 33,
+                  "endLine": 55,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1861",
+          "level": "note",
+          "message": "Prefira campos 'static readonly' em vez de argumentos de matriz constante se o método chamado for chamado repetidamente e não estiver modificando a matriz passada",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/ErrorExamples.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 48,
+                  "endLine": 20,
+                  "endColumn": 122
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "paramName": "value"
+            }
+          }
+        },
+        {
+          "ruleId": "CA1861",
+          "level": "note",
+          "message": "Prefira campos 'static readonly' em vez de argumentos de matriz constante se o método chamado for chamado repetidamente e não estiver modificando a matriz passada",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/ErrorExamples.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 57,
+                  "endLine": 21,
+                  "endColumn": 99
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "paramName": "value"
+            }
+          }
+        },
+        {
+          "ruleId": "S6580",
+          "level": "warning",
+          "message": "Use a format provider when parsing date and time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Controllers/FuncionariosController.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 33,
+                  "endLine": 39,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6580",
+          "level": "warning",
+          "message": "Use a format provider when parsing date and time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Controllers/FuncionariosController.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 33,
+                  "endLine": 19,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6580",
+          "level": "warning",
+          "message": "Use a format provider when parsing date and time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Controllers/FuncionariosController.cs",
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 37,
+                  "endLine": 67,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6580",
+          "level": "warning",
+          "message": "Use a format provider when parsing date and time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Controllers/FuncionariosController.cs",
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 37,
+                  "endLine": 76,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6580",
+          "level": "warning",
+          "message": "Use a format provider when parsing date and time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Controllers/FuncionariosController.cs",
+                "region": {
+                  "startLine": 85,
+                  "startColumn": 37,
+                  "endLine": 85,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CA1861": {
+          "id": "CA1861",
+          "shortDescription": "Evite matrizes constantes como argumentos",
+          "fullDescription": "Matrizes constantes passadas como argumentos não são reutilizadas quando chamadas repetidamente, o que implica uma nova matriz sendo criada a cada vez. Considere extraí-las para campos 'static readonly' para melhorar o desempenho se a matriz passada não for modificada dentro do método chamado.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1861",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS8618": {
+          "id": "CS8618",
+          "shortDescription": "O campo não anulável precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar como anulável.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8618)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S101": {
+          "id": "S101",
+          "shortDescription": "Types should be named in PascalCase",
+          "fullDescription": "Shared naming conventions allow teams to collaborate efficiently.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-101",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1192": {
+          "id": "S1192",
+          "shortDescription": "String literals should not be duplicated",
+          "fullDescription": "Duplicated string literals make the process of refactoring complex and error-prone, as any change would need to be propagated on all occurrences.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1192",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": false,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2068": {
+          "id": "S2068",
+          "shortDescription": "Hard-coded credentials are security-sensitive",
+          "fullDescription": "Because it is easy to extract strings from an application source code or binary, credentials should not be hard-coded. This is particularly true for applications that are distributed or that are open-source.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2068",
+          "properties": {
+            "category": "Blocker Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S6580": {
+          "id": "S6580",
+          "shortDescription": "Use a format provider when parsing date and time",
+          "fullDescription": "When converting a string representation of a date and time to a DateTime object or any other temporal type with one of the available system parsing methods, you should always provide an IFormatProvider parameter.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-6580",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S6964": {
+          "id": "S6964",
+          "shortDescription": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "fullDescription": "\"Under-posting\" refers to a situation where a client sends less data than expected to the server during an HTTP request, for example when the client omits some properties from the request body that the server expects to receive.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-6964",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S6966": {
+          "id": "S6966",
+          "shortDescription": "Awaitable method should be used",
+          "fullDescription": "In an async method, any blocking operations should be avoided.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-6966",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
