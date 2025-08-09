@@ -84,6 +84,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-Console.WriteLine("Aplicação inicializada. Swagger disponível em /swagger");
+Console.WriteLine("Aplicação inicializada. Swagger disponível em  aqui /swagger");
 
 app.Run();
