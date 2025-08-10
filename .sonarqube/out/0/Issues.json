@@ -3566,90 +3566,6 @@
         {
           "ruleId": "S101",
           "level": "warning",
-          "message": "Rename class 'UpdateBeaconDTO' to match pascal case naming rules, consider using 'UpdateBeaconDto'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/BeaconDTO.cs",
-                "region": {
-                  "startLine": 36,
-                  "startColumn": 18,
-                  "endLine": 36,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'ClienteDTO' to match pascal case naming rules, consider using 'ClienteDto'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/ClienteDTO.cs",
-                "region": {
-                  "startLine": 6,
-                  "startColumn": 18,
-                  "endLine": 6,
-                  "endColumn": 28
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'CreateClienteDTO' to match pascal case naming rules, consider using 'CreateClienteDto'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/ClienteDTO.cs",
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 18,
-                  "endLine": 18,
-                  "endColumn": 34
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'UpdateClienteDTO' to match pascal case naming rules, consider using 'UpdateClienteDto'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/ClienteDTO.cs",
-                "region": {
-                  "startLine": 38,
-                  "startColumn": 18,
-                  "endLine": 38,
-                  "endColumn": 34
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
           "message": "Rename class 'LocalizacaoDTO' to match pascal case naming rules, consider using 'LocalizacaoDto'.",
           "locations": [
             {
@@ -3755,6 +3671,69 @@
         {
           "ruleId": "S101",
           "level": "warning",
+          "message": "Rename class 'CreateMotoDTO' to match pascal case naming rules, consider using 'CreateMotoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/MotoDTO.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 18,
+                  "endLine": 19,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'UpdateBeaconDTO' to match pascal case naming rules, consider using 'UpdateBeaconDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/BeaconDTO.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 18,
+                  "endLine": 36,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'CreateTipoMovimentacaoDTO' to match pascal case naming rules, consider using 'CreateTipoMovimentacaoDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/TipoMovimentacaoDTO.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 18,
+                  "endLine": 13,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
           "message": "Rename class 'MotoDTO' to match pascal case naming rules, consider using 'MotoDto'.",
           "locations": [
             {
@@ -3776,16 +3755,121 @@
         {
           "ruleId": "S101",
           "level": "warning",
-          "message": "Rename class 'CreateMotoDTO' to match pascal case naming rules, consider using 'CreateMotoDto'.",
+          "message": "Rename class 'UpdateTipoMovimentacaoDTO' to match pascal case naming rules, consider using 'UpdateTipoMovimentacaoDto'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/MotoDTO.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/TipoMovimentacaoDTO.cs",
                 "region": {
-                  "startLine": 19,
+                  "startLine": 21,
                   "startColumn": 18,
-                  "endLine": 19,
-                  "endColumn": 31
+                  "endLine": 21,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'CreateUsuarioDTO' to match pascal case naming rules, consider using 'CreateUsuarioDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/UsuarioDTO.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 18,
+                  "endLine": 17,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'ClienteDTO' to match pascal case naming rules, consider using 'ClienteDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/ClienteDTO.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'CreateClienteDTO' to match pascal case naming rules, consider using 'CreateClienteDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/ClienteDTO.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 18,
+                  "endLine": 18,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'UsuarioDTO' to match pascal case naming rules, consider using 'UsuarioDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/UsuarioDTO.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'UpdateUsuarioDTO' to match pascal case naming rules, consider using 'UpdateUsuarioDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/UsuarioDTO.cs",
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 18,
+                  "endLine": 37,
+                  "endColumn": 34
                 }
               }
             }
@@ -3818,6 +3902,27 @@
         {
           "ruleId": "S101",
           "level": "warning",
+          "message": "Rename class 'UpdateClienteDTO' to match pascal case naming rules, consider using 'UpdateClienteDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/ClienteDTO.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 18,
+                  "endLine": 38,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
           "message": "Rename class 'MovimentacaoDTO' to match pascal case naming rules, consider using 'MovimentacaoDto'.",
           "locations": [
             {
@@ -3828,6 +3933,27 @@
                   "startColumn": 18,
                   "endLine": 6,
                   "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S101",
+          "level": "warning",
+          "message": "Rename class 'ChangePasswordDTO' to match pascal case naming rules, consider using 'ChangePasswordDto'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/UsuarioDTO.cs",
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 18,
+                  "endLine": 51,
+                  "endColumn": 35
                 }
               }
             }
@@ -3900,18 +4026,18 @@
           }
         },
         {
-          "ruleId": "S101",
+          "ruleId": "S6580",
           "level": "warning",
-          "message": "Rename class 'CreateTipoMovimentacaoDTO' to match pascal case naming rules, consider using 'CreateTipoMovimentacaoDto'.",
+          "message": "Use a format provider when parsing date and time.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/TipoMovimentacaoDTO.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
                 "region": {
-                  "startLine": 13,
-                  "startColumn": 18,
-                  "endLine": 13,
-                  "endColumn": 43
+                  "startLine": 102,
+                  "startColumn": 37,
+                  "endLine": 102,
+                  "endColumn": 65
                 }
               }
             }
@@ -3921,18 +4047,18 @@
           }
         },
         {
-          "ruleId": "S101",
+          "ruleId": "S6580",
           "level": "warning",
-          "message": "Rename class 'UpdateTipoMovimentacaoDTO' to match pascal case naming rules, consider using 'UpdateTipoMovimentacaoDto'.",
+          "message": "Use a format provider when parsing date and time.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/TipoMovimentacaoDTO.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
                 "region": {
-                  "startLine": 21,
-                  "startColumn": 18,
-                  "endLine": 21,
-                  "endColumn": 43
+                  "startLine": 110,
+                  "startColumn": 37,
+                  "endLine": 110,
+                  "endColumn": 65
                 }
               }
             }
@@ -3942,18 +4068,18 @@
           }
         },
         {
-          "ruleId": "S101",
+          "ruleId": "S6580",
           "level": "warning",
-          "message": "Rename class 'UsuarioDTO' to match pascal case naming rules, consider using 'UsuarioDto'.",
+          "message": "Use a format provider when parsing date and time.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/UsuarioDTO.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
                 "region": {
-                  "startLine": 6,
-                  "startColumn": 18,
-                  "endLine": 6,
-                  "endColumn": 28
+                  "startLine": 118,
+                  "startColumn": 37,
+                  "endLine": 118,
+                  "endColumn": 65
                 }
               }
             }
@@ -3963,354 +4089,18 @@
           }
         },
         {
-          "ruleId": "S101",
+          "ruleId": "S6580",
           "level": "warning",
-          "message": "Rename class 'CreateUsuarioDTO' to match pascal case naming rules, consider using 'CreateUsuarioDto'.",
+          "message": "Use a format provider when parsing date and time.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/UsuarioDTO.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
                 "region": {
-                  "startLine": 17,
-                  "startColumn": 18,
-                  "endLine": 17,
-                  "endColumn": 34
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'UpdateUsuarioDTO' to match pascal case naming rules, consider using 'UpdateUsuarioDto'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/UsuarioDTO.cs",
-                "region": {
-                  "startLine": 37,
-                  "startColumn": 18,
-                  "endLine": 37,
-                  "endColumn": 34
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S101",
-          "level": "warning",
-          "message": "Rename class 'ChangePasswordDTO' to match pascal case naming rules, consider using 'ChangePasswordDto'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/DTOs/UsuarioDTO.cs",
-                "region": {
-                  "startLine": 51,
-                  "startColumn": 18,
-                  "endLine": 51,
-                  "endColumn": 35
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Usuario.cs",
-                "region": {
-                  "startLine": 5,
-                  "startColumn": 20,
-                  "endLine": 5,
-                  "endColumn": 30
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Usuario.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 25,
-                  "endLine": 8,
-                  "endColumn": 38
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Usuario.cs",
-                "region": {
-                  "startLine": 10,
-                  "startColumn": 20,
-                  "endLine": 10,
-                  "endColumn": 35
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/TipoUsuario.cs",
-                "region": {
-                  "startLine": 5,
-                  "startColumn": 20,
-                  "endLine": 5,
-                  "endColumn": 35
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Beacon.cs",
-                "region": {
-                  "startLine": 5,
-                  "startColumn": 20,
-                  "endLine": 5,
-                  "endColumn": 29
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Beacon.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 20,
-                  "endLine": 7,
-                  "endColumn": 27
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Beacon.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 20,
-                  "endLine": 8,
-                  "endColumn": 27
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Beacon.cs",
-                "region": {
-                  "startLine": 9,
-                  "startColumn": 20,
-                  "endLine": 9,
-                  "endColumn": 36
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Moto.cs",
-                "region": {
-                  "startLine": 5,
-                  "startColumn": 20,
-                  "endLine": 5,
-                  "endColumn": 27
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Moto.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 25,
-                  "endLine": 7,
-                  "endColumn": 38
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Moto.cs",
-                "region": {
-                  "startLine": 9,
-                  "startColumn": 20,
-                  "endLine": 9,
-                  "endColumn": 34
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Cliente.cs",
-                "region": {
-                  "startLine": 5,
-                  "startColumn": 20,
-                  "endLine": 5,
-                  "endColumn": 30
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Cliente.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 25,
-                  "endLine": 8,
-                  "endColumn": 38
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/ModeloMoto.cs",
-                "region": {
-                  "startLine": 5,
-                  "startColumn": 20,
-                  "endLine": 5,
-                  "endColumn": 34
+                  "startLine": 55,
+                  "startColumn": 33,
+                  "endLine": 55,
+                  "endColumn": 61
                 }
               }
             }
@@ -4347,53 +4137,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/TipoMovimentacao.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/ModeloMoto.cs",
                 "region": {
                   "startLine": 5,
                   "startColumn": 20,
                   "endLine": 5,
-                  "endColumn": 40
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/RegistroBateria.cs",
-                "region": {
-                  "startLine": 5,
-                  "startColumn": 20,
-                  "endLine": 5,
-                  "endColumn": 31
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/RegistroBateria.cs",
-                "region": {
-                  "startLine": 6,
-                  "startColumn": 25,
-                  "endLine": 6,
                   "endColumn": 34
                 }
               }
@@ -4410,10 +4158,94 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/RegistroBateria.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Cliente.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Cliente.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 25,
+                  "endLine": 8,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 24,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
                 "region": {
                   "startLine": 7,
-                  "startColumn": 20,
+                  "startColumn": 24,
                   "endLine": 7,
                   "endColumn": 33
                 }
@@ -4431,12 +4263,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/RegistroBateria.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
                 "region": {
                   "startLine": 8,
-                  "startColumn": 20,
+                  "startColumn": 25,
                   "endLine": 8,
-                  "endColumn": 29
+                  "endColumn": 34
                 }
               }
             }
@@ -4446,18 +4278,81 @@
           }
         },
         {
-          "ruleId": "S6966",
+          "ruleId": "S6964",
           "level": "warning",
-          "message": "Await RunAsync instead.",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Program.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
                 "region": {
-                  "startLine": 89,
-                  "startColumn": 1,
-                  "endLine": 89,
-                  "endColumn": 10
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Moto.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Moto.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 25,
+                  "endLine": 7,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Moto.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 34
                 }
               }
             }
@@ -4809,12 +4704,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Usuario.cs",
                 "region": {
                   "startLine": 5,
                   "startColumn": 20,
                   "endLine": 5,
-                  "endColumn": 34
+                  "endColumn": 30
                 }
               }
             }
@@ -4830,54 +4725,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
-                "region": {
-                  "startLine": 6,
-                  "startColumn": 24,
-                  "endLine": 6,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 24,
-                  "endLine": 7,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6964",
-          "level": "warning",
-          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Usuario.cs",
                 "region": {
                   "startLine": 8,
                   "startColumn": 25,
                   "endLine": 8,
-                  "endColumn": 34
+                  "endColumn": 38
                 }
               }
             }
@@ -4893,11 +4746,116 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Localizacao.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Usuario.cs",
                 "region": {
-                  "startLine": 9,
+                  "startLine": 10,
                   "startColumn": 20,
-                  "endLine": 9,
+                  "endLine": 10,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/TipoUsuario.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/TipoMovimentacao.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6966",
+          "level": "warning",
+          "message": "Await RunAsync instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Program.cs",
+                "region": {
+                  "startLine": 89,
+                  "startColumn": 1,
+                  "endLine": 89,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Beacon.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Beacon.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 20,
+                  "endLine": 7,
                   "endColumn": 27
                 }
               }
@@ -4908,18 +4866,18 @@
           }
         },
         {
-          "ruleId": "S6580",
+          "ruleId": "S6964",
           "level": "warning",
-          "message": "Use a format provider when parsing date and time.",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Beacon.cs",
                 "region": {
-                  "startLine": 102,
-                  "startColumn": 37,
-                  "endLine": 102,
-                  "endColumn": 65
+                  "startLine": 8,
+                  "startColumn": 20,
+                  "endLine": 8,
+                  "endColumn": 27
                 }
               }
             }
@@ -4929,39 +4887,18 @@
           }
         },
         {
-          "ruleId": "S6580",
+          "ruleId": "S6964",
           "level": "warning",
-          "message": "Use a format provider when parsing date and time.",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/Beacon.cs",
                 "region": {
-                  "startLine": 110,
-                  "startColumn": 37,
-                  "endLine": 110,
-                  "endColumn": 65
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6580",
-          "level": "warning",
-          "message": "Use a format provider when parsing date and time.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
-                "region": {
-                  "startLine": 118,
-                  "startColumn": 37,
-                  "endLine": 118,
-                  "endColumn": 65
+                  "startLine": 9,
+                  "startColumn": 20,
+                  "endLine": 9,
+                  "endColumn": 36
                 }
               }
             }
@@ -4982,96 +4919,6 @@
                   "startLine": 38,
                   "startColumn": 33,
                   "endLine": 38,
-                  "endColumn": 61
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S6580",
-          "level": "warning",
-          "message": "Use a format provider when parsing date and time.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/UsuarioRequestExample.cs",
-                "region": {
-                  "startLine": 55,
-                  "startColumn": 33,
-                  "endLine": 55,
-                  "endColumn": 61
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA1861",
-          "level": "note",
-          "message": "Prefira campos 'static readonly' em vez de argumentos de matriz constante se o método chamado for chamado repetidamente e não estiver modificando a matriz passada",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/ErrorExamples.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 48,
-                  "endLine": 20,
-                  "endColumn": 122
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "paramName": "value"
-            }
-          }
-        },
-        {
-          "ruleId": "CA1861",
-          "level": "note",
-          "message": "Prefira campos 'static readonly' em vez de argumentos de matriz constante se o método chamado for chamado repetidamente e não estiver modificando a matriz passada",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/ErrorExamples.cs",
-                "region": {
-                  "startLine": 21,
-                  "startColumn": 57,
-                  "endLine": 21,
-                  "endColumn": 99
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "paramName": "value"
-            }
-          }
-        },
-        {
-          "ruleId": "S6580",
-          "level": "warning",
-          "message": "Use a format provider when parsing date and time.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Controllers/FuncionariosController.cs",
-                "region": {
-                  "startLine": 39,
-                  "startColumn": 33,
-                  "endLine": 39,
                   "endColumn": 61
                 }
               }
@@ -5163,6 +5010,159 @@
           ],
           "properties": {
             "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6580",
+          "level": "warning",
+          "message": "Use a format provider when parsing date and time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Controllers/FuncionariosController.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 33,
+                  "endLine": 39,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/RegistroBateria.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 20,
+                  "endLine": 5,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/RegistroBateria.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 25,
+                  "endLine": 6,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/RegistroBateria.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 20,
+                  "endLine": 7,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6964",
+          "level": "warning",
+          "message": "Value type property used as input in a controller action should be nullable, required or annotated with the JsonRequiredAttribute to avoid under-posting.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Models/RegistroBateria.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 20,
+                  "endLine": 8,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1861",
+          "level": "note",
+          "message": "Prefira campos 'static readonly' em vez de argumentos de matriz constante se o método chamado for chamado repetidamente e não estiver modificando a matriz passada",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/ErrorExamples.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 48,
+                  "endLine": 20,
+                  "endColumn": 122
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "paramName": "value"
+            }
+          }
+        },
+        {
+          "ruleId": "CA1861",
+          "level": "note",
+          "message": "Prefira campos 'static readonly' em vez de argumentos de matriz constante se o método chamado for chamado repetidamente e não estiver modificando a matriz passada",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/Examples/ErrorExamples.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 57,
+                  "endLine": 21,
+                  "endColumn": 99
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "paramName": "value"
+            }
           }
         }
       ],

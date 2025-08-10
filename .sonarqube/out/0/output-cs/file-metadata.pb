@@ -37,9 +37,9 @@ M/home/arthur/RiderProjects/API .Net/API .Net/Examples/MovimentacaoExamples.cs
 E/home/arthur/RiderProjects/API .Net/API .Net/Examples/MotoExamples.csutf-8T
 K/home/arthur/RiderProjects/API .Net/API .Net/Examples/ModeloMotoExamples.csutf-8\
 S/home/arthur/RiderProjects/API .Net/API .Net/Examples/ModeloBeaconRequestExample.csutf-8U
-L/home/arthur/RiderProjects/API .Net/API .Net/Examples/LocalizacaoExamples.csutf-8O
-F/home/arthur/RiderProjects/API .Net/API .Net/Examples/ErrorExamples.csutf-8Q
-H/home/arthur/RiderProjects/API .Net/API .Net/Examples/ClienteExamples.csutf-8P
+L/home/arthur/RiderProjects/API .Net/API .Net/Examples/LocalizacaoExamples.csutf-8Q
+H/home/arthur/RiderProjects/API .Net/API .Net/Examples/ClienteExamples.csutf-8O
+F/home/arthur/RiderProjects/API .Net/API .Net/Examples/ErrorExamples.csutf-8P
 G/home/arthur/RiderProjects/API .Net/API .Net/Examples/BeaconExamples.csutf-8H
 ?/home/arthur/RiderProjects/API .Net/API .Net/DTOs/UsuarioDTO.csutf-8Q
 H/home/arthur/RiderProjects/API .Net/API .Net/DTOs/TipoMovimentacaoDTO.csutf-8M
@@ -59,9 +59,9 @@ S/home/arthur/RiderProjects/API .Net/API .Net/Controllers/MovimentacoesControlle
 K/home/arthur/RiderProjects/API .Net/API .Net/Controllers/MotosController.csutf-8[
 R/home/arthur/RiderProjects/API .Net/API .Net/Controllers/ModelosMotosController.csutf-8\
 S/home/arthur/RiderProjects/API .Net/API .Net/Controllers/ModelosBeaconController.csutf-8[
-R/home/arthur/RiderProjects/API .Net/API .Net/Controllers/LocalizacoesController.csutf-8[
-R/home/arthur/RiderProjects/API .Net/API .Net/Controllers/FuncionariosController.csutf-8V
-M/home/arthur/RiderProjects/API .Net/API .Net/Controllers/FiliaisController.csutf-8\
+R/home/arthur/RiderProjects/API .Net/API .Net/Controllers/LocalizacoesController.csutf-8V
+M/home/arthur/RiderProjects/API .Net/API .Net/Controllers/FiliaisController.csutf-8[
+R/home/arthur/RiderProjects/API .Net/API .Net/Controllers/FuncionariosController.csutf-8\
 S/home/arthur/RiderProjects/API .Net/API .Net/Controllers/DepartamentosController.csutf-8W
 N/home/arthur/RiderProjects/API .Net/API .Net/Controllers/ClientesController.csutf-8V
 M/home/arthur/RiderProjects/API .Net/API .Net/Controllers/BeaconsController.csutf-8h

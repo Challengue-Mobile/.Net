@@ -7,13 +7,13 @@
 B/home/arthur/RiderProjects/API .Net/API .Net/Models/TipoUsuario.cs 8jr		
 Ça
 G/home/arthur/RiderProjects/API .Net/API .Net/Models/TipoMovimentacao.cs 8jr		
-Ç^
+ÇY
+</home/arthur/RiderProjects/API .Net/API .Net/Models/Patio.cs 8j	r
+Ç^
 F/home/arthur/RiderProjects/API .Net/API .Net/Models/RegistroBateria.cs 
 8
 j
-rY
-</home/arthur/RiderProjects/API .Net/API .Net/Models/Patio.cs 8j	r
-ÇU
+rU
 ;/home/arthur/RiderProjects/API .Net/API .Net/Models/Pais.cs 8jr		
 Çc
 C/home/arthur/RiderProjects/API .Net/API .Net/Models/Movimentacao.cs 8jr	
@@ -21,14 +21,14 @@ C/home/arthur/RiderProjects/API .Net/API .Net/Models/Movimentacao.cs 8jr
 ;/home/arthur/RiderProjects/API .Net/API .Net/Models/Moto.cs 8jr	Ç]
 A/home/arthur/RiderProjects/API .Net/API .Net/Models/ModeloMoto.cs 8j	r
 
-Ç_
-C/home/arthur/RiderProjects/API .Net/API .Net/Models/ModeloBeacon.cs 8j	r
-
 Ç]
 A/home/arthur/RiderProjects/API .Net/API .Net/Models/LogSistema.cs 
 8
 j
-rÇ]
+rÇ_
+C/home/arthur/RiderProjects/API .Net/API .Net/Models/ModeloBeacon.cs 8j	r
+
+Ç]
 A/home/arthur/RiderProjects/API .Net/API .Net/Models/Logradouro.cs 
 8
 j	r
@@ -84,11 +84,11 @@ K/home/arthur/RiderProjects/API .Net/API .Net/Examples/ModeloMotoExamples.cs
 S/home/arthur/RiderProjects/API .Net/API .Net/Examples/ModeloBeaconRequestExample.cs 8j		345rE
  !"#$%&'()*+,-./016789:;<=>?@ABCDEFGHIJKLMNOPQÇ:;∫
 L/home/arthur/RiderProjects/API .Net/API .Net/Examples/LocalizacaoExamples.cs 8j		123rL
- !"#$%&'()*+,-./456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXÇ$89?HQÇ
-F/home/arthur/RiderProjects/API .Net/API .Net/Examples/ErrorExamples.cs 8jr!	
- !"#$%&'()*+Ç"≤
+ !"#$%&'()*+,-./456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXÇ$89?HQ≤
 H/home/arthur/RiderProjects/API .Net/API .Net/Examples/ClienteExamples.cs 8j		
-678rH !"#$%&'()*+,-./012349:;<=>?@ABCDEFGHIJKLMNOPQRSTÇ %.=>DM´
+678rH !"#$%&'()*+,-./012349:;<=>?@ABCDEFGHIJKLMNOPQRSTÇ %.=>DMÇ
+F/home/arthur/RiderProjects/API .Net/API .Net/Examples/ErrorExamples.cs 8jr!	
+ !"#$%&'()*+Ç"´
 G/home/arthur/RiderProjects/API .Net/API .Net/Examples/BeaconExamples.cs 8j		
 678rF !"#$%&'()*+,-./012349:;<=>?@ABCDEFGHIJKLMNOPQRÇ =>é
 ?/home/arthur/RiderProjects/API .Net/API .Net/DTOs/UsuarioDTO.cs  8 j$2r1	
@@ -131,11 +131,11 @@ R/home/arthur/RiderProjects/API .Net/API .Net/Controllers/ModelosMotosController
 S/home/arthur/RiderProjects/API .Net/API .Net/Controllers/ModelosBeaconController.cs 8j3 !"#/012345JKLMNOPQRTVWYklmnopqrsòôöõúùûr§	
 $%&'()*+,-6789:;<=>?@BCDEGHZ[\]^_`abcdefhituvwxyz{|}~ÄÅÉÖÜáàâäãåçéèêëíìïñü†°¢£§•¶ß®©™´≠Æ∞±≥¥µ∂∑∏xÇ&,@BDGefh~ÄÉáãçëïß®™≠Æ∞µó
 R/home/arthur/RiderProjects/API .Net/API .Net/Controllers/LocalizacoesController.cs 8jD !"#$0123456KLMNOP_`abcdefgiklmnpÑÖÜáàâäãå±≤≥¥µ∂∑r¡	
-%&'()*+,-.789:;<=>?@ACDEFHIQRSTUVWXYZ[\]qrstuvwxyz{|~ÅÇçéèêëíìîïñóòôöúûü†°¢£§•¶ß®©™´¨ÆØ∏π∫ªºΩæø¿¡¬√ƒ∆«… ÃÕŒœ–—xÇ,-ACEHYZ[|~Åóôú†§¶™Æ¿¡√∆«…Œƒ
-R/home/arthur/RiderProjects/API .Net/API .Net/Controllers/FuncionariosController.cs 8j		456rO
- !"#$%&'()*+,-./012789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[Ç	!';<CLU∂
+%&'()*+,-.789:;<=>?@ACDEFHIQRSTUVWXYZ[\]qrstuvwxyz{|~ÅÇçéèêëíìîïñóòôöúûü†°¢£§•¶ß®©™´¨ÆØ∏π∫ªºΩæø¿¡¬√ƒ∆«… ÃÕŒœ–—xÇ,-ACEHYZ[|~Åóôú†§¶™Æ¿¡√∆«…Œ∂
 M/home/arthur/RiderProjects/API .Net/API .Net/Controllers/FiliaisController.cs 8j		
-9:;rK !"#$%&'()*+,-./01234567<=>?@ABCDEFGHIJKLMNOPQRSTUVWÇ@AÆ
+9:;rK !"#$%&'()*+,-./01234567<=>?@ABCDEFGHIJKLMNOPQRSTUVWÇ@Aƒ
+R/home/arthur/RiderProjects/API .Net/API .Net/Controllers/FuncionariosController.cs 8j		456rO
+ !"#$%&'()*+,-./012789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[Ç	!';<CLUÆ
 S/home/arthur/RiderProjects/API .Net/API .Net/Controllers/DepartamentosController.cs 8j		+,-r=
  !"#$%&'()./0123456789:;<=>?@ABCDEFGHIÇ23•
 N/home/arthur/RiderProjects/API .Net/API .Net/Controllers/ClientesController.cs 8jE !"#$0123456KLMNOPQghijklmnoqstuvxåçéèêëíìîπ∫ªºΩæørÕ	

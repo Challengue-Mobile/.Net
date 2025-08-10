@@ -9,7 +9,7 @@
   <HasBeginStepCommandLineCredentials>true</HasBeginStepCommandLineCredentials>
   <HasBeginStepCommandLineTruststorePassword>false</HasBeginStepCommandLineTruststorePassword>
   <SonarQubeHostUrl>https://sonarcloud.io</SonarQubeHostUrl>
-  <SonarQubeVersion>8.0.0.65972</SonarQubeVersion>
+  <SonarQubeVersion>8.0.0.66037</SonarQubeVersion>
   <SonarProjectKey>Challengue-Mobile_.Net</SonarProjectKey>
   <AdditionalConfig>
     <ConfigSetting Id="BuildUri" />
@@ -192,7 +192,7 @@ Automatic Analysis will not be available between 07:00 CET and 09:00 CET</Proper
     <Property Name="sonar.maintenance_mode.link">https://community.sonarsource.com/t/sonarcloud-autoscan-maintenance-september-28th-07-00-and-09-00-cet/101442</Property>
     <Property Name="sonar.maintenance_mode.start_date">2023-09-28T09:10:00:00.000+01:00</Property>
     <Property Name="sonar.sensor.cache.baseUrl">https://api.sonarcloud.io/analysis</Property>
-    <Property Name="sonar.core.startTime">06/08/2025 03:23:14</Property>
+    <Property Name="sonar.core.startTime">07/08/2025 12:11:16</Property>
   </ServerSettings>
   <LocalSettings>
     <Property Name="sonar.host.url">https://sonarcloud.io</Property>

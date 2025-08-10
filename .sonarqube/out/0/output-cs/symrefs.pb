@@ -84,16 +84,7 @@ F/home/arthur/RiderProjects/API .Net/API .Net/Models/RegistroBateria.cs
 
 ) 5
 
-$ +m
-;/home/arthur/RiderProjects/API .Net/API .Net/Models/Pais.cs
-
- 
-
- 
-
- 
-
-		$ +Ω
+$ +Ω
 C/home/arthur/RiderProjects/API .Net/API .Net/Models/Movimentacao.cs
 
  
@@ -116,7 +107,16 @@ C/home/arthur/RiderProjects/API .Net/API .Net/Models/Movimentacao.cs
 
  
 
-! 1¡
+! 1m
+;/home/arthur/RiderProjects/API .Net/API .Net/Models/Pais.cs
+
+ 
+
+ 
+
+ 
+
+		$ +¡
 ;/home/arthur/RiderProjects/API .Net/API .Net/Models/Moto.cs
 
  
@@ -845,17 +845,7 @@ L/home/arthur/RiderProjects/API .Net/API .Net/Examples/LocalizacaoExamples.cs
 
 44 0
 
-66 (¢
-F/home/arthur/RiderProjects/API .Net/API .Net/Examples/ErrorExamples.cs
-
-		 /
-
-( 3(
-    !
-
- (
-
-   )í
+66 (í
 H/home/arthur/RiderProjects/API .Net/API .Net/Examples/ClienteExamples.cs
 
  &
@@ -868,7 +858,17 @@ H/home/arthur/RiderProjects/API .Net/API .Net/Examples/ClienteExamples.cs
 
 99 ,
 
-;; $ë
+;; $¢
+F/home/arthur/RiderProjects/API .Net/API .Net/Examples/ErrorExamples.cs
+
+		 /
+
+( 3(
+    !
+
+ (
+
+   )ë
 G/home/arthur/RiderProjects/API .Net/API .Net/Examples/BeaconExamples.cs
 
  %
@@ -2008,7 +2008,20 @@ R/home/arthur/RiderProjects/API .Net/API .Net/Controllers/LocalizacoesController
 ŒŒF H
 
 ŒŒ- .
-ŒŒ2 3ú
+ŒŒ2 3ó
+M/home/arthur/RiderProjects/API .Net/API .Net/Controllers/FiliaisController.cs
+
+ %
+
+ !
+
+ &
+
+ !
+
+<< +
+
+>> #ú
 R/home/arthur/RiderProjects/API .Net/API .Net/Controllers/FuncionariosController.cs
 
 
@@ -2023,20 +2036,7 @@ R/home/arthur/RiderProjects/API .Net/API .Net/Controllers/FuncionariosController
 
 77 0
 
-99 (ó
-M/home/arthur/RiderProjects/API .Net/API .Net/Controllers/FiliaisController.cs
-
- %
-
- !
-
- &
-
- !
-
-<< +
-
->> #ù
+99 (ù
 S/home/arthur/RiderProjects/API .Net/API .Net/Controllers/DepartamentosController.cs
 
 
