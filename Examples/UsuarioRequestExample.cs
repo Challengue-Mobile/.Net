@@ -2,6 +2,7 @@ using API_.Net.Models;
 using Swashbuckle.AspNetCore.Filters;
 using System;
 using System.Collections.Generic;
+using System.Globalization; // ← ADICIONADO
 
 namespace API_.Net.Examples
 {
@@ -35,7 +36,7 @@ namespace API_.Net.Examples
                 NOME = "João da Silva",
                 EMAIL = "joao.novo@exemplo.com",
                 ID_TIPO_USUARIO = 2,
-                DATA_CADASTRO = DateTime.Parse("2025-01-15")
+                DATA_CADASTRO = DateTime.Parse("2025-01-15", CultureInfo.InvariantCulture) // ← CORRIGIDO - Issue L38
             };
         }
     }
@@ -52,7 +53,7 @@ namespace API_.Net.Examples
                 ID_USUARIO = 1,
                 NOME = "João da Silva",
                 EMAIL = "joao@exemplo.com",
-                DATA_CADASTRO = DateTime.Parse("2025-01-15"),
+                DATA_CADASTRO = DateTime.Parse("2025-01-15", CultureInfo.InvariantCulture), // ← CORRIGIDO - Issue L55
                 ID_TIPO_USUARIO = 1,
                 TipoUsuario = new TipoUsuario
                 {
@@ -99,7 +100,7 @@ namespace API_.Net.Examples
                     ID_USUARIO = 1,
                     NOME = "João da Silva",
                     EMAIL = "joao@exemplo.com",
-                    DATA_CADASTRO = DateTime.Parse("2025-01-15"),
+                    DATA_CADASTRO = DateTime.Parse("2025-01-15", CultureInfo.InvariantCulture), // ← CORRIGIDO - Issue L102
                     ID_TIPO_USUARIO = 1
                 },
                 new Usuario
@@ -107,7 +108,7 @@ namespace API_.Net.Examples
                     ID_USUARIO = 2,
                     NOME = "Maria Souza",
                     EMAIL = "maria@exemplo.com",
-                    DATA_CADASTRO = DateTime.Parse("2025-02-20"),
+                    DATA_CADASTRO = DateTime.Parse("2025-02-20", CultureInfo.InvariantCulture), // ← CORRIGIDO - Issue L110
                     ID_TIPO_USUARIO = 2
                 },
                 new Usuario
@@ -115,7 +116,7 @@ namespace API_.Net.Examples
                     ID_USUARIO = 3,
                     NOME = "Pedro Santos",
                     EMAIL = "pedro@exemplo.com",
-                    DATA_CADASTRO = DateTime.Parse("2025-03-10"),
+                    DATA_CADASTRO = DateTime.Parse("2025-03-10", CultureInfo.InvariantCulture), // ← CORRIGIDO - Issue L118
                     ID_TIPO_USUARIO = 3
                 }
             };

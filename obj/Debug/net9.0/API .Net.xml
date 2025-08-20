@@ -1,0 +1,1077 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API .Net</name>
+    </assembly>
+    <members>
+        <member name="T:API_.Net.Migrations.InitialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.InitialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.InitialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.InitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API_.Net.Migrations.ConfigurarPrecisaoLocalizacao">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.ConfigurarPrecisaoLocalizacao.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.ConfigurarPrecisaoLocalizacao.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.ConfigurarPrecisaoLocalizacao.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API_.Net.Examples.DepartamentoRequestExample">
+            <summary>
+            Exemplo de requisição para criar um departamento
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.DepartamentoResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um departamento
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.DepartamentosListResponseExample">
+            <summary>
+            Exemplo de lista de departamentos
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.FilialRequestExample">
+            <summary>
+            Exemplo de requisição para criar uma filial
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.FilialResponseExample">
+            <summary>
+            Exemplo de resposta ao obter uma filial
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.FiliaisListResponseExample">
+            <summary>
+            Exemplo de lista de filiais
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.FuncionarioRequestExample">
+            <summary>
+            Exemplo de requisição para criar um funcionário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.FuncionarioResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um funcionário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.FuncionariosListResponseExample">
+            <summary>
+            Exemplo de lista de funcionários
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.BeaconRequestExample">
+            <summary>
+            Exemplo de requisição para criar um beacon
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.BeaconResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um beacon
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.BeaconsListResponseExample">
+            <summary>
+            Exemplo de lista de beacons
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ClienteRequestExample">
+            <summary>
+            Exemplo de requisição para criar um cliente
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ClienteResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um cliente
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ClientesListResponseExample">
+            <summary>
+            Exemplo de lista de clientes
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ValidationErrorResponseExample">
+            <summary>
+            Exemplo de resposta para erros de validação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.NotFoundResponseExample">
+            <summary>
+            Exemplo de resposta para erro de não encontrado
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.LocalizacaoRequestExample">
+            <summary>
+            Exemplo de requisição para registrar uma localização
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.LocalizacaoResponseExample">
+            <summary>
+            Exemplo de resposta ao obter uma localização
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.LocalizacoesListResponseExample">
+            <summary>
+            Exemplo de lista de localizações
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ModeloBeaconRequestExample">
+            <summary>
+            Exemplo de requisição para criar um modelo de beacon
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ModeloBeaconResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um modelo de beacon
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ModelosBeaconListResponseExample">
+            <summary>
+            Exemplo de lista de modelos de beacon
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ModeloMotoRequestExample">
+            <summary>
+            Exemplo de requisição para criar um modelo de moto
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ModeloMotoResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um modelo de moto
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ModelosMotosListResponseExample">
+            <summary>
+            Exemplo de lista de modelos de motos
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.MotoRequestExample">
+            <summary>
+            Exemplo de requisição para criar uma moto
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.MotoResponseExample">
+            <summary>
+            Exemplo de resposta ao obter uma moto
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.MotosListResponseExample">
+            <summary>
+            Exemplo de lista de motos
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.MovimentacaoRequestExample">
+            <summary>
+            Exemplo de requisição para registrar uma movimentação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.MovimentacaoResponseExample">
+            <summary>
+            Exemplo de resposta ao obter uma movimentação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.MovimentacoesListResponseExample">
+            <summary>
+            Exemplo de lista de movimentações
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.PatioRequestExample">
+            <summary>
+            Exemplo de requisição para criar um pátio
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.PatioResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um pátio
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.PatiosListResponseExample">
+            <summary>
+            Exemplo de lista de pátios
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.RegistroBateriaRequestExample">
+            <summary>
+            Exemplo de requisição para registrar um nível de bateria
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.RegistroBateriaResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um registro de bateria
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.RegistrosBateriaListResponseExample">
+            <summary>
+            Exemplo de lista de registros de bateria
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.TipoMovimentacaoRequestExample">
+            <summary>
+            Exemplo de requisição para criar um tipo de movimentação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.TipoMovimentacaoResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um tipo de movimentação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.TiposMovimentacaoListResponseExample">
+            <summary>
+            Exemplo de lista de tipos de movimentação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.TipoUsuarioRequestExample">
+            <summary>
+            Exemplo de requisição para criar um tipo de usuário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.TipoUsuarioResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um tipo de usuário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.TiposUsuarioListResponseExample">
+            <summary>
+            Exemplo de lista de tipos de usuário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.UsuarioRequestExample">
+            <summary>
+            Exemplo de requisição para criar um usuário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.UsuarioUpdateRequestExample">
+            <summary>
+            Exemplo de requisição para atualizar um usuário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.UsuarioResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um usuário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.UsuariosListResponseExample">
+            <summary>
+            Exemplo de lista de usuários
+            </summary>
+        </member>
+        <member name="T:API_.Net.Controllers.MotosController">
+            <summary>
+            API para gerenciamento de motos
+            </summary>
+        </member>
+        <member name="M:API_.Net.Controllers.MotosController.#ctor(API_.Net.Data.AppDbContext)">
+            <summary>
+            API para gerenciamento de motos
+            </summary>
+        </member>
+        <member name="M:API_.Net.Controllers.MotosController.GetMotos">
+            <summary>
+            Obtém todas as motos cadastradas
+            </summary>
+            <returns>Lista de motos</returns>
+            <response code="200">Retorna a lista de motos</response>
+        </member>
+        <member name="M:API_.Net.Controllers.MotosController.GetMoto(System.Int32)">
+            <summary>
+            Obtém uma moto específica pelo ID
+            </summary>
+            <param name="id">ID da moto</param>
+            <returns>Dados da moto solicitada</returns>
+            <response code="200">Retorna a moto</response>
+            <response code="404">Se a moto não for encontrada</response>
+        </member>
+        <member name="M:API_.Net.Controllers.MotosController.GetMotosByCliente(System.Int32)">
+            <summary>
+            Busca motos associadas a um cliente específico
+            </summary>
+            <param name="clienteId">ID do cliente</param>
+            <returns>Lista de motos do cliente</returns>
+            <response code="200">Retorna a lista de motos do cliente</response>
+        </member>
+        <member name="M:API_.Net.Controllers.MotosController.GetMotoByPlaca(System.String)">
+            <summary>
+            Busca uma moto pela placa
+            </summary>
+            <param name="placa">Placa da moto (formato XXX0000)</param>
+            <returns>Moto correspondente à placa</returns>
+            <response code="200">Retorna a moto com a placa especificada</response>
+            <response code="404">Se nenhuma moto com a placa informada for encontrada</response>
+        </member>
+        <member name="M:API_.Net.Controllers.MotosController.PostMoto(API_.Net.Models.Moto)">
+            <summary>
+            Cadastra uma nova moto
+            </summary>
+            <param name="moto">Dados da moto a ser cadastrada</param>
+            <returns>Moto cadastrada com seu ID</returns>
+            <response code="201">Retorna a moto recém criada</response>
+            <response code="400">Se os dados da moto são inválidos</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/Motos
+                {
+                   "placa": "ABC1234",
+                   "id_cliente": 1,
+                   "id_modelo_moto": 2
+                }
+            </remarks>
+        </member>
+        <member name="M:API_.Net.Controllers.MotosController.PutMoto(System.Int32,API_.Net.Models.Moto)">
+            <summary>
+            Atualiza os dados de uma moto existente
+            </summary>
+            <param name="id">ID da moto a ser atualizada</param>
+            <param name="moto">Novos dados da moto</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se a moto foi atualizada com sucesso</response>
+            <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
+            <response code="404">Se a moto não for encontrada</response>
+        </member>
+        <member name="M:API_.Net.Controllers.MotosController.DeleteMoto(System.Int32)">
+            <summary>
+            Remove uma moto do sistema
+            </summary>
+            <param name="id">ID da moto a ser removida</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se a moto foi removida com sucesso</response>
+            <response code="404">Se a moto não for encontrada</response>
+        </member>
+        <member name="T:API.Net.Controllers.BeaconsController">
+            <summary>
+            API para gerenciamento de beacons
+            </summary>
+        </member>
+        <member name="M:API.Net.Controllers.BeaconsController.GetBeacons">
+            <summary>
+            Obtém todos os beacons cadastrados
+            </summary>
+            <returns>Lista de beacons</returns>
+            <response code="200">Retorna a lista de beacons</response>
+        </member>
+        <member name="M:API.Net.Controllers.BeaconsController.GetBeacon(System.Int32)">
+            <summary>
+            Obtém um beacon específico pelo ID
+            </summary>
+            <param name="id">ID do beacon</param>
+            <returns>Dados do beacon solicitado</returns>
+            <response code="200">Retorna o beacon</response>
+            <response code="404">Se o beacon não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.BeaconsController.GetBeaconsByMoto(System.Int32)">
+            <summary>
+            Busca beacons associados a uma moto específica
+            </summary>
+            <param name="motoId">ID da moto</param>
+            <returns>Lista de beacons associados à moto</returns>
+            <response code="200">Retorna a lista de beacons da moto</response>
+        </member>
+        <member name="M:API.Net.Controllers.BeaconsController.GetBeaconByUuid(System.String)">
+            <summary>
+            Busca um beacon pelo seu UUID
+            </summary>
+            <param name="uuid">UUID do beacon</param>
+            <returns>Beacon correspondente ao UUID</returns>
+            <response code="200">Retorna o beacon com o UUID especificado</response>
+            <response code="404">Se nenhum beacon com o UUID informado for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.BeaconsController.PostBeacon(API_.Net.Models.Beacon)">
+            <summary>
+            Cadastra um novo beacon
+            </summary>
+            <param name="beacon">Dados do beacon a ser cadastrado</param>
+            <returns>Beacon cadastrado com seu ID</returns>
+            <response code="201">Retorna o beacon recém criado</response>
+            <response code="400">Se os dados do beacon são inválidos</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/Beacons
+                {
+                   "uuid": "550e8400-e29b-41d4-a716-446655440000",
+                   "bateria": 85,
+                   "id_moto": 1,
+                   "id_modelo_beacon": 1
+                }
+            </remarks>
+        </member>
+        <member name="M:API.Net.Controllers.BeaconsController.PutBeacon(System.Int32,API_.Net.Models.Beacon)">
+            <summary>
+            Atualiza os dados de um beacon existente
+            </summary>
+            <param name="id">ID do beacon a ser atualizado</param>
+            <param name="beacon">Novos dados do beacon</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o beacon foi atualizado com sucesso</response>
+            <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
+            <response code="404">Se o beacon não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.BeaconsController.DeleteBeacon(System.Int32)">
+            <summary>
+            Remove um beacon do sistema
+            </summary>
+            <param name="id">ID do beacon a ser removido</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o beacon foi removido com sucesso</response>
+            <response code="404">Se o beacon não for encontrado</response>
+        </member>
+        <member name="T:API.Net.Controllers.ClientesController">
+            <summary>
+            API para gerenciamento de clientes
+            </summary>
+        </member>
+        <member name="M:API.Net.Controllers.ClientesController.GetClientes">
+            <summary>
+            Obtém todos os clientes cadastrados
+            </summary>
+            <returns>Lista de clientes</returns>
+            <response code="200">Retorna a lista de clientes</response>
+        </member>
+        <member name="M:API.Net.Controllers.ClientesController.GetCliente(System.Int32)">
+            <summary>
+            Obtém um cliente específico pelo ID
+            </summary>
+            <param name="id">ID do cliente</param>
+            <returns>Dados do cliente solicitado</returns>
+            <response code="200">Retorna o cliente</response>
+            <response code="404">Se o cliente não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.ClientesController.GetClienteByCpf(System.String)">
+            <summary>
+            Busca um cliente pelo CPF
+            </summary>
+            <param name="cpf">CPF do cliente (formato XXX.XXX.XXX-XX)</param>
+            <returns>Cliente correspondente ao CPF</returns>
+            <response code="200">Retorna o cliente com o CPF especificado</response>
+            <response code="404">Se nenhum cliente com o CPF informado for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.ClientesController.PostCliente(API_.Net.Models.Cliente)">
+            <summary>
+            Cadastra um novo cliente
+            </summary>
+            <param name="cliente">Dados do cliente a ser cadastrado</param>
+            <returns>Cliente cadastrado com seu ID</returns>
+            <response code="201">Retorna o cliente recém criado</response>
+            <response code="400">Se os dados do cliente são inválidos</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/Clientes
+                {
+                   "nome": "João da Silva",
+                   "cpf": "123.456.789-00",
+                   "email": "joao@exemplo.com",
+                   "telefone": "(11) 99999-8888"
+                }
+            </remarks>
+        </member>
+        <member name="M:API.Net.Controllers.ClientesController.PutCliente(System.Int32,API_.Net.Models.Cliente)">
+            <summary>
+            Atualiza os dados de um cliente existente
+            </summary>
+            <param name="id">ID do cliente a ser atualizado</param>
+            <param name="cliente">Novos dados do cliente</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o cliente foi atualizado com sucesso</response>
+            <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
+            <response code="404">Se o cliente não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.ClientesController.DeleteCliente(System.Int32)">
+            <summary>
+            Remove um cliente do sistema
+            </summary>
+            <param name="id">ID do cliente a ser removido</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o cliente foi removido com sucesso</response>
+            <response code="404">Se o cliente não for encontrado</response>
+        </member>
+        <member name="T:API.Net.Controllers.LocalizacoesController">
+            <summary>
+            API para gerenciamento de localizações
+            </summary>
+        </member>
+        <member name="M:API.Net.Controllers.LocalizacoesController.GetLocalizacoes">
+            <summary>
+            Obtém todas as localizações registradas
+            </summary>
+            <returns>Lista de localizações</returns>
+            <response code="200">Retorna a lista de localizações</response>
+        </member>
+        <member name="M:API.Net.Controllers.LocalizacoesController.GetLocalizacao(System.Int32)">
+            <summary>
+            Obtém uma localização específica pelo ID
+            </summary>
+            <param name="id">ID da localização</param>
+            <returns>Dados da localização solicitada</returns>
+            <response code="200">Retorna a localização</response>
+            <response code="404">Se a localização não for encontrada</response>
+        </member>
+        <member name="M:API.Net.Controllers.LocalizacoesController.GetLocalizacoesByMoto(System.Int32)">
+            <summary>
+            Busca localizações de uma moto específica
+            </summary>
+            <param name="motoId">ID da moto</param>
+            <returns>Lista de localizações da moto, ordenadas pela data mais recente</returns>
+            <response code="200">Retorna a lista de localizações da moto</response>
+        </member>
+        <member name="M:API.Net.Controllers.LocalizacoesController.PostLocalizacao(API_.Net.Models.Localizacao)">
+            <summary>
+            Registra uma nova localização
+            </summary>
+            <param name="localizacao">Dados da localização a ser registrada</param>
+            <returns>Localização registrada com seu ID</returns>
+            <response code="201">Retorna a localização recém registrada</response>
+            <response code="400">Se os dados da localização são inválidos</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/Localizacoes
+                {
+                   "posicao_x": -23.550520,
+                   "posicao_y": -46.633308,
+                   "id_moto": 1,
+                   "id_patio": null
+                }
+            </remarks>
+        </member>
+        <member name="M:API.Net.Controllers.LocalizacoesController.PutLocalizacao(System.Int32,API_.Net.Models.Localizacao)">
+            <summary>
+            Atualiza os dados de uma localização existente
+            </summary>
+            <param name="id">ID da localização a ser atualizada</param>
+            <param name="localizacao">Novos dados da localização</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se a localização foi atualizada com sucesso</response>
+            <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
+            <response code="404">Se a localização não for encontrada</response>
+        </member>
+        <member name="M:API.Net.Controllers.LocalizacoesController.DeleteLocalizacao(System.Int32)">
+            <summary>
+            Remove uma localização do sistema
+            </summary>
+            <param name="id">ID da localização a ser removida</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se a localização foi removida com sucesso</response>
+            <response code="404">Se a localização não for encontrada</response>
+        </member>
+        <member name="T:API.Net.Controllers.ModelosBeaconController">
+            <summary>
+            API para gerenciamento de modelos de beacon
+            </summary>
+        </member>
+        <member name="M:API.Net.Controllers.ModelosBeaconController.GetModelosBeacon">
+            <summary>
+            Obtém todos os modelos de beacon cadastrados
+            </summary>
+            <returns>Lista de modelos de beacon</returns>
+            <response code="200">Retorna a lista de modelos de beacon</response>
+        </member>
+        <member name="M:API.Net.Controllers.ModelosBeaconController.GetModeloBeacon(System.Int32)">
+            <summary>
+            Obtém um modelo de beacon específico pelo ID
+            </summary>
+            <param name="id">ID do modelo de beacon</param>
+            <returns>Dados do modelo de beacon solicitado</returns>
+            <response code="200">Retorna o modelo de beacon</response>
+            <response code="404">Se o modelo de beacon não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.ModelosBeaconController.PostModeloBeacon(API_.Net.Models.ModeloBeacon)">
+            <summary>
+            Cadastra um novo modelo de beacon
+            </summary>
+            <param name="modeloBeacon">Dados do modelo de beacon a ser cadastrado</param>
+            <returns>Modelo de beacon cadastrado com seu ID</returns>
+            <response code="201">Retorna o modelo de beacon recém criado</response>
+            <response code="400">Se os dados do modelo de beacon são inválidos</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/ModelosBeacon
+                {
+                   "nome": "TrackBeacon Pro",
+                   "fabricante": "TrackTech"
+                }
+            </remarks>
+        </member>
+        <member name="M:API.Net.Controllers.ModelosBeaconController.PutModeloBeacon(System.Int32,API_.Net.Models.ModeloBeacon)">
+            <summary>
+            Atualiza os dados de um modelo de beacon existente
+            </summary>
+            <param name="id">ID do modelo de beacon a ser atualizado</param>
+            <param name="modeloBeacon">Novos dados do modelo de beacon</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o modelo de beacon foi atualizado com sucesso</response>
+            <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
+            <response code="404">Se o modelo de beacon não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.ModelosBeaconController.DeleteModeloBeacon(System.Int32)">
+            <summary>
+            Remove um modelo de beacon do sistema
+            </summary>
+            <param name="id">ID do modelo de beacon a ser removido</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o modelo de beacon foi removido com sucesso</response>
+            <response code="404">Se o modelo de beacon não for encontrado</response>
+        </member>
+        <member name="T:API.Net.Controllers.ModelosMotosController">
+            <summary>
+            API para gerenciamento de modelos de motos
+            </summary>
+        </member>
+        <member name="M:API.Net.Controllers.ModelosMotosController.GetModelosMotos">
+            <summary>
+            Obtém todos os modelos de motos cadastrados
+            </summary>
+            <returns>Lista de modelos de motos</returns>
+            <response code="200">Retorna a lista de modelos de motos</response>
+        </member>
+        <member name="M:API.Net.Controllers.ModelosMotosController.GetModeloMoto(System.Int32)">
+            <summary>
+            Obtém um modelo de moto específico pelo ID
+            </summary>
+            <param name="id">ID do modelo de moto</param>
+            <returns>Dados do modelo de moto solicitado</returns>
+            <response code="200">Retorna o modelo de moto</response>
+            <response code="404">Se o modelo de moto não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.ModelosMotosController.PostModeloMoto(API_.Net.Models.ModeloMoto)">
+            <summary>
+            Cadastra um novo modelo de moto
+            </summary>
+            <param name="modeloMoto">Dados do modelo de moto a ser cadastrado</param>
+            <returns>Modelo de moto cadastrado com seu ID</returns>
+            <response code="201">Retorna o modelo de moto recém criado</response>
+            <response code="400">Se os dados do modelo de moto são inválidos</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/ModelosMotos
+                {
+                   "nome": "CB 500",
+                   "fabricante": "Honda"
+                }
+            </remarks>
+        </member>
+        <member name="M:API.Net.Controllers.ModelosMotosController.PutModeloMoto(System.Int32,API_.Net.Models.ModeloMoto)">
+            <summary>
+            Atualiza os dados de um modelo de moto existente
+            </summary>
+            <param name="id">ID do modelo de moto a ser atualizado</param>
+            <param name="modeloMoto">Novos dados do modelo de moto</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o modelo de moto foi atualizado com sucesso</response>
+            <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
+            <response code="404">Se o modelo de moto não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.ModelosMotosController.DeleteModeloMoto(System.Int32)">
+            <summary>
+            Remove um modelo de moto do sistema
+            </summary>
+            <param name="id">ID do modelo de moto a ser removido</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o modelo de moto foi removido com sucesso</response>
+            <response code="404">Se o modelo de moto não for encontrado</response>
+        </member>
+        <member name="T:API.Net.Controllers.MovimentacoesController">
+            <summary>
+            API para gerenciamento de movimentações de motos
+            </summary>
+        </member>
+        <member name="M:API.Net.Controllers.MovimentacoesController.GetMovimentacoes">
+            <summary>
+            Obtém todas as movimentações registradas
+            </summary>
+            <returns>Lista de movimentações</returns>
+            <response code="200">Retorna a lista de movimentações</response>
+        </member>
+        <member name="M:API.Net.Controllers.MovimentacoesController.GetMovimentacao(System.Int32)">
+            <summary>
+            Obtém uma movimentação específica pelo ID
+            </summary>
+            <param name="id">ID da movimentação</param>
+            <returns>Dados da movimentação solicitada</returns>
+            <response code="200">Retorna a movimentação</response>
+            <response code="404">Se a movimentação não for encontrada</response>
+        </member>
+        <member name="M:API.Net.Controllers.MovimentacoesController.GetMovimentacoesByMoto(System.Int32)">
+            <summary>
+            Busca movimentações de uma moto específica
+            </summary>
+            <param name="motoId">ID da moto</param>
+            <returns>Lista de movimentações da moto, ordenadas pela data mais recente</returns>
+            <response code="200">Retorna a lista de movimentações da moto</response>
+        </member>
+        <member name="M:API.Net.Controllers.MovimentacoesController.PostMovimentacao(API_.Net.Models.Movimentacao)">
+            <summary>
+            Registra uma nova movimentação
+            </summary>
+            <param name="movimentacao">Dados da movimentação a ser registrada</param>
+            <returns>Movimentação registrada com seu ID</returns>
+            <response code="201">Retorna a movimentação recém registrada</response>
+            <response code="400">Se os dados da movimentação são inválidos</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/Movimentacoes
+                {
+                   "observacao": "Saída para entrega",
+                   "id_usuario": 1,
+                   "id_moto": 1,
+                   "id_tipo_movimentacao": 2
+                }
+            </remarks>
+        </member>
+        <member name="M:API.Net.Controllers.MovimentacoesController.PutMovimentacao(System.Int32,API_.Net.Models.Movimentacao)">
+            <summary>
+            Atualiza os dados de uma movimentação existente
+            </summary>
+            <param name="id">ID da movimentação a ser atualizada</param>
+            <param name="movimentacao">Novos dados da movimentação</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se a movimentação foi atualizada com sucesso</response>
+            <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
+            <response code="404">Se a movimentação não for encontrada</response>
+        </member>
+        <member name="M:API.Net.Controllers.MovimentacoesController.DeleteMovimentacao(System.Int32)">
+            <summary>
+            Remove uma movimentação do sistema
+            </summary>
+            <param name="id">ID da movimentação a ser removida</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se a movimentação foi removida com sucesso</response>
+            <response code="404">Se a movimentação não for encontrada</response>
+        </member>
+        <member name="T:API.Net.Controllers.PatiosController">
+            <summary>
+            API para gerenciamento de pátios
+            </summary>
+        </member>
+        <member name="M:API.Net.Controllers.PatiosController.GetPatios">
+            <summary>
+            Obtém todos os pátios cadastrados
+            </summary>
+            <returns>Lista de pátios</returns>
+            <response code="200">Retorna a lista de pátios</response>
+        </member>
+        <member name="M:API.Net.Controllers.PatiosController.GetPatio(System.Int32)">
+            <summary>
+            Obtém um pátio específico pelo ID
+            </summary>
+            <param name="id">ID do pátio</param>
+            <returns>Dados do pátio solicitado</returns>
+            <response code="200">Retorna o pátio</response>
+            <response code="404">Se o pátio não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.PatiosController.GetPatiosByLogradouro(System.Int32)">
+            <summary>
+            Busca pátios por logradouro
+            </summary>
+            <param name="logradouroId">ID do logradouro</param>
+            <returns>Lista de pátios localizados no logradouro especificado</returns>
+            <response code="200">Retorna a lista de pátios do logradouro</response>
+        </member>
+        <member name="M:API.Net.Controllers.PatiosController.PostPatio(API_.Net.Models.Patio)">
+            <summary>
+            Cadastra um novo pátio
+            </summary>
+            <param name="patio">Dados do pátio a ser cadastrado</param>
+            <returns>Pátio cadastrado com seu ID</returns>
+            <response code="201">Retorna o pátio recém criado</response>
+            <response code="400">Se os dados do pátio são inválidos</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/Patios
+                {
+                   "nome": "Pátio Central",
+                   "id_logradouro": 1
+                }
+            </remarks>
+        </member>
+        <member name="M:API.Net.Controllers.PatiosController.PutPatio(System.Int32,API_.Net.Models.Patio)">
+            <summary>
+            Atualiza os dados de um pátio existente
+            </summary>
+            <param name="id">ID do pátio a ser atualizado</param>
+            <param name="patio">Novos dados do pátio</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o pátio foi atualizado com sucesso</response>
+            <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
+            <response code="404">Se o pátio não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.PatiosController.DeletePatio(System.Int32)">
+            <summary>
+            Remove um pátio do sistema
+            </summary>
+            <param name="id">ID do pátio a ser removido</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o pátio foi removido com sucesso</response>
+            <response code="404">Se o pátio não for encontrado</response>
+        </member>
+        <member name="T:API.Net.Controllers.RegistrosBateriaController">
+            <summary>
+            API para gerenciamento de registros de bateria de beacons
+            </summary>
+        </member>
+        <member name="M:API.Net.Controllers.RegistrosBateriaController.GetRegistrosBateria">
+            <summary>
+            Obtém todos os registros de bateria
+            </summary>
+            <returns>Lista de registros de bateria</returns>
+            <response code="200">Retorna a lista de registros de bateria</response>
+        </member>
+        <member name="M:API.Net.Controllers.RegistrosBateriaController.GetRegistroBateria(System.Int32)">
+            <summary>
+            Obtém um registro de bateria específico pelo ID
+            </summary>
+            <param name="id">ID do registro de bateria</param>
+            <returns>Dados do registro de bateria solicitado</returns>
+            <response code="200">Retorna o registro de bateria</response>
+            <response code="404">Se o registro de bateria não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.RegistrosBateriaController.GetRegistrosByBeacon(System.Int32)">
+            <summary>
+            Busca registros de bateria de um beacon específico
+            </summary>
+            <param name="beaconId">ID do beacon</param>
+            <returns>Lista de registros de bateria do beacon, ordenados pela data mais recente</returns>
+            <response code="200">Retorna a lista de registros de bateria do beacon</response>
+        </member>
+        <member name="M:API.Net.Controllers.RegistrosBateriaController.PostRegistroBateria(API_.Net.Models.RegistroBateria)">
+            <summary>
+            Registra um novo nível de bateria
+            </summary>
+            <param name="registroBateria">Dados do registro de bateria a ser cadastrado</param>
+            <returns>Registro de bateria cadastrado com seu ID</returns>
+            <response code="201">Retorna o registro de bateria recém criado</response>
+            <response code="400">Se os dados do registro de bateria são inválidos</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/RegistrosBateria
+                {
+                   "nivel_bateria": 75,
+                   "id_beacon": 1
+                }
+            </remarks>
+        </member>
+        <member name="M:API.Net.Controllers.RegistrosBateriaController.PutRegistroBateria(System.Int32,API_.Net.Models.RegistroBateria)">
+            <summary>
+            Atualiza os dados de um registro de bateria existente
+            </summary>
+            <param name="id">ID do registro de bateria a ser atualizado</param>
+            <param name="registroBateria">Novos dados do registro de bateria</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o registro de bateria foi atualizado com sucesso</response>
+            <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
+            <response code="404">Se o registro de bateria não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.RegistrosBateriaController.DeleteRegistroBateria(System.Int32)">
+            <summary>
+            Remove um registro de bateria do sistema
+            </summary>
+            <param name="id">ID do registro de bateria a ser removido</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o registro de bateria foi removido com sucesso</response>
+            <response code="404">Se o registro de bateria não for encontrado</response>
+        </member>
+        <member name="T:API.Net.Controllers.TiposMovimentacaoController">
+            <summary>
+            API para gerenciamento de tipos de movimentação
+            </summary>
+        </member>
+        <member name="M:API.Net.Controllers.TiposMovimentacaoController.GetTiposMovimentacao">
+            <summary>
+            Obtém todos os tipos de movimentação cadastrados
+            </summary>
+            <returns>Lista de tipos de movimentação</returns>
+            <response code="200">Retorna a lista de tipos de movimentação</response>
+        </member>
+        <member name="M:API.Net.Controllers.TiposMovimentacaoController.GetTipoMovimentacao(System.Int32)">
+            <summary>
+            Obtém um tipo de movimentação específico pelo ID
+            </summary>
+            <param name="id">ID do tipo de movimentação</param>
+            <returns>Dados do tipo de movimentação solicitado</returns>
+            <response code="200">Retorna o tipo de movimentação</response>
+            <response code="404">Se o tipo de movimentação não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.TiposMovimentacaoController.PostTipoMovimentacao(API_.Net.Models.TipoMovimentacao)">
+            <summary>
+            Cadastra um novo tipo de movimentação
+            </summary>
+            <param name="tipoMovimentacao">Dados do tipo de movimentação a ser cadastrado</param>
+            <returns>Tipo de movimentação cadastrado com seu ID</returns>
+            <response code="201">Retorna o tipo de movimentação recém criado</response>
+            <response code="400">Se os dados do tipo de movimentação são inválidos</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/TiposMovimentacao
+                {
+                   "descricao": "Entrada"
+                }
+            </remarks>
+        </member>
+        <member name="M:API.Net.Controllers.TiposMovimentacaoController.PutTipoMovimentacao(System.Int32,API_.Net.Models.TipoMovimentacao)">
+            <summary>
+            Atualiza os dados de um tipo de movimentação existente
+            </summary>
+            <param name="id">ID do tipo de movimentação a ser atualizado</param>
+            <param name="tipoMovimentacao">Novos dados do tipo de movimentação</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o tipo de movimentação foi atualizado com sucesso</response>
+            <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
+            <response code="404">Se o tipo de movimentação não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.TiposMovimentacaoController.DeleteTipoMovimentacao(System.Int32)">
+            <summary>
+            Remove um tipo de movimentação do sistema
+            </summary>
+            <param name="id">ID do tipo de movimentação a ser removido</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o tipo de movimentação foi removido com sucesso</response>
+            <response code="404">Se o tipo de movimentação não for encontrado</response>
+        </member>
+        <member name="T:API.Net.Controllers.TiposUsuarioController">
+            <summary>
+            API para gerenciamento de tipos de usuário
+            </summary>
+        </member>
+        <member name="M:API.Net.Controllers.TiposUsuarioController.GetTiposUsuario">
+            <summary>
+            Obtém todos os tipos de usuário cadastrados
+            </summary>
+            <returns>Lista de tipos de usuário</returns>
+            <response code="200">Retorna a lista de tipos de usuário</response>
+        </member>
+        <member name="M:API.Net.Controllers.TiposUsuarioController.GetTipoUsuario(System.Int32)">
+            <summary>
+            Obtém um tipo de usuário específico pelo ID
+            </summary>
+            <param name="id">ID do tipo de usuário</param>
+            <returns>Dados do tipo de usuário solicitado</returns>
+            <response code="200">Retorna o tipo de usuário</response>
+            <response code="404">Se o tipo de usuário não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.TiposUsuarioController.PostTipoUsuario(API_.Net.Models.TipoUsuario)">
+            <summary>
+            Cadastra um novo tipo de usuário
+            </summary>
+            <param name="tipoUsuario">Dados do tipo de usuário a ser cadastrado</param>
+            <returns>Tipo de usuário cadastrado com seu ID</returns>
+            <response code="201">Retorna o tipo de usuário recém criado</response>
+            <response code="400">Se os dados do tipo de usuário são inválidos</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/TiposUsuario
+                {
+                   "descricao": "Administrador"
+                }
+            </remarks>
+        </member>
+        <member name="M:API.Net.Controllers.TiposUsuarioController.PutTipoUsuario(System.Int32,API_.Net.Models.TipoUsuario)">
+            <summary>
+            Atualiza os dados de um tipo de usuário existente
+            </summary>
+            <param name="id">ID do tipo de usuário a ser atualizado</param>
+            <param name="tipoUsuario">Novos dados do tipo de usuário</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o tipo de usuário foi atualizado com sucesso</response>
+            <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
+            <response code="404">Se o tipo de usuário não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.TiposUsuarioController.DeleteTipoUsuario(System.Int32)">
+            <summary>
+            Remove um tipo de usuário do sistema
+            </summary>
+            <param name="id">ID do tipo de usuário a ser removido</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o tipo de usuário foi removido com sucesso</response>
+            <response code="404">Se o tipo de usuário não for encontrado</response>
+        </member>
+        <member name="T:API.Net.Controllers.UsuariosController">
+            <summary>
+            API para gerenciamento de usuários do sistema
+            </summary>
+        </member>
+        <member name="M:API.Net.Controllers.UsuariosController.GetUsuarios">
+            <summary>
+            Obtém todos os usuários cadastrados
+            </summary>
+            <returns>Lista de usuários</returns>
+            <response code="200">Retorna a lista de usuários</response>
+        </member>
+        <member name="M:API.Net.Controllers.UsuariosController.GetUsuario(System.Int32)">
+            <summary>
+            Obtém um usuário específico pelo ID
+            </summary>
+            <param name="id">ID do usuário</param>
+            <returns>Dados do usuário solicitado</returns>
+            <response code="200">Retorna o usuário</response>
+            <response code="404">Se o usuário não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.UsuariosController.GetUsuariosByTipo(System.Int32)">
+            <summary>
+            Busca usuários por tipo
+            </summary>
+            <param name="tipoId">ID do tipo de usuário</param>
+            <returns>Lista de usuários do tipo especificado</returns>
+            <response code="200">Retorna a lista de usuários do tipo</response>
+        </member>
+        <member name="M:API.Net.Controllers.UsuariosController.PostUsuario(API_.Net.Models.Usuario)">
+            <summary>
+            Cadastra um novo usuário
+            </summary>
+            <param name="usuario">Dados do usuário a ser cadastrado</param>
+            <returns>Usuário cadastrado com seu ID</returns>
+            <response code="201">Retorna o usuário recém criado</response>
+            <response code="400">Se os dados do usuário são inválidos</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/Usuarios
+                {
+                   "nome": "João da Silva",
+                   "senha": "senha123",
+                   "email": "joao@exemplo.com",
+                   "id_tipo_usuario": 1
+                }
+            </remarks>
+        </member>
+        <member name="M:API.Net.Controllers.UsuariosController.PutUsuario(System.Int32,API_.Net.Models.Usuario)">
+            <summary>
+            Atualiza os dados de um usuário existente
+            </summary>
+            <param name="id">ID do usuário a ser atualizado</param>
+            <param name="usuario">Novos dados do usuário</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o usuário foi atualizado com sucesso</response>
+            <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
+            <response code="404">Se o usuário não for encontrado</response>
+        </member>
+        <member name="M:API.Net.Controllers.UsuariosController.DeleteUsuario(System.Int32)">
+            <summary>
+            Remove um usuário do sistema
+            </summary>
+            <param name="id">ID do usuário a ser removido</param>
+            <returns>Nenhum conteúdo</returns>
+            <response code="204">Se o usuário foi removido com sucesso</response>
+            <response code="404">Se o usuário não for encontrado</response>
+        </member>
+    </members>
+</doc>
