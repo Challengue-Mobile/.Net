@@ -9,6 +9,7 @@
 /home/arthur/RiderProjects/API .Net/API .Net/API.Net.Tests/DTOs/DTOTests.cs
 /home/arthur/RiderProjects/API .Net/API .Net/API.Net.Tests/IntegrationTests.cs
 /home/arthur/RiderProjects/API .Net/API .Net/API.Net.Tests/Models/ModelsTests.cs
+/home/arthur/RiderProjects/API .Net/API .Net/API.Net.Tests/obj/Debug/net9.0/API.Net.Tests.GlobalUsings.g.cs
 /home/arthur/RiderProjects/API .Net/API .Net/API.Net.Tests/Services/ServicesTests.cs
 /home/arthur/RiderProjects/API .Net/API .Net/API.Net.Tests/UnitTest1.cs
 /home/arthur/RiderProjects/API .Net/API .Net/API_/Net/Migrations/AppDbContextModelSnapshot.cs
@@ -79,6 +80,7 @@
 /home/arthur/RiderProjects/API .Net/API .Net/API.Net.Tests/obj/API.Net.Tests.csproj.nuget.dgspec.json
 /home/arthur/RiderProjects/API .Net/API .Net/API.Net.Tests/obj/API.Net.Tests.csproj.nuget.g.props
 /home/arthur/RiderProjects/API .Net/API .Net/API.Net.Tests/obj/API.Net.Tests.csproj.nuget.g.targets
+/home/arthur/RiderProjects/API .Net/API .Net/API.Net.Tests/obj/Debug/net9.0/API.Net.Tests.assets.cache
 /home/arthur/RiderProjects/API .Net/API .Net/API.Net.Tests/obj/project.assets.json
 /home/arthur/RiderProjects/API .Net/API .Net/API.Net.Tests/obj/project.nuget.cache
 /home/arthur/RiderProjects/API .Net/API .Net/appsettings.json

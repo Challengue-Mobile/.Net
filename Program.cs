@@ -86,4 +86,4 @@ app.MapControllers();
 
 Console.WriteLine("Aplicação inicializada. Swagger disponível em  aqui /swagger");
 
-app.Run();
+await app.RunAsync();

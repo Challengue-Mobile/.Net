@@ -1,6 +1,7 @@
 using API_.Net.Models;
 using Swashbuckle.AspNetCore.Filters;
 using System;
+using System.Globalization; // ← ADICIONADO
 
 namespace API_.Net.Examples
 {
@@ -16,7 +17,7 @@ namespace API_.Net.Examples
                 NOME = "João da Silva",
                 CPF = "123.456.789-00",
                 CARGO = "Analista",
-                DATA_ADMISSAO = DateTime.Parse("2025-01-15"),
+                DATA_ADMISSAO = DateTime.Parse("2025-01-15", CultureInfo.InvariantCulture), // ← CORRIGIDO
                 ID_DEPARTAMENTO = 1,
                 ID_USUARIO = null
             };
@@ -36,7 +37,7 @@ namespace API_.Net.Examples
                 NOME = "João da Silva",
                 CPF = "123.456.789-00",
                 CARGO = "Analista",
-                DATA_ADMISSAO = DateTime.Parse("2025-01-15"),
+                DATA_ADMISSAO = DateTime.Parse("2025-01-15", CultureInfo.InvariantCulture), // ← CORRIGIDO
                 ID_DEPARTAMENTO = 1,
                 ID_USUARIO = null,
                 Departamento = new Departamento
@@ -64,7 +65,7 @@ namespace API_.Net.Examples
                     NOME = "João da Silva",
                     CPF = "123.456.789-00",
                     CARGO = "Analista",
-                    DATA_ADMISSAO = DateTime.Parse("2025-01-15"),
+                    DATA_ADMISSAO = DateTime.Parse("2025-01-15", CultureInfo.InvariantCulture), // ← CORRIGIDO
                     ID_DEPARTAMENTO = 1
                 },
                 new Funcionario
@@ -73,7 +74,7 @@ namespace API_.Net.Examples
                     NOME = "Maria Souza",
                     CPF = "987.654.321-00",
                     CARGO = "Gerente",
-                    DATA_ADMISSAO = DateTime.Parse("2024-06-10"),
+                    DATA_ADMISSAO = DateTime.Parse("2024-06-10", CultureInfo.InvariantCulture), // ← CORRIGIDO
                     ID_DEPARTAMENTO = 1
                 },
                 new Funcionario
@@ -82,7 +83,7 @@ namespace API_.Net.Examples
                     NOME = "Pedro Santos",
                     CPF = "456.789.123-00",
                     CARGO = "Coordenador",
-                    DATA_ADMISSAO = DateTime.Parse("2024-09-05"),
+                    DATA_ADMISSAO = DateTime.Parse("2024-09-05", CultureInfo.InvariantCulture), // ← CORRIGIDO
                     ID_DEPARTAMENTO = 2
                 }
             };

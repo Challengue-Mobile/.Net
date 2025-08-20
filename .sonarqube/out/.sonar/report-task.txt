@@ -1,7 +1,0 @@
-organization=challengue-mobile
-projectKey=Challengue-Mobile_.Net
-serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.66037
-dashboardUrl=https://sonarcloud.io/dashboard?id=Challengue-Mobile_.Net
-ceTaskId=AZiRS8iQ0IPh_qqKhx6x
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZiRS8iQ0IPh_qqKhx6x

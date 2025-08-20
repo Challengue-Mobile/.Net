@@ -210,6 +210,24 @@
           ]
         },
         {
+          "ruleId": "CS0400",
+          "level": "error",
+          "message": "O tipo ou nome do namespace \"Xunit\" não pode ser encontrado no namespace global (uma referência de assembly está faltando?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/obj/Debug/net9.0/API.Net.Tests.GlobalUsings.g.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 22,
+                  "endLine": 9,
+                  "endColumn": 27
+                }
+              }
+            }
+          ]
+        },
+        {
           "ruleId": "CS0246",
           "level": "error",
           "message": "O nome do tipo ou do namespace \"Xunit\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
@@ -342,11 +360,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/ConfigurationTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
                 "region": {
-                  "startLine": 27,
+                  "startLine": 7,
                   "startColumn": 10,
-                  "endLine": 27,
+                  "endLine": 7,
                   "endColumn": 14
                 }
               }
@@ -360,11 +378,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/ConfigurationTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
                 "region": {
-                  "startLine": 27,
+                  "startLine": 7,
                   "startColumn": 10,
-                  "endLine": 27,
+                  "endLine": 7,
                   "endColumn": 14
                 }
               }
@@ -378,11 +396,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/ConfigurationTests.cs",
                 "region": {
-                  "startLine": 7,
+                  "startLine": 27,
                   "startColumn": 10,
-                  "endLine": 7,
+                  "endLine": 27,
                   "endColumn": 14
                 }
               }
@@ -396,11 +414,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/ConfigurationTests.cs",
                 "region": {
-                  "startLine": 7,
+                  "startLine": 27,
                   "startColumn": 10,
-                  "endLine": 7,
+                  "endLine": 27,
                   "endColumn": 14
                 }
               }
@@ -469,78 +487,6 @@
             {
               "resultFile": {
                 "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/DTOs/DTOTests.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 10,
-                  "endLine": 7,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/IntegrationTests.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 10,
-                  "endLine": 7,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/IntegrationTests.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 10,
-                  "endLine": 7,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 10,
-                  "endLine": 7,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
                 "region": {
                   "startLine": 7,
                   "startColumn": 10,
@@ -617,6 +563,78 @@
                   "startLine": 17,
                   "startColumn": 10,
                   "endLine": 17,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/IntegrationTests.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 10,
+                  "endLine": 7,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/IntegrationTests.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 10,
+                  "endLine": 7,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/DTOs/DTOTests.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 10,
+                  "endLine": 27,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/DTOs/DTOTests.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 10,
+                  "endLine": 27,
                   "endColumn": 14
                 }
               }
@@ -668,9 +686,9 @@
               "resultFile": {
                 "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/DTOs/DTOTests.cs",
                 "region": {
-                  "startLine": 27,
+                  "startLine": 37,
                   "startColumn": 10,
-                  "endLine": 27,
+                  "endLine": 37,
                   "endColumn": 14
                 }
               }
@@ -686,81 +704,9 @@
               "resultFile": {
                 "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/DTOs/DTOTests.cs",
                 "region": {
-                  "startLine": 27,
+                  "startLine": 37,
                   "startColumn": 10,
-                  "endLine": 27,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 10,
-                  "endLine": 7,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 10,
-                  "endLine": 7,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 10,
-                  "endLine": 7,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 10,
-                  "endLine": 7,
+                  "endLine": 37,
                   "endColumn": 14
                 }
               }
@@ -806,159 +752,15 @@
         {
           "ruleId": "CS0246",
           "level": "error",
-          "message": "O nome do tipo ou do namespace \"TheoryAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
-                "region": {
-                  "startLine": 17,
-                  "startColumn": 10,
-                  "endLine": 17,
-                  "endColumn": 16
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Theory\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
-                "region": {
-                  "startLine": 17,
-                  "startColumn": 10,
-                  "endLine": 17,
-                  "endColumn": 16
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 10,
-                  "endLine": 18,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 10,
-                  "endLine": 18,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 10,
-                  "endLine": 19,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 10,
-                  "endLine": 19,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 10,
-                  "endLine": 20,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 10,
-                  "endLine": 20,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
           "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/DTOs/DTOTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
                 "region": {
-                  "startLine": 37,
+                  "startLine": 7,
                   "startColumn": 10,
-                  "endLine": 37,
+                  "endLine": 7,
                   "endColumn": 14
                 }
               }
@@ -972,11 +774,47 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/DTOs/DTOTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
                 "region": {
-                  "startLine": 37,
+                  "startLine": 7,
                   "startColumn": 10,
-                  "endLine": 37,
+                  "endLine": 7,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 10,
+                  "endLine": 7,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 10,
+                  "endLine": 7,
                   "endColumn": 14
                 }
               }
@@ -1013,6 +851,42 @@
                   "startLine": 47,
                   "startColumn": 10,
                   "endLine": 47,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 10,
+                  "endLine": 7,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 10,
+                  "endLine": 7,
                   "endColumn": 14
                 }
               }
@@ -1166,474 +1040,6 @@
         {
           "ruleId": "CS0246",
           "level": "error",
-          "message": "O nome do tipo ou do namespace \"TheoryAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 10,
-                  "endLine": 7,
-                  "endColumn": 16
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Theory\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 10,
-                  "endLine": 7,
-                  "endColumn": 16
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 10,
-                  "endLine": 8,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 10,
-                  "endLine": 8,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
-                "region": {
-                  "startLine": 9,
-                  "startColumn": 10,
-                  "endLine": 9,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
-                "region": {
-                  "startLine": 9,
-                  "startColumn": 10,
-                  "endLine": 9,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
-                "region": {
-                  "startLine": 10,
-                  "startColumn": 10,
-                  "endLine": 10,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
-                "region": {
-                  "startLine": 10,
-                  "startColumn": 10,
-                  "endLine": 10,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"TheoryAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
-                "region": {
-                  "startLine": 16,
-                  "startColumn": 10,
-                  "endLine": 16,
-                  "endColumn": 16
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Theory\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
-                "region": {
-                  "startLine": 16,
-                  "startColumn": 10,
-                  "endLine": 16,
-                  "endColumn": 16
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
-                "region": {
-                  "startLine": 17,
-                  "startColumn": 10,
-                  "endLine": 17,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
-                "region": {
-                  "startLine": 17,
-                  "startColumn": 10,
-                  "endLine": 17,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 10,
-                  "endLine": 18,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 10,
-                  "endLine": 18,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 10,
-                  "endLine": 19,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 10,
-                  "endLine": 19,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 10,
-                  "endLine": 18,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 10,
-                  "endLine": 18,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"TheoryAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
-                "region": {
-                  "startLine": 17,
-                  "startColumn": 10,
-                  "endLine": 17,
-                  "endColumn": 16
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Theory\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
-                "region": {
-                  "startLine": 17,
-                  "startColumn": 10,
-                  "endLine": 17,
-                  "endColumn": 16
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 10,
-                  "endLine": 18,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 10,
-                  "endLine": 18,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 10,
-                  "endLine": 19,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 10,
-                  "endLine": 19,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 10,
-                  "endLine": 20,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 10,
-                  "endLine": 20,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
           "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
           "locations": [
             {
@@ -1661,42 +1067,6 @@
                   "startLine": 23,
                   "startColumn": 10,
                   "endLine": 23,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
-                "region": {
-                  "startLine": 27,
-                  "startColumn": 10,
-                  "endLine": 27,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
-                "region": {
-                  "startLine": 27,
-                  "startColumn": 10,
-                  "endLine": 27,
                   "endColumn": 14
                 }
               }
@@ -1742,186 +1112,6 @@
         {
           "ruleId": "CS0246",
           "level": "error",
-          "message": "O nome do tipo ou do namespace \"TheoryAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 10,
-                  "endLine": 8,
-                  "endColumn": 16
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Theory\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 10,
-                  "endLine": 8,
-                  "endColumn": 16
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
-                "region": {
-                  "startLine": 9,
-                  "startColumn": 10,
-                  "endLine": 9,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
-                "region": {
-                  "startLine": 9,
-                  "startColumn": 10,
-                  "endLine": 9,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
-                "region": {
-                  "startLine": 10,
-                  "startColumn": 10,
-                  "endLine": 10,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
-                "region": {
-                  "startLine": 10,
-                  "startColumn": 10,
-                  "endLine": 10,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
-                "region": {
-                  "startLine": 11,
-                  "startColumn": 10,
-                  "endLine": 11,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
-                "region": {
-                  "startLine": 11,
-                  "startColumn": 10,
-                  "endLine": 11,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 10,
-                  "endLine": 20,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 10,
-                  "endLine": 20,
-                  "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
           "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
           "locations": [
             {
@@ -1950,150 +1140,6 @@
                   "startColumn": 10,
                   "endLine": 39,
                   "endColumn": 14
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"TheoryAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
-                "region": {
-                  "startLine": 17,
-                  "startColumn": 10,
-                  "endLine": 17,
-                  "endColumn": 16
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"Theory\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
-                "region": {
-                  "startLine": 17,
-                  "startColumn": 10,
-                  "endLine": 17,
-                  "endColumn": 16
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 10,
-                  "endLine": 18,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
-                "region": {
-                  "startLine": 18,
-                  "startColumn": 10,
-                  "endLine": 18,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 10,
-                  "endLine": 19,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
-                "region": {
-                  "startLine": 19,
-                  "startColumn": 10,
-                  "endLine": 19,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 10,
-                  "endLine": 20,
-                  "endColumn": 20
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS0246",
-          "level": "error",
-          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 10,
-                  "endLine": 20,
-                  "endColumn": 20
                 }
               }
             }
@@ -2246,6 +1292,438 @@
         {
           "ruleId": "CS0246",
           "level": "error",
+          "message": "O nome do tipo ou do namespace \"TheoryAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 10,
+                  "endLine": 17,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Theory\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 10,
+                  "endLine": 17,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 10,
+                  "endLine": 18,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 10,
+                  "endLine": 18,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 10,
+                  "endLine": 19,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 10,
+                  "endLine": 19,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 10,
+                  "endLine": 20,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/PatiosControllerTests.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 10,
+                  "endLine": 20,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"TheoryAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 10,
+                  "endLine": 17,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Theory\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 10,
+                  "endLine": 17,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 10,
+                  "endLine": 18,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 10,
+                  "endLine": 18,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 10,
+                  "endLine": 19,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 10,
+                  "endLine": 19,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 10,
+                  "endLine": 20,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Services/ServicesTests.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 10,
+                  "endLine": 20,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"TheoryAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 10,
+                  "endLine": 7,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Theory\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 10,
+                  "endLine": 7,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 10,
+                  "endLine": 8,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 10,
+                  "endLine": 8,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 10,
+                  "endLine": 9,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 10,
+                  "endLine": 9,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 10,
+                  "endLine": 10,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 10,
+                  "endLine": 10,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
           "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
           "locations": [
             {
@@ -2286,11 +1764,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
                 "region": {
-                  "startLine": 35,
+                  "startLine": 16,
                   "startColumn": 10,
-                  "endLine": 35,
+                  "endLine": 16,
                   "endColumn": 16
                 }
               }
@@ -2304,11 +1782,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
                 "region": {
-                  "startLine": 35,
+                  "startLine": 16,
                   "startColumn": 10,
-                  "endLine": 35,
+                  "endLine": 16,
                   "endColumn": 16
                 }
               }
@@ -2322,11 +1800,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
                 "region": {
-                  "startLine": 36,
+                  "startLine": 17,
                   "startColumn": 10,
-                  "endLine": 36,
+                  "endLine": 17,
                   "endColumn": 20
                 }
               }
@@ -2340,11 +1818,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
                 "region": {
-                  "startLine": 36,
+                  "startLine": 17,
                   "startColumn": 10,
-                  "endLine": 36,
+                  "endLine": 17,
                   "endColumn": 20
                 }
               }
@@ -2358,11 +1836,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
                 "region": {
-                  "startLine": 37,
+                  "startLine": 18,
                   "startColumn": 10,
-                  "endLine": 37,
+                  "endLine": 18,
                   "endColumn": 20
                 }
               }
@@ -2376,11 +1854,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
                 "region": {
-                  "startLine": 37,
+                  "startLine": 18,
                   "startColumn": 10,
-                  "endLine": 37,
+                  "endLine": 18,
                   "endColumn": 20
                 }
               }
@@ -2394,11 +1872,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
                 "region": {
-                  "startLine": 38,
+                  "startLine": 19,
                   "startColumn": 10,
-                  "endLine": 38,
+                  "endLine": 19,
                   "endColumn": 20
                 }
               }
@@ -2412,11 +1890,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
                 "region": {
-                  "startLine": 38,
+                  "startLine": 19,
                   "startColumn": 10,
-                  "endLine": 38,
+                  "endLine": 19,
                   "endColumn": 20
                 }
               }
@@ -2742,6 +2220,546 @@
                   "startColumn": 10,
                   "endLine": 61,
                   "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 10,
+                  "endLine": 18,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/TiposMovimentacaoControllerTests.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 10,
+                  "endLine": 18,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"TheoryAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 10,
+                  "endLine": 17,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Theory\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 10,
+                  "endLine": 17,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 10,
+                  "endLine": 18,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 10,
+                  "endLine": 18,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 10,
+                  "endLine": 19,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 10,
+                  "endLine": 19,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 10,
+                  "endLine": 20,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/RegistrosBateriaControllerTests.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 10,
+                  "endLine": 20,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"TheoryAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 10,
+                  "endLine": 8,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Theory\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 10,
+                  "endLine": 8,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 10,
+                  "endLine": 9,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 10,
+                  "endLine": 9,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 10,
+                  "endLine": 10,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 10,
+                  "endLine": 10,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 10,
+                  "endLine": 11,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 10,
+                  "endLine": 11,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 10,
+                  "endLine": 20,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 10,
+                  "endLine": 20,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"TheoryAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 10,
+                  "endLine": 35,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Theory\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 10,
+                  "endLine": 35,
+                  "endColumn": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 10,
+                  "endLine": 36,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 10,
+                  "endLine": 36,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 10,
+                  "endLine": 37,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 10,
+                  "endLine": 37,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineDataAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 10,
+                  "endLine": 38,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"InlineData\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Controllers/UsuariosControllerTests.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 10,
+                  "endLine": 38,
+                  "endColumn": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"FactAttribute\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 10,
+                  "endLine": 27,
+                  "endColumn": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS0246",
+          "level": "error",
+          "message": "O nome do tipo ou do namespace \"Fact\" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/arthur/RiderProjects/API%20.Net/API%20.Net/API.Net.Tests/Models/ModelsTests.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 10,
+                  "endLine": 27,
+                  "endColumn": 14
                 }
               }
             }
@@ -2753,6 +2771,20 @@
           "id": "CS0246",
           "defaultLevel": "error",
           "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0246)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry",
+              "NotConfigurable"
+            ]
+          }
+        },
+        "CS0400": {
+          "id": "CS0400",
+          "defaultLevel": "error",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0400)",
           "properties": {
             "category": "Compiler",
             "isEnabledByDefault": true,

@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace API_.Net.Models
 {
     public class TipoUsuario
     {
+        [Required]
         public int ID_TIPO_USUARIO { get; set; }
         public string DESCRICAO { get; set; } = string.Empty;
         

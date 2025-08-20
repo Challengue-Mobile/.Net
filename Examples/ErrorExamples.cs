@@ -8,6 +8,10 @@ namespace API_.Net.Examples
     /// </summary>
     public class ValidationErrorResponseExample : IExamplesProvider<ValidationProblemDetails>
     {
+        // ← ADICIONADO - Arrays estáticos readonly
+        private static readonly string[] _placaErrors = { "A placa é obrigatória", "A placa deve estar no formato XXX0000" };
+        private static readonly string[] _modeloMotoErrors = { "O modelo da moto é obrigatório" };
+        
         public ValidationProblemDetails GetExamples()
         {
             var problemDetails = new ValidationProblemDetails
@@ -17,8 +21,10 @@ namespace API_.Net.Examples
                 Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1"
             };
 
-            problemDetails.Errors.Add("PLACA", new[] { "A placa é obrigatória", "A placa deve estar no formato XXX0000" });
-            problemDetails.Errors.Add("ID_MODELO_MOTO", new[] { "O modelo da moto é obrigatório" });
+            // ← CORRIGIDO - Issue L20
+            problemDetails.Errors.Add("PLACA", _placaErrors);
+            // ← CORRIGIDO - Issue L21  
+            problemDetails.Errors.Add("ID_MODELO_MOTO", _modeloMotoErrors);
 
             return problemDetails;
         }
