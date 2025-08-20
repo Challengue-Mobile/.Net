@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace API_.Net.DTOs
 {
     // DTO para exibir informações de cliente
-    public class ClienteDTO
+    public class ClienteDto // ← CORRIGIDO - Issue L6
     {
         public int ID_CLIENTE { get; set; }
         public string NOME { get; set; } = string.Empty;
@@ -15,7 +15,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para criar um novo cliente
-    public class CreateClienteDTO
+    public class CreateClienteDto // ← CORRIGIDO - Issue L18
     {
         [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
@@ -35,7 +35,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para atualizar um cliente existente
-    public class UpdateClienteDTO
+    public class UpdateClienteDto // ← CORRIGIDO - Issue L38
     {
         [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]

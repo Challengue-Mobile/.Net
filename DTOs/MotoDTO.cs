@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace API_.Net.DTOs
 {
     // DTO para exibir informações de moto
-    public class MotoDTO
+    public class MotoDto // ← CORRIGIDO - Issue L6
     {
         public int ID_MOTO { get; set; }
         public string PLACA { get; set; } = string.Empty;
@@ -16,7 +16,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para criar uma nova moto
-    public class CreateMotoDTO
+    public class CreateMotoDto // ← CORRIGIDO - Issue L19
     {
         [Required(ErrorMessage = "A placa é obrigatória")]
         [StringLength(10, ErrorMessage = "A placa não pode ter mais de 10 caracteres")]
@@ -29,7 +29,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para atualizar uma moto existente
-    public class UpdateMotoDTO
+    public class UpdateMotoDto // ← CORRIGIDO - Issue L32
     {
         [Required(ErrorMessage = "A placa é obrigatória")]
         [StringLength(10, ErrorMessage = "A placa não pode ter mais de 10 caracteres")]

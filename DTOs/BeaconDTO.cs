@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace API_.Net.DTOs
 {
     // DTO para exibir informações de beacon
-    public class BeaconDTO
+    public class BeaconDto // ← CORRIGIDO - Issue L6
     {
         public int ID_BEACON { get; set; }
         public string UUID { get; set; } = string.Empty;
@@ -15,7 +15,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para criar um novo beacon
-    public class CreateBeaconDTO
+    public class CreateBeaconDto // ← CORRIGIDO - Issue L18
     {
         [Required(ErrorMessage = "O UUID é obrigatório")]
         [StringLength(100, ErrorMessage = "O UUID não pode ter mais de 100 caracteres")]
@@ -33,7 +33,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para atualizar um beacon existente
-    public class UpdateBeaconDTO
+    public class UpdateBeaconDto // ← CORRIGIDO - Issue L36
     {
         [Required(ErrorMessage = "O nível de bateria é obrigatório")]
         [Range(0, 100, ErrorMessage = "O nível de bateria deve estar entre 0 e 100")]

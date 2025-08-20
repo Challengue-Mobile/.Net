@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace API_.Net.DTOs
 {
     // DTO para exibir informações de localização
-    public class LocalizacaoDTO
+    public class LocalizacaoDto // ← CORRIGIDO - Issue L6
     {
         public int ID_LOCALIZACAO { get; set; }
         public decimal POSICAO_X { get; set; }
@@ -16,7 +16,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para criar uma nova localização
-    public class CreateLocalizacaoDTO
+    public class CreateLocalizacaoDto // ← CORRIGIDO - Issue L19
     {
         [Required(ErrorMessage = "A posição X é obrigatória")]
         public decimal POSICAO_X { get; set; }

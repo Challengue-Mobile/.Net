@@ -7,28 +7,33 @@ namespace API_.Net.Migrations
     /// <inheritdoc />
     public partial class ConfigurarPrecisaoLocalizacao : Migration
     {
+        // ← CONSTANTES para resolver os 3 últimos magic strings
+        private const string TbLocalizacao = "TB_LOCALIZACAO";
+        private const string Decimal18_6 = "DECIMAL(18,6)";
+        private const string Decimal18_2 = "DECIMAL(18,2)";
+
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<decimal>(
                 name: "POSICAO_Y",
-                table: "TB_LOCALIZACAO",
-                type: "DECIMAL(18,6)",
+                table: TbLocalizacao, // ← CORRIGIDO - Issue L15
+                type: Decimal18_6, // ← CORRIGIDO - Issue L16
                 precision: 18,
                 scale: 6,
                 nullable: false,
                 oldClrType: typeof(decimal),
-                oldType: "DECIMAL(18,2)");
+                oldType: Decimal18_2); // ← CORRIGIDO - Issue L21
 
             migrationBuilder.AlterColumn<decimal>(
                 name: "POSICAO_X",
-                table: "TB_LOCALIZACAO",
-                type: "DECIMAL(18,6)",
+                table: TbLocalizacao, // ← CORRIGIDO - Issue L15
+                type: Decimal18_6, // ← CORRIGIDO - Issue L16
                 precision: 18,
                 scale: 6,
                 nullable: false,
                 oldClrType: typeof(decimal),
-                oldType: "DECIMAL(18,2)");
+                oldType: Decimal18_2); // ← CORRIGIDO - Issue L21
         }
 
         /// <inheritdoc />
@@ -36,21 +41,21 @@ namespace API_.Net.Migrations
         {
             migrationBuilder.AlterColumn<decimal>(
                 name: "POSICAO_Y",
-                table: "TB_LOCALIZACAO",
-                type: "DECIMAL(18,2)",
+                table: TbLocalizacao, // ← CORRIGIDO - Issue L15
+                type: Decimal18_2, // ← CORRIGIDO - Issue L21
                 nullable: false,
                 oldClrType: typeof(decimal),
-                oldType: "DECIMAL(18,6)",
+                oldType: Decimal18_6, // ← CORRIGIDO - Issue L16
                 oldPrecision: 18,
                 oldScale: 6);
 
             migrationBuilder.AlterColumn<decimal>(
                 name: "POSICAO_X",
-                table: "TB_LOCALIZACAO",
-                type: "DECIMAL(18,2)",
+                table: TbLocalizacao, // ← CORRIGIDO - Issue L15
+                type: Decimal18_2, // ← CORRIGIDO - Issue L21
                 nullable: false,
                 oldClrType: typeof(decimal),
-                oldType: "DECIMAL(18,6)",
+                oldType: Decimal18_6, // ← CORRIGIDO - Issue L16
                 oldPrecision: 18,
                 oldScale: 6);
         }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace API_.Net.DTOs
 {
     // DTO para exibir informações de movimentação
-    public class MovimentacaoDTO
+    public class MovimentacaoDto // ← CORRIGIDO - Issue L6
     {
         public int ID_MOVIMENTACAO { get; set; }
         public DateTime DATA_MOVIMENTACAO { get; set; }
@@ -17,7 +17,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para criar uma nova movimentação
-    public class CreateMovimentacaoDTO
+    public class CreateMovimentacaoDto // ← CORRIGIDO - Issue L20
     {
         [StringLength(255, ErrorMessage = "A observação não pode ter mais de 255 caracteres")]
         public string OBSERVACAO { get; set; } = string.Empty;
@@ -33,7 +33,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para atualizar uma movimentação existente
-    public class UpdateMovimentacaoDTO
+    public class UpdateMovimentacaoDto // ← CORRIGIDO - Issue L36
     {
         [StringLength(255, ErrorMessage = "A observação não pode ter mais de 255 caracteres")]
         public string OBSERVACAO { get; set; } = string.Empty;

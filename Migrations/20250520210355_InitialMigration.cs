@@ -8,6 +8,26 @@ namespace API_.Net.Migrations
     /// <inheritdoc />
     public partial class InitialMigration : Migration
     {
+        // ← CONSTANTES para resolver magic strings
+        private const string NumberType = "NUMBER(10)";
+        private const string OracleIdentity = "Oracle:Identity";
+        private const string IdentityStartIncrement = "START WITH 1 INCREMENT BY 1";
+        private const string NVarChar100 = "NVARCHAR2(100)";
+        private const string TimestampType = "TIMESTAMP(7)";
+        private const string TbMoto = "TB_MOTO";
+        private const string TbEstado = "TB_ESTADO";
+        private const string TbUsuario = "TB_USUARIO";
+        private const string TbBeacon = "TB_BEACON";
+        private const string TbCidade = "TB_CIDADE";
+        private const string TbMovimentacao = "TB_MOVIMENTACAO";
+        private const string TbBairro = "TB_BAIRRO";
+        private const string TbLogradouro = "TB_LOGRADOURO";
+        private const string TbPatio = "TB_PATIO";
+        private const string TbFilial = "TB_FILIAL";
+        private const string TbLocalizacao = "TB_LOCALIZACAO";
+        private const string TbDepartamento = "TB_DEPARTAMENTO";
+        private const string TbFuncionario = "TB_FUNCIONARIO";
+
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,12 +35,12 @@ namespace API_.Net.Migrations
                 name: "TB_CLIENTE",
                 columns: table => new
                 {
-                    ID_CLIENTE = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NOME = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
+                    ID_CLIENTE = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
                     CPF = table.Column<string>(type: "NVARCHAR2(14)", maxLength: 14, nullable: false),
-                    DATA_CADASTRO = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
-                    EMAIL = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
+                    DATA_CADASTRO = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    EMAIL = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
                     TELEFONE = table.Column<string>(type: "NVARCHAR2(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
@@ -32,10 +52,10 @@ namespace API_.Net.Migrations
                 name: "TB_MODELO_BEACON",
                 columns: table => new
                 {
-                    ID_MODELO_BEACON = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NOME = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
-                    FABRICANTE = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false)
+                    ID_MODELO_BEACON = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    FABRICANTE = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -46,10 +66,10 @@ namespace API_.Net.Migrations
                 name: "TB_MODELO_MOTO",
                 columns: table => new
                 {
-                    ID_MODELO_MOTO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NOME = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
-                    FABRICANTE = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false)
+                    ID_MODELO_MOTO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    FABRICANTE = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -60,9 +80,9 @@ namespace API_.Net.Migrations
                 name: "TB_PAIS",
                 columns: table => new
                 {
-                    ID_PAIS = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NOME = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false)
+                    ID_PAIS = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -73,8 +93,8 @@ namespace API_.Net.Migrations
                 name: "TB_TIPO_MOVIMENTACAO",
                 columns: table => new
                 {
-                    ID_TIPO_MOVIMENTACAO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
+                    ID_TIPO_MOVIMENTACAO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
                     DESCRICAO = table.Column<string>(type: "NVARCHAR2(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -86,8 +106,8 @@ namespace API_.Net.Migrations
                 name: "TB_TIPO_USUARIO",
                 columns: table => new
                 {
-                    ID_TIPO_USUARIO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
+                    ID_TIPO_USUARIO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
                     DESCRICAO = table.Column<string>(type: "NVARCHAR2(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -96,15 +116,15 @@ namespace API_.Net.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_MOTO",
+                name: TbMoto,
                 columns: table => new
                 {
-                    ID_MOTO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
+                    ID_MOTO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
                     PLACA = table.Column<string>(type: "NVARCHAR2(10)", maxLength: 10, nullable: false),
-                    DATA_REGISTRO = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
-                    ID_CLIENTE = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    ID_MODELO_MOTO = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    DATA_REGISTRO = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    ID_CLIENTE = table.Column<int>(type: NumberType, nullable: true),
+                    ID_MODELO_MOTO = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -123,13 +143,13 @@ namespace API_.Net.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_ESTADO",
+                name: TbEstado,
                 columns: table => new
                 {
-                    ID_ESTADO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NOME = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
-                    ID_PAIS = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    ID_ESTADO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_PAIS = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -143,16 +163,16 @@ namespace API_.Net.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_USUARIO",
+                name: TbUsuario,
                 columns: table => new
                 {
-                    ID_USUARIO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NOME = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
+                    ID_USUARIO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
                     SENHA = table.Column<string>(type: "NVARCHAR2(255)", maxLength: 255, nullable: false),
-                    DATA_CADASTRO = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
-                    EMAIL = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
-                    ID_TIPO_USUARIO = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    DATA_CADASTRO = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    EMAIL = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_TIPO_USUARIO = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -166,15 +186,15 @@ namespace API_.Net.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_BEACON",
+                name: TbBeacon,
                 columns: table => new
                 {
-                    ID_BEACON = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    UUID = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
-                    BATERIA = table.Column<int>(type: "NUMBER(10)", nullable: false),
-                    ID_MOTO = table.Column<int>(type: "NUMBER(10)", nullable: false),
-                    ID_MODELO_BEACON = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    ID_BEACON = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    UUID = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    BATERIA = table.Column<int>(type: NumberType, nullable: false),
+                    ID_MOTO = table.Column<int>(type: NumberType, nullable: false),
+                    ID_MODELO_BEACON = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -188,19 +208,19 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_BEACON_TB_MOTO_ID_MOTO",
                         column: x => x.ID_MOTO,
-                        principalTable: "TB_MOTO",
+                        principalTable: TbMoto,
                         principalColumn: "ID_MOTO",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_CIDADE",
+                name: TbCidade,
                 columns: table => new
                 {
-                    ID_CIDADE = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NOME = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
-                    ID_ESTADO = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    ID_CIDADE = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_ESTADO = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -208,7 +228,7 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_CIDADE_TB_ESTADO_ID_ESTADO",
                         column: x => x.ID_ESTADO,
-                        principalTable: "TB_ESTADO",
+                        principalTable: TbEstado,
                         principalColumn: "ID_ESTADO",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -217,11 +237,11 @@ namespace API_.Net.Migrations
                 name: "TB_LOG_SISTEMA",
                 columns: table => new
                 {
-                    ID_LOG = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    ACAO = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
-                    DATA_HORA = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
-                    ID_USUARIO = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    ID_LOG = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    ACAO = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    DATA_HORA = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    ID_USUARIO = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -229,22 +249,22 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_LOG_SISTEMA_TB_USUARIO_ID_USUARIO",
                         column: x => x.ID_USUARIO,
-                        principalTable: "TB_USUARIO",
+                        principalTable: TbUsuario,
                         principalColumn: "ID_USUARIO",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_MOVIMENTACAO",
+                name: TbMovimentacao,
                 columns: table => new
                 {
-                    ID_MOVIMENTACAO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    DATA_MOVIMENTACAO = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
+                    ID_MOVIMENTACAO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    DATA_MOVIMENTACAO = table.Column<DateTime>(type: TimestampType, nullable: false),
                     OBSERVACAO = table.Column<string>(type: "CLOB", nullable: false),
-                    ID_USUARIO = table.Column<int>(type: "NUMBER(10)", nullable: false),
-                    ID_MOTO = table.Column<int>(type: "NUMBER(10)", nullable: false),
-                    ID_TIPO_MOVIMENTACAO = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    ID_USUARIO = table.Column<int>(type: NumberType, nullable: false),
+                    ID_MOTO = table.Column<int>(type: NumberType, nullable: false),
+                    ID_TIPO_MOVIMENTACAO = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -252,7 +272,7 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_MOVIMENTACAO_TB_MOTO_ID_MOTO",
                         column: x => x.ID_MOTO,
-                        principalTable: "TB_MOTO",
+                        principalTable: TbMoto,
                         principalColumn: "ID_MOTO",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -264,7 +284,7 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_MOVIMENTACAO_TB_USUARIO_ID_USUARIO",
                         column: x => x.ID_USUARIO,
-                        principalTable: "TB_USUARIO",
+                        principalTable: TbUsuario,
                         principalColumn: "ID_USUARIO",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -273,11 +293,11 @@ namespace API_.Net.Migrations
                 name: "TB_REGISTRO_BATERIA",
                 columns: table => new
                 {
-                    ID_REGISTRO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    DATA_HORA = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
-                    NIVEL_BATERIA = table.Column<int>(type: "NUMBER(10)", nullable: false),
-                    ID_BEACON = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    ID_REGISTRO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    DATA_HORA = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    NIVEL_BATERIA = table.Column<int>(type: NumberType, nullable: false),
+                    ID_BEACON = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -285,19 +305,19 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_REGISTRO_BATERIA_TB_BEACON_ID_BEACON",
                         column: x => x.ID_BEACON,
-                        principalTable: "TB_BEACON",
+                        principalTable: TbBeacon,
                         principalColumn: "ID_BEACON",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_BAIRRO",
+                name: TbBairro,
                 columns: table => new
                 {
-                    ID_BAIRRO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NOME = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
-                    ID_CIDADE = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    ID_BAIRRO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_CIDADE = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -305,19 +325,19 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_BAIRRO_TB_CIDADE_ID_CIDADE",
                         column: x => x.ID_CIDADE,
-                        principalTable: "TB_CIDADE",
+                        principalTable: TbCidade,
                         principalColumn: "ID_CIDADE",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_LOGRADOURO",
+                name: TbLogradouro,
                 columns: table => new
                 {
-                    ID_LOGRADOURO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
+                    ID_LOGRADOURO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
                     NOME = table.Column<string>(type: "NVARCHAR2(255)", maxLength: 255, nullable: false),
-                    ID_BAIRRO = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    ID_BAIRRO = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -325,19 +345,19 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_LOGRADOURO_TB_BAIRRO_ID_BAIRRO",
                         column: x => x.ID_BAIRRO,
-                        principalTable: "TB_BAIRRO",
+                        principalTable: TbBairro,
                         principalColumn: "ID_BAIRRO",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_PATIO",
+                name: TbPatio,
                 columns: table => new
                 {
-                    ID_PATIO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NOME = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
-                    ID_LOGRADOURO = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    ID_PATIO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_LOGRADOURO = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -345,19 +365,19 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_PATIO_TB_LOGRADOURO_ID_LOGRADOURO",
                         column: x => x.ID_LOGRADOURO,
-                        principalTable: "TB_LOGRADOURO",
+                        principalTable: TbLogradouro,
                         principalColumn: "ID_LOGRADOURO",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_FILIAL",
+                name: TbFilial,
                 columns: table => new
                 {
-                    ID_FILIAL = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NOME = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
-                    ID_PATIO = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    ID_FILIAL = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_PATIO = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -365,22 +385,22 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_FILIAL_TB_PATIO_ID_PATIO",
                         column: x => x.ID_PATIO,
-                        principalTable: "TB_PATIO",
+                        principalTable: TbPatio,
                         principalColumn: "ID_PATIO",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_LOCALIZACAO",
+                name: TbLocalizacao,
                 columns: table => new
                 {
-                    ID_LOCALIZACAO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
+                    ID_LOCALIZACAO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
                     POSICAO_X = table.Column<decimal>(type: "DECIMAL(18, 2)", nullable: false),
                     POSICAO_Y = table.Column<decimal>(type: "DECIMAL(18, 2)", nullable: false),
-                    DATA_HORA = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
-                    ID_MOTO = table.Column<int>(type: "NUMBER(10)", nullable: false),
-                    ID_PATIO = table.Column<int>(type: "NUMBER(10)", nullable: true)
+                    DATA_HORA = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    ID_MOTO = table.Column<int>(type: NumberType, nullable: false),
+                    ID_PATIO = table.Column<int>(type: NumberType, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -388,24 +408,24 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_LOCALIZACAO_TB_MOTO_ID_MOTO",
                         column: x => x.ID_MOTO,
-                        principalTable: "TB_MOTO",
+                        principalTable: TbMoto,
                         principalColumn: "ID_MOTO",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_TB_LOCALIZACAO_TB_PATIO_ID_PATIO",
                         column: x => x.ID_PATIO,
-                        principalTable: "TB_PATIO",
+                        principalTable: TbPatio,
                         principalColumn: "ID_PATIO");
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_DEPARTAMENTO",
+                name: TbDepartamento,
                 columns: table => new
                 {
-                    ID_DEPARTAMENTO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NOME = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
-                    ID_FILIAL = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    ID_DEPARTAMENTO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_FILIAL = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -413,23 +433,23 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_DEPARTAMENTO_TB_FILIAL_ID_FILIAL",
                         column: x => x.ID_FILIAL,
-                        principalTable: "TB_FILIAL",
+                        principalTable: TbFilial,
                         principalColumn: "ID_FILIAL",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TB_FUNCIONARIO",
+                name: TbFuncionario,
                 columns: table => new
                 {
-                    ID_FUNCIONARIO = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NOME = table.Column<string>(type: "NVARCHAR2(100)", maxLength: 100, nullable: false),
+                    ID_FUNCIONARIO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
                     CPF = table.Column<string>(type: "NVARCHAR2(14)", maxLength: 14, nullable: false),
                     CARGO = table.Column<string>(type: "NVARCHAR2(50)", maxLength: 50, nullable: false),
-                    DATA_ADMISSAO = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
-                    ID_USUARIO = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    ID_DEPARTAMENTO = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    DATA_ADMISSAO = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    ID_USUARIO = table.Column<int>(type: NumberType, nullable: true),
+                    ID_DEPARTAMENTO = table.Column<int>(type: NumberType, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -437,71 +457,71 @@ namespace API_.Net.Migrations
                     table.ForeignKey(
                         name: "FK_TB_FUNCIONARIO_TB_DEPARTAMENTO_ID_DEPARTAMENTO",
                         column: x => x.ID_DEPARTAMENTO,
-                        principalTable: "TB_DEPARTAMENTO",
+                        principalTable: TbDepartamento,
                         principalColumn: "ID_DEPARTAMENTO",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_TB_FUNCIONARIO_TB_USUARIO_ID_USUARIO",
                         column: x => x.ID_USUARIO,
-                        principalTable: "TB_USUARIO",
+                        principalTable: TbUsuario,
                         principalColumn: "ID_USUARIO");
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_BAIRRO_ID_CIDADE",
-                table: "TB_BAIRRO",
+                table: TbBairro,
                 column: "ID_CIDADE");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_BEACON_ID_MODELO_BEACON",
-                table: "TB_BEACON",
+                table: TbBeacon,
                 column: "ID_MODELO_BEACON");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_BEACON_ID_MOTO",
-                table: "TB_BEACON",
+                table: TbBeacon,
                 column: "ID_MOTO");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_CIDADE_ID_ESTADO",
-                table: "TB_CIDADE",
+                table: TbCidade,
                 column: "ID_ESTADO");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_DEPARTAMENTO_ID_FILIAL",
-                table: "TB_DEPARTAMENTO",
+                table: TbDepartamento,
                 column: "ID_FILIAL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_ESTADO_ID_PAIS",
-                table: "TB_ESTADO",
+                table: TbEstado,
                 column: "ID_PAIS");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_FILIAL_ID_PATIO",
-                table: "TB_FILIAL",
+                table: TbFilial,
                 column: "ID_PATIO");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_FUNCIONARIO_ID_DEPARTAMENTO",
-                table: "TB_FUNCIONARIO",
+                table: TbFuncionario,
                 column: "ID_DEPARTAMENTO");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_FUNCIONARIO_ID_USUARIO",
-                table: "TB_FUNCIONARIO",
+                table: TbFuncionario,
                 column: "ID_USUARIO",
                 unique: true,
                 filter: "\"ID_USUARIO\" IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_LOCALIZACAO_ID_MOTO",
-                table: "TB_LOCALIZACAO",
+                table: TbLocalizacao,
                 column: "ID_MOTO");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_LOCALIZACAO_ID_PATIO",
-                table: "TB_LOCALIZACAO",
+                table: TbLocalizacao,
                 column: "ID_PATIO");
 
             migrationBuilder.CreateIndex(
@@ -511,37 +531,37 @@ namespace API_.Net.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_LOGRADOURO_ID_BAIRRO",
-                table: "TB_LOGRADOURO",
+                table: TbLogradouro,
                 column: "ID_BAIRRO");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_MOTO_ID_CLIENTE",
-                table: "TB_MOTO",
+                table: TbMoto,
                 column: "ID_CLIENTE");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_MOTO_ID_MODELO_MOTO",
-                table: "TB_MOTO",
+                table: TbMoto,
                 column: "ID_MODELO_MOTO");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_MOVIMENTACAO_ID_MOTO",
-                table: "TB_MOVIMENTACAO",
+                table: TbMovimentacao,
                 column: "ID_MOTO");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_MOVIMENTACAO_ID_TIPO_MOVIMENTACAO",
-                table: "TB_MOVIMENTACAO",
+                table: TbMovimentacao,
                 column: "ID_TIPO_MOVIMENTACAO");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_MOVIMENTACAO_ID_USUARIO",
-                table: "TB_MOVIMENTACAO",
+                table: TbMovimentacao,
                 column: "ID_USUARIO");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_PATIO_ID_LOGRADOURO",
-                table: "TB_PATIO",
+                table: TbPatio,
                 column: "ID_LOGRADOURO");
 
             migrationBuilder.CreateIndex(
@@ -551,7 +571,7 @@ namespace API_.Net.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_USUARIO_ID_TIPO_USUARIO",
-                table: "TB_USUARIO",
+                table: TbUsuario,
                 column: "ID_TIPO_USUARIO");
         }
 

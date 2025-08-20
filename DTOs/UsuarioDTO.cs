@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace API_.Net.DTOs
 {
     // DTO para exibir informações de usuário
-    public class UsuarioDTO
+    public class UsuarioDto // ← CORRIGIDO - Issue L6
     {
         public int ID_USUARIO { get; set; }
         public string NOME { get; set; } = string.Empty;
@@ -14,7 +14,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para criar um novo usuário
-    public class CreateUsuarioDTO
+    public class CreateUsuarioDto // ← CORRIGIDO - Issue L17
     {
         [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
@@ -34,7 +34,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para atualizar um usuário existente
-    public class UpdateUsuarioDTO
+    public class UpdateUsuarioDto // ← CORRIGIDO - Issue L37
     {
         [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
@@ -48,7 +48,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para alterar senha
-    public class ChangePasswordDTO
+    public class ChangePasswordDto // ← CORRIGIDO - Issue L51
     {
         [Required(ErrorMessage = "A senha atual é obrigatória")]
         public string SenhaAtual { get; set; } = string.Empty;
