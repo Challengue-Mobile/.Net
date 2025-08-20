@@ -27,6 +27,10 @@ namespace API_.Net.Migrations
         private const string TbLocalizacao = "TB_LOCALIZACAO";
         private const string TbDepartamento = "TB_DEPARTAMENTO";
         private const string TbFuncionario = "TB_FUNCIONARIO";
+        // ← ADICIONADAS - Constantes para os 3 últimos issues
+        private const string IdMoto = "ID_MOTO";
+        private const string IdUsuario = "ID_USUARIO";
+        private const string IdPatio = "ID_PATIO";
 
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -209,7 +213,7 @@ namespace API_.Net.Migrations
                         name: "FK_TB_BEACON_TB_MOTO_ID_MOTO",
                         column: x => x.ID_MOTO,
                         principalTable: TbMoto,
-                        principalColumn: "ID_MOTO",
+                        principalColumn: IdMoto,
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -250,7 +254,7 @@ namespace API_.Net.Migrations
                         name: "FK_TB_LOG_SISTEMA_TB_USUARIO_ID_USUARIO",
                         column: x => x.ID_USUARIO,
                         principalTable: TbUsuario,
-                        principalColumn: "ID_USUARIO",
+                        principalColumn: IdUsuario,
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -273,7 +277,7 @@ namespace API_.Net.Migrations
                         name: "FK_TB_MOVIMENTACAO_TB_MOTO_ID_MOTO",
                         column: x => x.ID_MOTO,
                         principalTable: TbMoto,
-                        principalColumn: "ID_MOTO",
+                        principalColumn: IdMoto,
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_TB_MOVIMENTACAO_TB_TIPO_MOVIMENTACAO_ID_TIPO_MOVIMENTACAO",
@@ -285,7 +289,7 @@ namespace API_.Net.Migrations
                         name: "FK_TB_MOVIMENTACAO_TB_USUARIO_ID_USUARIO",
                         column: x => x.ID_USUARIO,
                         principalTable: TbUsuario,
-                        principalColumn: "ID_USUARIO",
+                        principalColumn: IdUsuario,
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -386,7 +390,7 @@ namespace API_.Net.Migrations
                         name: "FK_TB_FILIAL_TB_PATIO_ID_PATIO",
                         column: x => x.ID_PATIO,
                         principalTable: TbPatio,
-                        principalColumn: "ID_PATIO",
+                        principalColumn: IdPatio,
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -409,13 +413,13 @@ namespace API_.Net.Migrations
                         name: "FK_TB_LOCALIZACAO_TB_MOTO_ID_MOTO",
                         column: x => x.ID_MOTO,
                         principalTable: TbMoto,
-                        principalColumn: "ID_MOTO",
+                        principalColumn: IdMoto,
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_TB_LOCALIZACAO_TB_PATIO_ID_PATIO",
                         column: x => x.ID_PATIO,
                         principalTable: TbPatio,
-                        principalColumn: "ID_PATIO");
+                        principalColumn: IdPatio);
                 });
 
             migrationBuilder.CreateTable(
@@ -464,7 +468,7 @@ namespace API_.Net.Migrations
                         name: "FK_TB_FUNCIONARIO_TB_USUARIO_ID_USUARIO",
                         column: x => x.ID_USUARIO,
                         principalTable: TbUsuario,
-                        principalColumn: "ID_USUARIO");
+                        principalColumn: IdUsuario);
                 });
 
             migrationBuilder.CreateIndex(
@@ -480,7 +484,7 @@ namespace API_.Net.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_TB_BEACON_ID_MOTO",
                 table: TbBeacon,
-                column: "ID_MOTO");
+                column: IdMoto);
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_CIDADE_ID_ESTADO",
@@ -500,7 +504,7 @@ namespace API_.Net.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_TB_FILIAL_ID_PATIO",
                 table: TbFilial,
-                column: "ID_PATIO");
+                column: IdPatio);
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_FUNCIONARIO_ID_DEPARTAMENTO",
@@ -510,24 +514,24 @@ namespace API_.Net.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_TB_FUNCIONARIO_ID_USUARIO",
                 table: TbFuncionario,
-                column: "ID_USUARIO",
+                column: IdUsuario,
                 unique: true,
                 filter: "\"ID_USUARIO\" IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_LOCALIZACAO_ID_MOTO",
                 table: TbLocalizacao,
-                column: "ID_MOTO");
+                column: IdMoto);
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_LOCALIZACAO_ID_PATIO",
                 table: TbLocalizacao,
-                column: "ID_PATIO");
+                column: IdPatio);
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_LOG_SISTEMA_ID_USUARIO",
                 table: "TB_LOG_SISTEMA",
-                column: "ID_USUARIO");
+                column: IdUsuario);
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_LOGRADOURO_ID_BAIRRO",
@@ -547,7 +551,7 @@ namespace API_.Net.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_TB_MOVIMENTACAO_ID_MOTO",
                 table: TbMovimentacao,
-                column: "ID_MOTO");
+                column: IdMoto);
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_MOVIMENTACAO_ID_TIPO_MOVIMENTACAO",
@@ -557,7 +561,7 @@ namespace API_.Net.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_TB_MOVIMENTACAO_ID_USUARIO",
                 table: TbMovimentacao,
-                column: "ID_USUARIO");
+                column: IdUsuario);
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_PATIO_ID_LOGRADOURO",
