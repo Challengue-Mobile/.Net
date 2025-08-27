@@ -3793,25 +3793,26 @@
     ]
   },
   "packageFolders": {
-    "/home/arthur/.nuget/packages/": {}
+    "C:\\Users\\felip\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/arthur/RiderProjects/API .Net/API .Net/API .Net.csproj",
+      "projectUniqueName": "C:\\Users\\felip\\OneDrive\\Área de Trabalho\\.Net\\API .Net.csproj",
       "projectName": "API .Net",
-      "projectPath": "/home/arthur/RiderProjects/API .Net/API .Net/API .Net.csproj",
-      "packagesPath": "/home/arthur/.nuget/packages/",
-      "outputPath": "/home/arthur/RiderProjects/API .Net/API .Net/obj/",
+      "projectPath": "C:\\Users\\felip\\OneDrive\\Área de Trabalho\\.Net\\API .Net.csproj",
+      "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\felip\\OneDrive\\Área de Trabalho\\.Net\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/arthur/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\felip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "/usr/lib/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3830,7 +3831,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net9.0": {
@@ -3885,7 +3886,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.108/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
