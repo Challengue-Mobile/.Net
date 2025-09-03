@@ -1,7 +1,7 @@
 namespace API_.Net.DTOs
 {
     // DTO para exibir informações de beacon (Entity -> API)
-    public class BeaconDTO
+    public class BeaconDto
     {
         public int ID_BEACON { get; set; }
         public string UUID { get; set; } = string.Empty;

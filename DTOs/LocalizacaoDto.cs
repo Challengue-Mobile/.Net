@@ -3,7 +3,7 @@ using System;
 namespace API_.Net.DTOs
 {
     /// <summary>DTO de resposta (Entity → API) para Localização</summary>
-    public class LocalizacaoDTO
+    public class LocalizacaoDto
     {
         public int ID_LOCALIZACAO { get; set; }
         public decimal POSICAO_X { get; set; }

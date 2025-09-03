@@ -38,10 +38,10 @@ namespace API.Net.Controllers
         [SwaggerOperation(Summary = "Lista todos os beacons",
                           Description = "Obtém uma lista de todos os beacons cadastrados no sistema")]
         [SwaggerResponseExample(StatusCodes.Status200OK, typeof(BeaconsListResponseExample))]
-        public async Task<ActionResult<IEnumerable<BeaconDTO>>> GetBeacons()
+        public async Task<ActionResult<IEnumerable<BeaconDto>>> GetBeacons()
         {
             var entities = await _context.Beacons.AsNoTracking().ToListAsync();
-            var dtos = _mapper.Map<IEnumerable<BeaconDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<BeaconDto>>(entities);
             return Ok(dtos);
         }
 
@@ -53,12 +53,12 @@ namespace API.Net.Controllers
                           Description = "Busca e retorna informações detalhadas de um beacon específico")]
         [SwaggerResponseExample(StatusCodes.Status200OK, typeof(BeaconResponseExample))]
         [SwaggerResponseExample(StatusCodes.Status404NotFound, typeof(NotFoundResponseExample))]
-        public async Task<ActionResult<BeaconDTO>> GetBeacon(int id)
+        public async Task<ActionResult<BeaconDto>> GetBeacon(int id)
         {
             var entity = await _context.Beacons.AsNoTracking()
                                                .FirstOrDefaultAsync(b => b.ID_BEACON == id);
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<BeaconDTO>(entity));
+            return Ok(_mapper.Map<BeaconDto>(entity));
         }
 
         /// <summary>Busca beacons associados a uma moto específica</summary>
@@ -67,12 +67,12 @@ namespace API.Net.Controllers
         [SwaggerOperation(Summary = "Busca beacons por moto",
                           Description = "Obtém todos os beacons associados a uma moto específica")]
         [SwaggerResponseExample(StatusCodes.Status200OK, typeof(BeaconsListResponseExample))]
-        public async Task<ActionResult<IEnumerable<BeaconDTO>>> GetBeaconsByMoto(int motoId)
+        public async Task<ActionResult<IEnumerable<BeaconDto>>> GetBeaconsByMoto(int motoId)
         {
             var entities = await _context.Beacons.AsNoTracking()
                                                  .Where(b => b.ID_MOTO == motoId)
                                                  .ToListAsync();
-            return Ok(_mapper.Map<IEnumerable<BeaconDTO>>(entities));
+            return Ok(_mapper.Map<IEnumerable<BeaconDto>>(entities));
         }
 
         /// <summary>Busca um beacon pelo seu UUID</summary>
@@ -83,12 +83,12 @@ namespace API.Net.Controllers
                           Description = "Localiza um beacon usando seu UUID como critério de busca")]
         [SwaggerResponseExample(StatusCodes.Status200OK, typeof(BeaconResponseExample))]
         [SwaggerResponseExample(StatusCodes.Status404NotFound, typeof(NotFoundResponseExample))]
-        public async Task<ActionResult<BeaconDTO>> GetBeaconByUuid(string uuid)
+        public async Task<ActionResult<BeaconDto>> GetBeaconByUuid(string uuid)
         {
             var entity = await _context.Beacons.AsNoTracking()
                                                .FirstOrDefaultAsync(b => b.UUID == uuid);
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<BeaconDTO>(entity));
+            return Ok(_mapper.Map<BeaconDto>(entity));
         }
 
         /// <summary>Cadastra um novo beacon</summary>
@@ -100,7 +100,7 @@ namespace API.Net.Controllers
         [SwaggerRequestExample(typeof(CreateBeaconDTO), typeof(BeaconRequestExample))]
         [SwaggerResponseExample(StatusCodes.Status201Created, typeof(BeaconResponseExample))]
         [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(ValidationErrorResponseExample))]
-        public async Task<ActionResult<BeaconDTO>> PostBeacon([FromBody] CreateBeaconDTO dto)
+        public async Task<ActionResult<BeaconDto>> PostBeacon([FromBody] CreateBeaconDTO dto)
         {
             // opcional: var entity = _mapper.Map<Beacon>(dto);
             var entity = new Beacon
@@ -114,7 +114,7 @@ namespace API.Net.Controllers
             _context.Beacons.Add(entity);
             await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<BeaconDTO>(entity);
+            var result = _mapper.Map<BeaconDto>(entity);
             return CreatedAtAction(nameof(GetBeacon), new { id = entity.ID_BEACON }, result);
         }
 
@@ -126,7 +126,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(Summary = "Atualiza um beacon",
                           Description = "Atualiza informações de um beacon existente no sistema")]
         [SwaggerRequestExample(typeof(UpdateBeaconDTO), typeof(BeaconRequestExample))]
-        public async Task<ActionResult<BeaconDTO>> PutBeacon(int id, [FromBody] UpdateBeaconDTO dto)
+        public async Task<ActionResult<BeaconDto>> PutBeacon(int id, [FromBody] UpdateBeaconDTO dto)
         {
             var entity = await _context.Beacons.FirstOrDefaultAsync(b => b.ID_BEACON == id);
             if (entity is null) return NotFound();
@@ -138,7 +138,7 @@ namespace API.Net.Controllers
             if (dto.ID_MODELO_BEACON.HasValue)      entity.ID_MODELO_BEACON = dto.ID_MODELO_BEACON.Value;
 
             await _context.SaveChangesAsync();
-            return Ok(_mapper.Map<BeaconDTO>(entity));
+            return Ok(_mapper.Map<BeaconDto>(entity));
         }
 
         /// <summary>Remove um beacon do sistema</summary>

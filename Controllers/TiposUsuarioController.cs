@@ -36,13 +36,13 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Lista todos os tipos de usuário",
             Description = "Obtém uma lista de todos os tipos de usuário cadastrados no sistema")]
-        public async Task<ActionResult<IEnumerable<TipoUsuarioDTO>>> GetTiposUsuario()
+        public async Task<ActionResult<IEnumerable<TipoUsuarioDto>>> GetTiposUsuario()
         {
             var entities = await _context.TiposUsuario
                                          .AsNoTracking()
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<TipoUsuarioDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<TipoUsuarioDto>>(entities);
             return Ok(dtos);
         }
 
@@ -53,14 +53,14 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Obtém um tipo de usuário pelo ID",
             Description = "Busca e retorna informações detalhadas de um tipo de usuário específico")]
-        public async Task<ActionResult<TipoUsuarioDTO>> GetTipoUsuario(int id)
+        public async Task<ActionResult<TipoUsuarioDto>> GetTipoUsuario(int id)
         {
             var entity = await _context.TiposUsuario
                                        .AsNoTracking()
                                        .FirstOrDefaultAsync(t => t.ID_TIPO_USUARIO == id);
 
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<TipoUsuarioDTO>(entity));
+            return Ok(_mapper.Map<TipoUsuarioDto>(entity));
         }
 
         /// <summary>Cadastra um novo tipo de usuário</summary>
@@ -70,14 +70,14 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Cadastra um novo tipo de usuário",
             Description = "Cria um novo registro de tipo de usuário no sistema")]
-        public async Task<ActionResult<TipoUsuarioDTO>> PostTipoUsuario([FromBody] CreateTipoUsuarioDTO dto)
+        public async Task<ActionResult<TipoUsuarioDto>> PostTipoUsuario([FromBody] CreateTipoUsuarioDTO dto)
         {
             var entity = _mapper.Map<TipoUsuario>(dto);
 
             _context.TiposUsuario.Add(entity);
             await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<TipoUsuarioDTO>(entity);
+            var result = _mapper.Map<TipoUsuarioDto>(entity);
             return CreatedAtAction(nameof(GetTipoUsuario), new { id = entity.ID_TIPO_USUARIO }, result);
         }
 
@@ -88,7 +88,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Atualiza um tipo de usuário",
             Description = "Atualiza informações de um tipo de usuário existente no sistema")]
-        public async Task<ActionResult<TipoUsuarioDTO>> PutTipoUsuario(int id, [FromBody] UpdateTipoUsuarioDTO dto)
+        public async Task<ActionResult<TipoUsuarioDto>> PutTipoUsuario(int id, [FromBody] UpdateTipoUsuarioDTO dto)
         {
             var entity = await _context.TiposUsuario.FirstOrDefaultAsync(t => t.ID_TIPO_USUARIO == id);
             if (entity is null) return NotFound();
@@ -96,7 +96,7 @@ namespace API.Net.Controllers
             _mapper.Map(dto, entity);
             await _context.SaveChangesAsync();
 
-            return Ok(_mapper.Map<TipoUsuarioDTO>(entity));
+            return Ok(_mapper.Map<TipoUsuarioDto>(entity));
         }
 
         /// <summary>Remove um tipo de usuário do sistema</summary>

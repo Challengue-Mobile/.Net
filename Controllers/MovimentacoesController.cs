@@ -38,13 +38,13 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todas as movimentações",
                           Description = "Obtém todas as movimentações registradas no sistema")]
-        public async Task<ActionResult<IEnumerable<MovimentacaoDTO>>> GetMovimentacoes()
+        public async Task<ActionResult<IEnumerable<MovimentacaoDto>>> GetMovimentacoes()
         {
             var entities = await _context.Movimentacoes
                                          .AsNoTracking()
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<MovimentacaoDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<MovimentacaoDto>>(entities);
             return Ok(dtos);
         }
 
@@ -54,14 +54,14 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Obtém uma movimentação pelo ID",
                           Description = "Retorna detalhes de uma movimentação específica")]
-        public async Task<ActionResult<MovimentacaoDTO>> GetMovimentacao(int id)
+        public async Task<ActionResult<MovimentacaoDto>> GetMovimentacao(int id)
         {
             var entity = await _context.Movimentacoes
                                        .AsNoTracking()
                                        .FirstOrDefaultAsync(m => m.ID_MOVIMENTACAO == id);
 
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<MovimentacaoDTO>(entity));
+            return Ok(_mapper.Map<MovimentacaoDto>(entity));
         }
 
         /// <summary>Busca movimentações de uma moto específica</summary>
@@ -69,7 +69,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Busca movimentações por moto",
                           Description = "Histórico de movimentações de uma moto, mais recentes primeiro")]
-        public async Task<ActionResult<IEnumerable<MovimentacaoDTO>>> GetMovimentacoesByMoto(int motoId)
+        public async Task<ActionResult<IEnumerable<MovimentacaoDto>>> GetMovimentacoesByMoto(int motoId)
         {
             var entities = await _context.Movimentacoes
                                          .AsNoTracking()
@@ -77,7 +77,7 @@ namespace API.Net.Controllers
                                          .OrderByDescending(m => m.DATA_MOVIMENTACAO)
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<MovimentacaoDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<MovimentacaoDto>>(entities);
             return Ok(dtos);
         }
 
@@ -87,7 +87,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Registra uma nova movimentação",
                           Description = "Cria um registro de movimentação de moto")]
-        public async Task<ActionResult<MovimentacaoDTO>> PostMovimentacao([FromBody] CreateMovimentacaoDTO dto)
+        public async Task<ActionResult<MovimentacaoDto>> PostMovimentacao([FromBody] CreateMovimentacaoDTO dto)
         {
             var entity = _mapper.Map<Movimentacao>(dto);
             entity.DATA_MOVIMENTACAO = DateTime.Now;
@@ -95,7 +95,7 @@ namespace API.Net.Controllers
             _context.Movimentacoes.Add(entity);
             await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<MovimentacaoDTO>(entity);
+            var result = _mapper.Map<MovimentacaoDto>(entity);
             return CreatedAtAction(nameof(GetMovimentacao), new { id = entity.ID_MOVIMENTACAO }, result);
         }
 
@@ -105,7 +105,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza uma movimentação",
                           Description = "Atualiza informações de uma movimentação existente")]
-        public async Task<ActionResult<MovimentacaoDTO>> PutMovimentacao(int id, [FromBody] UpdateMovimentacaoDTO dto)
+        public async Task<ActionResult<MovimentacaoDto>> PutMovimentacao(int id, [FromBody] UpdateMovimentacaoDTO dto)
         {
             var entity = await _context.Movimentacoes.FirstOrDefaultAsync(m => m.ID_MOVIMENTACAO == id);
             if (entity is null) return NotFound();
@@ -113,7 +113,7 @@ namespace API.Net.Controllers
             _mapper.Map(dto, entity);
             await _context.SaveChangesAsync();
 
-            return Ok(_mapper.Map<MovimentacaoDTO>(entity));
+            return Ok(_mapper.Map<MovimentacaoDto>(entity));
         }
 
         /// <summary>Remove uma movimentação do sistema</summary>

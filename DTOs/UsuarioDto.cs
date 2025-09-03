@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace API_.Net.DTOs
 {
     // DTO de saída (Entity -> API)
-    public class UsuarioDTO
+    public class UsuarioDto
     {
         public int ID_USUARIO { get; set; }
         public string NOME { get; set; } = string.Empty;

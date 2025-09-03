@@ -3,7 +3,7 @@
 namespace API_.Net.DTOs
 {
     /// <summary>DTO de resposta (Entity → API) para funcionário</summary>
-    public class FuncionarioDTO
+    public class FuncionarioDto
     {
         public int ID_FUNCIONARIO { get; set; }
 

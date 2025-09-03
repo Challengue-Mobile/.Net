@@ -36,10 +36,10 @@ namespace API.Net.Controllers
         [SwaggerOperation(Summary = "Lista todos os clientes",
                           Description = "Obtém uma lista de todos os clientes cadastrados no sistema")]
         [SwaggerResponseExample(StatusCodes.Status200OK, typeof(ClientesListResponseExample))]
-        public async Task<ActionResult<IEnumerable<ClienteDTO>>> GetClientes()
+        public async Task<ActionResult<IEnumerable<ClienteDto>>> GetClientes()
         {
             var entities = await _context.Clientes.AsNoTracking().ToListAsync();
-            return Ok(_mapper.Map<IEnumerable<ClienteDTO>>(entities));
+            return Ok(_mapper.Map<IEnumerable<ClienteDto>>(entities));
         }
 
         [HttpGet("{id:int}")]
@@ -49,12 +49,12 @@ namespace API.Net.Controllers
                           Description = "Busca e retorna informações detalhadas de um cliente específico")]
         [SwaggerResponseExample(StatusCodes.Status200OK, typeof(ClienteResponseExample))]
         [SwaggerResponseExample(StatusCodes.Status404NotFound, typeof(NotFoundResponseExample))]
-        public async Task<ActionResult<ClienteDTO>> GetCliente(int id)
+        public async Task<ActionResult<ClienteDto>> GetCliente(int id)
         {
             var entity = await _context.Clientes.AsNoTracking()
                                 .FirstOrDefaultAsync(c => c.ID_CLIENTE == id);
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<ClienteDTO>(entity));
+            return Ok(_mapper.Map<ClienteDto>(entity));
         }
 
         [HttpGet("cpf/{cpf}")]
@@ -64,12 +64,12 @@ namespace API.Net.Controllers
                           Description = "Localiza um cliente usando seu CPF como critério de busca")]
         [SwaggerResponseExample(StatusCodes.Status200OK, typeof(ClienteResponseExample))]
         [SwaggerResponseExample(StatusCodes.Status404NotFound, typeof(NotFoundResponseExample))]
-        public async Task<ActionResult<ClienteDTO>> GetClienteByCpf(string cpf)
+        public async Task<ActionResult<ClienteDto>> GetClienteByCpf(string cpf)
         {
             var entity = await _context.Clientes.AsNoTracking()
                                 .FirstOrDefaultAsync(c => c.CPF == cpf);
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<ClienteDTO>(entity));
+            return Ok(_mapper.Map<ClienteDto>(entity));
         }
 
         [HttpPost]
@@ -80,7 +80,7 @@ namespace API.Net.Controllers
         [SwaggerRequestExample(typeof(CreateClienteDTO), typeof(ClienteRequestExample))]
         [SwaggerResponseExample(StatusCodes.Status201Created, typeof(ClienteResponseExample))]
         [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(ValidationErrorResponseExample))]
-        public async Task<ActionResult<ClienteDTO>> PostCliente([FromBody] CreateClienteDTO dto)
+        public async Task<ActionResult<ClienteDto>> PostCliente([FromBody] CreateClienteDTO dto)
         {
             var entity = _mapper.Map<Cliente>(dto);
             entity.DATA_CADASTRO = DateTime.Now;
@@ -88,7 +88,7 @@ namespace API.Net.Controllers
             _context.Clientes.Add(entity);
             await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<ClienteDTO>(entity);
+            var result = _mapper.Map<ClienteDto>(entity);
             return CreatedAtAction(nameof(GetCliente), new { id = entity.ID_CLIENTE }, result);
         }
 
@@ -99,7 +99,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(Summary = "Atualiza um cliente",
                           Description = "Atualiza informações de um cliente existente no sistema")]
         [SwaggerRequestExample(typeof(UpdateClienteDTO), typeof(ClienteRequestExample))]
-        public async Task<ActionResult<ClienteDTO>> PutCliente(int id, [FromBody] UpdateClienteDTO dto)
+        public async Task<ActionResult<ClienteDto>> PutCliente(int id, [FromBody] UpdateClienteDTO dto)
         {
             var entity = await _context.Clientes.FirstOrDefaultAsync(c => c.ID_CLIENTE == id);
             if (entity is null) return NotFound();
@@ -107,7 +107,7 @@ namespace API.Net.Controllers
             _mapper.Map(dto, entity); // aplica apenas campos enviados (mapeamento ignora null)
             await _context.SaveChangesAsync();
 
-            return Ok(_mapper.Map<ClienteDTO>(entity));
+            return Ok(_mapper.Map<ClienteDto>(entity));
         }
 
         [HttpDelete("{id:int}")]

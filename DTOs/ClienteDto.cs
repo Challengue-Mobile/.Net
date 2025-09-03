@@ -3,7 +3,7 @@ using System;
 namespace API_.Net.DTOs
 {
     // DTO para exibir informações de cliente (Entity -> API)
-    public class ClienteDTO
+    public class ClienteDto
     {
         public int ID_CLIENTE { get; set; }
         public string NOME { get; set; } = string.Empty;

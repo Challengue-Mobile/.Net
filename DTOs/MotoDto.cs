@@ -1,7 +1,7 @@
 namespace API_.Net.DTOs
 {
     /// <summary>DTO de resposta (Entity → API) para Moto</summary>
-    public class MotoDTO
+    public class MotoDto
     {
         public int ID_MOTO { get; set; }
         public string PLACA { get; set; } = string.Empty;

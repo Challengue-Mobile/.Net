@@ -10,23 +10,23 @@ namespace API_.Net.AutoMapper
         public MappingProfile()
         {
             // -------- Entity -> DTO (saída) --------
-            CreateMap<Beacon, BeaconDTO>();
-            CreateMap<Cliente, ClienteDTO>();
-            CreateMap<Localizacao, LocalizacaoDTO>();
-            CreateMap<ModeloMoto, ModeloMotoDTO>();
-            CreateMap<Moto, MotoDTO>();
-            CreateMap<Movimentacao, MovimentacaoDTO>();
-            CreateMap<TipoMovimentacao, TipoMovimentacaoDTO>();
-            CreateMap<Usuario, UsuarioDTO>();
+            CreateMap<Beacon, BeaconDto>();
+            CreateMap<Cliente, ClienteDto>();
+            CreateMap<Localizacao, LocalizacaoDto>();
+            CreateMap<ModeloMoto, ModeloMotoDto>();
+            CreateMap<Moto, MotoDto>();
+            CreateMap<Movimentacao, MovimentacaoDto>();
+            CreateMap<TipoMovimentacao, TipoMovimentacaoDto>();
+            CreateMap<Usuario, UsuarioDto>();
 
             // comuns/adicionais
             CreateMap<Patio, PatioDTO>();
-            CreateMap<ModeloBeacon, ModeloBeaconDTO>();
-            CreateMap<RegistroBateria, RegistroBateriaDTO>();
-            CreateMap<TipoUsuario, TipoUsuarioDTO>();
-            CreateMap<Departamento, DepartamentoDTO>();
+            CreateMap<ModeloBeacon, ModeloBeaconDto>();
+            CreateMap<RegistroBateria, RegistroBateriaDto>();
+            CreateMap<TipoUsuario, TipoUsuarioDto>();
+            CreateMap<Departamento, DepartamentoDto>();
             CreateMap<Filial, FilialDTO>();
-            CreateMap<Funcionario, FuncionarioDTO>();
+            CreateMap<Funcionario, FuncionarioDto>();
 
             // -------- Create DTO -> Entity (entrada) --------
             CreateMap<CreateBeaconDTO, Beacon>();

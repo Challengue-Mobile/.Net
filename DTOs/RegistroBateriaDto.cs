@@ -2,7 +2,7 @@
 
 namespace API_.Net.DTOs
 {
-    public class RegistroBateriaDTO
+    public class RegistroBateriaDto
     {
         public int ID_REGISTRO { get; set; }
         public int NIVEL_BATERIA { get; set; }

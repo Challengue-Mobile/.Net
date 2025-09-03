@@ -38,13 +38,13 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Lista todos os modelos de beacon",
             Description = "Obtém uma lista de todos os modelos de beacon cadastrados no sistema")]
-        public async Task<ActionResult<IEnumerable<ModeloBeaconDTO>>> GetModelosBeacon()
+        public async Task<ActionResult<IEnumerable<ModeloBeaconDto>>> GetModelosBeacon()
         {
             var entities = await _context.ModelosBeacon
                                          .AsNoTracking()
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<ModeloBeaconDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<ModeloBeaconDto>>(entities);
             return Ok(dtos);
         }
 
@@ -55,14 +55,14 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Obtém um modelo de beacon pelo ID",
             Description = "Busca e retorna informações detalhadas de um modelo de beacon específico")]
-        public async Task<ActionResult<ModeloBeaconDTO>> GetModeloBeacon(int id)
+        public async Task<ActionResult<ModeloBeaconDto>> GetModeloBeacon(int id)
         {
             var entity = await _context.ModelosBeacon
                                        .AsNoTracking()
                                        .FirstOrDefaultAsync(m => m.ID_MODELO_BEACON == id);
 
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<ModeloBeaconDTO>(entity));
+            return Ok(_mapper.Map<ModeloBeaconDto>(entity));
         }
 
         /// <summary>Cadastra um novo modelo de beacon</summary>
@@ -72,14 +72,14 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Cadastra um novo modelo de beacon",
             Description = "Cria um novo registro de modelo de beacon no sistema")]
-        public async Task<ActionResult<ModeloBeaconDTO>> PostModeloBeacon([FromBody] CreateModeloBeaconDTO dto)
+        public async Task<ActionResult<ModeloBeaconDto>> PostModeloBeacon([FromBody] CreateModeloBeaconDTO dto)
         {
             var entity = _mapper.Map<ModeloBeacon>(dto);
 
             _context.ModelosBeacon.Add(entity);
             await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<ModeloBeaconDTO>(entity);
+            var result = _mapper.Map<ModeloBeaconDto>(entity);
             return CreatedAtAction(nameof(GetModeloBeacon), new { id = entity.ID_MODELO_BEACON }, result);
         }
 
@@ -90,7 +90,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Atualiza um modelo de beacon",
             Description = "Atualiza informações de um modelo de beacon existente no sistema")]
-        public async Task<ActionResult<ModeloBeaconDTO>> PutModeloBeacon(int id, [FromBody] UpdateModeloBeaconDTO dto)
+        public async Task<ActionResult<ModeloBeaconDto>> PutModeloBeacon(int id, [FromBody] UpdateModeloBeaconDTO dto)
         {
             var entity = await _context.ModelosBeacon.FirstOrDefaultAsync(m => m.ID_MODELO_BEACON == id);
             if (entity is null) return NotFound();
@@ -98,7 +98,7 @@ namespace API.Net.Controllers
             _mapper.Map(dto, entity);
             await _context.SaveChangesAsync();
 
-            return Ok(_mapper.Map<ModeloBeaconDTO>(entity));
+            return Ok(_mapper.Map<ModeloBeaconDto>(entity));
         }
 
         /// <summary>Remove um modelo de beacon do sistema</summary>

@@ -39,13 +39,13 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Lista todos os registros de bateria",
             Description = "Obtém uma lista de todos os registros de nível de bateria cadastrados no sistema")]
-        public async Task<ActionResult<IEnumerable<RegistroBateriaDTO>>> GetRegistrosBateria()
+        public async Task<ActionResult<IEnumerable<RegistroBateriaDto>>> GetRegistrosBateria()
         {
             var entities = await _context.RegistrosBateria
                                          .AsNoTracking()
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<RegistroBateriaDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<RegistroBateriaDto>>(entities);
             return Ok(dtos);
         }
 
@@ -56,14 +56,14 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Obtém um registro de bateria pelo ID",
             Description = "Busca e retorna informações detalhadas de um registro de bateria específico")]
-        public async Task<ActionResult<RegistroBateriaDTO>> GetRegistroBateria(int id)
+        public async Task<ActionResult<RegistroBateriaDto>> GetRegistroBateria(int id)
         {
             var entity = await _context.RegistrosBateria
                                        .AsNoTracking()
                                        .FirstOrDefaultAsync(r => r.ID_REGISTRO == id);
 
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<RegistroBateriaDTO>(entity));
+            return Ok(_mapper.Map<RegistroBateriaDto>(entity));
         }
 
         /// <summary>Busca registros de bateria de um beacon específico</summary>
@@ -72,7 +72,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Busca registros de bateria por beacon",
             Description = "Obtém o histórico de níveis de bateria de um beacon, ordenado do mais recente para o mais antigo")]
-        public async Task<ActionResult<IEnumerable<RegistroBateriaDTO>>> GetRegistrosByBeacon(int beaconId)
+        public async Task<ActionResult<IEnumerable<RegistroBateriaDto>>> GetRegistrosByBeacon(int beaconId)
         {
             var entities = await _context.RegistrosBateria
                                          .AsNoTracking()
@@ -80,7 +80,7 @@ namespace API.Net.Controllers
                                          .OrderByDescending(rb => rb.DATA_HORA)
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<RegistroBateriaDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<RegistroBateriaDto>>(entities);
             return Ok(dtos);
         }
 
@@ -91,7 +91,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Registra um novo nível de bateria",
             Description = "Cria um novo registro de nível de bateria para um beacon")]
-        public async Task<ActionResult<RegistroBateriaDTO>> PostRegistroBateria([FromBody] CreateRegistroBateriaDTO dto)
+        public async Task<ActionResult<RegistroBateriaDto>> PostRegistroBateria([FromBody] CreateRegistroBateriaDTO dto)
         {
             var entity = _mapper.Map<RegistroBateria>(dto);
             entity.DATA_HORA = DateTime.Now;
@@ -99,7 +99,7 @@ namespace API.Net.Controllers
             _context.RegistrosBateria.Add(entity);
             await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<RegistroBateriaDTO>(entity);
+            var result = _mapper.Map<RegistroBateriaDto>(entity);
             return CreatedAtAction(nameof(GetRegistroBateria), new { id = entity.ID_REGISTRO }, result);
         }
 
@@ -110,7 +110,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Atualiza um registro de bateria",
             Description = "Atualiza informações de um registro de bateria existente")]
-        public async Task<ActionResult<RegistroBateriaDTO>> PutRegistroBateria(int id, [FromBody] UpdateRegistroBateriaDTO dto)
+        public async Task<ActionResult<RegistroBateriaDto>> PutRegistroBateria(int id, [FromBody] UpdateRegistroBateriaDTO dto)
         {
             var entity = await _context.RegistrosBateria.FirstOrDefaultAsync(r => r.ID_REGISTRO == id);
             if (entity is null) return NotFound();
@@ -118,7 +118,7 @@ namespace API.Net.Controllers
             _mapper.Map(dto, entity);
             await _context.SaveChangesAsync();
 
-            return Ok(_mapper.Map<RegistroBateriaDTO>(entity));
+            return Ok(_mapper.Map<RegistroBateriaDto>(entity));
         }
 
         /// <summary>Remove um registro de bateria do sistema</summary>

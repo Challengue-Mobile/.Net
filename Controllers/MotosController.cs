@@ -38,13 +38,13 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todas as motos",
                           Description = "Obtém uma lista de todas as motos cadastradas no sistema")]
-        public async Task<ActionResult<IEnumerable<MotoDTO>>> GetMotos()
+        public async Task<ActionResult<IEnumerable<MotoDto>>> GetMotos()
         {
             var entities = await _context.Motos
                                          .AsNoTracking()
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<MotoDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<MotoDto>>(entities);
             return Ok(dtos);
         }
 
@@ -54,14 +54,14 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Obtém uma moto pelo ID",
                           Description = "Busca e retorna informações detalhadas de uma moto específica")]
-        public async Task<ActionResult<MotoDTO>> GetMoto(int id)
+        public async Task<ActionResult<MotoDto>> GetMoto(int id)
         {
             var entity = await _context.Motos
                                        .AsNoTracking()
                                        .FirstOrDefaultAsync(m => m.ID_MOTO == id);
 
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<MotoDTO>(entity));
+            return Ok(_mapper.Map<MotoDto>(entity));
         }
 
         /// <summary>Busca motos associadas a um cliente específico</summary>
@@ -69,14 +69,14 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Busca motos por cliente",
                           Description = "Obtém todas as motos associadas a um cliente específico")]
-        public async Task<ActionResult<IEnumerable<MotoDTO>>> GetMotosByCliente(int clienteId)
+        public async Task<ActionResult<IEnumerable<MotoDto>>> GetMotosByCliente(int clienteId)
         {
             var entities = await _context.Motos
                                          .AsNoTracking()
                                          .Where(m => m.ID_CLIENTE == clienteId)
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<MotoDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<MotoDto>>(entities);
             return Ok(dtos);
         }
 
@@ -86,14 +86,14 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Busca moto pela placa",
                           Description = "Localiza uma moto usando sua placa como critério de busca")]
-        public async Task<ActionResult<MotoDTO>> GetMotoByPlaca(string placa)
+        public async Task<ActionResult<MotoDto>> GetMotoByPlaca(string placa)
         {
             var entity = await _context.Motos
                                        .AsNoTracking()
                                        .FirstOrDefaultAsync(m => m.PLACA == placa);
 
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<MotoDTO>(entity));
+            return Ok(_mapper.Map<MotoDto>(entity));
         }
 
         /// <summary>Cadastra uma nova moto</summary>
@@ -102,7 +102,7 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra uma nova moto",
                           Description = "Cria um novo registro de moto no sistema")]
-        public async Task<ActionResult<MotoDTO>> PostMoto([FromBody] CreateMotoDTO dto)
+        public async Task<ActionResult<MotoDto>> PostMoto([FromBody] CreateMotoDTO dto)
         {
             var entity = _mapper.Map<Moto>(dto);
             entity.DATA_REGISTRO = DateTime.Now;
@@ -110,7 +110,7 @@ namespace API_.Net.Controllers
             _context.Motos.Add(entity);
             await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<MotoDTO>(entity);
+            var result = _mapper.Map<MotoDto>(entity);
             return CreatedAtAction(nameof(GetMoto), new { id = entity.ID_MOTO }, result);
         }
 
@@ -120,7 +120,7 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza uma moto",
                           Description = "Atualiza informações de uma moto existente no sistema")]
-        public async Task<ActionResult<MotoDTO>> PutMoto(int id, [FromBody] UpdateMotoDTO dto)
+        public async Task<ActionResult<MotoDto>> PutMoto(int id, [FromBody] UpdateMotoDTO dto)
         {
             var entity = await _context.Motos.FirstOrDefaultAsync(m => m.ID_MOTO == id);
             if (entity is null) return NotFound();
@@ -128,7 +128,7 @@ namespace API_.Net.Controllers
             _mapper.Map(dto, entity);
             await _context.SaveChangesAsync();
 
-            return Ok(_mapper.Map<MotoDTO>(entity));
+            return Ok(_mapper.Map<MotoDto>(entity));
         }
 
         /// <summary>Remove uma moto do sistema</summary>

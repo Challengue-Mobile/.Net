@@ -37,13 +37,13 @@ namespace API_.Net.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todos os usuários", Description = "Obtém todos os usuários cadastrados no sistema")]
-        public async Task<ActionResult<IEnumerable<UsuarioDTO>>> GetUsuarios()
+        public async Task<ActionResult<IEnumerable<UsuarioDto>>> GetUsuarios()
         {
             var entities = await _context.Usuarios
                                          .AsNoTracking()
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<UsuarioDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<UsuarioDto>>(entities);
             return Ok(dtos);
         }
 
@@ -52,28 +52,28 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Obtém um usuário pelo ID", Description = "Retorna um usuário específico")]
-        public async Task<ActionResult<UsuarioDTO>> GetUsuario(int id)
+        public async Task<ActionResult<UsuarioDto>> GetUsuario(int id)
         {
             var entity = await _context.Usuarios
                                        .AsNoTracking()
                                        .FirstOrDefaultAsync(u => u.ID_USUARIO == id);
 
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<UsuarioDTO>(entity));
+            return Ok(_mapper.Map<UsuarioDto>(entity));
         }
 
         /// <summary>Busca usuários por tipo</summary>
         [HttpGet("tipo/{tipoId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Busca usuários por tipo", Description = "Obtém todos os usuários de um tipo específico")]
-        public async Task<ActionResult<IEnumerable<UsuarioDTO>>> GetUsuariosByTipo(int tipoId)
+        public async Task<ActionResult<IEnumerable<UsuarioDto>>> GetUsuariosByTipo(int tipoId)
         {
             var entities = await _context.Usuarios
                                          .AsNoTracking()
                                          .Where(u => u.ID_TIPO_USUARIO == tipoId)
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<UsuarioDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<UsuarioDto>>(entities);
             return Ok(dtos);
         }
 
@@ -82,7 +82,7 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo usuário", Description = "Cria um novo registro de usuário no sistema")]
-        public async Task<ActionResult<UsuarioDTO>> PostUsuario([FromBody] CreateUsuarioDTO dto)
+        public async Task<ActionResult<UsuarioDto>> PostUsuario([FromBody] CreateUsuarioDTO dto)
         {
             var entity = _mapper.Map<Usuario>(dto);
             entity.DATA_CADASTRO = DateTime.Now;
@@ -90,7 +90,7 @@ namespace API_.Net.Controllers
             _context.Usuarios.Add(entity);
             await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<UsuarioDTO>(entity);
+            var result = _mapper.Map<UsuarioDto>(entity);
             return CreatedAtAction(nameof(GetUsuario), new { id = entity.ID_USUARIO }, result);
         }
 
@@ -99,7 +99,7 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um usuário", Description = "Atualiza informações de um usuário existente")]
-        public async Task<ActionResult<UsuarioDTO>> PutUsuario(int id, [FromBody] UpdateUsuarioDTO dto)
+        public async Task<ActionResult<UsuarioDto>> PutUsuario(int id, [FromBody] UpdateUsuarioDTO dto)
         {
             var entity = await _context.Usuarios.FirstOrDefaultAsync(u => u.ID_USUARIO == id);
             if (entity is null) return NotFound();
@@ -107,7 +107,7 @@ namespace API_.Net.Controllers
             _mapper.Map(dto, entity); // aplica somente os campos enviados (se usar .IgnoreNulls no profile)
             await _context.SaveChangesAsync();
 
-            return Ok(_mapper.Map<UsuarioDTO>(entity));
+            return Ok(_mapper.Map<UsuarioDto>(entity));
         }
 
         /// <summary>Remove um usuário do sistema</summary>

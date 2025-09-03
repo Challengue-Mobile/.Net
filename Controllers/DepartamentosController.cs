@@ -35,14 +35,14 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todos os departamentos",
                           Description = "Obtém todos os departamentos cadastrados")]
-        public async Task<ActionResult<IEnumerable<DepartamentoDTO>>> GetDepartamentos()
+        public async Task<ActionResult<IEnumerable<DepartamentoDto>>> GetDepartamentos()
         {
             var entities = await _context.Departamentos
                                          .AsNoTracking()
                                          .Include(d => d.Filial)
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<DepartamentoDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<DepartamentoDto>>(entities);
             return Ok(dtos);
         }
 
@@ -52,7 +52,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Obtém um departamento por ID",
                           Description = "Retorna informações detalhadas de um departamento específico")]
-        public async Task<ActionResult<DepartamentoDTO>> GetDepartamento(int id)
+        public async Task<ActionResult<DepartamentoDto>> GetDepartamento(int id)
         {
             var entity = await _context.Departamentos
                                        .AsNoTracking()
@@ -61,7 +61,7 @@ namespace API.Net.Controllers
 
             if (entity is null) return NotFound();
 
-            return Ok(_mapper.Map<DepartamentoDTO>(entity));
+            return Ok(_mapper.Map<DepartamentoDto>(entity));
         }
 
         /// <summary>Cria um novo departamento</summary>
@@ -70,14 +70,14 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo departamento",
                           Description = "Cria um registro de departamento")]
-        public async Task<ActionResult<DepartamentoDTO>> PostDepartamento([FromBody] CreateDepartamentoDTO dto)
+        public async Task<ActionResult<DepartamentoDto>> PostDepartamento([FromBody] CreateDepartamentoDTO dto)
         {
             var entity = _mapper.Map<Departamento>(dto);
 
             _context.Departamentos.Add(entity);
             await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<DepartamentoDTO>(entity);
+            var result = _mapper.Map<DepartamentoDto>(entity);
             return CreatedAtAction(nameof(GetDepartamento), new { id = entity.ID_DEPARTAMENTO }, result);
         }
 
@@ -87,7 +87,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um departamento",
                           Description = "Atualiza informações de um departamento existente")]
-        public async Task<ActionResult<DepartamentoDTO>> PutDepartamento(int id, [FromBody] UpdateDepartamentoDTO dto)
+        public async Task<ActionResult<DepartamentoDto>> PutDepartamento(int id, [FromBody] UpdateDepartamentoDTO dto)
         {
             var entity = await _context.Departamentos.FirstOrDefaultAsync(d => d.ID_DEPARTAMENTO == id);
             if (entity is null) return NotFound();
@@ -95,7 +95,7 @@ namespace API.Net.Controllers
             _mapper.Map(dto, entity); // aplica somente os campos enviados
             await _context.SaveChangesAsync();
 
-            return Ok(_mapper.Map<DepartamentoDTO>(entity));
+            return Ok(_mapper.Map<DepartamentoDto>(entity));
         }
 
         /// <summary>Exclui um departamento</summary>

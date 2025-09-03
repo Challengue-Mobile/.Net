@@ -3,7 +3,7 @@ using System;
 namespace API_.Net.DTOs
 {
     /// <summary>DTO de resposta (Entity → API) para Movimentação</summary>
-    public class MovimentacaoDTO
+    public class MovimentacaoDto
     {
         public int ID_MOVIMENTACAO { get; set; }
         public DateTime DATA_MOVIMENTACAO { get; set; }

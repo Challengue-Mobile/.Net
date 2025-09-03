@@ -38,13 +38,13 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Lista todos os modelos de motos",
             Description = "Obtém uma lista de todos os modelos de motos cadastrados no sistema")]
-        public async Task<ActionResult<IEnumerable<ModeloMotoDTO>>> GetModelosMotos()
+        public async Task<ActionResult<IEnumerable<ModeloMotoDto>>> GetModelosMotos()
         {
             var entities = await _context.ModelosMotos
                                          .AsNoTracking()
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<ModeloMotoDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<ModeloMotoDto>>(entities);
             return Ok(dtos);
         }
 
@@ -55,14 +55,14 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Obtém um modelo de moto pelo ID",
             Description = "Busca e retorna informações detalhadas de um modelo de moto específico")]
-        public async Task<ActionResult<ModeloMotoDTO>> GetModeloMoto(int id)
+        public async Task<ActionResult<ModeloMotoDto>> GetModeloMoto(int id)
         {
             var entity = await _context.ModelosMotos
                                        .AsNoTracking()
                                        .FirstOrDefaultAsync(m => m.ID_MODELO_MOTO == id);
 
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<ModeloMotoDTO>(entity));
+            return Ok(_mapper.Map<ModeloMotoDto>(entity));
         }
 
         /// <summary>Cadastra um novo modelo de moto</summary>
@@ -72,14 +72,14 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Cadastra um novo modelo de moto",
             Description = "Cria um novo registro de modelo de moto no sistema")]
-        public async Task<ActionResult<ModeloMotoDTO>> PostModeloMoto([FromBody] CreateModeloMotoDTO dto)
+        public async Task<ActionResult<ModeloMotoDto>> PostModeloMoto([FromBody] CreateModeloMotoDTO dto)
         {
             var entity = _mapper.Map<ModeloMoto>(dto);
 
             _context.ModelosMotos.Add(entity);
             await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<ModeloMotoDTO>(entity);
+            var result = _mapper.Map<ModeloMotoDto>(entity);
             return CreatedAtAction(nameof(GetModeloMoto), new { id = entity.ID_MODELO_MOTO }, result);
         }
 
@@ -90,7 +90,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Atualiza um modelo de moto",
             Description = "Atualiza informações de um modelo de moto existente no sistema")]
-        public async Task<ActionResult<ModeloMotoDTO>> PutModeloMoto(int id, [FromBody] UpdateModeloMotoDTO dto)
+        public async Task<ActionResult<ModeloMotoDto>> PutModeloMoto(int id, [FromBody] UpdateModeloMotoDTO dto)
         {
             var entity = await _context.ModelosMotos.FirstOrDefaultAsync(m => m.ID_MODELO_MOTO == id);
             if (entity is null) return NotFound();
@@ -98,7 +98,7 @@ namespace API.Net.Controllers
             _mapper.Map(dto, entity);
             await _context.SaveChangesAsync();
 
-            return Ok(_mapper.Map<ModeloMotoDTO>(entity));
+            return Ok(_mapper.Map<ModeloMotoDto>(entity));
         }
 
         /// <summary>Remove um modelo de moto do sistema</summary>
