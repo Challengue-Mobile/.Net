@@ -3,7 +3,7 @@
 namespace API_.Net.DTOs.Requests
 {
     /// <summary>DTO de criação (API → Entity)</summary>
-    public class CreateFuncionarioDTO
+    public class CreateFuncionarioDto
     {
         [Required]
         public int ID_USUARIO { get; set; }
@@ -13,7 +13,7 @@ namespace API_.Net.DTOs.Requests
     }
 
     /// <summary>DTO de atualização (API → Entity). Campos opcionais para update parcial.</summary>
-    public class UpdateFuncionarioDTO
+    public class UpdateFuncionarioDto
     {
         public int? ID_USUARIO { get; set; }
         public int? ID_DEPARTAMENTO { get; set; }

@@ -102,7 +102,7 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra uma nova moto",
                           Description = "Cria um novo registro de moto no sistema")]
-        public async Task<ActionResult<MotoDto>> PostMoto([FromBody] CreateMotoDTO dto)
+        public async Task<ActionResult<MotoDto>> PostMoto([FromBody] CreateMotoDto dto)
         {
             var entity = _mapper.Map<Moto>(dto);
             entity.DATA_REGISTRO = DateTime.Now;
@@ -120,7 +120,7 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza uma moto",
                           Description = "Atualiza informações de uma moto existente no sistema")]
-        public async Task<ActionResult<MotoDto>> PutMoto(int id, [FromBody] UpdateMotoDTO dto)
+        public async Task<ActionResult<MotoDto>> PutMoto(int id, [FromBody] UpdateMotoDto dto)
         {
             var entity = await _context.Motos.FirstOrDefaultAsync(m => m.ID_MOTO == id);
             if (entity is null) return NotFound();

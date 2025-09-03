@@ -70,7 +70,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo departamento",
                           Description = "Cria um registro de departamento")]
-        public async Task<ActionResult<DepartamentoDto>> PostDepartamento([FromBody] CreateDepartamentoDTO dto)
+        public async Task<ActionResult<DepartamentoDto>> PostDepartamento([FromBody] CreateDepartamentoDto dto)
         {
             var entity = _mapper.Map<Departamento>(dto);
 
@@ -87,7 +87,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um departamento",
                           Description = "Atualiza informações de um departamento existente")]
-        public async Task<ActionResult<DepartamentoDto>> PutDepartamento(int id, [FromBody] UpdateDepartamentoDTO dto)
+        public async Task<ActionResult<DepartamentoDto>> PutDepartamento(int id, [FromBody] UpdateDepartamentoDto dto)
         {
             var entity = await _context.Departamentos.FirstOrDefaultAsync(d => d.ID_DEPARTAMENTO == id);
             if (entity is null) return NotFound();

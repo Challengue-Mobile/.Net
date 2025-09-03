@@ -70,7 +70,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Cadastra um novo tipo de usuário",
             Description = "Cria um novo registro de tipo de usuário no sistema")]
-        public async Task<ActionResult<TipoUsuarioDto>> PostTipoUsuario([FromBody] CreateTipoUsuarioDTO dto)
+        public async Task<ActionResult<TipoUsuarioDto>> PostTipoUsuario([FromBody] CreateTipoUsuarioDto dto)
         {
             var entity = _mapper.Map<TipoUsuario>(dto);
 
@@ -88,7 +88,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Atualiza um tipo de usuário",
             Description = "Atualiza informações de um tipo de usuário existente no sistema")]
-        public async Task<ActionResult<TipoUsuarioDto>> PutTipoUsuario(int id, [FromBody] UpdateTipoUsuarioDTO dto)
+        public async Task<ActionResult<TipoUsuarioDto>> PutTipoUsuario(int id, [FromBody] UpdateTipoUsuarioDto dto)
         {
             var entity = await _context.TiposUsuario.FirstOrDefaultAsync(t => t.ID_TIPO_USUARIO == id);
             if (entity is null) return NotFound();

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace API_.Net.DTOs
 {
-    public class BaseResponseDTO<T>
+    public class BaseResponseDto<T>
     {
         public bool Success { get; set; } = true;
         public string Message { get; set; } = string.Empty;

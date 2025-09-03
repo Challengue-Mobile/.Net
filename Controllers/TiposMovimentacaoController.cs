@@ -64,7 +64,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo tipo de movimentação", Description = "Cria um novo registro de tipo")]
-        public async Task<ActionResult<TipoMovimentacaoDto>> PostTipoMovimentacao([FromBody] CreateTipoMovimentacaoDTO dto)
+        public async Task<ActionResult<TipoMovimentacaoDto>> PostTipoMovimentacao([FromBody] CreateTipoMovimentacaoDto dto)
         {
             var entity = _mapper.Map<TipoMovimentacao>(dto);
 
@@ -80,7 +80,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um tipo de movimentação", Description = "Atualiza informações de um tipo existente")]
-        public async Task<ActionResult<TipoMovimentacaoDto>> PutTipoMovimentacao(int id, [FromBody] UpdateTipoMovimentacaoDTO dto)
+        public async Task<ActionResult<TipoMovimentacaoDto>> PutTipoMovimentacao(int id, [FromBody] UpdateTipoMovimentacaoDto dto)
         {
             var entity = await _context.TiposMovimentacao.FirstOrDefaultAsync(t => t.ID_TIPO_MOVIMENTACAO == id);
             if (entity is null) return NotFound();

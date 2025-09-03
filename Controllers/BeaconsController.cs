@@ -97,10 +97,10 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo beacon",
                           Description = "Cria um novo registro de beacon no sistema")]
-        [SwaggerRequestExample(typeof(CreateBeaconDTO), typeof(BeaconRequestExample))]
+        [SwaggerRequestExample(typeof(CreateBeaconDto), typeof(BeaconRequestExample))]
         [SwaggerResponseExample(StatusCodes.Status201Created, typeof(BeaconResponseExample))]
         [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(ValidationErrorResponseExample))]
-        public async Task<ActionResult<BeaconDto>> PostBeacon([FromBody] CreateBeaconDTO dto)
+        public async Task<ActionResult<BeaconDto>> PostBeacon([FromBody] CreateBeaconDto dto)
         {
             // opcional: var entity = _mapper.Map<Beacon>(dto);
             var entity = new Beacon
@@ -125,8 +125,8 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um beacon",
                           Description = "Atualiza informações de um beacon existente no sistema")]
-        [SwaggerRequestExample(typeof(UpdateBeaconDTO), typeof(BeaconRequestExample))]
-        public async Task<ActionResult<BeaconDto>> PutBeacon(int id, [FromBody] UpdateBeaconDTO dto)
+        [SwaggerRequestExample(typeof(UpdateBeaconDto), typeof(BeaconRequestExample))]
+        public async Task<ActionResult<BeaconDto>> PutBeacon(int id, [FromBody] UpdateBeaconDto dto)
         {
             var entity = await _context.Beacons.FirstOrDefaultAsync(b => b.ID_BEACON == id);
             if (entity is null) return NotFound();

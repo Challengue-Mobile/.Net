@@ -77,10 +77,10 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo cliente",
                           Description = "Cria um novo registro de cliente no sistema")]
-        [SwaggerRequestExample(typeof(CreateClienteDTO), typeof(ClienteRequestExample))]
+        [SwaggerRequestExample(typeof(CreateClienteDto), typeof(ClienteRequestExample))]
         [SwaggerResponseExample(StatusCodes.Status201Created, typeof(ClienteResponseExample))]
         [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(ValidationErrorResponseExample))]
-        public async Task<ActionResult<ClienteDto>> PostCliente([FromBody] CreateClienteDTO dto)
+        public async Task<ActionResult<ClienteDto>> PostCliente([FromBody] CreateClienteDto dto)
         {
             var entity = _mapper.Map<Cliente>(dto);
             entity.DATA_CADASTRO = DateTime.Now;
@@ -98,8 +98,8 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um cliente",
                           Description = "Atualiza informações de um cliente existente no sistema")]
-        [SwaggerRequestExample(typeof(UpdateClienteDTO), typeof(ClienteRequestExample))]
-        public async Task<ActionResult<ClienteDto>> PutCliente(int id, [FromBody] UpdateClienteDTO dto)
+        [SwaggerRequestExample(typeof(UpdateClienteDto), typeof(ClienteRequestExample))]
+        public async Task<ActionResult<ClienteDto>> PutCliente(int id, [FromBody] UpdateClienteDto dto)
         {
             var entity = await _context.Clientes.FirstOrDefaultAsync(c => c.ID_CLIENTE == id);
             if (entity is null) return NotFound();

@@ -3,7 +3,7 @@
 namespace API_.Net.DTOs.Requests
 {
     // DTO para criar cliente (API -> Entity)
-    public class CreateClienteDTO
+    public class CreateClienteDto
     {
         [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
@@ -23,7 +23,7 @@ namespace API_.Net.DTOs.Requests
     }
 
     // DTO para atualizar cliente (API -> Entity) – campos opcionais
-    public class UpdateClienteDTO
+    public class UpdateClienteDto
     {
         [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
         public string? NOME { get; set; }

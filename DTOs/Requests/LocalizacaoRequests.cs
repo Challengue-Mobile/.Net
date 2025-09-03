@@ -3,7 +3,7 @@
 namespace API_.Net.DTOs.Requests
 {
     /// <summary>DTO de criação de Localização</summary>
-    public class CreateLocalizacaoDTO
+    public class CreateLocalizacaoDto
     {
         [Required(ErrorMessage = "A posição X é obrigatória")]
         public decimal POSICAO_X { get; set; }
@@ -18,7 +18,7 @@ namespace API_.Net.DTOs.Requests
     }
 
     /// <summary>DTO de atualização de Localização (parcial)</summary>
-    public class UpdateLocalizacaoDTO
+    public class UpdateLocalizacaoDto
     {
         public decimal? POSICAO_X { get; set; }
         public decimal? POSICAO_Y { get; set; }

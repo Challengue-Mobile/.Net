@@ -3,7 +3,7 @@
 namespace API_.Net.DTOs.Requests
 {
     /// <summary>DTO de criação (API → Entity)</summary>
-    public class CreateMotoDTO
+    public class CreateMotoDto
     {
         [Required(ErrorMessage = "A placa é obrigatória")]
         [StringLength(10, ErrorMessage = "A placa não pode ter mais de 10 caracteres")]
@@ -17,7 +17,7 @@ namespace API_.Net.DTOs.Requests
     }
 
     /// <summary>DTO de atualização parcial (API → Entity)</summary>
-    public class UpdateMotoDTO
+    public class UpdateMotoDto
     {
         [StringLength(10, ErrorMessage = "A placa não pode ter mais de 10 caracteres")]
         public string? PLACA { get; set; }

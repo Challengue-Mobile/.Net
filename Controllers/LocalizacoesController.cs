@@ -89,7 +89,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Registra uma nova localização", Description = "Cria um registro de localização de moto")]
-        public async Task<ActionResult<LocalizacaoDto>> PostLocalizacao([FromBody] CreateLocalizacaoDTO dto)
+        public async Task<ActionResult<LocalizacaoDto>> PostLocalizacao([FromBody] CreateLocalizacaoDto dto)
         {
             var entity = _mapper.Map<Localizacao>(dto);
             entity.DATA_HORA = DateTime.Now;
@@ -110,7 +110,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza uma localização", Description = "Atualiza informações de uma localização existente")]
-        public async Task<ActionResult<LocalizacaoDto>> PutLocalizacao(int id, [FromBody] UpdateLocalizacaoDTO dto)
+        public async Task<ActionResult<LocalizacaoDto>> PutLocalizacao(int id, [FromBody] UpdateLocalizacaoDto dto)
         {
             var entity = await _context.Localizacoes.FirstOrDefaultAsync(l => l.ID_LOCALIZACAO == id);
             if (entity is null) return NotFound();

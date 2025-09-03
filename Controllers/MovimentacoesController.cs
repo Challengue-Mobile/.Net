@@ -87,7 +87,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Registra uma nova movimentação",
                           Description = "Cria um registro de movimentação de moto")]
-        public async Task<ActionResult<MovimentacaoDto>> PostMovimentacao([FromBody] CreateMovimentacaoDTO dto)
+        public async Task<ActionResult<MovimentacaoDto>> PostMovimentacao([FromBody] CreateMovimentacaoDto dto)
         {
             var entity = _mapper.Map<Movimentacao>(dto);
             entity.DATA_MOVIMENTACAO = DateTime.Now;
@@ -105,7 +105,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza uma movimentação",
                           Description = "Atualiza informações de uma movimentação existente")]
-        public async Task<ActionResult<MovimentacaoDto>> PutMovimentacao(int id, [FromBody] UpdateMovimentacaoDTO dto)
+        public async Task<ActionResult<MovimentacaoDto>> PutMovimentacao(int id, [FromBody] UpdateMovimentacaoDto dto)
         {
             var entity = await _context.Movimentacoes.FirstOrDefaultAsync(m => m.ID_MOVIMENTACAO == id);
             if (entity is null) return NotFound();

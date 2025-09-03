@@ -2,13 +2,13 @@
 
 namespace API_.Net.DTOs.Requests
 {
-    public class CreateTipoUsuarioDTO
+    public class CreateTipoUsuarioDto
     {
         [Required, StringLength(50)]
         public string DESCRICAO { get; set; } = default!;
     }
 
-    public class UpdateTipoUsuarioDTO
+    public class UpdateTipoUsuarioDto
     {
         [StringLength(50)]
         public string? DESCRICAO { get; set; }

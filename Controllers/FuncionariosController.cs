@@ -69,7 +69,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo funcionário", Description = "Cria um novo registro de funcionário")]
-        public async Task<ActionResult<FuncionarioDto>> PostFuncionario([FromBody] CreateFuncionarioDTO dto)
+        public async Task<ActionResult<FuncionarioDto>> PostFuncionario([FromBody] CreateFuncionarioDto dto)
         {
             var entity = _mapper.Map<Funcionario>(dto);
 
@@ -85,7 +85,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um funcionário", Description = "Atualiza informações de um funcionário existente")]
-        public async Task<ActionResult<FuncionarioDto>> PutFuncionario(int id, [FromBody] UpdateFuncionarioDTO dto)
+        public async Task<ActionResult<FuncionarioDto>> PutFuncionario(int id, [FromBody] UpdateFuncionarioDto dto)
         {
             var entity = await _context.Funcionarios.FirstOrDefaultAsync(f => f.ID_FUNCIONARIO == id);
             if (entity is null) return NotFound();

@@ -82,7 +82,7 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo usuário", Description = "Cria um novo registro de usuário no sistema")]
-        public async Task<ActionResult<UsuarioDto>> PostUsuario([FromBody] CreateUsuarioDTO dto)
+        public async Task<ActionResult<UsuarioDto>> PostUsuario([FromBody] CreateUsuarioDto dto)
         {
             var entity = _mapper.Map<Usuario>(dto);
             entity.DATA_CADASTRO = DateTime.Now;
@@ -99,7 +99,7 @@ namespace API_.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um usuário", Description = "Atualiza informações de um usuário existente")]
-        public async Task<ActionResult<UsuarioDto>> PutUsuario(int id, [FromBody] UpdateUsuarioDTO dto)
+        public async Task<ActionResult<UsuarioDto>> PutUsuario(int id, [FromBody] UpdateUsuarioDto dto)
         {
             var entity = await _context.Usuarios.FirstOrDefaultAsync(u => u.ID_USUARIO == id);
             if (entity is null) return NotFound();

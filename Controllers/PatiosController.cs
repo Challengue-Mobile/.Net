@@ -87,7 +87,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo pátio",
                           Description = "Cria um novo registro de pátio no sistema")]
-        public async Task<ActionResult<PatioDTO>> PostPatio([FromBody] CreatePatioDTO dto)
+        public async Task<ActionResult<PatioDTO>> PostPatio([FromBody] CreatePatioDto dto)
         {
             var entity = _mapper.Map<Patio>(dto);
 
@@ -104,7 +104,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um pátio",
                           Description = "Atualiza informações de um pátio existente no sistema")]
-        public async Task<ActionResult<PatioDTO>> PutPatio(int id, [FromBody] UpdatePatioDTO dto)
+        public async Task<ActionResult<PatioDTO>> PutPatio(int id, [FromBody] UpdatePatioDto dto)
         {
             var entity = await _context.Patios.FirstOrDefaultAsync(p => p.ID_PATIO == id);
             if (entity is null) return NotFound();

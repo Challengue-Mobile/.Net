@@ -29,38 +29,38 @@ namespace API_.Net.AutoMapper
             CreateMap<Funcionario, FuncionarioDto>();
 
             // -------- Create DTO -> Entity (entrada) --------
-            CreateMap<CreateBeaconDTO, Beacon>();
-            CreateMap<CreateClienteDTO, Cliente>();
-            CreateMap<CreateLocalizacaoDTO, Localizacao>();
-            CreateMap<CreateModeloBeaconDTO, ModeloBeacon>();
-            CreateMap<CreateModeloMotoDTO, ModeloMoto>();
-            CreateMap<CreateMotoDTO, Moto>();
-            CreateMap<CreateMovimentacaoDTO, Movimentacao>();
-            CreateMap<CreatePatioDTO, Patio>();
-            CreateMap<CreateRegistroBateriaDTO, RegistroBateria>();
-            CreateMap<CreateTipoMovimentacaoDTO, TipoMovimentacao>();
-            CreateMap<CreateTipoUsuarioDTO, TipoUsuario>();
-            CreateMap<CreateUsuarioDTO, Usuario>();
-            CreateMap<CreateDepartamentoDTO, Departamento>();
-            CreateMap<CreateFilialDTO, Filial>();
-            CreateMap<CreateFuncionarioDTO, Funcionario>();
+            CreateMap<CreateBeaconDto, Beacon>();
+            CreateMap<CreateClienteDto, Cliente>();
+            CreateMap<CreateLocalizacaoDto, Localizacao>();
+            CreateMap<CreateModeloBeaconDto, ModeloBeacon>();
+            CreateMap<CreateModeloMotoDto, ModeloMoto>();
+            CreateMap<CreateMotoDto, Moto>();
+            CreateMap<CreateMovimentacaoDto, Movimentacao>();
+            CreateMap<CreatePatioDto, Patio>();
+            CreateMap<CreateRegistroBateriaDto, RegistroBateria>();
+            CreateMap<CreateTipoMovimentacaoDto, TipoMovimentacao>();
+            CreateMap<CreateTipoUsuarioDto, TipoUsuario>();
+            CreateMap<CreateUsuarioDto, Usuario>();
+            CreateMap<CreateDepartamentoDto, Departamento>();
+            CreateMap<CreateFilialDto, Filial>();
+            CreateMap<CreateFuncionarioDto, Funcionario>();
 
             // -------- Update DTO -> Entity (ignora nulls) --------
-            CreateMap<UpdateBeaconDTO, Beacon>().IgnoreNulls();
-            CreateMap<UpdateClienteDTO, Cliente>().IgnoreNulls();
-            CreateMap<UpdateLocalizacaoDTO, Localizacao>().IgnoreNulls();
-            CreateMap<UpdateModeloBeaconDTO, ModeloBeacon>().IgnoreNulls();
-            CreateMap<UpdateModeloMotoDTO, ModeloMoto>().IgnoreNulls();
-            CreateMap<UpdateMotoDTO, Moto>().IgnoreNulls();
-            CreateMap<UpdateMovimentacaoDTO, Movimentacao>().IgnoreNulls();
-            CreateMap<UpdatePatioDTO, Patio>().IgnoreNulls();
-            CreateMap<UpdateRegistroBateriaDTO, RegistroBateria>().IgnoreNulls();
-            CreateMap<UpdateTipoMovimentacaoDTO, TipoMovimentacao>().IgnoreNulls();
-            CreateMap<UpdateTipoUsuarioDTO, TipoUsuario>().IgnoreNulls();
-            CreateMap<UpdateUsuarioDTO, Usuario>().IgnoreNulls();
-            CreateMap<UpdateDepartamentoDTO, Departamento>().IgnoreNulls();
-            CreateMap<UpdateFilialDTO, Filial>().IgnoreNulls();
-            CreateMap<UpdateFuncionarioDTO, Funcionario>().IgnoreNulls();
+            CreateMap<UpdateBeaconDto, Beacon>().IgnoreNulls();
+            CreateMap<UpdateClienteDto, Cliente>().IgnoreNulls();
+            CreateMap<UpdateLocalizacaoDto, Localizacao>().IgnoreNulls();
+            CreateMap<UpdateModeloBeaconDto, ModeloBeacon>().IgnoreNulls();
+            CreateMap<UpdateModeloMotoDto, ModeloMoto>().IgnoreNulls();
+            CreateMap<UpdateMotoDto, Moto>().IgnoreNulls();
+            CreateMap<UpdateMovimentacaoDto, Movimentacao>().IgnoreNulls();
+            CreateMap<UpdatePatioDto, Patio>().IgnoreNulls();
+            CreateMap<UpdateRegistroBateriaDto, RegistroBateria>().IgnoreNulls();
+            CreateMap<UpdateTipoMovimentacaoDto, TipoMovimentacao>().IgnoreNulls();
+            CreateMap<UpdateTipoUsuarioDto, TipoUsuario>().IgnoreNulls();
+            CreateMap<UpdateUsuarioDto, Usuario>().IgnoreNulls();
+            CreateMap<UpdateDepartamentoDto, Departamento>().IgnoreNulls();
+            CreateMap<UpdateFilialDto, Filial>().IgnoreNulls();
+            CreateMap<UpdateFuncionarioDto, Funcionario>().IgnoreNulls();
         }
     }
 

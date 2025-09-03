@@ -2,7 +2,7 @@
 
 namespace API_.Net.DTOs.Requests
 {
-    public class CreateUsuarioDTO
+    public class CreateUsuarioDto
     {
         [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
@@ -22,7 +22,7 @@ namespace API_.Net.DTOs.Requests
     }
 
     // Update parcial: propriedades opcionais (null = não alterar)
-    public class UpdateUsuarioDTO
+    public class UpdateUsuarioDto
     {
         [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
         public string? NOME { get; set; }

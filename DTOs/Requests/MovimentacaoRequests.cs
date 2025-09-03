@@ -3,7 +3,7 @@
 namespace API_.Net.DTOs.Requests
 {
     /// <summary>DTO de criação (API → Entity)</summary>
-    public class CreateMovimentacaoDTO
+    public class CreateMovimentacaoDto
     {
         [StringLength(255, ErrorMessage = "A observação não pode ter mais de 255 caracteres")]
         public string? OBSERVACAO { get; set; }
@@ -19,7 +19,7 @@ namespace API_.Net.DTOs.Requests
     }
 
     /// <summary>DTO de atualização parcial (API → Entity)</summary>
-    public class UpdateMovimentacaoDTO
+    public class UpdateMovimentacaoDto
     {
         [StringLength(255, ErrorMessage = "A observação não pode ter mais de 255 caracteres")]
         public string? OBSERVACAO { get; set; }

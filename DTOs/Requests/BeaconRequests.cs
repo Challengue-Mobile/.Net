@@ -3,7 +3,7 @@
 namespace API_.Net.DTOs.Requests
 {
     // DTO para criar um novo beacon (API -> Entity)
-    public class CreateBeaconDTO
+    public class CreateBeaconDto
     {
         [Required(ErrorMessage = "O UUID é obrigatório")]
         [StringLength(100, ErrorMessage = "O UUID não pode ter mais de 100 caracteres")]
@@ -21,7 +21,7 @@ namespace API_.Net.DTOs.Requests
     }
 
     // DTO para atualizar um beacon existente (API -> Entity, campos opcionais)
-    public class UpdateBeaconDTO
+    public class UpdateBeaconDto
     {
         public string? UUID { get; set; }
 

@@ -72,7 +72,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Cadastra um novo modelo de beacon",
             Description = "Cria um novo registro de modelo de beacon no sistema")]
-        public async Task<ActionResult<ModeloBeaconDto>> PostModeloBeacon([FromBody] CreateModeloBeaconDTO dto)
+        public async Task<ActionResult<ModeloBeaconDto>> PostModeloBeacon([FromBody] CreateModeloBeaconDto dto)
         {
             var entity = _mapper.Map<ModeloBeacon>(dto);
 
@@ -90,7 +90,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Atualiza um modelo de beacon",
             Description = "Atualiza informações de um modelo de beacon existente no sistema")]
-        public async Task<ActionResult<ModeloBeaconDto>> PutModeloBeacon(int id, [FromBody] UpdateModeloBeaconDTO dto)
+        public async Task<ActionResult<ModeloBeaconDto>> PutModeloBeacon(int id, [FromBody] UpdateModeloBeaconDto dto)
         {
             var entity = await _context.ModelosBeacon.FirstOrDefaultAsync(m => m.ID_MODELO_BEACON == id);
             if (entity is null) return NotFound();

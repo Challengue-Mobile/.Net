@@ -72,7 +72,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Cadastra um novo modelo de moto",
             Description = "Cria um novo registro de modelo de moto no sistema")]
-        public async Task<ActionResult<ModeloMotoDto>> PostModeloMoto([FromBody] CreateModeloMotoDTO dto)
+        public async Task<ActionResult<ModeloMotoDto>> PostModeloMoto([FromBody] CreateModeloMotoDto dto)
         {
             var entity = _mapper.Map<ModeloMoto>(dto);
 
@@ -90,7 +90,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Atualiza um modelo de moto",
             Description = "Atualiza informações de um modelo de moto existente no sistema")]
-        public async Task<ActionResult<ModeloMotoDto>> PutModeloMoto(int id, [FromBody] UpdateModeloMotoDTO dto)
+        public async Task<ActionResult<ModeloMotoDto>> PutModeloMoto(int id, [FromBody] UpdateModeloMotoDto dto)
         {
             var entity = await _context.ModelosMotos.FirstOrDefaultAsync(m => m.ID_MODELO_MOTO == id);
             if (entity is null) return NotFound();
