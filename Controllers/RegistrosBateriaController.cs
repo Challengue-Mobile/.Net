@@ -13,11 +13,11 @@ using AutoMapper;
 using API_.Net.DTOs;               // RegistroBateriaDTO
 using API_.Net.DTOs.Requests;      // CreateRegistroBateriaDTO / UpdateRegistroBateriaDTO
 // using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples; // ← migre os Examples para DTOs e reative se quiser
+
 
 namespace API.Net.Controllers
 {
-    /// <summary>API para gerenciamento de registros de bateria de beacons</summary>
+    
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -33,7 +33,7 @@ namespace API.Net.Controllers
             _mapper  = mapper;
         }
 
-        /// <summary>Obtém todos os registros de bateria</summary>
+        
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(
@@ -49,7 +49,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Obtém um registro de bateria específico pelo ID</summary>
+        
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -66,7 +66,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<RegistroBateriaDto>(entity));
         }
 
-        /// <summary>Busca registros de bateria de um beacon específico</summary>
+        
         [HttpGet("beacon/{beaconId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(
@@ -84,7 +84,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Registra um novo nível de bateria</summary>
+        
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -103,7 +103,7 @@ namespace API.Net.Controllers
             return CreatedAtAction(nameof(GetRegistroBateria), new { id = entity.ID_REGISTRO }, result);
         }
 
-        /// <summary>Atualiza os dados de um registro de bateria existente</summary>
+        
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -121,7 +121,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<RegistroBateriaDto>(entity));
         }
 
-        /// <summary>Remove um registro de bateria do sistema</summary>
+       
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

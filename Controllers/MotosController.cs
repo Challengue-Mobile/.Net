@@ -17,7 +17,7 @@ using API_.Net.DTOs.Requests;      // CreateMotoDTO / UpdateMotoDTO
 
 namespace API_.Net.Controllers
 {
-    /// <summary>API para gerenciamento de motos</summary>
+    
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -33,7 +33,7 @@ namespace API_.Net.Controllers
             _mapper  = mapper;
         }
 
-        /// <summary>Obtém todas as motos cadastradas</summary>
+        
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todas as motos",
@@ -48,7 +48,7 @@ namespace API_.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Obtém uma moto específica pelo ID</summary>
+        
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -64,7 +64,7 @@ namespace API_.Net.Controllers
             return Ok(_mapper.Map<MotoDto>(entity));
         }
 
-        /// <summary>Busca motos associadas a um cliente específico</summary>
+       
         [HttpGet("cliente/{clienteId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Busca motos por cliente",
@@ -80,7 +80,7 @@ namespace API_.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Busca uma moto pela placa</summary>
+        
         [HttpGet("placa/{placa}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -96,7 +96,7 @@ namespace API_.Net.Controllers
             return Ok(_mapper.Map<MotoDto>(entity));
         }
 
-        /// <summary>Cadastra uma nova moto</summary>
+       
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -114,7 +114,7 @@ namespace API_.Net.Controllers
             return CreatedAtAction(nameof(GetMoto), new { id = entity.ID_MOTO }, result);
         }
 
-        /// <summary>Atualiza os dados de uma moto existente</summary>
+      
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -131,7 +131,7 @@ namespace API_.Net.Controllers
             return Ok(_mapper.Map<MotoDto>(entity));
         }
 
-        /// <summary>Remove uma moto do sistema</summary>
+        
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

@@ -14,7 +14,7 @@ using API_.Net.DTOs.Requests;      // CreateFuncionarioDTO / UpdateFuncionarioDT
 
 namespace API.Net.Controllers
 {
-    /// <summary>API para gerenciamento de funcionários</summary>
+   
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -30,7 +30,7 @@ namespace API.Net.Controllers
             _mapper  = mapper;
         }
 
-        /// <summary>Lista todos os funcionários</summary>
+        
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todos os funcionários", Description = "Obtém todos os funcionários cadastrados")]
@@ -46,7 +46,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Obtém um funcionário pelo ID</summary>
+        
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -64,7 +64,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<FuncionarioDto>(entity));
         }
 
-        /// <summary>Cadastra um novo funcionário</summary>
+       
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -80,7 +80,7 @@ namespace API.Net.Controllers
             return CreatedAtAction(nameof(GetFuncionario), new { id = entity.ID_FUNCIONARIO }, result);
         }
 
-        /// <summary>Atualiza um funcionário existente</summary>
+       
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -96,7 +96,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<FuncionarioDto>(entity));
         }
 
-        /// <summary>Exclui um funcionário</summary>
+       
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

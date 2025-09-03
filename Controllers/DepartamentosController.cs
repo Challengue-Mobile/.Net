@@ -14,7 +14,7 @@ using API_.Net.DTOs.Requests;      // CreateDepartamentoDTO / UpdateDepartamento
 
 namespace API.Net.Controllers
 {
-    /// <summary>API para gerenciamento de departamentos</summary>
+  
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -30,7 +30,7 @@ namespace API.Net.Controllers
             _mapper  = mapper;
         }
 
-        /// <summary>Lista todos os departamentos</summary>
+  
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todos os departamentos",
@@ -46,7 +46,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Obtém um departamento pelo ID</summary>
+     
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -64,7 +64,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<DepartamentoDto>(entity));
         }
 
-        /// <summary>Cria um novo departamento</summary>
+       
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -81,7 +81,7 @@ namespace API.Net.Controllers
             return CreatedAtAction(nameof(GetDepartamento), new { id = entity.ID_DEPARTAMENTO }, result);
         }
 
-        /// <summary>Atualiza um departamento existente</summary>
+      
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -98,7 +98,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<DepartamentoDto>(entity));
         }
 
-        /// <summary>Exclui um departamento</summary>
+        
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

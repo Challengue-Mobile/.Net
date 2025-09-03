@@ -16,7 +16,7 @@ using API_.Net.DTOs.Requests;      // CreatePatioDTO / UpdatePatioDTO
 
 namespace API.Net.Controllers
 {
-    /// <summary>API para gerenciamento de pátios</summary>
+    
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -32,7 +32,7 @@ namespace API.Net.Controllers
             _mapper  = mapper;
         }
 
-        /// <summary>Obtém todos os pátios cadastrados</summary>
+       
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todos os pátios",
@@ -48,7 +48,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Obtém um pátio específico pelo ID</summary>
+        
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -65,7 +65,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<PatiosDto>(entity));
         }
 
-        /// <summary>Busca pátios por logradouro</summary>
+        
         [HttpGet("logradouro/{logradouroId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Busca pátios por logradouro",
@@ -81,7 +81,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Cadastra um novo pátio</summary>
+        
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -98,7 +98,7 @@ namespace API.Net.Controllers
             return CreatedAtAction(nameof(GetPatio), new { id = entity.ID_PATIO }, result);
         }
 
-        /// <summary>Atualiza os dados de um pátio existente</summary>
+        
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -115,7 +115,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<PatiosDto>(entity));
         }
 
-        /// <summary>Remove um pátio do sistema</summary>
+      
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

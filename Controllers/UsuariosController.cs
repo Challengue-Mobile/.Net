@@ -17,7 +17,7 @@ using API_.Net.DTOs.Requests;      // CreateUsuarioDTO / UpdateUsuarioDTO
 
 namespace API_.Net.Controllers
 {
-    /// <summary>API para gerenciamento de usuários do sistema</summary>
+    
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -33,7 +33,7 @@ namespace API_.Net.Controllers
             _mapper  = mapper;
         }
 
-        /// <summary>Obtém todos os usuários cadastrados</summary>
+        
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todos os usuários", Description = "Obtém todos os usuários cadastrados no sistema")]
@@ -47,7 +47,7 @@ namespace API_.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Obtém um usuário específico pelo ID</summary>
+       
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -62,7 +62,7 @@ namespace API_.Net.Controllers
             return Ok(_mapper.Map<UsuarioDto>(entity));
         }
 
-        /// <summary>Busca usuários por tipo</summary>
+        
         [HttpGet("tipo/{tipoId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Busca usuários por tipo", Description = "Obtém todos os usuários de um tipo específico")]
@@ -77,7 +77,7 @@ namespace API_.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Cadastra um novo usuário</summary>
+        
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -94,7 +94,7 @@ namespace API_.Net.Controllers
             return CreatedAtAction(nameof(GetUsuario), new { id = entity.ID_USUARIO }, result);
         }
 
-        /// <summary>Atualiza os dados de um usuário existente</summary>
+        
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -110,7 +110,7 @@ namespace API_.Net.Controllers
             return Ok(_mapper.Map<UsuarioDto>(entity));
         }
 
-        /// <summary>Remove um usuário do sistema</summary>
+        
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

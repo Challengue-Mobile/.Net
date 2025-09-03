@@ -16,7 +16,7 @@ using API_.Net.DTOs.Requests;     // CreateBeaconDTO / UpdateBeaconDTO
 
 namespace API.Net.Controllers
 {
-    /// <summary>API para gerenciamento de beacons</summary>
+
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -32,7 +32,7 @@ namespace API.Net.Controllers
             _mapper  = mapper;
         }
 
-        /// <summary>Obtém todos os beacons cadastrados</summary>
+ 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todos os beacons",
@@ -45,7 +45,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Obtém um beacon específico pelo ID</summary>
+
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -61,7 +61,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<BeaconDto>(entity));
         }
 
-        /// <summary>Busca beacons associados a uma moto específica</summary>
+   
         [HttpGet("moto/{motoId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Busca beacons por moto",
@@ -75,7 +75,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<IEnumerable<BeaconDto>>(entities));
         }
 
-        /// <summary>Busca um beacon pelo seu UUID</summary>
+     
         [HttpGet("uuid/{uuid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -91,7 +91,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<BeaconDto>(entity));
         }
 
-        /// <summary>Cadastra um novo beacon</summary>
+       
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -118,7 +118,7 @@ namespace API.Net.Controllers
             return CreatedAtAction(nameof(GetBeacon), new { id = entity.ID_BEACON }, result);
         }
 
-        /// <summary>Atualiza os dados de um beacon existente</summary>
+   
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -141,7 +141,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<BeaconDto>(entity));
         }
 
-        /// <summary>Remove um beacon do sistema</summary>
+  
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

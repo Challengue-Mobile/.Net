@@ -17,7 +17,7 @@ using API_.Net.DTOs.Requests;      // CreateMovimentacaoDTO / UpdateMovimentacao
 
 namespace API.Net.Controllers
 {
-    /// <summary>API para gerenciamento de movimentações de motos</summary>
+    
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -33,7 +33,7 @@ namespace API.Net.Controllers
             _mapper  = mapper;
         }
 
-        /// <summary>Obtém todas as movimentações registradas</summary>
+        
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todas as movimentações",
@@ -48,7 +48,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Obtém uma movimentação específica pelo ID</summary>
+        
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -64,7 +64,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<MovimentacaoDto>(entity));
         }
 
-        /// <summary>Busca movimentações de uma moto específica</summary>
+        
         [HttpGet("moto/{motoId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Busca movimentações por moto",
@@ -81,7 +81,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Registra uma nova movimentação</summary>
+       
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -99,7 +99,7 @@ namespace API.Net.Controllers
             return CreatedAtAction(nameof(GetMovimentacao), new { id = entity.ID_MOVIMENTACAO }, result);
         }
 
-        /// <summary>Atualiza os dados de uma movimentação existente</summary>
+        
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -116,7 +116,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<MovimentacaoDto>(entity));
         }
 
-        /// <summary>Remove uma movimentação do sistema</summary>
+        
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

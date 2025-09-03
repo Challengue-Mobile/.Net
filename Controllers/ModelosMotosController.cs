@@ -16,7 +16,7 @@ using API_.Net.DTOs.Requests;      // CreateModeloMotoDTO / UpdateModeloMotoDTO
 
 namespace API.Net.Controllers
 {
-    /// <summary>API para gerenciamento de modelos de motos</summary>
+    
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -32,7 +32,7 @@ namespace API.Net.Controllers
             _mapper  = mapper;
         }
 
-        /// <summary>Obtém todos os modelos de motos cadastrados</summary>
+        
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(
@@ -48,7 +48,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Obtém um modelo de moto específico pelo ID</summary>
+        
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -65,7 +65,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<ModeloMotoDto>(entity));
         }
 
-        /// <summary>Cadastra um novo modelo de moto</summary>
+        
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -83,7 +83,7 @@ namespace API.Net.Controllers
             return CreatedAtAction(nameof(GetModeloMoto), new { id = entity.ID_MODELO_MOTO }, result);
         }
 
-        /// <summary>Atualiza os dados de um modelo de moto existente</summary>
+        
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -101,7 +101,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<ModeloMotoDto>(entity));
         }
 
-        /// <summary>Remove um modelo de moto do sistema</summary>
+       
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

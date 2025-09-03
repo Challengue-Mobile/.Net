@@ -14,7 +14,7 @@ using API_.Net.DTOs.Requests;      // CreateFilialDTO / UpdateFilialDTO
 
 namespace API.Net.Controllers
 {
-    /// <summary>API para gerenciamento de filiais</summary>
+
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -30,7 +30,7 @@ namespace API.Net.Controllers
             _mapper  = mapper;
         }
 
-        /// <summary>Lista todas as filiais</summary>
+
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todas as filiais", Description = "Obtém todas as filiais cadastradas")]
@@ -46,7 +46,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Obtém uma filial pelo ID</summary>
+      
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -63,7 +63,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<FiliaisDto>(entity));
         }
 
-        /// <summary>Cadastra uma nova filial</summary>
+    
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -79,7 +79,7 @@ namespace API.Net.Controllers
             return CreatedAtAction(nameof(GetFilial), new { id = entity.ID_FILIAL }, result);
         }
 
-        /// <summary>Atualiza uma filial existente</summary>
+        
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -95,7 +95,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<FiliaisDto>(entity));
         }
 
-        /// <summary>Exclui uma filial</summary>
+    
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

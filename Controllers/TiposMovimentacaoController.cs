@@ -14,7 +14,7 @@ using API_.Net.DTOs.Requests;      // CreateTipoMovimentacaoDTO / UpdateTipoMovi
 
 namespace API.Net.Controllers
 {
-    /// <summary>API para gerenciamento de tipos de movimentação</summary>
+    
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -30,7 +30,7 @@ namespace API.Net.Controllers
             _mapper  = mapper;
         }
 
-        /// <summary>Obtém todos os tipos de movimentação cadastrados</summary>
+        
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todos os tipos de movimentação", Description = "Obtém todos os tipos cadastrados")]
@@ -44,7 +44,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Obtém um tipo de movimentação específico pelo ID</summary>
+        
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -59,7 +59,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<TipoMovimentacaoDto>(entity));
         }
 
-        /// <summary>Cadastra um novo tipo de movimentação</summary>
+        
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -75,7 +75,7 @@ namespace API.Net.Controllers
             return CreatedAtAction(nameof(GetTipoMovimentacao), new { id = entity.ID_TIPO_MOVIMENTACAO }, result);
         }
 
-        /// <summary>Atualiza os dados de um tipo de movimentação existente</summary>
+        
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -91,7 +91,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<TipoMovimentacaoDto>(entity));
         }
 
-        /// <summary>Remove um tipo de movimentação do sistema</summary>
+        
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

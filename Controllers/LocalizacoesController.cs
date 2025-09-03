@@ -17,7 +17,7 @@ using API_.Net.DTOs.Requests;      // CreateLocalizacaoDTO / UpdateLocalizacaoDT
 
 namespace API.Net.Controllers
 {
-    /// <summary>API para gerenciamento de localizações</summary>
+  
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -33,7 +33,7 @@ namespace API.Net.Controllers
             _mapper  = mapper;
         }
 
-        /// <summary>Obtém todas as localizações registradas</summary>
+        
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todas as localizações", Description = "Obtém todas as localizações registradas")]
@@ -49,7 +49,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Obtém uma localização específica pelo ID</summary>
+        
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -66,7 +66,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<LocalizacaoDto>(entity));
         }
 
-        /// <summary>Busca localizações de uma moto específica</summary>
+        
         [HttpGet("moto/{motoId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Busca localizações por moto", Description = "Lista histórico de localizações de uma moto, mais recentes primeiro")]
@@ -84,7 +84,7 @@ namespace API.Net.Controllers
             return Ok(dtos);
         }
 
-        /// <summary>Registra uma nova localização</summary>
+       
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -105,7 +105,7 @@ namespace API.Net.Controllers
             return CreatedAtAction(nameof(GetLocalizacao), new { id = entity.ID_LOCALIZACAO }, result);
         }
 
-        /// <summary>Atualiza os dados de uma localização existente</summary>
+       
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -125,7 +125,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<LocalizacaoDto>(entity));
         }
 
-        /// <summary>Remove uma localização do sistema</summary>
+       
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
