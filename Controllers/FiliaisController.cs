@@ -34,7 +34,7 @@ namespace API.Net.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todas as filiais", Description = "Obtém todas as filiais cadastradas")]
-        public async Task<ActionResult<IEnumerable<FilialDTO>>> GetFiliais()
+        public async Task<ActionResult<IEnumerable<FiliaisDto>>> GetFiliais()
         {
             var entities = await _context.Filiais
                                          .AsNoTracking()
@@ -42,7 +42,7 @@ namespace API.Net.Controllers
                                          .Include(f => f.Departamentos)
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<FilialDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<FiliaisDto>>(entities);
             return Ok(dtos);
         }
 
@@ -51,7 +51,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Obtém uma filial por ID", Description = "Retorna informações detalhadas de uma filial")]
-        public async Task<ActionResult<FilialDTO>> GetFilial(int id)
+        public async Task<ActionResult<FiliaisDto>> GetFilial(int id)
         {
             var entity = await _context.Filiais
                                        .AsNoTracking()
@@ -60,7 +60,7 @@ namespace API.Net.Controllers
                                        .FirstOrDefaultAsync(f => f.ID_FILIAL == id);
 
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<FilialDTO>(entity));
+            return Ok(_mapper.Map<FiliaisDto>(entity));
         }
 
         /// <summary>Cadastra uma nova filial</summary>
@@ -68,14 +68,14 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra uma nova filial", Description = "Cria um novo registro de filial")]
-        public async Task<ActionResult<FilialDTO>> PostFilial([FromBody] CreateFilialDto dto)
+        public async Task<ActionResult<FiliaisDto>> PostFilial([FromBody] CreateFilialDto dto)
         {
             var entity = _mapper.Map<Filial>(dto);
 
             _context.Filiais.Add(entity);
             await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<FilialDTO>(entity);
+            var result = _mapper.Map<FiliaisDto>(entity);
             return CreatedAtAction(nameof(GetFilial), new { id = entity.ID_FILIAL }, result);
         }
 
@@ -84,7 +84,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza uma filial", Description = "Atualiza informações de uma filial existente")]
-        public async Task<ActionResult<FilialDTO>> PutFilial(int id, [FromBody] UpdateFilialDto dto)
+        public async Task<ActionResult<FiliaisDto>> PutFilial(int id, [FromBody] UpdateFilialDto dto)
         {
             var entity = await _context.Filiais.FirstOrDefaultAsync(f => f.ID_FILIAL == id);
             if (entity is null) return NotFound();
@@ -92,7 +92,7 @@ namespace API.Net.Controllers
             _mapper.Map(dto, entity); // aplica somente os campos enviados (mapeie IgnoreNulls no profile)
             await _context.SaveChangesAsync();
 
-            return Ok(_mapper.Map<FilialDTO>(entity));
+            return Ok(_mapper.Map<FiliaisDto>(entity));
         }
 
         /// <summary>Exclui uma filial</summary>

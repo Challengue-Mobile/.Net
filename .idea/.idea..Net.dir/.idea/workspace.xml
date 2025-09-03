@@ -7,7 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="550ddf4b-bc66-4ccf-8512-4de5614e1e12" name="Changes" comment="renomeando as classes" />
+    <list default="true" id="550ddf4b-bc66-4ccf-8512-4de5614e1e12" name="Changes" comment="arrumando">
+      <change beforePath="$PROJECT_DIR$/AutoMapper/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AutoMapper/MappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/FiliaisDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/FiliaisDto.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1756855683265</updated>
       <workItem from="1756855683267" duration="6029000" />
-      <workItem from="1756934391250" duration="6501000" />
+      <workItem from="1756934391250" duration="6863000" />
     </task>
     <task id="LOCAL-00001" summary="arrumando os dtos">
       <option name="closed" value="true" />
@@ -143,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756940915170</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="arrumando">
+      <option name="closed" value="true" />
+      <created>1756941152489</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1756941152489</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,9 +167,9 @@
     <MESSAGE value="arrumando os dtos" />
     <MESSAGE value="Arrumando as classes request, controllers e DTOS" />
     <MESSAGE value="Arrumando a classe MappingProfile.cs" />
-    <MESSAGE value="arrumando" />
     <MESSAGE value="Renomeando os nomes das classes" />
     <MESSAGE value="renomeando as classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="renomeando as classes" />
+    <MESSAGE value="arrumando" />
+    <option name="LAST_COMMIT_MESSAGE" value="arrumando" />
   </component>
 </project>

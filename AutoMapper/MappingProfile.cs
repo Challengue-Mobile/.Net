@@ -25,7 +25,7 @@ namespace API_.Net.AutoMapper
             CreateMap<RegistroBateria, RegistroBateriaDto>();
             CreateMap<TipoUsuario, TipoUsuarioDto>();
             CreateMap<Departamento, DepartamentoDto>();
-            CreateMap<Filial, FilialDTO>();
+            CreateMap<Filial, FiliaisDto>();
             CreateMap<Funcionario, FuncionarioDto>();
 
             // -------- Create DTO -> Entity (entrada) --------

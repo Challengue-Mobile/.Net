@@ -14,7 +14,7 @@ namespace API_.Net.DTOs
     }
 
     // DTO para alteração de senha (uso em endpoint específico, não mapeia direto para entidade)
-    public class ChangePasswordDTO
+    public class ChangePasswordDto
     {
         [Required(ErrorMessage = "A senha atual é obrigatória")]
         public string SenhaAtual { get; set; } = string.Empty;

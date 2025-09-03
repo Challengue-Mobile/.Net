@@ -3,7 +3,7 @@
 namespace API_.Net.DTOs
 {
     /// <summary>DTO de resposta (Entity → API)</summary>
-    public class FilialDTO
+    public class FiliaisDto
     {
         public int ID_FILIAL { get; set; }
 
