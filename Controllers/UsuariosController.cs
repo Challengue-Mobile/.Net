@@ -13,7 +13,7 @@ using AutoMapper;
 using API_.Net.DTOs;               // UsuarioDTO
 using API_.Net.DTOs.Requests;      // CreateUsuarioDTO / UpdateUsuarioDTO
 // using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples; // ← migre os Examples para DTOs e reative se quiser
+
 
 namespace API_.Net.Controllers
 {
@@ -74,7 +74,7 @@ namespace API_.Net.Controllers
                                          .ToListAsync();
 
             var dtos = _mapper.Map<IEnumerable<UsuarioDTO>>(entities);
-            return Ok(dos);
+            return Ok(dtos);
         }
 
         /// <summary>Cadastra um novo usuário</summary>

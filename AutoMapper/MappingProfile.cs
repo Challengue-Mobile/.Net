@@ -19,11 +19,14 @@ namespace API_.Net.AutoMapper
             CreateMap<TipoMovimentacao, TipoMovimentacaoDTO>();
             CreateMap<Usuario, UsuarioDTO>();
 
-            // DTOs de resposta adicionais (estão em DTOs/Common)
-            CreateMap<Patio, PatiosDTO>();
+            // comuns/adicionais
+            CreateMap<Patio, PatioDTO>();
             CreateMap<ModeloBeacon, ModeloBeaconDTO>();
             CreateMap<RegistroBateria, RegistroBateriaDTO>();
             CreateMap<TipoUsuario, TipoUsuarioDTO>();
+            CreateMap<Departamento, DepartamentoDTO>();
+            CreateMap<Filial, FilialDTO>();
+            CreateMap<Funcionario, FuncionarioDTO>();
 
             // -------- Create DTO -> Entity (entrada) --------
             CreateMap<CreateBeaconDTO, Beacon>();
@@ -38,6 +41,9 @@ namespace API_.Net.AutoMapper
             CreateMap<CreateTipoMovimentacaoDTO, TipoMovimentacao>();
             CreateMap<CreateTipoUsuarioDTO, TipoUsuario>();
             CreateMap<CreateUsuarioDTO, Usuario>();
+            CreateMap<CreateDepartamentoDTO, Departamento>();
+            CreateMap<CreateFilialDTO, Filial>();
+            CreateMap<CreateFuncionarioDTO, Funcionario>();
 
             // -------- Update DTO -> Entity (ignora nulls) --------
             CreateMap<UpdateBeaconDTO, Beacon>().IgnoreNulls();
@@ -52,19 +58,21 @@ namespace API_.Net.AutoMapper
             CreateMap<UpdateTipoMovimentacaoDTO, TipoMovimentacao>().IgnoreNulls();
             CreateMap<UpdateTipoUsuarioDTO, TipoUsuario>().IgnoreNulls();
             CreateMap<UpdateUsuarioDTO, Usuario>().IgnoreNulls();
+            CreateMap<UpdateDepartamentoDTO, Departamento>().IgnoreNulls();
+            CreateMap<UpdateFilialDTO, Filial>().IgnoreNulls();
+            CreateMap<UpdateFuncionarioDTO, Funcionario>().IgnoreNulls();
         }
     }
 
-    // Helper para updates parciais: NÃO sobrescreve destino com null
+    // Helper para updates parciais: não sobrescreve destino com null
     public static class MappingExtensions
     {
         public static IMappingExpression<TSrc, TDest> IgnoreNulls<TSrc, TDest>(
             this IMappingExpression<TSrc, TDest> map)
         {
+            // ForAllMembers retorna void na sua versão — chame e depois retorne o map
             map.ForAllMembers(opt =>
-            {
-                opt.Condition((src, dest, srcMember) => srcMember != null);
-            });
+                opt.Condition((src, dest, srcMember) => srcMember != null));
             return map;
         }
     }
