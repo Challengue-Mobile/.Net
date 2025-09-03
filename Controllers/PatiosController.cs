@@ -1,20 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using API_.Net.Models;
-using API_.Net.Data;
+using Microsoft.AspNetCore.Http;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Swashbuckle.AspNetCore.Annotations;
-using Swashbuckle.AspNetCore.Filters;
-using API_.Net.Examples;
-using Microsoft.AspNetCore.Http;
+
+using API_.Net.Data;
+using API_.Net.Models;
+using AutoMapper;
+using API_.Net.DTOs;               // PatioDTO
+using API_.Net.DTOs.Requests;      // CreatePatioDto / UpdatePatioDto
+// using Swashbuckle.AspNetCore.Filters;
+// using API_.Net.Examples; // ← migre seus Examples para DTOs e reative depois, se quiser
 
 namespace API.Net.Controllers
 {
-    /// <summary>
-    /// API para gerenciamento de pátios
-    /// </summary>
+    /// <summary>API para gerenciamento de pátios</summary>
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -22,182 +24,109 @@ namespace API.Net.Controllers
     public class PatiosController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-        public PatiosController(AppDbContext context)
+        public PatiosController(AppDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper  = mapper;
         }
 
-        /// <summary>
-        /// Obtém todos os pátios cadastrados
-        /// </summary>
-        /// <returns>Lista de pátios</returns>
-        /// <response code="200">Retorna a lista de pátios</response>
+        /// <summary>Obtém todos os pátios cadastrados</summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [SwaggerOperation(
-            Summary = "Lista todos os pátios",
-            Description = "Obtém uma lista de todos os pátios cadastrados no sistema")]
-        [SwaggerResponseExample(StatusCodes.Status200OK, typeof(PatiosListResponseExample))]
-        public async Task<ActionResult<IEnumerable<Patio>>> GetPatios()
+        [SwaggerOperation(Summary = "Lista todos os pátios", Description = "Obtém uma lista de todos os pátios cadastrados no sistema")]
+        public async Task<ActionResult<IEnumerable<PatioDTO>>> GetPatios()
         {
-            return Ok(await _context.Patios.ToListAsync());
+            var entities = await _context.Patios
+                                         .AsNoTracking()
+                                         .Include(p => p.Logradouro)
+                                         .ToListAsync();
+
+            var dtos = _mapper.Map<IEnumerable<PatioDTO>>(entities);
+            return Ok(dtos);
         }
 
-        /// <summary>
-        /// Obtém um pátio específico pelo ID
-        /// </summary>
-        /// <param name="id">ID do pátio</param>
-        /// <returns>Dados do pátio solicitado</returns>
-        /// <response code="200">Retorna o pátio</response>
-        /// <response code="404">Se o pátio não for encontrado</response>
-        [HttpGet("{id}")]
+        /// <summary>Obtém um pátio específico pelo ID</summary>
+        [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(
-            Summary = "Obtém um pátio pelo ID",
-            Description = "Busca e retorna informações detalhadas de um pátio específico")]
-        [SwaggerResponseExample(StatusCodes.Status200OK, typeof(PatioResponseExample))]
-        [SwaggerResponseExample(StatusCodes.Status404NotFound, typeof(NotFoundResponseExample))]
-        public async Task<ActionResult<Patio>> GetPatio(int id)
+        [SwaggerOperation(Summary = "Obtém um pátio pelo ID", Description = "Busca e retorna informações detalhadas de um pátio específico")]
+        public async Task<ActionResult<PatioDTO>> GetPatio(int id)
         {
-            var patio = await _context.Patios.FindAsync(id);
+            var entity = await _context.Patios
+                                       .AsNoTracking()
+                                       .Include(p => p.Logradouro)
+                                       .FirstOrDefaultAsync(p => p.ID_PATIO == id);
 
-            if (patio == null)
-            {
-                return NotFound();
-            }
-
-            return patio;
+            if (entity is null) return NotFound();
+            return Ok(_mapper.Map<PatioDTO>(entity));
         }
 
-        /// <summary>
-        /// Busca pátios por logradouro
-        /// </summary>
-        /// <param name="logradouroId">ID do logradouro</param>
-        /// <returns>Lista de pátios localizados no logradouro especificado</returns>
-        /// <response code="200">Retorna a lista de pátios do logradouro</response>
-        [HttpGet("logradouro/{logradouroId}")]
+        /// <summary>Busca pátios por logradouro</summary>
+        [HttpGet("logradouro/{logradouroId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [SwaggerOperation(
-            Summary = "Busca pátios por logradouro",
-            Description = "Obtém todos os pátios localizados em um logradouro específico")]
-        [SwaggerResponseExample(StatusCodes.Status200OK, typeof(PatiosListResponseExample))]
-        public async Task<ActionResult<IEnumerable<Patio>>> GetPatiosByLogradouro(int logradouroId)
+        [SwaggerOperation(Summary = "Busca pátios por logradouro", Description = "Obtém todos os pátios localizados em um logradouro específico")]
+        public async Task<ActionResult<IEnumerable<PatioDTO>>> GetPatiosByLogradouro(int logradouroId)
         {
-            return await _context.Patios
-                .Where(p => p.ID_LOGRADOURO == logradouroId)
-                .ToListAsync();
+            var entities = await _context.Patios
+                                         .AsNoTracking()
+                                         .Where(p => p.ID_LOGRADOURO == logradouroId)
+                                         .ToListAsync();
+
+            var dtos = _mapper.Map<IEnumerable<PatioDTO>>(entities);
+            return Ok(dtos);
         }
 
-        /// <summary>
-        /// Cadastra um novo pátio
-        /// </summary>
-        /// <param name="patio">Dados do pátio a ser cadastrado</param>
-        /// <returns>Pátio cadastrado com seu ID</returns>
-        /// <response code="201">Retorna o pátio recém criado</response>
-        /// <response code="400">Se os dados do pátio são inválidos</response>
-        /// <remarks>
-        /// Exemplo de requisição:
-        /// 
-        ///     POST /api/Patios
-        ///     {
-        ///        "nome": "Pátio Central",
-        ///        "id_logradouro": 1
-        ///     }
-        /// </remarks>
+        /// <summary>Cadastra um novo pátio</summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [SwaggerOperation(
-            Summary = "Cadastra um novo pátio",
-            Description = "Cria um novo registro de pátio no sistema")]
-        [SwaggerRequestExample(typeof(Patio), typeof(PatioRequestExample))]
-        [SwaggerResponseExample(StatusCodes.Status201Created, typeof(PatioResponseExample))]
-        [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(ValidationErrorResponseExample))]
-        public async Task<ActionResult<Patio>> PostPatio(Patio patio)
+        [SwaggerOperation(Summary = "Cadastra um novo pátio", Description = "Cria um novo registro de pátio no sistema")]
+        public async Task<ActionResult<PatioDTO>> PostPatio([FromBody] CreatePatioDto dto)
         {
-            _context.Patios.Add(patio);
+            var entity = _mapper.Map<Patio>(dto);
+
+            _context.Patios.Add(entity);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPatio", new { id = patio.ID_PATIO }, patio);
+            var result = _mapper.Map<PatioDTO>(entity);
+            return CreatedAtAction(nameof(GetPatio), new { id = entity.ID_PATIO }, result);
         }
 
-        /// <summary>
-        /// Atualiza os dados de um pátio existente
-        /// </summary>
-        /// <param name="id">ID do pátio a ser atualizado</param>
-        /// <param name="patio">Novos dados do pátio</param>
-        /// <returns>Nenhum conteúdo</returns>
-        /// <response code="204">Se o pátio foi atualizado com sucesso</response>
-        /// <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
-        /// <response code="404">Se o pátio não for encontrado</response>
-        [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        /// <summary>Atualiza os dados de um pátio existente</summary>
+        [HttpPut("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(
-            Summary = "Atualiza um pátio",
-            Description = "Atualiza informações de um pátio existente no sistema")]
-        [SwaggerRequestExample(typeof(Patio), typeof(PatioRequestExample))]
-        public async Task<IActionResult> PutPatio(int id, Patio patio)
+        [SwaggerOperation(Summary = "Atualiza um pátio", Description = "Atualiza informações de um pátio existente no sistema")]
+        public async Task<ActionResult<PatioDTO>> PutPatio(int id, [FromBody] UpdatePatioDto dto)
         {
-            if (id != patio.ID_PATIO)
-            {
-                return BadRequest();
-            }
+            var entity = await _context.Patios.FirstOrDefaultAsync(p => p.ID_PATIO == id);
+            if (entity is null) return NotFound();
 
-            _context.Entry(patio).State = EntityState.Modified;
+            _mapper.Map(dto, entity);
+            await _context.SaveChangesAsync();
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PatioExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return Ok(_mapper.Map<PatioDTO>(entity));
         }
 
-        /// <summary>
-        /// Remove um pátio do sistema
-        /// </summary>
-        /// <param name="id">ID do pátio a ser removido</param>
-        /// <returns>Nenhum conteúdo</returns>
-        /// <response code="204">Se o pátio foi removido com sucesso</response>
-        /// <response code="404">Se o pátio não for encontrado</response>
-        [HttpDelete("{id}")]
+        /// <summary>Remove um pátio do sistema</summary>
+        [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(
-            Summary = "Exclui um pátio",
-            Description = "Remove permanentemente um pátio do sistema")]
+        [SwaggerOperation(Summary = "Exclui um pátio", Description = "Remove permanentemente um pátio do sistema")]
         public async Task<IActionResult> DeletePatio(int id)
         {
-            var patio = await _context.Patios.FindAsync(id);
-            if (patio == null)
-            {
-                return NotFound();
-            }
+            var entity = await _context.Patios.FindAsync(id);
+            if (entity is null) return NotFound();
 
-            _context.Patios.Remove(patio);
+            _context.Patios.Remove(entity);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool PatioExists(int id)
-        {
-            return _context.Patios.Any(e => e.ID_PATIO == id);
-        }
+        private bool PatioExists(int id) =>
+            _context.Patios.Any(e => e.ID_PATIO == id);
     }
 }

@@ -2,8 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace API_.Net.DTOs
 {
-    // DTO para exibir informações de usuário
-    public class UsuarioDto // ← CORRIGIDO - Issue L6
+    /// <summary>DTO de saída (Entity -> API)</summary>
+    public class UsuarioDTO
     {
         public int ID_USUARIO { get; set; }
         public string NOME { get; set; } = string.Empty;
@@ -13,8 +13,8 @@ namespace API_.Net.DTOs
         public string TipoUsuario { get; set; } = string.Empty;
     }
 
-    // DTO para criar um novo usuário
-    public class CreateUsuarioDto // ← CORRIGIDO - Issue L17
+    /// <summary>DTO de criação (API -> Entity)</summary>
+    public class CreateUsuarioDTO
     {
         [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
@@ -33,8 +33,8 @@ namespace API_.Net.DTOs
         public int ID_TIPO_USUARIO { get; set; }
     }
 
-    // DTO para atualizar um usuário existente
-    public class UpdateUsuarioDto // ← CORRIGIDO - Issue L37
+    /// <summary>DTO de atualização (API -> Entity)</summary>
+    public class UpdateUsuarioDTO
     {
         [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
@@ -44,11 +44,12 @@ namespace API_.Net.DTOs
         [StringLength(100, ErrorMessage = "O email não pode ter mais de 100 caracteres")]
         public string EMAIL { get; set; } = string.Empty;
 
+        [Required(ErrorMessage = "O tipo de usuário é obrigatório")]
         public int ID_TIPO_USUARIO { get; set; }
     }
 
-    // DTO para alterar senha
-    public class ChangePasswordDto // ← CORRIGIDO - Issue L51
+    /// <summary>DTO para alteração de senha</summary>
+    public class ChangePasswordDTO
     {
         [Required(ErrorMessage = "A senha atual é obrigatória")]
         public string SenhaAtual { get; set; } = string.Empty;

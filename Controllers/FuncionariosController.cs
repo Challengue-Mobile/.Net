@@ -1,92 +1,113 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using Swashbuckle.AspNetCore.Annotations;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+using API_.Net.Data;
 using API_.Net.Models;
-using Swashbuckle.AspNetCore.Filters;
-using System;
-using System.Globalization; // ← ADICIONADO
+using AutoMapper;
+using API_.Net.DTOs;               // FuncionarioDTO
+using API_.Net.DTOs.Requests;      // CreateFuncionarioDto / UpdateFuncionarioDto
 
-namespace API_.Net.Examples
+namespace API.Net.Controllers
 {
-    /// <summary>
-    /// Exemplo de requisição para criar um funcionário
-    /// </summary>
-    public class FuncionarioRequestExample : IExamplesProvider<Funcionario>
+    /// <summary>API para gerenciamento de funcionários</summary>
+    [Route("api/[controller]")]
+    [ApiController]
+    [Produces("application/json")]
+    [SwaggerTag("Cria, lê, atualiza e exclui funcionários")]
+    public class FuncionariosController : ControllerBase
     {
-        public Funcionario GetExamples()
-        {
-            return new Funcionario
-            {
-                NOME = "João da Silva",
-                CPF = "123.456.789-00",
-                CARGO = "Analista",
-                DATA_ADMISSAO = DateTime.Parse("2025-01-15", CultureInfo.InvariantCulture), // ← CORRIGIDO
-                ID_DEPARTAMENTO = 1,
-                ID_USUARIO = null
-            };
-        }
-    }
+        private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-    /// <summary>
-    /// Exemplo de resposta ao obter um funcionário
-    /// </summary>
-    public class FuncionarioResponseExample : IExamplesProvider<Funcionario>
-    {
-        public Funcionario GetExamples()
+        public FuncionariosController(AppDbContext context, IMapper mapper)
         {
-            return new Funcionario
-            {
-                ID_FUNCIONARIO = 1,
-                NOME = "João da Silva",
-                CPF = "123.456.789-00",
-                CARGO = "Analista",
-                DATA_ADMISSAO = DateTime.Parse("2025-01-15", CultureInfo.InvariantCulture), // ← CORRIGIDO
-                ID_DEPARTAMENTO = 1,
-                ID_USUARIO = null,
-                Departamento = new Departamento
-                {
-                    ID_DEPARTAMENTO = 1,
-                    NOME = "Recursos Humanos"
-                },
-                Usuario = null
-            };
+            _context = context;
+            _mapper  = mapper;
         }
-    }
 
-    /// <summary>
-    /// Exemplo de lista de funcionários
-    /// </summary>
-    public class FuncionariosListResponseExample : IExamplesProvider<Funcionario[]>
-    {
-        public Funcionario[] GetExamples()
+        /// <summary>Lista todos os funcionários</summary>
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [SwaggerOperation(Summary = "Lista todos os funcionários", Description = "Obtém todos os funcionários cadastrados")]
+        public async Task<ActionResult<IEnumerable<FuncionarioDTO>>> GetFuncionarios()
         {
-            return new Funcionario[]
-            {
-                new Funcionario
-                {
-                    ID_FUNCIONARIO = 1,
-                    NOME = "João da Silva",
-                    CPF = "123.456.789-00",
-                    CARGO = "Analista",
-                    DATA_ADMISSAO = DateTime.Parse("2025-01-15", CultureInfo.InvariantCulture), // ← CORRIGIDO
-                    ID_DEPARTAMENTO = 1
-                },
-                new Funcionario
-                {
-                    ID_FUNCIONARIO = 2,
-                    NOME = "Maria Souza",
-                    CPF = "987.654.321-00",
-                    CARGO = "Gerente",
-                    DATA_ADMISSAO = DateTime.Parse("2024-06-10", CultureInfo.InvariantCulture), // ← CORRIGIDO
-                    ID_DEPARTAMENTO = 1
-                },
-                new Funcionario
-                {
-                    ID_FUNCIONARIO = 3,
-                    NOME = "Pedro Santos",
-                    CPF = "456.789.123-00",
-                    CARGO = "Coordenador",
-                    DATA_ADMISSAO = DateTime.Parse("2024-09-05", CultureInfo.InvariantCulture), // ← CORRIGIDO
-                    ID_DEPARTAMENTO = 2
-                }
-            };
+            var entities = await _context.Funcionarios
+                                         .AsNoTracking()
+                                         .Include(f => f.Departamento)
+                                         .Include(f => f.Usuario)
+                                         .ToListAsync();
+
+            var dtos = _mapper.Map<IEnumerable<FuncionarioDTO>>(entities);
+            return Ok(dtos);
+        }
+
+        /// <summary>Obtém um funcionário pelo ID</summary>
+        [HttpGet("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [SwaggerOperation(Summary = "Obtém um funcionário por ID", Description = "Retorna informações detalhadas de um funcionário")]
+        public async Task<ActionResult<FuncionarioDTO>> GetFuncionario(int id)
+        {
+            var entity = await _context.Funcionarios
+                                       .AsNoTracking()
+                                       .Include(f => f.Departamento)
+                                       .Include(f => f.Usuario)
+                                       .FirstOrDefaultAsync(f => f.ID_FUNCIONARIO == id);
+
+            if (entity is null) return NotFound();
+            return Ok(_mapper.Map<FuncionarioDTO>(entity));
+        }
+
+        /// <summary>Cadastra um novo funcionário</summary>
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [SwaggerOperation(Summary = "Cadastra um novo funcionário", Description = "Cria um novo registro de funcionário")]
+        public async Task<ActionResult<FuncionarioDTO>> PostFuncionario([FromBody] CreateFuncionarioDto dto)
+        {
+            var entity = _mapper.Map<Funcionario>(dto);
+
+            _context.Funcionarios.Add(entity);
+            await _context.SaveChangesAsync();
+
+            var result = _mapper.Map<FuncionarioDTO>(entity);
+            return CreatedAtAction(nameof(GetFuncionario), new { id = entity.ID_FUNCIONARIO }, result);
+        }
+
+        /// <summary>Atualiza um funcionário existente</summary>
+        [HttpPut("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [SwaggerOperation(Summary = "Atualiza um funcionário", Description = "Atualiza informações de um funcionário existente")]
+        public async Task<ActionResult<FuncionarioDTO>> PutFuncionario(int id, [FromBody] UpdateFuncionarioDto dto)
+        {
+            var entity = await _context.Funcionarios.FirstOrDefaultAsync(f => f.ID_FUNCIONARIO == id);
+            if (entity is null) return NotFound();
+
+            _mapper.Map(dto, entity);
+            await _context.SaveChangesAsync();
+
+            return Ok(_mapper.Map<FuncionarioDTO>(entity));
+        }
+
+        /// <summary>Exclui um funcionário</summary>
+        [HttpDelete("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [SwaggerOperation(Summary = "Exclui um funcionário", Description = "Remove um funcionário do sistema")]
+        public async Task<IActionResult> DeleteFuncionario(int id)
+        {
+            var entity = await _context.Funcionarios.FindAsync(id);
+            if (entity is null) return NotFound();
+
+            _context.Funcionarios.Remove(entity);
+            await _context.SaveChangesAsync();
+            return NoContent();
         }
     }
 }

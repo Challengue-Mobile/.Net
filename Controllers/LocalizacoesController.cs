@@ -1,21 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using API_.Net.Models;
-using API_.Net.Data;
+using Microsoft.AspNetCore.Http;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-using Swashbuckle.AspNetCore.Annotations;
+
+using API_.Net.Data;
+using API_.Net.Models;
+using AutoMapper;
+using API_.Net.DTOs;               // LocalizacaoDTO
+using API_.Net.DTOs.Requests;      // CreateLocalizacaoDto / UpdateLocalizacaoDto
 using Swashbuckle.AspNetCore.Filters;
-using API_.Net.Examples;
-using Microsoft.AspNetCore.Http;
+// using API_.Net.Examples; // ← deixe comentado até migrarmos os Examples para DTOs
 
 namespace API.Net.Controllers
 {
-    /// <summary>
-    /// API para gerenciamento de localizações
-    /// </summary>
+    /// <summary>API para gerenciamento de localizações</summary>
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -23,187 +25,111 @@ namespace API.Net.Controllers
     public class LocalizacoesController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-        public LocalizacoesController(AppDbContext context)
+        public LocalizacoesController(AppDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper  = mapper;
         }
 
-        /// <summary>
-        /// Obtém todas as localizações registradas
-        /// </summary>
-        /// <returns>Lista de localizações</returns>
-        /// <response code="200">Retorna a lista de localizações</response>
+        /// <summary>Obtém todas as localizações registradas</summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [SwaggerOperation(
-            Summary = "Lista todas as localizações",
-            Description = "Obtém uma lista de todas as localizações de motos registradas no sistema")]
-        [SwaggerResponseExample(StatusCodes.Status200OK, typeof(LocalizacoesListResponseExample))]
-        public async Task<ActionResult<IEnumerable<Localizacao>>> GetLocalizacoes()
+        [SwaggerOperation(Summary = "Lista todas as localizações", Description = "Obtém todas as localizações registradas")]
+        public async Task<ActionResult<IEnumerable<LocalizacaoDTO>>> GetLocalizacoes()
         {
-            return Ok(await _context.Localizacoes.ToListAsync());
+            var entities = await _context.Localizacoes
+                                         .AsNoTracking()
+                                         .ToListAsync();
+
+            var dtos = _mapper.Map<IEnumerable<LocalizacaoDTO>>(entities);
+            return Ok(dtos);
         }
 
-        /// <summary>
-        /// Obtém uma localização específica pelo ID
-        /// </summary>
-        /// <param name="id">ID da localização</param>
-        /// <returns>Dados da localização solicitada</returns>
-        /// <response code="200">Retorna a localização</response>
-        /// <response code="404">Se a localização não for encontrada</response>
-        [HttpGet("{id}")]
+        /// <summary>Obtém uma localização específica pelo ID</summary>
+        [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(
-            Summary = "Obtém uma localização pelo ID",
-            Description = "Busca e retorna informações detalhadas de uma localização específica")]
-        [SwaggerResponseExample(StatusCodes.Status200OK, typeof(LocalizacaoResponseExample))]
-        [SwaggerResponseExample(StatusCodes.Status404NotFound, typeof(NotFoundResponseExample))]
-        public async Task<ActionResult<Localizacao>> GetLocalizacao(int id)
+        [SwaggerOperation(Summary = "Obtém uma localização pelo ID", Description = "Retorna uma localização específica")]
+        public async Task<ActionResult<LocalizacaoDTO>> GetLocalizacao(int id)
         {
-            var localizacao = await _context.Localizacoes.FindAsync(id);
+            var entity = await _context.Localizacoes
+                                       .AsNoTracking()
+                                       .FirstOrDefaultAsync(l => l.ID_LOCALIZACAO == id);
 
-            if (localizacao == null)
-            {
-                return NotFound();
-            }
-
-            return localizacao;
+            if (entity is null) return NotFound();
+            return Ok(_mapper.Map<LocalizacaoDTO>(entity));
         }
 
-        /// <summary>
-        /// Busca localizações de uma moto específica
-        /// </summary>
-        /// <param name="motoId">ID da moto</param>
-        /// <returns>Lista de localizações da moto, ordenadas pela data mais recente</returns>
-        /// <response code="200">Retorna a lista de localizações da moto</response>
-        [HttpGet("moto/{motoId}")]
+        /// <summary>Busca localizações de uma moto específica</summary>
+        [HttpGet("moto/{motoId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [SwaggerOperation(
-            Summary = "Busca localizações por moto",
-            Description = "Obtém o histórico de localizações de uma moto específica, ordenadas da mais recente para a mais antiga")]
-        [SwaggerResponseExample(StatusCodes.Status200OK, typeof(LocalizacoesListResponseExample))]
-        public async Task<ActionResult<IEnumerable<Localizacao>>> GetLocalizacoesByMoto(int motoId)
+        [SwaggerOperation(Summary = "Busca localizações por moto", Description = "Lista histórico de localizações de uma moto, mais recentes primeiro")]
+        public async Task<ActionResult<IEnumerable<LocalizacaoDTO>>> GetLocalizacoesByMoto(int motoId)
         {
-            return await _context.Localizacoes
-                .Where(l => l.ID_MOTO == motoId)
-                .OrderByDescending(l => l.DATA_HORA)
-                .ToListAsync();
+            var entities = await _context.Localizacoes
+                                         .AsNoTracking()
+                                         .Where(l => l.ID_MOTO == motoId)
+                                         .OrderByDescending(l => l.DATA_HORA)
+                                         .ToListAsync();
+
+            var dtos = _mapper.Map<IEnumerable<LocalizacaoDTO>>(entities);
+            return Ok(dtos);
         }
 
-        /// <summary>
-        /// Registra uma nova localização
-        /// </summary>
-        /// <param name="localizacao">Dados da localização a ser registrada</param>
-        /// <returns>Localização registrada com seu ID</returns>
-        /// <response code="201">Retorna a localização recém registrada</response>
-        /// <response code="400">Se os dados da localização são inválidos</response>
-        /// <remarks>
-        /// Exemplo de requisição:
-        /// 
-        ///     POST /api/Localizacoes
-        ///     {
-        ///        "posicao_x": -23.550520,
-        ///        "posicao_y": -46.633308,
-        ///        "id_moto": 1,
-        ///        "id_patio": null
-        ///     }
-        /// </remarks>
+        /// <summary>Registra uma nova localização</summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [SwaggerOperation(
-            Summary = "Registra uma nova localização",
-            Description = "Cria um novo registro de localização de moto no sistema")]
-        [SwaggerRequestExample(typeof(Localizacao), typeof(LocalizacaoRequestExample))]
-        [SwaggerResponseExample(StatusCodes.Status201Created, typeof(LocalizacaoResponseExample))]
-        [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(ValidationErrorResponseExample))]
-        public async Task<ActionResult<Localizacao>> PostLocalizacao(Localizacao localizacao)
+        [SwaggerOperation(Summary = "Registra uma nova localização", Description = "Cria um registro de localização de moto")]
+        // [SwaggerRequestExample(typeof(CreateLocalizacaoDto), typeof(LocalizacaoRequestExample))] // ← atualizar depois que migrarmos os Examples para DTOs
+        public async Task<ActionResult<LocalizacaoDTO>> PostLocalizacao([FromBody] CreateLocalizacaoDto dto)
         {
-            localizacao.DATA_HORA = DateTime.Now;
-            
-            _context.Localizacoes.Add(localizacao);
+            var entity = _mapper.Map<Localizacao>(dto);
+            entity.DATA_HORA = DateTime.Now;
+
+            _context.Localizacoes.Add(entity);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetLocalizacao", new { id = localizacao.ID_LOCALIZACAO }, localizacao);
+            var result = _mapper.Map<LocalizacaoDTO>(entity);
+            return CreatedAtAction(nameof(GetLocalizacao), new { id = entity.ID_LOCALIZACAO }, result);
         }
 
-        /// <summary>
-        /// Atualiza os dados de uma localização existente
-        /// </summary>
-        /// <param name="id">ID da localização a ser atualizada</param>
-        /// <param name="localizacao">Novos dados da localização</param>
-        /// <returns>Nenhum conteúdo</returns>
-        /// <response code="204">Se a localização foi atualizada com sucesso</response>
-        /// <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
-        /// <response code="404">Se a localização não for encontrada</response>
-        [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        /// <summary>Atualiza os dados de uma localização existente</summary>
+        [HttpPut("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(
-            Summary = "Atualiza uma localização",
-            Description = "Atualiza informações de uma localização existente no sistema")]
-        [SwaggerRequestExample(typeof(Localizacao), typeof(LocalizacaoRequestExample))]
-        public async Task<IActionResult> PutLocalizacao(int id, Localizacao localizacao)
+        [SwaggerOperation(Summary = "Atualiza uma localização", Description = "Atualiza informações de uma localização existente")]
+        // [SwaggerRequestExample(typeof(UpdateLocalizacaoDto), typeof(LocalizacaoRequestExample))] // ← atualizar depois
+        public async Task<ActionResult<LocalizacaoDTO>> PutLocalizacao(int id, [FromBody] UpdateLocalizacaoDto dto)
         {
-            if (id != localizacao.ID_LOCALIZACAO)
-            {
-                return BadRequest();
-            }
+            var entity = await _context.Localizacoes.FirstOrDefaultAsync(l => l.ID_LOCALIZACAO == id);
+            if (entity is null) return NotFound();
 
-            _context.Entry(localizacao).State = EntityState.Modified;
+            _mapper.Map(dto, entity);
+            await _context.SaveChangesAsync();
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!LocalizacaoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return Ok(_mapper.Map<LocalizacaoDTO>(entity));
         }
 
-        /// <summary>
-        /// Remove uma localização do sistema
-        /// </summary>
-        /// <param name="id">ID da localização a ser removida</param>
-        /// <returns>Nenhum conteúdo</returns>
-        /// <response code="204">Se a localização foi removida com sucesso</response>
-        /// <response code="404">Se a localização não for encontrada</response>
-        [HttpDelete("{id}")]
+        /// <summary>Remove uma localização do sistema</summary>
+        [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(
-            Summary = "Exclui uma localização",
-            Description = "Remove permanentemente uma localização do sistema")]
+        [SwaggerOperation(Summary = "Exclui uma localização", Description = "Remove permanentemente uma localização do sistema")]
         public async Task<IActionResult> DeleteLocalizacao(int id)
         {
-            var localizacao = await _context.Localizacoes.FindAsync(id);
-            if (localizacao == null)
-            {
-                return NotFound();
-            }
+            var entity = await _context.Localizacoes.FindAsync(id);
+            if (entity is null) return NotFound();
 
-            _context.Localizacoes.Remove(localizacao);
+            _context.Localizacoes.Remove(entity);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool LocalizacaoExists(int id)
-        {
-            return _context.Localizacoes.Any(e => e.ID_LOCALIZACAO == id);
-        }
+        private bool LocalizacaoExists(int id) =>
+            _context.Localizacoes.Any(e => e.ID_LOCALIZACAO == id);
     }
 }

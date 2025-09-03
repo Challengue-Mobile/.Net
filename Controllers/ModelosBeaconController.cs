@@ -1,14 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using API_.Net.Models;
-using API_.Net.Data;
+using Microsoft.AspNetCore.Http;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Swashbuckle.AspNetCore.Annotations;
-using Swashbuckle.AspNetCore.Filters;
-using API_.Net.Examples;
-using Microsoft.AspNetCore.Http;
+
+using API_.Net.Data;
+using API_.Net.Models;
+using AutoMapper;
+using API_.Net.DTOs;               // ModeloBeaconDTO
+using API_.Net.DTOs.Requests;      // CreateModeloBeaconDto / UpdateModeloBeaconDto
+// using Swashbuckle.AspNetCore.Filters;
+// using API_.Net.Examples; // ← migre seus Examples para DTOs e então reative
 
 namespace API.Net.Controllers
 {
@@ -22,141 +26,85 @@ namespace API.Net.Controllers
     public class ModelosBeaconController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-        public ModelosBeaconController(AppDbContext context)
+        public ModelosBeaconController(AppDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper  = mapper;
         }
 
-        /// <summary>
-        /// Obtém todos os modelos de beacon cadastrados
-        /// </summary>
-        /// <returns>Lista de modelos de beacon</returns>
-        /// <response code="200">Retorna a lista de modelos de beacon</response>
+        /// <summary>Obtém todos os modelos de beacon cadastrados</summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(
             Summary = "Lista todos os modelos de beacon",
             Description = "Obtém uma lista de todos os modelos de beacon cadastrados no sistema")]
-        [SwaggerResponseExample(StatusCodes.Status200OK, typeof(ModelosBeaconListResponseExample))]
-        public async Task<ActionResult<IEnumerable<ModeloBeacon>>> GetModelosBeacon()
+        public async Task<ActionResult<IEnumerable<ModeloBeaconDTO>>> GetModelosBeacon()
         {
-            return Ok(await _context.ModelosBeacon.ToListAsync());
+            var entities = await _context.ModelosBeacon
+                                         .AsNoTracking()
+                                         .ToListAsync();
+
+            var dtos = _mapper.Map<IEnumerable<ModeloBeaconDTO>>(entities);
+            return Ok(dtos);
         }
 
-        /// <summary>
-        /// Obtém um modelo de beacon específico pelo ID
-        /// </summary>
-        /// <param name="id">ID do modelo de beacon</param>
-        /// <returns>Dados do modelo de beacon solicitado</returns>
-        /// <response code="200">Retorna o modelo de beacon</response>
-        /// <response code="404">Se o modelo de beacon não for encontrado</response>
-        [HttpGet("{id}")]
+        /// <summary>Obtém um modelo de beacon específico pelo ID</summary>
+        [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(
             Summary = "Obtém um modelo de beacon pelo ID",
             Description = "Busca e retorna informações detalhadas de um modelo de beacon específico")]
-        [SwaggerResponseExample(StatusCodes.Status200OK, typeof(ModeloBeaconResponseExample))]
-        [SwaggerResponseExample(StatusCodes.Status404NotFound, typeof(NotFoundResponseExample))]
-        public async Task<ActionResult<ModeloBeacon>> GetModeloBeacon(int id)
+        public async Task<ActionResult<ModeloBeaconDTO>> GetModeloBeacon(int id)
         {
-            var modeloBeacon = await _context.ModelosBeacon.FindAsync(id);
+            var entity = await _context.ModelosBeacon
+                                       .AsNoTracking()
+                                       .FirstOrDefaultAsync(m => m.ID_MODELO_BEACON == id);
 
-            if (modeloBeacon == null)
-            {
-                return NotFound();
-            }
-
-            return modeloBeacon;
+            if (entity is null) return NotFound();
+            return Ok(_mapper.Map<ModeloBeaconDTO>(entity));
         }
 
-        /// <summary>
-        /// Cadastra um novo modelo de beacon
-        /// </summary>
-        /// <param name="modeloBeacon">Dados do modelo de beacon a ser cadastrado</param>
-        /// <returns>Modelo de beacon cadastrado com seu ID</returns>
-        /// <response code="201">Retorna o modelo de beacon recém criado</response>
-        /// <response code="400">Se os dados do modelo de beacon são inválidos</response>
-        /// <remarks>
-        /// Exemplo de requisição:
-        /// 
-        ///     POST /api/ModelosBeacon
-        ///     {
-        ///        "nome": "TrackBeacon Pro",
-        ///        "fabricante": "TrackTech"
-        ///     }
-        /// </remarks>
+        /// <summary>Cadastra um novo modelo de beacon</summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(
             Summary = "Cadastra um novo modelo de beacon",
             Description = "Cria um novo registro de modelo de beacon no sistema")]
-        [SwaggerRequestExample(typeof(ModeloBeacon), typeof(ModeloBeaconRequestExample))]
-        [SwaggerResponseExample(StatusCodes.Status201Created, typeof(ModeloBeaconResponseExample))]
-        [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(ValidationErrorResponseExample))]
-        public async Task<ActionResult<ModeloBeacon>> PostModeloBeacon(ModeloBeacon modeloBeacon)
+        public async Task<ActionResult<ModeloBeaconDTO>> PostModeloBeacon([FromBody] CreateModeloBeaconDto dto)
         {
-            _context.ModelosBeacon.Add(modeloBeacon);
+            var entity = _mapper.Map<ModeloBeacon>(dto);
+
+            _context.ModelosBeacon.Add(entity);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetModeloBeacon", new { id = modeloBeacon.ID_MODELO_BEACON }, modeloBeacon);
+            var result = _mapper.Map<ModeloBeaconDTO>(entity);
+            return CreatedAtAction(nameof(GetModeloBeacon), new { id = entity.ID_MODELO_BEACON }, result);
         }
 
-        /// <summary>
-        /// Atualiza os dados de um modelo de beacon existente
-        /// </summary>
-        /// <param name="id">ID do modelo de beacon a ser atualizado</param>
-        /// <param name="modeloBeacon">Novos dados do modelo de beacon</param>
-        /// <returns>Nenhum conteúdo</returns>
-        /// <response code="204">Se o modelo de beacon foi atualizado com sucesso</response>
-        /// <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
-        /// <response code="404">Se o modelo de beacon não for encontrado</response>
-        [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        /// <summary>Atualiza os dados de um modelo de beacon existente</summary>
+        [HttpPut("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(
             Summary = "Atualiza um modelo de beacon",
             Description = "Atualiza informações de um modelo de beacon existente no sistema")]
-        [SwaggerRequestExample(typeof(ModeloBeacon), typeof(ModeloBeaconRequestExample))]
-        public async Task<IActionResult> PutModeloBeacon(int id, ModeloBeacon modeloBeacon)
+        public async Task<ActionResult<ModeloBeaconDTO>> PutModeloBeacon(int id, [FromBody] UpdateModeloBeaconDto dto)
         {
-            if (id != modeloBeacon.ID_MODELO_BEACON)
-            {
-                return BadRequest();
-            }
+            var entity = await _context.ModelosBeacon.FirstOrDefaultAsync(m => m.ID_MODELO_BEACON == id);
+            if (entity is null) return NotFound();
 
-            _context.Entry(modeloBeacon).State = EntityState.Modified;
+            _mapper.Map(dto, entity);
+            await _context.SaveChangesAsync();
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ModeloBeaconExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return Ok(_mapper.Map<ModeloBeaconDTO>(entity));
         }
 
-        /// <summary>
-        /// Remove um modelo de beacon do sistema
-        /// </summary>
-        /// <param name="id">ID do modelo de beacon a ser removido</param>
-        /// <returns>Nenhum conteúdo</returns>
-        /// <response code="204">Se o modelo de beacon foi removido com sucesso</response>
-        /// <response code="404">Se o modelo de beacon não for encontrado</response>
-        [HttpDelete("{id}")]
+        /// <summary>Remove um modelo de beacon do sistema</summary>
+        [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(
@@ -164,21 +112,16 @@ namespace API.Net.Controllers
             Description = "Remove permanentemente um modelo de beacon do sistema")]
         public async Task<IActionResult> DeleteModeloBeacon(int id)
         {
-            var modeloBeacon = await _context.ModelosBeacon.FindAsync(id);
-            if (modeloBeacon == null)
-            {
-                return NotFound();
-            }
+            var entity = await _context.ModelosBeacon.FindAsync(id);
+            if (entity is null) return NotFound();
 
-            _context.ModelosBeacon.Remove(modeloBeacon);
+            _context.ModelosBeacon.Remove(entity);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool ModeloBeaconExists(int id)
-        {
-            return _context.ModelosBeacon.Any(e => e.ID_MODELO_BEACON == id);
-        }
+        private bool ModeloBeaconExists(int id) =>
+            _context.ModelosBeacon.Any(e => e.ID_MODELO_BEACON == id);
     }
 }

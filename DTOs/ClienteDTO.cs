@@ -2,8 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace API_.Net.DTOs
 {
-    // DTO para exibir informações de cliente
-    public class ClienteDto // ← CORRIGIDO - Issue L6
+    /// <summary>DTO de saída (Entity -> API)</summary>
+    public class ClienteDTO
     {
         public int ID_CLIENTE { get; set; }
         public string NOME { get; set; } = string.Empty;
@@ -14,8 +14,8 @@ namespace API_.Net.DTOs
         public int QuantidadeMotos { get; set; }
     }
 
-    // DTO para criar um novo cliente
-    public class CreateClienteDto // ← CORRIGIDO - Issue L18
+    /// <summary>DTO de criação (API -> Entity)</summary>
+    public class CreateClienteDto
     {
         [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
@@ -34,18 +34,17 @@ namespace API_.Net.DTOs
         public string TELEFONE { get; set; } = string.Empty;
     }
 
-    // DTO para atualizar um cliente existente
-    public class UpdateClienteDto // ← CORRIGIDO - Issue L38
+    /// <summary>DTO de atualização parcial (API -> Entity)</summary>
+    public class UpdateClienteDto
     {
-        [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
-        public string NOME { get; set; } = string.Empty;
+        public string? NOME { get; set; }
 
         [EmailAddress(ErrorMessage = "Email inválido")]
         [StringLength(100, ErrorMessage = "O email não pode ter mais de 100 caracteres")]
-        public string EMAIL { get; set; } = string.Empty;
+        public string? EMAIL { get; set; }
 
         [StringLength(20, ErrorMessage = "O telefone não pode ter mais de 20 caracteres")]
-        public string TELEFONE { get; set; } = string.Empty;
+        public string? TELEFONE { get; set; }
     }
 }

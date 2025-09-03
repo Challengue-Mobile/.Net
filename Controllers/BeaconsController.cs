@@ -9,6 +9,9 @@ using Swashbuckle.AspNetCore.Annotations;
 using Swashbuckle.AspNetCore.Filters;
 using API_.Net.Examples;
 using Microsoft.AspNetCore.Http;
+using AutoMapper;
+using API_.Net.DTOs;                 // BeaconDTO
+using API_.Net.DTOs.Requests;        // CreateBeaconDto / UpdateBeaconDto
 
 namespace API.Net.Controllers
 {
@@ -22,10 +25,12 @@ namespace API.Net.Controllers
     public class BeaconsController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-        public BeaconsController(AppDbContext context)
+        public BeaconsController(AppDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         /// <summary>
@@ -39,19 +44,17 @@ namespace API.Net.Controllers
             Summary = "Lista todos os beacons",
             Description = "Obtém uma lista de todos os beacons cadastrados no sistema")]
         [SwaggerResponseExample(StatusCodes.Status200OK, typeof(BeaconsListResponseExample))]
-        public async Task<ActionResult<IEnumerable<Beacon>>> GetBeacons()
+        public async Task<ActionResult<IEnumerable<BeaconDTO>>> GetBeacons()
         {
-            return Ok(await _context.Beacons.ToListAsync());
+            var entities = await _context.Beacons.AsNoTracking().ToListAsync();
+            var dtos = _mapper.Map<IEnumerable<BeaconDTO>>(entities);
+            return Ok(dtos);
         }
 
         /// <summary>
         /// Obtém um beacon específico pelo ID
         /// </summary>
-        /// <param name="id">ID do beacon</param>
-        /// <returns>Dados do beacon solicitado</returns>
-        /// <response code="200">Retorna o beacon</response>
-        /// <response code="404">Se o beacon não for encontrado</response>
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(
@@ -59,44 +62,36 @@ namespace API.Net.Controllers
             Description = "Busca e retorna informações detalhadas de um beacon específico")]
         [SwaggerResponseExample(StatusCodes.Status200OK, typeof(BeaconResponseExample))]
         [SwaggerResponseExample(StatusCodes.Status404NotFound, typeof(NotFoundResponseExample))]
-        public async Task<ActionResult<Beacon>> GetBeacon(int id)
+        public async Task<ActionResult<BeaconDTO>> GetBeacon(int id)
         {
-            var beacon = await _context.Beacons.FindAsync(id);
+            var entity = await _context.Beacons.AsNoTracking().FirstOrDefaultAsync(b => b.ID_BEACON == id);
+            if (entity is null) return NotFound();
 
-            if (beacon == null)
-            {
-                return NotFound();
-            }
-
-            return beacon;
+            return Ok(_mapper.Map<BeaconDTO>(entity));
         }
 
         /// <summary>
         /// Busca beacons associados a uma moto específica
         /// </summary>
-        /// <param name="motoId">ID da moto</param>
-        /// <returns>Lista de beacons associados à moto</returns>
-        /// <response code="200">Retorna a lista de beacons da moto</response>
-        [HttpGet("moto/{motoId}")]
+        [HttpGet("moto/{motoId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(
             Summary = "Busca beacons por moto",
             Description = "Obtém todos os beacons associados a uma moto específica")]
         [SwaggerResponseExample(StatusCodes.Status200OK, typeof(BeaconsListResponseExample))]
-        public async Task<ActionResult<IEnumerable<Beacon>>> GetBeaconsByMoto(int motoId)
+        public async Task<ActionResult<IEnumerable<BeaconDTO>>> GetBeaconsByMoto(int motoId)
         {
-            return await _context.Beacons
+            var entities = await _context.Beacons
+                .AsNoTracking()
                 .Where(b => b.ID_MOTO == motoId)
                 .ToListAsync();
+
+            return Ok(_mapper.Map<IEnumerable<BeaconDTO>>(entities));
         }
 
         /// <summary>
         /// Busca um beacon pelo seu UUID
         /// </summary>
-        /// <param name="uuid">UUID do beacon</param>
-        /// <returns>Beacon correspondente ao UUID</returns>
-        /// <response code="200">Retorna o beacon com o UUID especificado</response>
-        /// <response code="404">Se nenhum beacon com o UUID informado for encontrado</response>
         [HttpGet("uuid/{uuid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -105,107 +100,77 @@ namespace API.Net.Controllers
             Description = "Localiza um beacon usando seu UUID como critério de busca")]
         [SwaggerResponseExample(StatusCodes.Status200OK, typeof(BeaconResponseExample))]
         [SwaggerResponseExample(StatusCodes.Status404NotFound, typeof(NotFoundResponseExample))]
-        public async Task<ActionResult<Beacon>> GetBeaconByUuid(string uuid)
+        public async Task<ActionResult<BeaconDTO>> GetBeaconByUuid(string uuid)
         {
-            var beacon = await _context.Beacons
+            var entity = await _context.Beacons
+                .AsNoTracking()
                 .FirstOrDefaultAsync(b => b.UUID == uuid);
 
-            if (beacon == null)
-            {
-                return NotFound();
-            }
+            if (entity is null) return NotFound();
 
-            return beacon;
+            return Ok(_mapper.Map<BeaconDTO>(entity));
         }
 
         /// <summary>
         /// Cadastra um novo beacon
         /// </summary>
-        /// <param name="beacon">Dados do beacon a ser cadastrado</param>
-        /// <returns>Beacon cadastrado com seu ID</returns>
-        /// <response code="201">Retorna o beacon recém criado</response>
-        /// <response code="400">Se os dados do beacon são inválidos</response>
-        /// <remarks>
-        /// Exemplo de requisição:
-        /// 
-        ///     POST /api/Beacons
-        ///     {
-        ///        "uuid": "550e8400-e29b-41d4-a716-446655440000",
-        ///        "bateria": 85,
-        ///        "id_moto": 1,
-        ///        "id_modelo_beacon": 1
-        ///     }
-        /// </remarks>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(
             Summary = "Cadastra um novo beacon",
             Description = "Cria um novo registro de beacon no sistema")]
-        [SwaggerRequestExample(typeof(Beacon), typeof(BeaconRequestExample))]
+        [SwaggerRequestExample(typeof(CreateBeaconDto), typeof(BeaconRequestExample))]
         [SwaggerResponseExample(StatusCodes.Status201Created, typeof(BeaconResponseExample))]
         [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(ValidationErrorResponseExample))]
-        public async Task<ActionResult<Beacon>> PostBeacon(Beacon beacon)
+        public async Task<ActionResult<BeaconDTO>> PostBeacon([FromBody] CreateBeaconDto dto)
         {
-            _context.Beacons.Add(beacon);
+            // Se usar AutoMapper para entrada, pode trocar por: var entity = _mapper.Map<Beacon>(dto);
+            var entity = new Beacon
+            {
+                UUID = dto.UUID,
+                BATERIA = dto.Bateria,
+                ID_MOTO = dto.IdMoto,
+                ID_MODELO_BEACON = dto.IdModeloBeacon
+            };
+
+            _context.Beacons.Add(entity);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetBeacon", new { id = beacon.ID_BEACON }, beacon);
+            var result = _mapper.Map<BeaconDTO>(entity);
+            return CreatedAtAction(nameof(GetBeacon), new { id = entity.ID_BEACON }, result);
         }
 
         /// <summary>
         /// Atualiza os dados de um beacon existente
         /// </summary>
-        /// <param name="id">ID do beacon a ser atualizado</param>
-        /// <param name="beacon">Novos dados do beacon</param>
-        /// <returns>Nenhum conteúdo</returns>
-        /// <response code="204">Se o beacon foi atualizado com sucesso</response>
-        /// <response code="400">Se o ID na URL não corresponde ao ID no corpo</response>
-        /// <response code="404">Se o beacon não for encontrado</response>
-        [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [HttpPut("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(
             Summary = "Atualiza um beacon",
             Description = "Atualiza informações de um beacon existente no sistema")]
-        [SwaggerRequestExample(typeof(Beacon), typeof(BeaconRequestExample))]
-        public async Task<IActionResult> PutBeacon(int id, Beacon beacon)
+        [SwaggerRequestExample(typeof(UpdateBeaconDto), typeof(BeaconRequestExample))]
+        public async Task<ActionResult<BeaconDTO>> PutBeacon(int id, [FromBody] UpdateBeaconDto dto)
         {
-            if (id != beacon.ID_BEACON)
-            {
-                return BadRequest();
-            }
+            var entity = await _context.Beacons.FirstOrDefaultAsync(b => b.ID_BEACON == id);
+            if (entity is null) return NotFound();
 
-            _context.Entry(beacon).State = EntityState.Modified;
+            // Se quiser usar AutoMapper: _mapper.Map(dto, entity);
+            if (dto.UUID is not null) entity.UUID = dto.UUID;
+            if (dto.Bateria.HasValue) entity.BATERIA = dto.Bateria.Value;
+            if (dto.IdMoto.HasValue) entity.ID_MOTO = dto.IdMoto.Value;
+            if (dto.IdModeloBeacon.HasValue) entity.ID_MODELO_BEACON = dto.IdModeloBeacon.Value;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!BeaconExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            await _context.SaveChangesAsync();
+            return Ok(_mapper.Map<BeaconDTO>(entity));
         }
 
         /// <summary>
         /// Remove um beacon do sistema
         /// </summary>
-        /// <param name="id">ID do beacon a ser removido</param>
-        /// <returns>Nenhum conteúdo</returns>
-        /// <response code="204">Se o beacon foi removido com sucesso</response>
-        /// <response code="404">Se o beacon não for encontrado</response>
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(
@@ -213,21 +178,15 @@ namespace API.Net.Controllers
             Description = "Remove permanentemente um beacon do sistema")]
         public async Task<IActionResult> DeleteBeacon(int id)
         {
-            var beacon = await _context.Beacons.FindAsync(id);
-            if (beacon == null)
-            {
-                return NotFound();
-            }
+            var entity = await _context.Beacons.FindAsync(id);
+            if (entity is null) return NotFound();
 
-            _context.Beacons.Remove(beacon);
+            _context.Beacons.Remove(entity);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool BeaconExists(int id)
-        {
-            return _context.Beacons.Any(e => e.ID_BEACON == id);
-        }
+        private bool BeaconExists(int id) => _context.Beacons.Any(e => e.ID_BEACON == id);
     }
 }

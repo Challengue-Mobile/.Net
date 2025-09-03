@@ -2,28 +2,26 @@ using System.ComponentModel.DataAnnotations;
 
 namespace API_.Net.DTOs
 {
-    // DTO para exibir informações de beacon
-    public class BeaconDto // ← CORRIGIDO - Issue L6
+    /// <summary>DTO de saída (Entity -> API)</summary>
+    public class BeaconDTO
     {
         public int ID_BEACON { get; set; }
         public string UUID { get; set; } = string.Empty;
-        public int BATERIA { get; set; }
+        public int? BATERIA { get; set; }       // pode vir nulo em leituras antigas
         public int ID_MOTO { get; set; }
         public int ID_MODELO_BEACON { get; set; }
-        public string PlacaMoto { get; set; } = string.Empty;
-        public string ModeloBeacon { get; set; } = string.Empty;
+        // Mantemos o contrato enxuto; se quiser exibir nomes (placa/modelo), crie um ViewModel separado.
     }
 
-    // DTO para criar um novo beacon
-    public class CreateBeaconDto // ← CORRIGIDO - Issue L18
+    /// <summary>DTO de criação (API -> Entity)</summary>
+    public class CreateBeaconDto
     {
         [Required(ErrorMessage = "O UUID é obrigatório")]
         [StringLength(100, ErrorMessage = "O UUID não pode ter mais de 100 caracteres")]
         public string UUID { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "O nível de bateria é obrigatório")]
         [Range(0, 100, ErrorMessage = "O nível de bateria deve estar entre 0 e 100")]
-        public int BATERIA { get; set; }
+        public int? BATERIA { get; set; }   // opcional na criação (se não informado, o backend pode calcular)
 
         [Required(ErrorMessage = "O ID da moto é obrigatório")]
         public int ID_MOTO { get; set; }
@@ -32,14 +30,18 @@ namespace API_.Net.DTOs
         public int ID_MODELO_BEACON { get; set; }
     }
 
-    // DTO para atualizar um beacon existente
-    public class UpdateBeaconDto // ← CORRIGIDO - Issue L36
+    /// <summary>DTO de atualização parcial (API -> Entity)</summary>
+    public class UpdateBeaconDto
     {
-        [Required(ErrorMessage = "O nível de bateria é obrigatório")]
-        [Range(0, 100, ErrorMessage = "O nível de bateria deve estar entre 0 e 100")]
-        public int BATERIA { get; set; }
+        // Todos opcionais para evitar under-posting; o AutoMapper só aplicará se tiver valor (Profile já tem Condition != null)
+        [StringLength(100, ErrorMessage = "O UUID não pode ter mais de 100 caracteres")]
+        public string? UUID { get; set; }
 
-        [Required(ErrorMessage = "O ID da moto é obrigatório")]
-        public int ID_MOTO { get; set; }
+        [Range(0, 100, ErrorMessage = "O nível de bateria deve estar entre 0 e 100")]
+        public int? BATERIA { get; set; }
+
+        public int? ID_MOTO { get; set; }
+
+        public int? ID_MODELO_BEACON { get; set; }
     }
 }
