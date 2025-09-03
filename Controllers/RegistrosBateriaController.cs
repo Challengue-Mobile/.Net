@@ -10,9 +10,9 @@ using System;
 using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
-using API_.Net.DTOs;               // RegistroBateriaDTO
-using API_.Net.DTOs.Requests;      // CreateRegistroBateriaDTO / UpdateRegistroBateriaDTO
-// using Swashbuckle.AspNetCore.Filters;
+using API_.Net.DTOs;               
+using API_.Net.DTOs.Requests;      
+
 
 
 namespace API.Net.Controllers
