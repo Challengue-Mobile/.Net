@@ -7,9 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="550ddf4b-bc66-4ccf-8512-4de5614e1e12" name="Changes" comment="Renomeando os nomes das classes">
-      <change beforePath="$PROJECT_DIR$/DTOs/Common/BaseResponseDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/Common/BaseResponseDto.cs" afterDir="false" />
-    </list>
+    <list default="true" id="550ddf4b-bc66-4ccf-8512-4de5614e1e12" name="Changes" comment="renomeando as classes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1756855683265</updated>
       <workItem from="1756855683267" duration="6029000" />
-      <workItem from="1756934391250" duration="6005000" />
+      <workItem from="1756934391250" duration="6501000" />
     </task>
     <task id="LOCAL-00001" summary="arrumando os dtos">
       <option name="closed" value="true" />
@@ -137,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756940257998</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="renomeando as classes">
+      <option name="closed" value="true" />
+      <created>1756940915170</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1756940915170</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +158,7 @@
     <MESSAGE value="Arrumando a classe MappingProfile.cs" />
     <MESSAGE value="arrumando" />
     <MESSAGE value="Renomeando os nomes das classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renomeando os nomes das classes" />
+    <MESSAGE value="renomeando as classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="renomeando as classes" />
   </component>
 </project>

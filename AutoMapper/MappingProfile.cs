@@ -20,7 +20,7 @@ namespace API_.Net.AutoMapper
             CreateMap<Usuario, UsuarioDto>();
 
             // comuns/adicionais
-            CreateMap<Patio, PatioDTO>();
+            CreateMap<Patio, PatiosDto>();
             CreateMap<ModeloBeacon, ModeloBeaconDto>();
             CreateMap<RegistroBateria, RegistroBateriaDto>();
             CreateMap<TipoUsuario, TipoUsuarioDto>();

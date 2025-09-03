@@ -37,14 +37,14 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Lista todos os pátios",
                           Description = "Obtém uma lista de todos os pátios cadastrados no sistema")]
-        public async Task<ActionResult<IEnumerable<PatioDTO>>> GetPatios()
+        public async Task<ActionResult<IEnumerable<PatiosDto>>> GetPatios()
         {
             var entities = await _context.Patios
                                          .AsNoTracking()
                                          .Include(p => p.Logradouro)
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<PatioDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<PatiosDto>>(entities);
             return Ok(dtos);
         }
 
@@ -54,7 +54,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Obtém um pátio pelo ID",
                           Description = "Busca e retorna informações detalhadas de um pátio específico")]
-        public async Task<ActionResult<PatioDTO>> GetPatio(int id)
+        public async Task<ActionResult<PatiosDto>> GetPatio(int id)
         {
             var entity = await _context.Patios
                                        .AsNoTracking()
@@ -62,7 +62,7 @@ namespace API.Net.Controllers
                                        .FirstOrDefaultAsync(p => p.ID_PATIO == id);
 
             if (entity is null) return NotFound();
-            return Ok(_mapper.Map<PatioDTO>(entity));
+            return Ok(_mapper.Map<PatiosDto>(entity));
         }
 
         /// <summary>Busca pátios por logradouro</summary>
@@ -70,14 +70,14 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Busca pátios por logradouro",
                           Description = "Obtém todos os pátios localizados em um logradouro específico")]
-        public async Task<ActionResult<IEnumerable<PatioDTO>>> GetPatiosByLogradouro(int logradouroId)
+        public async Task<ActionResult<IEnumerable<PatiosDto>>> GetPatiosByLogradouro(int logradouroId)
         {
             var entities = await _context.Patios
                                          .AsNoTracking()
                                          .Where(p => p.ID_LOGRADOURO == logradouroId)
                                          .ToListAsync();
 
-            var dtos = _mapper.Map<IEnumerable<PatioDTO>>(entities);
+            var dtos = _mapper.Map<IEnumerable<PatiosDto>>(entities);
             return Ok(dtos);
         }
 
@@ -87,14 +87,14 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo pátio",
                           Description = "Cria um novo registro de pátio no sistema")]
-        public async Task<ActionResult<PatioDTO>> PostPatio([FromBody] CreatePatioDto dto)
+        public async Task<ActionResult<PatiosDto>> PostPatio([FromBody] CreatePatioDto dto)
         {
             var entity = _mapper.Map<Patio>(dto);
 
             _context.Patios.Add(entity);
             await _context.SaveChangesAsync();
 
-            var result = _mapper.Map<PatioDTO>(entity);
+            var result = _mapper.Map<PatiosDto>(entity);
             return CreatedAtAction(nameof(GetPatio), new { id = entity.ID_PATIO }, result);
         }
 
@@ -104,7 +104,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um pátio",
                           Description = "Atualiza informações de um pátio existente no sistema")]
-        public async Task<ActionResult<PatioDTO>> PutPatio(int id, [FromBody] UpdatePatioDto dto)
+        public async Task<ActionResult<PatiosDto>> PutPatio(int id, [FromBody] UpdatePatioDto dto)
         {
             var entity = await _context.Patios.FirstOrDefaultAsync(p => p.ID_PATIO == id);
             if (entity is null) return NotFound();
@@ -112,7 +112,7 @@ namespace API.Net.Controllers
             _mapper.Map(dto, entity);
             await _context.SaveChangesAsync();
 
-            return Ok(_mapper.Map<PatioDTO>(entity));
+            return Ok(_mapper.Map<PatiosDto>(entity));
         }
 
         /// <summary>Remove um pátio do sistema</summary>

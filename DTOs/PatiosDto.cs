@@ -1,6 +1,6 @@
 ﻿namespace API_.Net.DTOs
 {
-    public class PatioDTO
+    public class PatiosDto
     {
         public int ID_PATIO { get; set; }
         public string NOME { get; set; } = string.Empty;
