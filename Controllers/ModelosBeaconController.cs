@@ -10,15 +10,13 @@ using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
 using API_.Net.DTOs;               // ModeloBeaconDTO
-using API_.Net.DTOs.Requests;      // CreateModeloBeaconDto / UpdateModeloBeaconDto
+using API_.Net.DTOs.Requests;      // CreateModeloBeaconDTO / UpdateModeloBeaconDTO
 // using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples; // ← migre seus Examples para DTOs e então reative
+// using API_.Net.Examples;
 
 namespace API.Net.Controllers
 {
-    /// <summary>
-    /// API para gerenciamento de modelos de beacon
-    /// </summary>
+    /// <summary>API para gerenciamento de modelos de beacon</summary>
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -74,7 +72,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Cadastra um novo modelo de beacon",
             Description = "Cria um novo registro de modelo de beacon no sistema")]
-        public async Task<ActionResult<ModeloBeaconDTO>> PostModeloBeacon([FromBody] CreateModeloBeaconDto dto)
+        public async Task<ActionResult<ModeloBeaconDTO>> PostModeloBeacon([FromBody] CreateModeloBeaconDTO dto)
         {
             var entity = _mapper.Map<ModeloBeacon>(dto);
 
@@ -92,7 +90,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Atualiza um modelo de beacon",
             Description = "Atualiza informações de um modelo de beacon existente no sistema")]
-        public async Task<ActionResult<ModeloBeaconDTO>> PutModeloBeacon(int id, [FromBody] UpdateModeloBeaconDto dto)
+        public async Task<ActionResult<ModeloBeaconDTO>> PutModeloBeacon(int id, [FromBody] UpdateModeloBeaconDTO dto)
         {
             var entity = await _context.ModelosBeacon.FirstOrDefaultAsync(m => m.ID_MODELO_BEACON == id);
             if (entity is null) return NotFound();

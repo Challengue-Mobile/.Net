@@ -1,0 +1,17 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace API_.Net.DTOs
+{
+    /// <summary>DTO de resposta para Departamento (Entity → API)</summary>
+    public class DepartamentoDTO
+    {
+        public int ID_DEPARTAMENTO { get; set; }
+
+        public string NOME { get; set; } = string.Empty;
+
+        public int ID_FILIAL { get; set; }
+
+        /// <summary>Nome da filial (mapeado via Include/Projection)</summary>
+        public string? NOME_FILIAL { get; set; }
+    }
+}

@@ -10,9 +10,9 @@ using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
 using API_.Net.DTOs;               // PatioDTO
-using API_.Net.DTOs.Requests;      // CreatePatioDto / UpdatePatioDto
+using API_.Net.DTOs.Requests;      // CreatePatioDTO / UpdatePatioDTO
 // using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples; // ← migre seus Examples para DTOs e reative depois, se quiser
+// using API_.Net.Examples;
 
 namespace API.Net.Controllers
 {
@@ -35,7 +35,8 @@ namespace API.Net.Controllers
         /// <summary>Obtém todos os pátios cadastrados</summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [SwaggerOperation(Summary = "Lista todos os pátios", Description = "Obtém uma lista de todos os pátios cadastrados no sistema")]
+        [SwaggerOperation(Summary = "Lista todos os pátios",
+                          Description = "Obtém uma lista de todos os pátios cadastrados no sistema")]
         public async Task<ActionResult<IEnumerable<PatioDTO>>> GetPatios()
         {
             var entities = await _context.Patios
@@ -51,7 +52,8 @@ namespace API.Net.Controllers
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(Summary = "Obtém um pátio pelo ID", Description = "Busca e retorna informações detalhadas de um pátio específico")]
+        [SwaggerOperation(Summary = "Obtém um pátio pelo ID",
+                          Description = "Busca e retorna informações detalhadas de um pátio específico")]
         public async Task<ActionResult<PatioDTO>> GetPatio(int id)
         {
             var entity = await _context.Patios
@@ -66,7 +68,8 @@ namespace API.Net.Controllers
         /// <summary>Busca pátios por logradouro</summary>
         [HttpGet("logradouro/{logradouroId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [SwaggerOperation(Summary = "Busca pátios por logradouro", Description = "Obtém todos os pátios localizados em um logradouro específico")]
+        [SwaggerOperation(Summary = "Busca pátios por logradouro",
+                          Description = "Obtém todos os pátios localizados em um logradouro específico")]
         public async Task<ActionResult<IEnumerable<PatioDTO>>> GetPatiosByLogradouro(int logradouroId)
         {
             var entities = await _context.Patios
@@ -82,8 +85,9 @@ namespace API.Net.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [SwaggerOperation(Summary = "Cadastra um novo pátio", Description = "Cria um novo registro de pátio no sistema")]
-        public async Task<ActionResult<PatioDTO>> PostPatio([FromBody] CreatePatioDto dto)
+        [SwaggerOperation(Summary = "Cadastra um novo pátio",
+                          Description = "Cria um novo registro de pátio no sistema")]
+        public async Task<ActionResult<PatioDTO>> PostPatio([FromBody] CreatePatioDTO dto)
         {
             var entity = _mapper.Map<Patio>(dto);
 
@@ -98,8 +102,9 @@ namespace API.Net.Controllers
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(Summary = "Atualiza um pátio", Description = "Atualiza informações de um pátio existente no sistema")]
-        public async Task<ActionResult<PatioDTO>> PutPatio(int id, [FromBody] UpdatePatioDto dto)
+        [SwaggerOperation(Summary = "Atualiza um pátio",
+                          Description = "Atualiza informações de um pátio existente no sistema")]
+        public async Task<ActionResult<PatioDTO>> PutPatio(int id, [FromBody] UpdatePatioDTO dto)
         {
             var entity = await _context.Patios.FirstOrDefaultAsync(p => p.ID_PATIO == id);
             if (entity is null) return NotFound();
@@ -114,7 +119,8 @@ namespace API.Net.Controllers
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(Summary = "Exclui um pátio", Description = "Remove permanentemente um pátio do sistema")]
+        [SwaggerOperation(Summary = "Exclui um pátio",
+                          Description = "Remove permanentemente um pátio do sistema")]
         public async Task<IActionResult> DeletePatio(int id)
         {
             var entity = await _context.Patios.FindAsync(id);

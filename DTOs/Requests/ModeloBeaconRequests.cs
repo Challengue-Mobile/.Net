@@ -2,15 +2,24 @@
 
 namespace API_.Net.DTOs.Requests
 {
-    public class CreateModeloBeaconDto
+    /// <summary>DTO de criação (API → Entity)</summary>
+    public class CreateModeloBeaconDTO
     {
-        [Required] public string NOME { get; set; } = default!;
+        [Required(ErrorMessage = "O nome é obrigatório")]
+        [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
+        public string NOME { get; set; } = default!;
+
+        [StringLength(100, ErrorMessage = "O fabricante não pode ter mais de 100 caracteres")]
         public string? FABRICANTE { get; set; }
     }
 
-    public class UpdateModeloBeaconDto
+    /// <summary>DTO de atualização parcial (API → Entity)</summary>
+    public class UpdateModeloBeaconDTO
     {
+        [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
         public string? NOME { get; set; }
+
+        [StringLength(100, ErrorMessage = "O fabricante não pode ter mais de 100 caracteres")]
         public string? FABRICANTE { get; set; }
     }
 }

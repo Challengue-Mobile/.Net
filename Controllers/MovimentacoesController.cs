@@ -11,9 +11,9 @@ using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
 using API_.Net.DTOs;               // MovimentacaoDTO
-using API_.Net.DTOs.Requests;      // CreateMovimentacaoDto / UpdateMovimentacaoDto
+using API_.Net.DTOs.Requests;      // CreateMovimentacaoDTO / UpdateMovimentacaoDTO
 // using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples; // ← migre seus Examples para DTOs e reative, se quiser
+// using API_.Net.Examples;
 
 namespace API.Net.Controllers
 {
@@ -36,7 +36,8 @@ namespace API.Net.Controllers
         /// <summary>Obtém todas as movimentações registradas</summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [SwaggerOperation(Summary = "Lista todas as movimentações", Description = "Obtém todas as movimentações registradas no sistema")]
+        [SwaggerOperation(Summary = "Lista todas as movimentações",
+                          Description = "Obtém todas as movimentações registradas no sistema")]
         public async Task<ActionResult<IEnumerable<MovimentacaoDTO>>> GetMovimentacoes()
         {
             var entities = await _context.Movimentacoes
@@ -51,7 +52,8 @@ namespace API.Net.Controllers
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(Summary = "Obtém uma movimentação pelo ID", Description = "Retorna detalhes de uma movimentação específica")]
+        [SwaggerOperation(Summary = "Obtém uma movimentação pelo ID",
+                          Description = "Retorna detalhes de uma movimentação específica")]
         public async Task<ActionResult<MovimentacaoDTO>> GetMovimentacao(int id)
         {
             var entity = await _context.Movimentacoes
@@ -65,7 +67,8 @@ namespace API.Net.Controllers
         /// <summary>Busca movimentações de uma moto específica</summary>
         [HttpGet("moto/{motoId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [SwaggerOperation(Summary = "Busca movimentações por moto", Description = "Histórico de movimentações de uma moto, mais recentes primeiro")]
+        [SwaggerOperation(Summary = "Busca movimentações por moto",
+                          Description = "Histórico de movimentações de uma moto, mais recentes primeiro")]
         public async Task<ActionResult<IEnumerable<MovimentacaoDTO>>> GetMovimentacoesByMoto(int motoId)
         {
             var entities = await _context.Movimentacoes
@@ -82,8 +85,9 @@ namespace API.Net.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [SwaggerOperation(Summary = "Registra uma nova movimentação", Description = "Cria um registro de movimentação de moto")]
-        public async Task<ActionResult<MovimentacaoDTO>> PostMovimentacao([FromBody] CreateMovimentacaoDto dto)
+        [SwaggerOperation(Summary = "Registra uma nova movimentação",
+                          Description = "Cria um registro de movimentação de moto")]
+        public async Task<ActionResult<MovimentacaoDTO>> PostMovimentacao([FromBody] CreateMovimentacaoDTO dto)
         {
             var entity = _mapper.Map<Movimentacao>(dto);
             entity.DATA_MOVIMENTACAO = DateTime.Now;
@@ -99,8 +103,9 @@ namespace API.Net.Controllers
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(Summary = "Atualiza uma movimentação", Description = "Atualiza informações de uma movimentação existente")]
-        public async Task<ActionResult<MovimentacaoDTO>> PutMovimentacao(int id, [FromBody] UpdateMovimentacaoDto dto)
+        [SwaggerOperation(Summary = "Atualiza uma movimentação",
+                          Description = "Atualiza informações de uma movimentação existente")]
+        public async Task<ActionResult<MovimentacaoDTO>> PutMovimentacao(int id, [FromBody] UpdateMovimentacaoDTO dto)
         {
             var entity = await _context.Movimentacoes.FirstOrDefaultAsync(m => m.ID_MOVIMENTACAO == id);
             if (entity is null) return NotFound();
@@ -115,7 +120,8 @@ namespace API.Net.Controllers
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(Summary = "Exclui uma movimentação", Description = "Remove permanentemente uma movimentação do sistema")]
+        [SwaggerOperation(Summary = "Exclui uma movimentação",
+                          Description = "Remove permanentemente uma movimentação do sistema")]
         public async Task<IActionResult> DeleteMovimentacao(int id)
         {
             var entity = await _context.Movimentacoes.FindAsync(id);

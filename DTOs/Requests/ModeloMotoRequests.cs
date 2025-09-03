@@ -2,15 +2,25 @@
 
 namespace API_.Net.DTOs.Requests
 {
-    public class CreateModeloMotoDto
+    /// <summary>DTO de criação (API → Entity)</summary>
+    public class CreateModeloMotoDTO
     {
-        [Required] public string NOME { get; set; } = default!;
-        public string? FABRICANTE { get; set; }
+        [Required(ErrorMessage = "O nome do modelo é obrigatório")]
+        [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
+        public string NOME { get; set; } = default!;
+
+        [Required(ErrorMessage = "O fabricante é obrigatório")]
+        [StringLength(100, ErrorMessage = "O fabricante não pode ter mais de 100 caracteres")]
+        public string FABRICANTE { get; set; } = default!;
     }
 
-    public class UpdateModeloMotoDto
+    /// <summary>DTO de atualização parcial (API → Entity)</summary>
+    public class UpdateModeloMotoDTO
     {
+        [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
         public string? NOME { get; set; }
+
+        [StringLength(100, ErrorMessage = "O fabricante não pode ter mais de 100 caracteres")]
         public string? FABRICANTE { get; set; }
     }
 }

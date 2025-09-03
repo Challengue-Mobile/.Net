@@ -2,16 +2,26 @@
 
 namespace API_.Net.DTOs.Requests
 {
-    public class CreateMotoDto
+    /// <summary>DTO de criação (API → Entity)</summary>
+    public class CreateMotoDTO
     {
-        [Required, StringLength(10)] public string PLACA { get; set; } = default!;
-        [Required] public int ID_CLIENTE { get; set; }
-        [Required] public int ID_MODELO_MOTO { get; set; }
+        [Required(ErrorMessage = "A placa é obrigatória")]
+        [StringLength(10, ErrorMessage = "A placa não pode ter mais de 10 caracteres")]
+        public string PLACA { get; set; } = default!;
+
+        // Cliente é OPCIONAL no seu domínio (int?)
+        public int? ID_CLIENTE { get; set; }
+
+        [Required(ErrorMessage = "O modelo da moto é obrigatório")]
+        public int ID_MODELO_MOTO { get; set; }
     }
 
-    public class UpdateMotoDto
+    /// <summary>DTO de atualização parcial (API → Entity)</summary>
+    public class UpdateMotoDTO
     {
-        [StringLength(10)] public string? PLACA { get; set; }
+        [StringLength(10, ErrorMessage = "A placa não pode ter mais de 10 caracteres")]
+        public string? PLACA { get; set; }
+
         public int? ID_CLIENTE { get; set; }
         public int? ID_MODELO_MOTO { get; set; }
     }

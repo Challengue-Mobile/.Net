@@ -10,9 +10,7 @@ using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
 using API_.Net.DTOs;               // TipoMovimentacaoDTO
-using API_.Net.DTOs.Requests;      // CreateTipoMovimentacaoDto / UpdateTipoMovimentacaoDto
-// using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples; // ← migre seus Examples para DTOs e reative depois
+using API_.Net.DTOs.Requests;      // CreateTipoMovimentacaoDTO / UpdateTipoMovimentacaoDTO
 
 namespace API.Net.Controllers
 {
@@ -66,7 +64,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo tipo de movimentação", Description = "Cria um novo registro de tipo")]
-        public async Task<ActionResult<TipoMovimentacaoDTO>> PostTipoMovimentacao([FromBody] CreateTipoMovimentacaoDto dto)
+        public async Task<ActionResult<TipoMovimentacaoDTO>> PostTipoMovimentacao([FromBody] CreateTipoMovimentacaoDTO dto)
         {
             var entity = _mapper.Map<TipoMovimentacao>(dto);
 
@@ -82,7 +80,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um tipo de movimentação", Description = "Atualiza informações de um tipo existente")]
-        public async Task<ActionResult<TipoMovimentacaoDTO>> PutTipoMovimentacao(int id, [FromBody] UpdateTipoMovimentacaoDto dto)
+        public async Task<ActionResult<TipoMovimentacaoDTO>> PutTipoMovimentacao(int id, [FromBody] UpdateTipoMovimentacaoDTO dto)
         {
             var entity = await _context.TiposMovimentacao.FirstOrDefaultAsync(t => t.ID_TIPO_MOVIMENTACAO == id);
             if (entity is null) return NotFound();
@@ -108,8 +106,5 @@ namespace API.Net.Controllers
 
             return NoContent();
         }
-
-        private bool TipoMovimentacaoExists(int id) =>
-            _context.TiposMovimentacao.Any(e => e.ID_TIPO_MOVIMENTACAO == id);
     }
 }

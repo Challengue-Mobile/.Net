@@ -11,7 +11,7 @@ using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
 using API_.Net.DTOs;               // RegistroBateriaDTO
-using API_.Net.DTOs.Requests;      // CreateRegistroBateriaDto / UpdateRegistroBateriaDto
+using API_.Net.DTOs.Requests;      // CreateRegistroBateriaDTO / UpdateRegistroBateriaDTO
 // using Swashbuckle.AspNetCore.Filters;
 // using API_.Net.Examples; // ← migre os Examples para DTOs e reative se quiser
 
@@ -91,7 +91,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Registra um novo nível de bateria",
             Description = "Cria um novo registro de nível de bateria para um beacon")]
-        public async Task<ActionResult<RegistroBateriaDTO>> PostRegistroBateria([FromBody] CreateRegistroBateriaDto dto)
+        public async Task<ActionResult<RegistroBateriaDTO>> PostRegistroBateria([FromBody] CreateRegistroBateriaDTO dto)
         {
             var entity = _mapper.Map<RegistroBateria>(dto);
             entity.DATA_HORA = DateTime.Now;
@@ -110,7 +110,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Atualiza um registro de bateria",
             Description = "Atualiza informações de um registro de bateria existente")]
-        public async Task<ActionResult<RegistroBateriaDTO>> PutRegistroBateria(int id, [FromBody] UpdateRegistroBateriaDto dto)
+        public async Task<ActionResult<RegistroBateriaDTO>> PutRegistroBateria(int id, [FromBody] UpdateRegistroBateriaDTO dto)
         {
             var entity = await _context.RegistrosBateria.FirstOrDefaultAsync(r => r.ID_REGISTRO == id);
             if (entity is null) return NotFound();

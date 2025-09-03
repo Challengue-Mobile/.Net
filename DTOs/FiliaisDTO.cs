@@ -1,0 +1,20 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace API_.Net.DTOs
+{
+    /// <summary>DTO de resposta (Entity → API)</summary>
+    public class FilialDTO
+    {
+        public int ID_FILIAL { get; set; }
+
+        public string NOME { get; set; } = string.Empty;
+
+        public int? ID_PATIO { get; set; }
+
+        /// <summary>Nome do pátio (preenchido via mapeamento)</summary>
+        public string? NOME_PATIO { get; set; }
+
+        /// <summary>Quantidade de departamentos vinculados</summary>
+        public int QTD_DEPARTAMENTOS { get; set; }
+    }
+}

@@ -11,9 +11,9 @@ using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
 using API_.Net.DTOs;               // LocalizacaoDTO
-using API_.Net.DTOs.Requests;      // CreateLocalizacaoDto / UpdateLocalizacaoDto
-using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples; // ← deixe comentado até migrarmos os Examples para DTOs
+using API_.Net.DTOs.Requests;      // CreateLocalizacaoDTO / UpdateLocalizacaoDTO
+// using Swashbuckle.AspNetCore.Filters;
+// using API_.Net.Examples;
 
 namespace API.Net.Controllers
 {
@@ -40,8 +40,10 @@ namespace API.Net.Controllers
         public async Task<ActionResult<IEnumerable<LocalizacaoDTO>>> GetLocalizacoes()
         {
             var entities = await _context.Localizacoes
-                                         .AsNoTracking()
-                                         .ToListAsync();
+                .AsNoTracking()
+                .Include(l => l.Moto)
+                .Include(l => l.Patio)
+                .ToListAsync();
 
             var dtos = _mapper.Map<IEnumerable<LocalizacaoDTO>>(entities);
             return Ok(dtos);
@@ -55,8 +57,10 @@ namespace API.Net.Controllers
         public async Task<ActionResult<LocalizacaoDTO>> GetLocalizacao(int id)
         {
             var entity = await _context.Localizacoes
-                                       .AsNoTracking()
-                                       .FirstOrDefaultAsync(l => l.ID_LOCALIZACAO == id);
+                .AsNoTracking()
+                .Include(l => l.Moto)
+                .Include(l => l.Patio)
+                .FirstOrDefaultAsync(l => l.ID_LOCALIZACAO == id);
 
             if (entity is null) return NotFound();
             return Ok(_mapper.Map<LocalizacaoDTO>(entity));
@@ -69,10 +73,12 @@ namespace API.Net.Controllers
         public async Task<ActionResult<IEnumerable<LocalizacaoDTO>>> GetLocalizacoesByMoto(int motoId)
         {
             var entities = await _context.Localizacoes
-                                         .AsNoTracking()
-                                         .Where(l => l.ID_MOTO == motoId)
-                                         .OrderByDescending(l => l.DATA_HORA)
-                                         .ToListAsync();
+                .AsNoTracking()
+                .Where(l => l.ID_MOTO == motoId)
+                .Include(l => l.Moto)
+                .Include(l => l.Patio)
+                .OrderByDescending(l => l.DATA_HORA)
+                .ToListAsync();
 
             var dtos = _mapper.Map<IEnumerable<LocalizacaoDTO>>(entities);
             return Ok(dtos);
@@ -83,14 +89,17 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Registra uma nova localização", Description = "Cria um registro de localização de moto")]
-        // [SwaggerRequestExample(typeof(CreateLocalizacaoDto), typeof(LocalizacaoRequestExample))] // ← atualizar depois que migrarmos os Examples para DTOs
-        public async Task<ActionResult<LocalizacaoDTO>> PostLocalizacao([FromBody] CreateLocalizacaoDto dto)
+        public async Task<ActionResult<LocalizacaoDTO>> PostLocalizacao([FromBody] CreateLocalizacaoDTO dto)
         {
             var entity = _mapper.Map<Localizacao>(dto);
             entity.DATA_HORA = DateTime.Now;
 
             _context.Localizacoes.Add(entity);
             await _context.SaveChangesAsync();
+
+            // recarrega com includes para preencher PlacaMoto/NomePatio no retorno
+            await _context.Entry(entity).Reference(e => e.Moto).LoadAsync();
+            await _context.Entry(entity).Reference(e => e.Patio).LoadAsync();
 
             var result = _mapper.Map<LocalizacaoDTO>(entity);
             return CreatedAtAction(nameof(GetLocalizacao), new { id = entity.ID_LOCALIZACAO }, result);
@@ -101,14 +110,17 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza uma localização", Description = "Atualiza informações de uma localização existente")]
-        // [SwaggerRequestExample(typeof(UpdateLocalizacaoDto), typeof(LocalizacaoRequestExample))] // ← atualizar depois
-        public async Task<ActionResult<LocalizacaoDTO>> PutLocalizacao(int id, [FromBody] UpdateLocalizacaoDto dto)
+        public async Task<ActionResult<LocalizacaoDTO>> PutLocalizacao(int id, [FromBody] UpdateLocalizacaoDTO dto)
         {
             var entity = await _context.Localizacoes.FirstOrDefaultAsync(l => l.ID_LOCALIZACAO == id);
             if (entity is null) return NotFound();
 
             _mapper.Map(dto, entity);
             await _context.SaveChangesAsync();
+
+            // recarrega relacionamentos para o retorno mapeado
+            await _context.Entry(entity).Reference(e => e.Moto).LoadAsync();
+            await _context.Entry(entity).Reference(e => e.Patio).LoadAsync();
 
             return Ok(_mapper.Map<LocalizacaoDTO>(entity));
         }
@@ -128,8 +140,5 @@ namespace API.Net.Controllers
 
             return NoContent();
         }
-
-        private bool LocalizacaoExists(int id) =>
-            _context.Localizacoes.Any(e => e.ID_LOCALIZACAO == id);
     }
 }

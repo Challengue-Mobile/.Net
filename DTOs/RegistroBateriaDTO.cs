@@ -1,4 +1,6 @@
-﻿namespace API_.Net.DTOs
+﻿using System;
+
+namespace API_.Net.DTOs
 {
     public class RegistroBateriaDTO
     {

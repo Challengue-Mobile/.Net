@@ -2,19 +2,37 @@
 
 namespace API_.Net.DTOs.Requests
 {
-    public class CreateClienteDto
+    // DTO para criar cliente (API -> Entity)
+    public class CreateClienteDTO
     {
-        [Required, StringLength(120)] public string NOME { get; set; } = default!;
-        [Required, StringLength(14)] public string CPF { get; set; } = default!;
-        [EmailAddress] public string? EMAIL { get; set; }
-        [StringLength(20)] public string? TELEFONE { get; set; }
+        [Required(ErrorMessage = "O nome é obrigatório")]
+        [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
+        public string NOME { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "O CPF é obrigatório")]
+        [StringLength(14, ErrorMessage = "O CPF deve ter 14 caracteres")]
+        public string CPF { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "O email é obrigatório")]
+        [EmailAddress(ErrorMessage = "Email inválido")]
+        [StringLength(100, ErrorMessage = "O email não pode ter mais de 100 caracteres")]
+        public string EMAIL { get; set; } = string.Empty;
+
+        [StringLength(20, ErrorMessage = "O telefone não pode ter mais de 20 caracteres")]
+        public string? TELEFONE { get; set; }
     }
 
-    public class UpdateClienteDto
+    // DTO para atualizar cliente (API -> Entity) – campos opcionais
+    public class UpdateClienteDTO
     {
-        [StringLength(120)] public string? NOME { get; set; }
-        [StringLength(14)]  public string? CPF { get; set; }
-        [EmailAddress]      public string? EMAIL { get; set; }
-        [StringLength(20)]  public string? TELEFONE { get; set; }
+        [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
+        public string? NOME { get; set; }
+
+        [EmailAddress(ErrorMessage = "Email inválido")]
+        [StringLength(100, ErrorMessage = "O email não pode ter mais de 100 caracteres")]
+        public string? EMAIL { get; set; }
+
+        [StringLength(20, ErrorMessage = "O telefone não pode ter mais de 20 caracteres")]
+        public string? TELEFONE { get; set; }
     }
 }

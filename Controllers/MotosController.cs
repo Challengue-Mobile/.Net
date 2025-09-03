@@ -11,9 +11,9 @@ using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
 using API_.Net.DTOs;               // MotoDTO
-using API_.Net.DTOs.Requests;      // CreateMotoDto / UpdateMotoDto
+using API_.Net.DTOs.Requests;      // CreateMotoDTO / UpdateMotoDTO
 // using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples; // ← migre seus Examples para DTOs e reative se quiser
+// using API_.Net.Examples;
 
 namespace API_.Net.Controllers
 {
@@ -36,7 +36,8 @@ namespace API_.Net.Controllers
         /// <summary>Obtém todas as motos cadastradas</summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [SwaggerOperation(Summary = "Lista todas as motos", Description = "Obtém uma lista de todas as motos cadastradas no sistema")]
+        [SwaggerOperation(Summary = "Lista todas as motos",
+                          Description = "Obtém uma lista de todas as motos cadastradas no sistema")]
         public async Task<ActionResult<IEnumerable<MotoDTO>>> GetMotos()
         {
             var entities = await _context.Motos
@@ -51,7 +52,8 @@ namespace API_.Net.Controllers
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(Summary = "Obtém uma moto pelo ID", Description = "Busca e retorna informações detalhadas de uma moto específica")]
+        [SwaggerOperation(Summary = "Obtém uma moto pelo ID",
+                          Description = "Busca e retorna informações detalhadas de uma moto específica")]
         public async Task<ActionResult<MotoDTO>> GetMoto(int id)
         {
             var entity = await _context.Motos
@@ -65,7 +67,8 @@ namespace API_.Net.Controllers
         /// <summary>Busca motos associadas a um cliente específico</summary>
         [HttpGet("cliente/{clienteId:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [SwaggerOperation(Summary = "Busca motos por cliente", Description = "Obtém todas as motos associadas a um cliente específico")]
+        [SwaggerOperation(Summary = "Busca motos por cliente",
+                          Description = "Obtém todas as motos associadas a um cliente específico")]
         public async Task<ActionResult<IEnumerable<MotoDTO>>> GetMotosByCliente(int clienteId)
         {
             var entities = await _context.Motos
@@ -81,7 +84,8 @@ namespace API_.Net.Controllers
         [HttpGet("placa/{placa}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(Summary = "Busca moto pela placa", Description = "Localiza uma moto usando sua placa como critério de busca")]
+        [SwaggerOperation(Summary = "Busca moto pela placa",
+                          Description = "Localiza uma moto usando sua placa como critério de busca")]
         public async Task<ActionResult<MotoDTO>> GetMotoByPlaca(string placa)
         {
             var entity = await _context.Motos
@@ -96,8 +100,9 @@ namespace API_.Net.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [SwaggerOperation(Summary = "Cadastra uma nova moto", Description = "Cria um novo registro de moto no sistema")]
-        public async Task<ActionResult<MotoDTO>> PostMoto([FromBody] CreateMotoDto dto)
+        [SwaggerOperation(Summary = "Cadastra uma nova moto",
+                          Description = "Cria um novo registro de moto no sistema")]
+        public async Task<ActionResult<MotoDTO>> PostMoto([FromBody] CreateMotoDTO dto)
         {
             var entity = _mapper.Map<Moto>(dto);
             entity.DATA_REGISTRO = DateTime.Now;
@@ -113,8 +118,9 @@ namespace API_.Net.Controllers
         [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(Summary = "Atualiza uma moto", Description = "Atualiza informações de uma moto existente no sistema")]
-        public async Task<ActionResult<MotoDTO>> PutMoto(int id, [FromBody] UpdateMotoDto dto)
+        [SwaggerOperation(Summary = "Atualiza uma moto",
+                          Description = "Atualiza informações de uma moto existente no sistema")]
+        public async Task<ActionResult<MotoDTO>> PutMoto(int id, [FromBody] UpdateMotoDTO dto)
         {
             var entity = await _context.Motos.FirstOrDefaultAsync(m => m.ID_MOTO == id);
             if (entity is null) return NotFound();
@@ -129,7 +135,8 @@ namespace API_.Net.Controllers
         [HttpDelete("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [SwaggerOperation(Summary = "Exclui uma moto", Description = "Remove permanentemente uma moto do sistema")]
+        [SwaggerOperation(Summary = "Exclui uma moto",
+                          Description = "Remove permanentemente uma moto do sistema")]
         public async Task<IActionResult> DeleteMoto(int id)
         {
             var entity = await _context.Motos.FindAsync(id);

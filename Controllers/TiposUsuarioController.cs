@@ -10,9 +10,7 @@ using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
 using API_.Net.DTOs;               // TipoUsuarioDTO
-using API_.Net.DTOs.Requests;      // CreateTipoUsuarioDto / UpdateTipoUsuarioDto
-// using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples; // ← migre seus Examples para DTOs e reative depois, se quiser
+using API_.Net.DTOs.Requests;      // CreateTipoUsuarioDTO / UpdateTipoUsuarioDTO
 
 namespace API.Net.Controllers
 {
@@ -72,7 +70,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Cadastra um novo tipo de usuário",
             Description = "Cria um novo registro de tipo de usuário no sistema")]
-        public async Task<ActionResult<TipoUsuarioDTO>> PostTipoUsuario([FromBody] CreateTipoUsuarioDto dto)
+        public async Task<ActionResult<TipoUsuarioDTO>> PostTipoUsuario([FromBody] CreateTipoUsuarioDTO dto)
         {
             var entity = _mapper.Map<TipoUsuario>(dto);
 
@@ -90,7 +88,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Atualiza um tipo de usuário",
             Description = "Atualiza informações de um tipo de usuário existente no sistema")]
-        public async Task<ActionResult<TipoUsuarioDTO>> PutTipoUsuario(int id, [FromBody] UpdateTipoUsuarioDto dto)
+        public async Task<ActionResult<TipoUsuarioDTO>> PutTipoUsuario(int id, [FromBody] UpdateTipoUsuarioDTO dto)
         {
             var entity = await _context.TiposUsuario.FirstOrDefaultAsync(t => t.ID_TIPO_USUARIO == id);
             if (entity is null) return NotFound();
@@ -118,8 +116,5 @@ namespace API.Net.Controllers
 
             return NoContent();
         }
-
-        private bool TipoUsuarioExists(int id) =>
-            _context.TiposUsuario.Any(e => e.ID_TIPO_USUARIO == id);
     }
 }

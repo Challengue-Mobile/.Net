@@ -11,11 +11,11 @@ using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
 using API_.Net.DTOs;               // UsuarioDTO
-using API_.Net.DTOs.Requests;      // CreateUsuarioDto / UpdateUsuarioDto
+using API_.Net.DTOs.Requests;      // CreateUsuarioDTO / UpdateUsuarioDTO
 // using Swashbuckle.AspNetCore.Filters;
 // using API_.Net.Examples; // ← migre os Examples para DTOs e reative se quiser
 
-namespace API.Net.Controllers
+namespace API_.Net.Controllers
 {
     /// <summary>API para gerenciamento de usuários do sistema</summary>
     [Route("api/[controller]")]
@@ -74,7 +74,7 @@ namespace API.Net.Controllers
                                          .ToListAsync();
 
             var dtos = _mapper.Map<IEnumerable<UsuarioDTO>>(entities);
-            return Ok(dtos);
+            return Ok(dos);
         }
 
         /// <summary>Cadastra um novo usuário</summary>
@@ -82,7 +82,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo usuário", Description = "Cria um novo registro de usuário no sistema")]
-        public async Task<ActionResult<UsuarioDTO>> PostUsuario([FromBody] CreateUsuarioDto dto)
+        public async Task<ActionResult<UsuarioDTO>> PostUsuario([FromBody] CreateUsuarioDTO dto)
         {
             var entity = _mapper.Map<Usuario>(dto);
             entity.DATA_CADASTRO = DateTime.Now;
@@ -99,12 +99,12 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um usuário", Description = "Atualiza informações de um usuário existente")]
-        public async Task<ActionResult<UsuarioDTO>> PutUsuario(int id, [FromBody] UpdateUsuarioDto dto)
+        public async Task<ActionResult<UsuarioDTO>> PutUsuario(int id, [FromBody] UpdateUsuarioDTO dto)
         {
             var entity = await _context.Usuarios.FirstOrDefaultAsync(u => u.ID_USUARIO == id);
             if (entity is null) return NotFound();
 
-            _mapper.Map(dto, entity);
+            _mapper.Map(dto, entity); // aplica somente os campos enviados (se usar .IgnoreNulls no profile)
             await _context.SaveChangesAsync();
 
             return Ok(_mapper.Map<UsuarioDTO>(entity));

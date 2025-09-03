@@ -2,13 +2,15 @@
 
 namespace API_.Net.DTOs.Requests
 {
-    public class CreateTipoMovimentacaoDto
+    public class CreateTipoMovimentacaoDTO
     {
-        [Required] public string DESCRICAO { get; set; } = default!;
+        [Required, StringLength(50)]
+        public string DESCRICAO { get; set; } = default!;
     }
 
-    public class UpdateTipoMovimentacaoDto
+    public class UpdateTipoMovimentacaoDTO
     {
+        [StringLength(50)]
         public string? DESCRICAO { get; set; }
     }
 }

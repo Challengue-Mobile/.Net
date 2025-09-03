@@ -2,18 +2,26 @@
 
 namespace API_.Net.DTOs.Requests
 {
-    public class CreateLocalizacaoDto
+    /// <summary>DTO de criação de Localização</summary>
+    public class CreateLocalizacaoDTO
     {
-        [Required] public double POSICAO_X { get; set; }
-        [Required] public double POSICAO_Y { get; set; }
-        [Required] public int ID_MOTO { get; set; }
+        [Required(ErrorMessage = "A posição X é obrigatória")]
+        public decimal POSICAO_X { get; set; }
+
+        [Required(ErrorMessage = "A posição Y é obrigatória")]
+        public decimal POSICAO_Y { get; set; }
+
+        [Required(ErrorMessage = "O ID da moto é obrigatório")]
+        public int ID_MOTO { get; set; }
+
         public int? ID_PATIO { get; set; }
     }
 
-    public class UpdateLocalizacaoDto
+    /// <summary>DTO de atualização de Localização (parcial)</summary>
+    public class UpdateLocalizacaoDTO
     {
-        public double? POSICAO_X { get; set; }
-        public double? POSICAO_Y { get; set; }
+        public decimal? POSICAO_X { get; set; }
+        public decimal? POSICAO_Y { get; set; }
         public int? ID_MOTO { get; set; }
         public int? ID_PATIO { get; set; }
     }

@@ -10,9 +10,9 @@ using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
 using API_.Net.DTOs;               // ModeloMotoDTO
-using API_.Net.DTOs.Requests;      // CreateModeloMotoDto / UpdateModeloMotoDto
+using API_.Net.DTOs.Requests;      // CreateModeloMotoDTO / UpdateModeloMotoDTO
 // using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples; // ← migrar para DTOs e reativar depois
+// using API_.Net.Examples;
 
 namespace API.Net.Controllers
 {
@@ -72,7 +72,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Cadastra um novo modelo de moto",
             Description = "Cria um novo registro de modelo de moto no sistema")]
-        public async Task<ActionResult<ModeloMotoDTO>> PostModeloMoto([FromBody] CreateModeloMotoDto dto)
+        public async Task<ActionResult<ModeloMotoDTO>> PostModeloMoto([FromBody] CreateModeloMotoDTO dto)
         {
             var entity = _mapper.Map<ModeloMoto>(dto);
 
@@ -90,7 +90,7 @@ namespace API.Net.Controllers
         [SwaggerOperation(
             Summary = "Atualiza um modelo de moto",
             Description = "Atualiza informações de um modelo de moto existente no sistema")]
-        public async Task<ActionResult<ModeloMotoDTO>> PutModeloMoto(int id, [FromBody] UpdateModeloMotoDto dto)
+        public async Task<ActionResult<ModeloMotoDTO>> PutModeloMoto(int id, [FromBody] UpdateModeloMotoDTO dto)
         {
             var entity = await _context.ModelosMotos.FirstOrDefaultAsync(m => m.ID_MODELO_MOTO == id);
             if (entity is null) return NotFound();

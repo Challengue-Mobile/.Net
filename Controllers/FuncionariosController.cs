@@ -10,7 +10,7 @@ using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
 using API_.Net.DTOs;               // FuncionarioDTO
-using API_.Net.DTOs.Requests;      // CreateFuncionarioDto / UpdateFuncionarioDto
+using API_.Net.DTOs.Requests;      // CreateFuncionarioDTO / UpdateFuncionarioDTO
 
 namespace API.Net.Controllers
 {
@@ -37,10 +37,10 @@ namespace API.Net.Controllers
         public async Task<ActionResult<IEnumerable<FuncionarioDTO>>> GetFuncionarios()
         {
             var entities = await _context.Funcionarios
-                                         .AsNoTracking()
-                                         .Include(f => f.Departamento)
-                                         .Include(f => f.Usuario)
-                                         .ToListAsync();
+                .AsNoTracking()
+                .Include(f => f.Departamento)
+                .Include(f => f.Usuario)
+                .ToListAsync();
 
             var dtos = _mapper.Map<IEnumerable<FuncionarioDTO>>(entities);
             return Ok(dtos);
@@ -54,12 +54,13 @@ namespace API.Net.Controllers
         public async Task<ActionResult<FuncionarioDTO>> GetFuncionario(int id)
         {
             var entity = await _context.Funcionarios
-                                       .AsNoTracking()
-                                       .Include(f => f.Departamento)
-                                       .Include(f => f.Usuario)
-                                       .FirstOrDefaultAsync(f => f.ID_FUNCIONARIO == id);
+                .AsNoTracking()
+                .Include(f => f.Departamento)
+                .Include(f => f.Usuario)
+                .FirstOrDefaultAsync(f => f.ID_FUNCIONARIO == id);
 
             if (entity is null) return NotFound();
+
             return Ok(_mapper.Map<FuncionarioDTO>(entity));
         }
 
@@ -68,7 +69,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra um novo funcionário", Description = "Cria um novo registro de funcionário")]
-        public async Task<ActionResult<FuncionarioDTO>> PostFuncionario([FromBody] CreateFuncionarioDto dto)
+        public async Task<ActionResult<FuncionarioDTO>> PostFuncionario([FromBody] CreateFuncionarioDTO dto)
         {
             var entity = _mapper.Map<Funcionario>(dto);
 
@@ -84,12 +85,12 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza um funcionário", Description = "Atualiza informações de um funcionário existente")]
-        public async Task<ActionResult<FuncionarioDTO>> PutFuncionario(int id, [FromBody] UpdateFuncionarioDto dto)
+        public async Task<ActionResult<FuncionarioDTO>> PutFuncionario(int id, [FromBody] UpdateFuncionarioDTO dto)
         {
             var entity = await _context.Funcionarios.FirstOrDefaultAsync(f => f.ID_FUNCIONARIO == id);
             if (entity is null) return NotFound();
 
-            _mapper.Map(dto, entity);
+            _mapper.Map(dto, entity); // aplica somente campos enviados (se usar IgnoreNulls no Profile)
             await _context.SaveChangesAsync();
 
             return Ok(_mapper.Map<FuncionarioDTO>(entity));

@@ -10,7 +10,7 @@ using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
 using API_.Net.DTOs;               // FilialDTO
-using API_.Net.DTOs.Requests;      // CreateFilialDto / UpdateFilialDto
+using API_.Net.DTOs.Requests;      // CreateFilialDTO / UpdateFilialDTO
 
 namespace API.Net.Controllers
 {
@@ -68,7 +68,7 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [SwaggerOperation(Summary = "Cadastra uma nova filial", Description = "Cria um novo registro de filial")]
-        public async Task<ActionResult<FilialDTO>> PostFilial([FromBody] CreateFilialDto dto)
+        public async Task<ActionResult<FilialDTO>> PostFilial([FromBody] CreateFilialDTO dto)
         {
             var entity = _mapper.Map<Filial>(dto);
 
@@ -84,12 +84,12 @@ namespace API.Net.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Atualiza uma filial", Description = "Atualiza informações de uma filial existente")]
-        public async Task<ActionResult<FilialDTO>> PutFilial(int id, [FromBody] UpdateFilialDto dto)
+        public async Task<ActionResult<FilialDTO>> PutFilial(int id, [FromBody] UpdateFilialDTO dto)
         {
             var entity = await _context.Filiais.FirstOrDefaultAsync(f => f.ID_FILIAL == id);
             if (entity is null) return NotFound();
 
-            _mapper.Map(dto, entity);
+            _mapper.Map(dto, entity); // aplica somente os campos enviados (mapeie IgnoreNulls no profile)
             await _context.SaveChangesAsync();
 
             return Ok(_mapper.Map<FilialDTO>(entity));
