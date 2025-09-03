@@ -10,10 +10,9 @@ using System;
 using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
-using API_.Net.DTOs;               // LocalizacaoDTO
-using API_.Net.DTOs.Requests;      // CreateLocalizacaoDTO / UpdateLocalizacaoDTO
-// using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples;
+using API_.Net.DTOs;               
+using API_.Net.DTOs.Requests;      
+
 
 namespace API.Net.Controllers
 {
@@ -97,7 +96,7 @@ namespace API.Net.Controllers
             _context.Localizacoes.Add(entity);
             await _context.SaveChangesAsync();
 
-            // recarrega com includes para preencher PlacaMoto/NomePatio no retorno
+            
             await _context.Entry(entity).Reference(e => e.Moto).LoadAsync();
             await _context.Entry(entity).Reference(e => e.Patio).LoadAsync();
 
@@ -118,7 +117,7 @@ namespace API.Net.Controllers
             _mapper.Map(dto, entity);
             await _context.SaveChangesAsync();
 
-            // recarrega relacionamentos para o retorno mapeado
+            
             await _context.Entry(entity).Reference(e => e.Moto).LoadAsync();
             await _context.Entry(entity).Reference(e => e.Patio).LoadAsync();
 

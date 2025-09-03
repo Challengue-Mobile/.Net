@@ -11,8 +11,8 @@ using API_.Net.Examples;
 using Microsoft.AspNetCore.Http;
 using AutoMapper;
 
-using API_.Net.DTOs;              // BeaconDTO (somente leitura)
-using API_.Net.DTOs.Requests;     // CreateBeaconDTO / UpdateBeaconDTO
+using API_.Net.DTOs;              
+using API_.Net.DTOs.Requests;     
 
 namespace API.Net.Controllers
 {
@@ -102,7 +102,7 @@ namespace API.Net.Controllers
         [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(ValidationErrorResponseExample))]
         public async Task<ActionResult<BeaconDto>> PostBeacon([FromBody] CreateBeaconDto dto)
         {
-            // opcional: var entity = _mapper.Map<Beacon>(dto);
+            
             var entity = new Beacon
             {
                 UUID             = dto.UUID,
@@ -131,7 +131,7 @@ namespace API.Net.Controllers
             var entity = await _context.Beacons.FirstOrDefaultAsync(b => b.ID_BEACON == id);
             if (entity is null) return NotFound();
 
-            // _mapper.Map(dto, entity); // alternativa (se IgnoreNulls estiver no profile)
+            
             if (dto.UUID is not null)               entity.UUID             = dto.UUID;
             if (dto.BATERIA.HasValue)               entity.BATERIA          = dto.BATERIA.Value;
             if (dto.ID_MOTO.HasValue)               entity.ID_MOTO          = dto.ID_MOTO.Value;

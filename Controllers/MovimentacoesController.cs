@@ -10,10 +10,9 @@ using System;
 using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
-using API_.Net.DTOs;               // MovimentacaoDTO
-using API_.Net.DTOs.Requests;      // CreateMovimentacaoDTO / UpdateMovimentacaoDTO
-// using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples;
+using API_.Net.DTOs;              
+using API_.Net.DTOs.Requests;      
+
 
 namespace API.Net.Controllers
 {

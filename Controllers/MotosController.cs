@@ -10,10 +10,9 @@ using System;
 using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
-using API_.Net.DTOs;               // MotoDTO
-using API_.Net.DTOs.Requests;      // CreateMotoDTO / UpdateMotoDTO
-// using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples;
+using API_.Net.DTOs;               
+using API_.Net.DTOs.Requests;      
+
 
 namespace API_.Net.Controllers
 {

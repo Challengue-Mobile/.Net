@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
-using API_.Net.DTOs;               // ModeloMotoDTO
-using API_.Net.DTOs.Requests;      // CreateModeloMotoDTO / UpdateModeloMotoDTO
-// using Swashbuckle.AspNetCore.Filters;
-// using API_.Net.Examples;
+using API_.Net.DTOs;               
+using API_.Net.DTOs.Requests;      
 
 namespace API.Net.Controllers
 {

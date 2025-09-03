@@ -7,21 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="550ddf4b-bc66-4ccf-8512-4de5614e1e12" name="Changes" comment="Arrumando os nomes das classes">
-      <change beforePath="$PROJECT_DIR$/Controllers/BeaconsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/BeaconsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/DepartamentosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/DepartamentosController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/FiliaisController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/FiliaisController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/FuncionariosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/FuncionariosController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/LocalizacoesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/LocalizacoesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ModelosBeaconController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ModelosBeaconController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ModelosMotosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ModelosMotosController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/MotosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MotosController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/MovimentacoesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MovimentacoesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/PatiosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/PatiosController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/RegistrosBateriaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/RegistrosBateriaController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/TiposMovimentacaoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TiposMovimentacaoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/TiposUsuarioController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TiposUsuarioController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="550ddf4b-bc66-4ccf-8512-4de5614e1e12" name="Changes" comment="arrumando" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1756855683265</updated>
       <workItem from="1756855683267" duration="6029000" />
-      <workItem from="1756934391250" duration="7360000" />
+      <workItem from="1756934391250" duration="7739000" />
     </task>
     <task id="LOCAL-00001" summary="arrumando os dtos">
       <option name="closed" value="true" />
@@ -173,7 +159,23 @@
       <option name="project" value="LOCAL" />
       <updated>1756941452016</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Tirando os comentários">
+      <option name="closed" value="true" />
+      <created>1756941845929</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1756941845929</updated>
+    </task>
+    <task id="LOCAL-00011" summary="arrumando">
+      <option name="closed" value="true" />
+      <created>1756941995000</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1756941995000</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,8 +190,9 @@
     <MESSAGE value="Arrumando a classe MappingProfile.cs" />
     <MESSAGE value="Renomeando os nomes das classes" />
     <MESSAGE value="renomeando as classes" />
-    <MESSAGE value="arrumando" />
     <MESSAGE value="Arrumando os nomes das classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arrumando os nomes das classes" />
+    <MESSAGE value="Tirando os comentários" />
+    <MESSAGE value="arrumando" />
+    <option name="LAST_COMMIT_MESSAGE" value="arrumando" />
   </component>
 </project>
