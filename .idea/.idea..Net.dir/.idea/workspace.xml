@@ -7,7 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="550ddf4b-bc66-4ccf-8512-4de5614e1e12" name="Changes" comment="arrumando" />
+    <list default="true" id="550ddf4b-bc66-4ccf-8512-4de5614e1e12" name="Changes" comment="retirando os comentários restantes">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea..Net.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea..Net.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/Requests/BeaconRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/Requests/BeaconRequests.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1756855683265</updated>
       <workItem from="1756855683267" duration="6029000" />
-      <workItem from="1756934391250" duration="7739000" />
+      <workItem from="1756934391250" duration="8661000" />
     </task>
     <task id="LOCAL-00001" summary="arrumando os dtos">
       <option name="closed" value="true" />
@@ -175,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756941995000</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="retirando os comentários restantes">
+      <option name="closed" value="true" />
+      <created>1756942389331</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1756942389331</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +204,7 @@
     <MESSAGE value="Arrumando os nomes das classes" />
     <MESSAGE value="Tirando os comentários" />
     <MESSAGE value="arrumando" />
-    <option name="LAST_COMMIT_MESSAGE" value="arrumando" />
+    <MESSAGE value="retirando os comentários restantes" />
+    <option name="LAST_COMMIT_MESSAGE" value="retirando os comentários restantes" />
   </component>
 </project>

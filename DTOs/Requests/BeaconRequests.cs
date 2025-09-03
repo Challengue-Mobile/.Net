@@ -1,22 +1,24 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace API_.Net.DTOs.Requests
 {
-    // DTO para criar um novo beacon (API -> Entity)
     public class CreateBeaconDto
     {
         [Required(ErrorMessage = "O UUID é obrigatório")]
         [StringLength(100, ErrorMessage = "O UUID não pode ter mais de 100 caracteres")]
         public string UUID { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "O nível de bateria é obrigatório")]
+        [JsonRequired]
         [Range(0, 100, ErrorMessage = "O nível de bateria deve estar entre 0 e 100")]
         public int BATERIA { get; set; }
 
-        [Required(ErrorMessage = "O ID da moto é obrigatório")]
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "O ID da moto deve ser maior que zero")]
         public int ID_MOTO { get; set; }
 
-        [Required(ErrorMessage = "O modelo do beacon é obrigatório")]
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "O ID do modelo do beacon deve ser maior que zero")]
         public int ID_MODELO_BEACON { get; set; }
     }
 
@@ -28,7 +30,10 @@ namespace API_.Net.DTOs.Requests
         [Range(0, 100, ErrorMessage = "O nível de bateria deve estar entre 0 e 100")]
         public int? BATERIA { get; set; }
 
+        [Range(1, int.MaxValue, ErrorMessage = "O ID da moto deve ser maior que zero")]
         public int? ID_MOTO { get; set; }
+
+        [Range(1, int.MaxValue, ErrorMessage = "O ID do modelo do beacon deve ser maior que zero")]
         public int? ID_MODELO_BEACON { get; set; }
     }
 }
