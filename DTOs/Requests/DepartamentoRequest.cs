@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace API_.Net.DTOs.Requests
 {
@@ -8,17 +9,21 @@ namespace API_.Net.DTOs.Requests
         [Required, StringLength(120)]
         public string NOME { get; set; } = default!;
 
-        [Required]
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "O ID da filial deve ser maior que zero")]
         public int ID_FILIAL { get; set; }
     }
 
-    /// <summary>DTO de entrada para atualização de Departamento (API → Entity)</summary>
-    /// <remarks>Campos opcionais para suportar atualização parcial; nulos são ignorados no mapeamento.</remarks>
+    /// <summary>
+    /// DTO de entrada para atualização de Departamento (API → Entity).
+    /// Campos opcionais para suportar atualização parcial; nulos são ignorados no mapeamento.
+    /// </summary>
     public class UpdateDepartamentoDto
     {
         [StringLength(120)]
         public string? NOME { get; set; }
 
+        [Range(1, int.MaxValue, ErrorMessage = "O ID da filial deve ser maior que zero")]
         public int? ID_FILIAL { get; set; }
     }
 }

@@ -1,17 +1,21 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace API_.Net.DTOs.Requests
 {
     /// <summary>DTO de criação de Localização</summary>
     public class CreateLocalizacaoDto
     {
+        [JsonRequired]
         [Required(ErrorMessage = "A posição X é obrigatória")]
         public decimal POSICAO_X { get; set; }
 
+        [JsonRequired]
         [Required(ErrorMessage = "A posição Y é obrigatória")]
         public decimal POSICAO_Y { get; set; }
 
-        [Required(ErrorMessage = "O ID da moto é obrigatório")]
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "O ID da moto deve ser maior que zero")]
         public int ID_MOTO { get; set; }
 
         public int? ID_PATIO { get; set; }
@@ -22,7 +26,10 @@ namespace API_.Net.DTOs.Requests
     {
         public decimal? POSICAO_X { get; set; }
         public decimal? POSICAO_Y { get; set; }
+
+        [Range(1, int.MaxValue, ErrorMessage = "O ID da moto deve ser maior que zero")]
         public int? ID_MOTO { get; set; }
+
         public int? ID_PATIO { get; set; }
     }
 }

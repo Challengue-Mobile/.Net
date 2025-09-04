@@ -1,15 +1,21 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace API_.Net.DTOs.Requests
 {
     public class CreatePatioDto
     {
-        [Required] public string NOME { get; set; } = default!;
-        [Required] public int ID_LOGRADOURO { get; set; }
+        [Required, StringLength(120)]
+        public string NOME { get; set; } = default!;
+
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "ID_LOGRADOURO deve ser maior que zero")]
+        public int ID_LOGRADOURO { get; set; }
     }
 
     public class UpdatePatioDto
     {
+        [StringLength(120)]
         public string? NOME { get; set; }
         public int? ID_LOGRADOURO { get; set; }
     }

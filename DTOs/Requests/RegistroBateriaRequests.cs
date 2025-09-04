@@ -1,16 +1,24 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace API_.Net.DTOs.Requests
 {
     public class CreateRegistroBateriaDto
     {
-        [Range(0, 100)] public int NIVEL_BATERIA { get; set; }
-        [Required] public int ID_BEACON { get; set; }
+        [JsonRequired]
+        [Range(0, 100, ErrorMessage = "NIVEL_BATERIA deve estar entre 0 e 100")]
+        public int NIVEL_BATERIA { get; set; }
+
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "ID_BEACON deve ser maior que zero")]
+        public int ID_BEACON { get; set; }
     }
 
     public class UpdateRegistroBateriaDto
     {
-        [Range(0, 100)] public int? NIVEL_BATERIA { get; set; }
+        [Range(0, 100, ErrorMessage = "NIVEL_BATERIA deve estar entre 0 e 100")]
+        public int? NIVEL_BATERIA { get; set; }
+
         public int? ID_BEACON { get; set; }
     }
 }

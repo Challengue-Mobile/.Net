@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization; // para JsonRequired
 
 namespace API_.Net.DTOs.Requests
 {
@@ -9,10 +10,11 @@ namespace API_.Net.DTOs.Requests
         [StringLength(10, ErrorMessage = "A placa não pode ter mais de 10 caracteres")]
         public string PLACA { get; set; } = default!;
 
-        // Cliente é OPCIONAL no seu domínio (int?)
+        // Cliente é opcional
         public int? ID_CLIENTE { get; set; }
 
-        [Required(ErrorMessage = "O modelo da moto é obrigatório")]
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "O modelo da moto deve ser maior que zero")]
         public int ID_MODELO_MOTO { get; set; }
     }
 
@@ -23,6 +25,8 @@ namespace API_.Net.DTOs.Requests
         public string? PLACA { get; set; }
 
         public int? ID_CLIENTE { get; set; }
+
+        [Range(1, int.MaxValue, ErrorMessage = "O modelo da moto deve ser maior que zero")]
         public int? ID_MODELO_MOTO { get; set; }
     }
 }

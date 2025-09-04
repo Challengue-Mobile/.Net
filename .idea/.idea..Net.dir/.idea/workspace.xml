@@ -7,9 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="550ddf4b-bc66-4ccf-8512-4de5614e1e12" name="Changes" comment="retirando os comentários restantes">
+    <list default="true" id="550ddf4b-bc66-4ccf-8512-4de5614e1e12" name="Changes" comment="Arrumando os requirimentos da classe BeancoRequest">
       <change beforePath="$PROJECT_DIR$/.idea/.idea..Net.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea..Net.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/Requests/BeaconRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/Requests/BeaconRequests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/Requests/DepartamentoRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/Requests/DepartamentoRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/Requests/FuncionarioRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/Requests/FuncionarioRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/Requests/LocalizacaoRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/Requests/LocalizacaoRequests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/Requests/MotoRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/Requests/MotoRequests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1756855683265</updated>
       <workItem from="1756855683267" duration="6029000" />
-      <workItem from="1756934391250" duration="8661000" />
+      <workItem from="1756934391250" duration="11644000" />
     </task>
     <task id="LOCAL-00001" summary="arrumando os dtos">
       <option name="closed" value="true" />
@@ -186,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756942389331</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Arrumando os requirimentos da classe BeancoRequest">
+      <option name="closed" value="true" />
+      <created>1756943183274</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1756943183274</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +216,7 @@
     <MESSAGE value="Tirando os comentários" />
     <MESSAGE value="arrumando" />
     <MESSAGE value="retirando os comentários restantes" />
-    <option name="LAST_COMMIT_MESSAGE" value="retirando os comentários restantes" />
+    <MESSAGE value="Arrumando os requirimentos da classe BeancoRequest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arrumando os requirimentos da classe BeancoRequest" />
   </component>
 </project>

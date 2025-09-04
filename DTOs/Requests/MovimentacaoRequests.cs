@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace API_.Net.DTOs.Requests
 {
@@ -8,13 +9,16 @@ namespace API_.Net.DTOs.Requests
         [StringLength(255, ErrorMessage = "A observação não pode ter mais de 255 caracteres")]
         public string? OBSERVACAO { get; set; }
 
-        [Required(ErrorMessage = "O ID do usuário é obrigatório")]
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "O ID do usuário deve ser maior que zero")]
         public int ID_USUARIO { get; set; }
 
-        [Required(ErrorMessage = "O ID da moto é obrigatório")]
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "O ID da moto deve ser maior que zero")]
         public int ID_MOTO { get; set; }
 
-        [Required(ErrorMessage = "O tipo de movimentação é obrigatório")]
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "O tipo de movimentação deve ser maior que zero")]
         public int ID_TIPO_MOVIMENTACAO { get; set; }
     }
 

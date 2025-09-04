@@ -1,37 +1,34 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace API_.Net.DTOs.Requests
 {
     public class CreateUsuarioDto
     {
-        [Required(ErrorMessage = "O nome é obrigatório")]
-        [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
+        [Required, StringLength(100)]
         public string NOME { get; set; } = default!;
 
-        [Required(ErrorMessage = "A senha é obrigatória")]
-        [StringLength(255, ErrorMessage = "A senha deve ter entre 6 e 255 caracteres", MinimumLength = 6)]
+        [Required, StringLength(255, MinimumLength = 6)]
         public string SENHA { get; set; } = default!;
 
-        [Required(ErrorMessage = "O email é obrigatório")]
-        [EmailAddress(ErrorMessage = "Email inválido")]
-        [StringLength(100, ErrorMessage = "O email não pode ter mais de 100 caracteres")]
+        [Required, EmailAddress, StringLength(100)]
         public string EMAIL { get; set; } = default!;
 
-        [Required(ErrorMessage = "O tipo de usuário é obrigatório")]
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "ID_TIPO_USUARIO deve ser maior que zero")]
         public int ID_TIPO_USUARIO { get; set; }
     }
 
     // Update parcial: propriedades opcionais (null = não alterar)
     public class UpdateUsuarioDto
     {
-        [StringLength(100, ErrorMessage = "O nome não pode ter mais de 100 caracteres")]
+        [StringLength(100)]
         public string? NOME { get; set; }
 
-        [EmailAddress(ErrorMessage = "Email inválido")]
-        [StringLength(100, ErrorMessage = "O email não pode ter mais de 100 caracteres")]
+        [EmailAddress, StringLength(100)]
         public string? EMAIL { get; set; }
 
         public int? ID_TIPO_USUARIO { get; set; }
-        // Senha NÃO é atualizada aqui. Use ChangePasswordDTO em um endpoint específico.
+        // Senha NÃO é atualizada aqui. Use um endpoint específico de troca de senha.
     }
 }
