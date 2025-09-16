@@ -1,13 +1,51 @@
+using System;
 using System.Collections.Generic;
 
-namespace API_.Net.DTOs
+namespace API_.Net.DTOs.Common
 {
+    /// <summary>
+    /// Resultado paginado para listas de dados
+    /// </summary>
     public class PagedResult<T>
     {
-        public IEnumerable<T> Items { get; set; } = new List<T>();
+        /// <summary>
+        /// Lista de itens da página atual
+        /// </summary>
+        public List<T> Items { get; set; } = new();
+        
+        /// <summary>
+        /// Número da página atual (1-based)
+        /// </summary>
         public int Page { get; set; }
+        
+        /// <summary>
+        /// Quantidade de itens por página
+        /// </summary>
         public int PageSize { get; set; }
+        
+        /// <summary>
+        /// Total de itens na consulta
+        /// </summary>
         public int TotalItems { get; set; }
-        public int TotalPages => PageSize == 0 ? 0 : (int)System.Math.Ceiling((double)TotalItems / PageSize);
+        
+        /// <summary>
+        /// Total de páginas calculado
+        /// </summary>
+        public int TotalPages => (int)Math.Ceiling(TotalItems / (double)PageSize);
+        
+        /// <summary>
+        /// Indica se existe próxima página
+        /// </summary>
+        public bool HasNextPage => Page < TotalPages;
+        
+        /// <summary>
+        /// Indica se existe página anterior
+        /// </summary>
+        public bool HasPreviousPage => Page > 1;
+        
+        /// <summary>
+        /// Links HATEOAS para navegação
+        /// </summary>
+        public List<Link> Links { get; set; } = new();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using API_.Net.DTOs.Common;
 
 namespace API_.Net.DTOs
 {
@@ -16,5 +17,10 @@ namespace API_.Net.DTOs
 
         /// <summary>Quantidade de departamentos vinculados</summary>
         public int QTD_DEPARTAMENTOS { get; set; }
+
+        /// <summary>
+        /// Links HATEOAS para navegação
+        /// </summary>
+        public List<Link> Links { get; set; } = new();
     }
 }

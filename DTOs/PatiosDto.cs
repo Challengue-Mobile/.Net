@@ -1,4 +1,6 @@
-﻿namespace API_.Net.DTOs
+﻿using API_.Net.DTOs.Common;
+
+namespace API_.Net.DTOs
 {
     public class PatiosDto
     {
@@ -6,5 +8,10 @@
         public string NOME { get; set; } = string.Empty;
         public int ID_LOGRADOURO { get; set; }
         public string? LOGRADOURO_NOME { get; set; }
+
+        /// <summary>
+        /// Links HATEOAS para navegação
+        /// </summary>
+        public List<Link> Links { get; set; } = new();
     }
 }

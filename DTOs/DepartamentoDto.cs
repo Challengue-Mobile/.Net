@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using API_.Net.DTOs.Common;
 
 namespace API_.Net.DTOs
 {
@@ -13,5 +14,10 @@ namespace API_.Net.DTOs
 
         /// <summary>Nome da filial (mapeado via Include/Projection)</summary>
         public string? NOME_FILIAL { get; set; }
+
+        /// <summary>
+        /// Links HATEOAS para navegação
+        /// </summary>
+        public List<Link> Links { get; set; } = new();
     }
 }

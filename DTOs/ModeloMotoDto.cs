@@ -1,3 +1,5 @@
+using API_.Net.DTOs.Common;
+
 namespace API_.Net.DTOs
 {
     /// <summary>DTO de resposta para Modelo de Moto (Entity → API)</summary>
@@ -7,5 +9,10 @@ namespace API_.Net.DTOs
         public string NOME { get; set; } = string.Empty;
         public string FABRICANTE { get; set; } = string.Empty;
         public int QuantidadeMotos { get; set; }
+
+        /// <summary>
+        /// Links HATEOAS para navegação
+        /// </summary>
+        public List<Link> Links { get; set; } = new();
     }
 }

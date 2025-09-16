@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using API_.Net.DTOs.Common;
 
 namespace API_.Net.DTOs
 {
@@ -11,9 +12,15 @@ namespace API_.Net.DTOs
         public string EMAIL { get; set; } = string.Empty;
         public int ID_TIPO_USUARIO { get; set; }
         public string TipoUsuario { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Links HATEOAS para navegação
+        /// </summary>
+        public List<Link> Links { get; set; } = new();
     }
 
     // DTO para alteração de senha (uso em endpoint específico, não mapeia direto para entidade)
+    
     public class ChangePasswordDto
     {
         [Required(ErrorMessage = "A senha atual é obrigatória")]

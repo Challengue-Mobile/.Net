@@ -1,3 +1,5 @@
+using API_.Net.DTOs.Common;
+
 namespace API_.Net.DTOs
 {
     // DTO para exibir informações de beacon (Entity -> API)
@@ -10,5 +12,10 @@ namespace API_.Net.DTOs
         public int ID_MODELO_BEACON { get; set; }
         public string PlacaMoto { get; set; } = string.Empty;
         public string ModeloBeacon { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Links HATEOAS para navegação
+        /// </summary>
+        public List<Link> Links { get; set; } = new();
     }
 }

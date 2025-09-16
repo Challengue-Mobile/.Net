@@ -1,4 +1,5 @@
 using System;
+using API_.Net.DTOs.Common;
 
 namespace API_.Net.DTOs
 {
@@ -12,9 +13,14 @@ namespace API_.Net.DTOs
         public int ID_MOTO { get; set; }
         public int ID_TIPO_MOVIMENTACAO { get; set; }
 
-        // Campos “derivados” (joins)
+        // Campos "derivados" (joins)
         public string NomeUsuario { get; set; } = string.Empty;
         public string PlacaMoto { get; set; } = string.Empty;
         public string TipoMovimentacao { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Links HATEOAS para navegação
+        /// </summary>
+        public List<Link> Links { get; set; } = new();
     }
 }
