@@ -1,0 +1,128 @@
+using API_.Net.Models;
+using Swashbuckle.AspNetCore.Filters;
+using System;
+using System.Collections.Generic;
+
+
+
+using System.Globalization; // ← ADICIONADO
+
+namespace API_.Net.Examples
+{
+    /// <summary>
+    /// Exemplo de requisição para criar um usuário
+    /// </summary>
+    public class UsuarioRequestExample : IExamplesProvider<Usuario>
+    {
+        public Usuario GetExamples()
+        {
+            return new Usuario
+            {
+                NOME = "João da Silva",
+                SENHA = "senha123",
+                EMAIL = "joao@exemplo.com",
+                ID_TIPO_USUARIO = 1
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de requisição para atualizar um usuário
+    /// </summary>
+    public class UsuarioUpdateRequestExample : IExamplesProvider<Usuario>
+    {
+        public Usuario GetExamples()
+        {
+            return new Usuario
+            {
+                ID_USUARIO = 1,
+                NOME = "João da Silva",
+                EMAIL = "joao.novo@exemplo.com",
+                ID_TIPO_USUARIO = 2,
+                DATA_CADASTRO = DateTime.Parse("2025-01-15", CultureInfo.InvariantCulture) // ← CORRIGIDO - Issue L38
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de resposta ao obter um usuário
+    /// </summary>
+    public class UsuarioResponseExample : IExamplesProvider<Usuario>
+    {
+        public Usuario GetExamples()
+        {
+            return new Usuario
+            {
+                ID_USUARIO = 1,
+                NOME = "João da Silva",
+                EMAIL = "joao@exemplo.com",
+                DATA_CADASTRO = DateTime.Parse("2025-01-15", CultureInfo.InvariantCulture), // ← CORRIGIDO - Issue L55
+                ID_TIPO_USUARIO = 1,
+                TipoUsuario = new TipoUsuario
+                {
+                    ID_TIPO_USUARIO = 1,
+                    DESCRICAO = "Administrador"
+                },
+                Movimentacoes = new List<Movimentacao>
+                {
+                    new Movimentacao
+                    {
+                        ID_MOVIMENTACAO = 1,
+                        DATA_MOVIMENTACAO = DateTime.Now.AddDays(-2)
+                    },
+                    new Movimentacao
+                    {
+                        ID_MOVIMENTACAO = 3,
+                        DATA_MOVIMENTACAO = DateTime.Now.AddDays(-1)
+                    }
+                },
+                Logs = new List<LogSistema>
+                {
+                    new LogSistema
+                    {
+                        ID_LOG = 1,
+                        ACAO = "Login no sistema",
+                        DATA_HORA = DateTime.Now.AddHours(-1)
+                    }
+                }
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de lista de usuários
+    /// </summary>
+    public class UsuariosListResponseExample : IExamplesProvider<Usuario[]>
+    {
+        public Usuario[] GetExamples()
+        {
+            return new Usuario[]
+            {
+                new Usuario
+                {
+                    ID_USUARIO = 1,
+                    NOME = "João da Silva",
+                    EMAIL = "joao@exemplo.com",
+                    DATA_CADASTRO = DateTime.Parse("2025-01-15", CultureInfo.InvariantCulture), // ← CORRIGIDO - Issue L102
+                    ID_TIPO_USUARIO = 1
+                },
+                new Usuario
+                {
+                    ID_USUARIO = 2,
+                    NOME = "Maria Souza",
+                    EMAIL = "maria@exemplo.com",
+                    DATA_CADASTRO = DateTime.Parse("2025-02-20", CultureInfo.InvariantCulture), // ← CORRIGIDO - Issue L110
+                    ID_TIPO_USUARIO = 2
+                },
+                new Usuario
+                {
+                    ID_USUARIO = 3,
+                    NOME = "Pedro Santos",
+                    EMAIL = "pedro@exemplo.com",
+                    DATA_CADASTRO = DateTime.Parse("2025-03-10", CultureInfo.InvariantCulture), // ← CORRIGIDO - Issue L118
+                    ID_TIPO_USUARIO = 3
+                }
+            };
+        }
+    }
+}

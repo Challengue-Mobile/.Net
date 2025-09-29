@@ -1,0 +1,80 @@
+using API_.Net.Models;
+using AutoMapper;
+
+using API_.Net.DTOs;               // BeaconDTO, ClienteDTO, ...
+using API_.Net.DTOs.Requests;      // Create*/Update* DTOs
+
+namespace API_.Net.AutoMapper
+{
+    public class MappingProfile : Profile
+    {
+        public MappingProfile()
+        {
+            // -------- Entity -> DTO (saída) --------
+            CreateMap<Beacon, BeaconDto>();
+            CreateMap<Cliente, ClienteDto>();
+            CreateMap<Localizacao, LocalizacaoDto>();
+            CreateMap<ModeloMoto, ModeloMotoDto>();
+            CreateMap<Moto, MotoDto>();
+            CreateMap<Movimentacao, MovimentacaoDto>();
+            CreateMap<TipoMovimentacao, TipoMovimentacaoDto>();
+            CreateMap<Usuario, UsuarioDto>();
+
+            // comuns/adicionais
+            CreateMap<Patio, PatiosDto>();
+            CreateMap<ModeloBeacon, ModeloBeaconDto>();
+            CreateMap<RegistroBateria, RegistroBateriaDto>();
+            CreateMap<TipoUsuario, TipoUsuarioDto>();
+            CreateMap<Departamento, DepartamentoDto>();
+            CreateMap<Filial, FiliaisDto>();
+            CreateMap<Funcionario, FuncionarioDto>();
+
+            // -------- Create DTO -> Entity (entrada) --------
+            CreateMap<CreateBeaconDto, Beacon>();
+            CreateMap<CreateClienteDto, Cliente>();
+            CreateMap<CreateLocalizacaoDto, Localizacao>();
+            CreateMap<CreateModeloBeaconDto, ModeloBeacon>();
+            CreateMap<CreateModeloMotoDto, ModeloMoto>();
+            CreateMap<CreateMotoDto, Moto>();
+            CreateMap<CreateMovimentacaoDto, Movimentacao>();
+            CreateMap<CreatePatioDto, Patio>();
+            CreateMap<CreateRegistroBateriaDto, RegistroBateria>();
+            CreateMap<CreateTipoMovimentacaoDto, TipoMovimentacao>();
+            CreateMap<CreateTipoUsuarioDto, TipoUsuario>();
+            CreateMap<CreateUsuarioDto, Usuario>();
+            CreateMap<CreateDepartamentoDto, Departamento>();
+            CreateMap<CreateFilialDto, Filial>();
+            CreateMap<CreateFuncionarioDto, Funcionario>();
+
+            // -------- Update DTO -> Entity (ignora nulls) --------
+            CreateMap<UpdateBeaconDto, Beacon>().IgnoreNulls();
+            CreateMap<UpdateClienteDto, Cliente>().IgnoreNulls();
+            CreateMap<UpdateLocalizacaoDto, Localizacao>().IgnoreNulls();
+            CreateMap<UpdateModeloBeaconDto, ModeloBeacon>().IgnoreNulls();
+            CreateMap<UpdateModeloMotoDto, ModeloMoto>().IgnoreNulls();
+            CreateMap<UpdateMotoDto, Moto>().IgnoreNulls();
+            CreateMap<UpdateMovimentacaoDto, Movimentacao>().IgnoreNulls();
+            CreateMap<UpdatePatioDto, Patio>().IgnoreNulls();
+            CreateMap<UpdateRegistroBateriaDto, RegistroBateria>().IgnoreNulls();
+            CreateMap<UpdateTipoMovimentacaoDto, TipoMovimentacao>().IgnoreNulls();
+            CreateMap<UpdateTipoUsuarioDto, TipoUsuario>().IgnoreNulls();
+            CreateMap<UpdateUsuarioDto, Usuario>().IgnoreNulls();
+            CreateMap<UpdateDepartamentoDto, Departamento>().IgnoreNulls();
+            CreateMap<UpdateFilialDto, Filial>().IgnoreNulls();
+            CreateMap<UpdateFuncionarioDto, Funcionario>().IgnoreNulls();
+        }
+    }
+
+    // Helper para updates parciais: não sobrescreve destino com null
+    public static class MappingExtensions
+    {
+        public static IMappingExpression<TSrc, TDest> IgnoreNulls<TSrc, TDest>(
+            this IMappingExpression<TSrc, TDest> map)
+        {
+            // ForAllMembers retorna void na sua versão — chame e depois retorne o map
+            map.ForAllMembers(opt =>
+                opt.Condition((src, dest, srcMember) => srcMember != null));
+            return map;
+        }
+    }
+}

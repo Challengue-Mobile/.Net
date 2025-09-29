@@ -1,0 +1,82 @@
+using API_.Net.Models;
+using Swashbuckle.AspNetCore.Filters;
+using System.Collections.Generic;
+
+
+namespace API_.Net.Examples
+{
+    /// <summary>
+    /// Exemplo de requisição para criar um modelo de beacon
+    /// </summary>
+    public class ModeloBeaconRequestExample : IExamplesProvider<ModeloBeacon>
+    {
+        public ModeloBeacon GetExamples()
+        {
+            return new ModeloBeacon
+            {
+                NOME = "TrackBeacon Pro",
+                FABRICANTE = "TrackTech"
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de resposta ao obter um modelo de beacon
+    /// </summary>
+    public class ModeloBeaconResponseExample : IExamplesProvider<ModeloBeacon>
+    {
+        public ModeloBeacon GetExamples()
+        {
+            return new ModeloBeacon
+            {
+                ID_MODELO_BEACON = 1,
+                NOME = "TrackBeacon Pro",
+                FABRICANTE = "TrackTech",
+                Beacons = new List<Beacon>
+                {
+                    new Beacon
+                    {
+                        ID_BEACON = 1,
+                        UUID = "550e8400-e29b-41d4-a716-446655440000"
+                    },
+                    new Beacon
+                    {
+                        ID_BEACON = 2,
+                        UUID = "550e8400-e29b-41d4-a716-446655440001"
+                    }
+                }
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de lista de modelos de beacon
+    /// </summary>
+    public class ModelosBeaconListResponseExample : IExamplesProvider<ModeloBeacon[]>
+    {
+        public ModeloBeacon[] GetExamples()
+        {
+            return new ModeloBeacon[]
+            {
+                new ModeloBeacon
+                {
+                    ID_MODELO_BEACON = 1,
+                    NOME = "TrackBeacon Pro",
+                    FABRICANTE = "TrackTech"
+                },
+                new ModeloBeacon
+                {
+                    ID_MODELO_BEACON = 2,
+                    NOME = "TrackBeacon Lite",
+                    FABRICANTE = "TrackTech"
+                },
+                new ModeloBeacon
+                {
+                    ID_MODELO_BEACON = 3,
+                    NOME = "MotoTracker X1",
+                    FABRICANTE = "MotoSecurity"
+                }
+            };
+        }
+    }
+}

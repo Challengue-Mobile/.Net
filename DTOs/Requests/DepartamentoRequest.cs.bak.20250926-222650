@@ -1,0 +1,30 @@
+using System.Text.Json.Serialization;
+
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace API_.Net.DTOs.Requests
+{
+    /// <summary>DTO de entrada para criação de Departamento (API → Entity)</summary>
+    public class CreateDepartamentoDto
+    {
+        [Required, StringLength(120)]
+        public string NOME { get; set; } = default!;
+
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "O ID da filial deve ser maior que zero")]
+        public int ID_FILIAL { get; set; }
+    }
+
+    /// <summary>
+    /// DTO de entrada para atualização de Departamento (API → Entity).
+    /// Campos opcionais para suportar atualização parcial; nulos são ignorados no mapeamento.
+    /// </summary>
+    public class UpdateDepartamentoDto
+    {
+        [StringLength(120)]
+        public string? NOME { get; set; }
+
+        [Range(1, int.MaxValue, ErrorMessage = "O ID da filial deve ser maior que zero")]
+        public int? ID_FILIAL { get; set; }
+    }
+}

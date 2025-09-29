@@ -1,0 +1,37 @@
+using System.Text.Json.Serialization;
+
+
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace API_.Net.DTOs.Requests
+{
+    /// <summary>DTO de criação (API → Entity)</summary>
+    public class CreateMovimentacaoDto
+    {
+        [StringLength(255, ErrorMessage = "A observação não pode ter mais de 255 caracteres")]
+        public string? OBSERVACAO { get; set; }
+
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "O ID do usuário deve ser maior que zero")]
+        public int ID_USUARIO { get; set; }
+
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "O ID da moto deve ser maior que zero")]
+        public int ID_MOTO { get; set; }
+
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "O tipo de movimentação deve ser maior que zero")]
+        public int ID_TIPO_MOVIMENTACAO { get; set; }
+    }
+
+    /// <summary>DTO de atualização parcial (API → Entity)</summary>
+    public class UpdateMovimentacaoDto
+    {
+        [StringLength(255, ErrorMessage = "A observação não pode ter mais de 255 caracteres")]
+        public string? OBSERVACAO { get; set; }
+
+        public int? ID_USUARIO { get; set; }
+        public int? ID_MOTO { get; set; }
+        public int? ID_TIPO_MOVIMENTACAO { get; set; }
+    }
+}

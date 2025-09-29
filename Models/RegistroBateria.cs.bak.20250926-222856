@@ -1,0 +1,53 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+
+
+
+namespace MottothTracking.Models
+{
+    [Table("TB_REGISTRO_BATERIA")]
+    public class RegistroBateria
+    {
+        [Key]
+        [Column("ID_REGISTRO")]
+        public int Id { get; set; }
+
+        [Required]
+        [Column("DATA_HORA")]
+        public DateTime DataHora { get; set; }
+
+        [Required]
+        [Column("NIVEL_BATERIA")]
+        public int NivelBateria { get; set; }
+
+        [Required]
+        [Column("ID_BEACON")]
+        public int BeaconId { get; set; }
+
+        [ForeignKey("BeaconId")]
+        public virtual Beacon? Beacon { get; set; }
+    }
+}
+using System.ComponentModel.DataAnnotations; // ← ADICIONADO
+
+namespace API_.Net.Models
+{
+    public class RegistroBateria
+    {
+        [Required] // ← CORRIGIDO - Issue L5
+        public int ID_REGISTRO { get; set; }
+        
+        [Required] // ← CORRIGIDO - Issue L6
+        public DateTime DATA_HORA { get; set; }
+        
+        [Required] // ← CORRIGIDO - Issue L7
+        public int NIVEL_BATERIA { get; set; }
+        
+        [Required] // ← CORRIGIDO - Issue L8
+        public int ID_BEACON { get; set; }
+        
+        // Propriedades de navegação
+        public Beacon? Beacon { get; set; }
+    }
+}

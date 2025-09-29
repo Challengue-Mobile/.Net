@@ -1,0 +1,11 @@
+namespace API_.Net.Models
+{
+    public class Pais
+    {
+        public int ID_PAIS { get; set; }
+        public string NOME { get; set; } = string.Empty;
+        
+        // Propriedades de navegação
+        public ICollection<Estado>? Estados { get; set; }
+    }
+}

@@ -2,7 +2,7 @@
 echo "=== Build e Push da Imagem Docker ==="
 
 # ⚠️ SUBSTITUA PELO NOME DO SEU ACR (do script anterior)
-ACR_NAME="acrmottoth1234567890"  # ← SUBSTITUA AQUI!
+ACR_NAME="acrmottoth1759096657"  # ← SUBSTITUA AQUI!
 IMAGE_NAME="mottoth-api"
 IMAGE_TAG="latest"
 

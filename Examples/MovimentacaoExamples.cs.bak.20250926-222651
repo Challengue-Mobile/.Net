@@ -1,0 +1,90 @@
+using API_.Net.Models;
+using Swashbuckle.AspNetCore.Filters;
+using System;
+
+
+
+namespace API_.Net.Examples
+{
+    /// <summary>
+    /// Exemplo de requisição para registrar uma movimentação
+    /// </summary>
+    public class MovimentacaoRequestExample : IExamplesProvider<Movimentacao>
+    {
+        public Movimentacao GetExamples()
+        {
+            return new Movimentacao
+            {
+                OBSERVACAO = "Saída para entrega",
+                ID_USUARIO = 1,
+                ID_MOTO = 1,
+                ID_TIPO_MOVIMENTACAO = 2
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de resposta ao obter uma movimentação
+    /// </summary>
+    public class MovimentacaoResponseExample : IExamplesProvider<Movimentacao>
+    {
+        public Movimentacao GetExamples()
+        {
+            return new Movimentacao
+            {
+                ID_MOVIMENTACAO = 1,
+                DATA_MOVIMENTACAO = DateTime.Now,
+                OBSERVACAO = "Saída para entrega",
+                ID_USUARIO = 1,
+                ID_MOTO = 1,
+                ID_TIPO_MOVIMENTACAO = 2,
+                Usuario = new Usuario
+                {
+                    ID_USUARIO = 1,
+                    NOME = "Administrador"
+                },
+                Moto = new Moto
+                {
+                    ID_MOTO = 1,
+                    PLACA = "ABC1234"
+                },
+                TipoMovimentacao = new TipoMovimentacao
+                {
+                    ID_TIPO_MOVIMENTACAO = 2,
+                    DESCRICAO = "Saída"
+                }
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de lista de movimentações
+    /// </summary>
+    public class MovimentacoesListResponseExample : IExamplesProvider<Movimentacao[]>
+    {
+        public Movimentacao[] GetExamples()
+        {
+            return new Movimentacao[]
+            {
+                new Movimentacao
+                {
+                    ID_MOVIMENTACAO = 1,
+                    DATA_MOVIMENTACAO = DateTime.Now.AddHours(-2),
+                    OBSERVACAO = "Entrada para manutenção",
+                    ID_USUARIO = 1,
+                    ID_MOTO = 1,
+                    ID_TIPO_MOVIMENTACAO = 1
+                },
+                new Movimentacao
+                {
+                    ID_MOVIMENTACAO = 2,
+                    DATA_MOVIMENTACAO = DateTime.Now,
+                    OBSERVACAO = "Saída para entrega",
+                    ID_USUARIO = 1,
+                    ID_MOTO = 1,
+                    ID_TIPO_MOVIMENTACAO = 2
+                }
+            };
+        }
+    }
+}

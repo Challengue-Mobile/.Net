@@ -1,0 +1,34 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+
+namespace MottothTracking.Models
+{
+    [Table("TB_ZONA")]
+    public class Zona
+    {
+        [Key]
+        [Column("ID_ZONA")]
+        public int Id { get; set; }
+
+        [Required]
+        [Column("NOME")]
+        [StringLength(50)]
+        public string Nome { get; set; } = string.Empty;
+
+        [Column("DESCRICAO")]
+        public string? Descricao { get; set; }
+
+        [Required]
+        [Column("ID_PATIO")]
+        public int PatioId { get; set; }
+
+        [ForeignKey("PatioId")]
+        public virtual Patio? Patio { get; set; }
+
+        // Relacionamentos
+        public virtual ICollection<Localizacao> Localizacoes { get; set; } = new List<Localizacao>();
+        public virtual ICollection<Movimentacao> MovimentacoesOrigem { get; set; } = new List<Movimentacao>();
+        public virtual ICollection<Movimentacao> MovimentacoesDestino { get; set; } = new List<Movimentacao>();
+    }
+}

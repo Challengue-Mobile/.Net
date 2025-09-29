@@ -1,33 +1,30 @@
-# Dockerfile para MottothTracking
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+# ===== build =====
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /app
 
-# Copiar projeto
+# copiar csproj e restaurar
 COPY *.csproj ./
 RUN dotnet restore
 
-# Copiar código e build
-COPY . .
-RUN dotnet publish -c Release -o /app/publish --no-restore
+# copiar código e publicar
+COPY . ./
+RUN dotnet publish -c Release -o /out
 
-# Runtime
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+# ===== runtime =====
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
 
-# Criar usuário não-root (OBRIGATÓRIO)
-RUN groupadd -r mottothuser && useradd -r -g mottothuser mottothuser
-RUN mkdir -p /app && chown -R mottothuser:mottothuser /app
-
-# Copiar app
-COPY --from=build /app/publish .
-RUN chown -R mottothuser:mottothuser /app
-
-# Configurações
-EXPOSE 8080
-ENV ASPNETCORE_URLS=http://+:8080
-ENV ASPNETCORE_ENVIRONMENT=Production
-
-# Executar como não-root
+# criar usuário não-root
+RUN groupadd -r mottothuser && useradd -r -g mottothuser mottothuser \
+ && chown -R mottothuser:mottothuser /app
 USER mottothuser
 
+# copiar artefatos publicados
+COPY --from=build /out ./
+
+# expor e bindar 8080
+ENV ASPNETCORE_URLS=http://0.0.0.0:8080
+EXPOSE 8080
+
+# ajuste o nome do DLL se seu AssemblyName for diferente
 ENTRYPOINT ["dotnet", "MottothTracking.dll"]

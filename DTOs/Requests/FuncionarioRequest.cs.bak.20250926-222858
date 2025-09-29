@@ -1,0 +1,28 @@
+using System.ComponentModel.DataAnnotations;
+
+using System.Text.Json.Serialization; // para JsonRequired
+
+namespace API_.Net.DTOs.Requests
+{
+    /// <summary>DTO de criação (API → Entity)</summary>
+    public class CreateFuncionarioDto
+    {
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "ID do usuário deve ser maior que zero")]
+        public int ID_USUARIO { get; set; }
+
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "ID do departamento deve ser maior que zero")]
+        public int ID_DEPARTAMENTO { get; set; }
+    }
+
+    /// <summary>DTO de atualização (API → Entity). Campos opcionais para update parcial.</summary>
+    public class UpdateFuncionarioDto
+    {
+        [Range(1, int.MaxValue, ErrorMessage = "ID do usuário deve ser maior que zero")]
+        public int? ID_USUARIO { get; set; }
+
+        [Range(1, int.MaxValue, ErrorMessage = "ID do departamento deve ser maior que zero")]
+        public int? ID_DEPARTAMENTO { get; set; }
+    }
+}

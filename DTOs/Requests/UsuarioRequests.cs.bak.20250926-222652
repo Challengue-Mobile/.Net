@@ -1,0 +1,36 @@
+using System.Text.Json.Serialization;
+
+
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace API_.Net.DTOs.Requests
+{
+    public class CreateUsuarioDto
+    {
+        [Required, StringLength(100)]
+        public string NOME { get; set; } = default!;
+
+        [Required, StringLength(255, MinimumLength = 6)]
+        public string SENHA { get; set; } = default!;
+
+        [Required, EmailAddress, StringLength(100)]
+        public string EMAIL { get; set; } = default!;
+
+        [JsonRequired]
+        [Range(1, int.MaxValue, ErrorMessage = "ID_TIPO_USUARIO deve ser maior que zero")]
+        public int ID_TIPO_USUARIO { get; set; }
+    }
+
+    // Update parcial: propriedades opcionais (null = não alterar)
+    public class UpdateUsuarioDto
+    {
+        [StringLength(100)]
+        public string? NOME { get; set; }
+
+        [EmailAddress, StringLength(100)]
+        public string? EMAIL { get; set; }
+
+        public int? ID_TIPO_USUARIO { get; set; }
+        // Senha NÃO é atualizada aqui. Use um endpoint específico de troca de senha.
+    }
+}

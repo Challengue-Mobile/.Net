@@ -1,0 +1,68 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+
+
+
+namespace MottothTracking.Models
+{
+    [Table("TB_USUARIO")]
+    public class Usuario
+    {
+        [Key]
+        [Column("ID_USUARIO")]
+        public int Id { get; set; }
+
+        [Required]
+        [Column("NOME")]
+        [StringLength(100)]
+        public string Nome { get; set; } = string.Empty;
+
+        [Required]
+        [Column("EMAIL")]
+        [StringLength(100)]
+        public string Email { get; set; } = string.Empty;
+
+        [Required]
+        [Column("SENHA")]
+        [StringLength(255)]
+        public string Senha { get; set; } = string.Empty;
+
+        [Required]
+        [Column("TIPO")]
+        [StringLength(20)]
+        public string Tipo { get; set; } = string.Empty;
+
+        [Required]
+        [Column("DATA_CADASTRO")]
+        public DateTime DataCadastro { get; set; }
+
+        // Relacionamentos
+        public virtual ICollection<LogSistema> Logs { get; set; } = new List<LogSistema>();
+    }
+}
+
+namespace API_.Net.Models
+{
+    public class Usuario
+    {
+        [Required] // ← CORRIGIDO - Issue L5
+        public int ID_USUARIO { get; set; }
+        
+        public string NOME { get; set; } = string.Empty;
+        public string SENHA { get; set; } = string.Empty;
+        
+        [Required] // ← CORRIGIDO - Issue L8
+        public DateTime DATA_CADASTRO { get; set; }
+        
+        public string EMAIL { get; set; } = string.Empty;
+        
+        [Required] // ← CORRIGIDO - Issue L10
+        public int ID_TIPO_USUARIO { get; set; }
+        
+        // Propriedades de navegação
+        public TipoUsuario? TipoUsuario { get; set; }
+        public ICollection<Movimentacao>? Movimentacoes { get; set; }
+        public ICollection<LogSistema>? Logs { get; set; }
+    }
+}

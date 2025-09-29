@@ -1,0 +1,40 @@
+using API_.Net.DTOs.Common;
+using System.ComponentModel.DataAnnotations;
+
+
+
+
+namespace API_.Net.DTOs
+{
+    // DTO de saída (Entity -> API)
+    public class UsuarioDto
+    {
+        public int ID_USUARIO { get; set; }
+        public string NOME { get; set; } = string.Empty;
+        public System.DateTime DATA_CADASTRO { get; set; }
+        public string EMAIL { get; set; } = string.Empty;
+        public int ID_TIPO_USUARIO { get; set; }
+        public string TipoUsuario { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Links HATEOAS para navegação
+        /// </summary>
+        public List<Link> Links { get; set; } = new();
+    }
+
+    // DTO para alteração de senha (uso em endpoint específico, não mapeia direto para entidade)
+    
+    public class ChangePasswordDto
+    {
+        [Required(ErrorMessage = "A senha atual é obrigatória")]
+        public string SenhaAtual { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "A nova senha é obrigatória")]
+        [StringLength(255, ErrorMessage = "A senha deve ter entre 6 e 255 caracteres", MinimumLength = 6)]
+        public string NovaSenha { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "A confirmação da senha é obrigatória")]
+        [Compare(nameof(NovaSenha), ErrorMessage = "As senhas não conferem")]
+        public string ConfirmacaoSenha { get; set; } = string.Empty;
+    }
+}

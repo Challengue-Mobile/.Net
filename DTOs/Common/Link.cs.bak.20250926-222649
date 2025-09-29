@@ -1,0 +1,26 @@
+using System;
+
+
+namespace API_.Net.DTOs.Common
+{
+    /// <summary>
+    /// Representa um link HATEOAS para navegação na API
+    /// </summary>
+    public class Link
+    {
+        /// <summary>
+        /// URL do recurso
+        /// </summary>
+        public string Href { get; set; }
+        
+        /// <summary>
+        /// Relação do link (self, edit, delete, etc.)
+        /// </summary>
+        public string Rel { get; set; }
+        
+        /// <summary>
+        /// Método HTTP para acessar o recurso
+        /// </summary>
+        public string Method { get; set; }
+    }
+}

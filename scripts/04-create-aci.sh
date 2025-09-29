@@ -1,88 +1,84 @@
-#!/bin/bash
-echo "=== Criando Azure Container Instance ==="
+#!/usr/bin/env bash
+set -euo pipefail
 
-RESOURCE_GROUP="rg-mottoth-devops"
-CONTAINER_NAME="aci-mottoth-api"
-ACR_NAME="acrmottoth1234567890"  # ⚠️ SUBSTITUA pelo seu ACR!
-IMAGE_NAME="mottoth-api:latest"
-LOCATION="East US"
+# ===== CONFIG =====
+RG="rg-mottoth-frotas-devops"
+LOCATION="eastus"
+ACR_NAME="acrmottoth1759096657"
+APP_NAME="mottoth-api-aci"
+IMAGE_NAME="mottoth-api"
+IMAGE_TAG="latest"
+PORT="8080"
+CPU="1"
+MEMORY="1.5"
+DNS_LABEL="mottoth-$RANDOM"   # opcional; precisa ser único na região
 
-echo "================================================"
-echo "VERIFICAR: ACR_NAME está correto?"
-echo "Usando ACR: $ACR_NAME"
-echo "Resource Group: $RESOURCE_GROUP"
-echo "================================================"
-read -p "Pressione ENTER para continuar ou Ctrl+C para cancelar..."
+ENV_VARS=(
+  "ASPNETCORE_ENVIRONMENT=Production"
+)
 
-# Sua connection string Oracle existente (do appsettings.json)
-ORACLE_CONNECTION="Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oracle.fiap.com.br)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User Id=rm558798;Password=fiap24;"
+log(){ echo -e "\033[1;34m[INFO]\033[0m $*"; }
+err(){ echo -e "\033[1;31m[ERRO]\033[0m $*" >&2; }
+need(){ command -v "$1" >/dev/null 2>&1 || { err "Comando '$1' não encontrado"; exit 1; }; }
 
-echo "Obtendo credenciais do ACR..."
+need az
 
-# Obter credenciais do ACR
-ACR_SERVER=$(az acr show --name $ACR_NAME --resource-group $RESOURCE_GROUP --query loginServer --output tsv 2>/dev/null)
-if [ -z "$ACR_SERVER" ]; then
-    echo "❌ Erro: ACR '$ACR_NAME' não encontrado!"
-    echo "Verifique se o nome do ACR está correto."
-    exit 1
+log "RG=$RG  ACR=$ACR_NAME  IMG=$IMAGE_NAME:$IMAGE_TAG  APP=$APP_NAME"
+
+# valida ACR
+az acr show -g "$RG" -n "$ACR_NAME" >/dev/null 2>&1 || { err "ACR '$ACR_NAME' não existe no RG '$RG'"; exit 1; }
+
+# credenciais do ACR
+USER="$(az acr credential show -n "$ACR_NAME" --query username -o tsv)"
+PASS="$(az acr credential show -n "$ACR_NAME" --query passwords[0].value -o tsv)"
+IMAGE_FQDN="${ACR_NAME}.azurecr.io/${IMAGE_NAME}:${IMAGE_TAG}"
+
+# remove ACI antiga se existir
+if az container show -g "$RG" -n "$APP_NAME" >/dev/null 2>&1; then
+  log "Removendo ACI antiga '$APP_NAME'..."
+  az container delete -g "$RG" -n "$APP_NAME" --yes
 fi
 
-ACR_USERNAME=$(az acr credential show --name $ACR_NAME --resource-group $RESOURCE_GROUP --query username --output tsv)
-ACR_PASSWORD=$(az acr credential show --name $ACR_NAME --resource-group $RESOURCE_GROUP --query passwords[0].value --output tsv)
+# monta env
+ENV_ARGS=()
+for kv in "${ENV_VARS[@]}"; do
+  ENV_ARGS+=( --environment-variables "$kv" )
+done
 
-echo "✅ Credenciais obtidas:"
-echo "   Server: $ACR_SERVER"
-echo "   Username: $ACR_USERNAME"
-
-echo ""
-echo "Criando Azure Container Instance..."
-echo "Isso pode levar alguns minutos..."
-
-# Criar ACI
+# cria ACI com porta exposta e DNS público
+log "Criando ACI '$APP_NAME' em $LOCATION..."
 az container create \
-  --resource-group $RESOURCE_GROUP \
-  --name $CONTAINER_NAME \
-  --image "$ACR_SERVER/$IMAGE_NAME" \
-  --registry-login-server $ACR_SERVER \
-  --registry-username $ACR_USERNAME \
-  --registry-password $ACR_PASSWORD \
-  --dns-name-label mottoth-api-$(date +%s) \
-  --ports 8080 \
-  --environment-variables \
-    ASPNETCORE_ENVIRONMENT=Production \
-    ConnectionStrings__OracleConnection="$ORACLE_CONNECTION" \
-  --cpu 1 \
-  --memory 1.5 \
-  --location "$LOCATION" \
-  --tags projeto="mottoth-sprint3"
+  -g "$RG" -n "$APP_NAME" -l "$LOCATION" \
+  --image "$IMAGE_FQDN" \
+  --registry-login-server "${ACR_NAME}.azurecr.io" \
+  --registry-username "$USER" \
+  --registry-password "$PASS" \
+  --os-type Linux \
+  --ports "$PORT" \
+  --dns-name-label "$DNS_LABEL" \
+  --cpu "$CPU" --memory "$MEMORY" \
+  "${ENV_ARGS[@]}"
 
-if [ $? -eq 0 ]; then
-    echo ""
-    echo "Obtendo URL do container..."
-    
-    # Obter URL final
-    CONTAINER_FQDN=$(az container show \
-      --resource-group $RESOURCE_GROUP \
-      --name $CONTAINER_NAME \
-      --query ipAddress.fqdn \
-      --output tsv)
-    
-    echo ""
-    echo "✅ Container criado com sucesso!"
-    echo "================================================"
-    echo "🌐 URL da API: http://$CONTAINER_FQDN:8080"
-    echo "📊 Swagger: http://$CONTAINER_FQDN:8080/swagger" 
-    echo "❤️ Health: http://$CONTAINER_FQDN:8080/health"
-    echo "👥 Usuários: http://$CONTAINER_FQDN:8080/api/usuarios"
-    echo "================================================"
-    echo ""
-    echo "⚠️  PRÓXIMO PASSO:"
-    echo "   Edite o arquivo 05-test-api.sh"
-    echo "   Substitua: API_URL=\"http://mottoth-api-1234567890.eastus.azurecontainer.io:8080\""
-    echo "   Por:       API_URL=\"http://$CONTAINER_FQDN:8080\""
-    echo ""
-    echo "Aguarde cerca de 2-3 minutos para o container inicializar completamente."
-else
-    echo "❌ Erro na criação do container! Verifique os logs acima."
-    exit 1
+# aguarda IP
+log "Aguardando IP/FQDN..."
+for i in {1..30}; do
+  IP="$(az container show -g "$RG" -n "$APP_NAME" --query ipAddress.ip -o tsv || true)"
+  FQDN="$(az container show -g "$RG" -n "$APP_NAME" --query ipAddress.fqdn -o tsv || true)"
+  [[ -n "${IP}" && "${IP}" != "null" ]] && break
+  sleep 4
+done
+
+if [[ -z "${IP:-}" || "$IP" == "null" ]]; then
+  err "Sem IP ainda. Status:"
+  az container show -g "$RG" -n "$APP_NAME" --query "{state:instanceView.state,ip:ipAddress.ip,ports:ipAddress.ports}" -o table || true
+  log "Logs:"
+  az container logs -g "$RG" -n "$APP_NAME" || true
+  exit 1
+fi
+
+echo
+echo "OK! Endpoints:"
+printf "  http://%s:%s/swagger\n" "$IP" "$PORT"
+if [[ -n "${FQDN:-}" && "$FQDN" != "null" ]]; then
+  printf "  http://%s:%s/swagger\n" "$FQDN" "$PORT"
 fi

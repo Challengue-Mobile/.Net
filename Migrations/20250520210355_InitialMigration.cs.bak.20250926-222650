@@ -1,0 +1,651 @@
+using Microsoft.EntityFrameworkCore.Migrations;
+
+
+﻿using System;
+
+#nullable disable
+
+namespace API_.Net.Migrations
+{
+    /// <inheritdoc />
+    public partial class InitialMigration : Migration
+    {
+        // ← CONSTANTES para resolver magic strings
+        private const string NumberType = "NUMBER(10)";
+        private const string OracleIdentity = "Oracle:Identity";
+        private const string IdentityStartIncrement = "START WITH 1 INCREMENT BY 1";
+        private const string NVarChar100 = "NVARCHAR2(100)";
+        private const string TimestampType = "TIMESTAMP(7)";
+        private const string TbMoto = "TB_MOTO";
+        private const string TbEstado = "TB_ESTADO";
+        private const string TbUsuario = "TB_USUARIO";
+        private const string TbBeacon = "TB_BEACON";
+        private const string TbCidade = "TB_CIDADE";
+        private const string TbMovimentacao = "TB_MOVIMENTACAO";
+        private const string TbBairro = "TB_BAIRRO";
+        private const string TbLogradouro = "TB_LOGRADOURO";
+        private const string TbPatio = "TB_PATIO";
+        private const string TbFilial = "TB_FILIAL";
+        private const string TbLocalizacao = "TB_LOCALIZACAO";
+        private const string TbDepartamento = "TB_DEPARTAMENTO";
+        private const string TbFuncionario = "TB_FUNCIONARIO";
+        // ← ADICIONADAS - Constantes para os 3 últimos issues
+        private const string IdMoto = "ID_MOTO";
+        private const string IdUsuario = "ID_USUARIO";
+        private const string IdPatio = "ID_PATIO";
+
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.CreateTable(
+                name: "TB_CLIENTE",
+                columns: table => new
+                {
+                    ID_CLIENTE = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    CPF = table.Column<string>(type: "NVARCHAR2(14)", maxLength: 14, nullable: false),
+                    DATA_CADASTRO = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    EMAIL = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    TELEFONE = table.Column<string>(type: "NVARCHAR2(20)", maxLength: 20, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_CLIENTE", x => x.ID_CLIENTE);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TB_MODELO_BEACON",
+                columns: table => new
+                {
+                    ID_MODELO_BEACON = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    FABRICANTE = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_MODELO_BEACON", x => x.ID_MODELO_BEACON);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TB_MODELO_MOTO",
+                columns: table => new
+                {
+                    ID_MODELO_MOTO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    FABRICANTE = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_MODELO_MOTO", x => x.ID_MODELO_MOTO);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TB_PAIS",
+                columns: table => new
+                {
+                    ID_PAIS = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_PAIS", x => x.ID_PAIS);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TB_TIPO_MOVIMENTACAO",
+                columns: table => new
+                {
+                    ID_TIPO_MOVIMENTACAO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    DESCRICAO = table.Column<string>(type: "NVARCHAR2(50)", maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_TIPO_MOVIMENTACAO", x => x.ID_TIPO_MOVIMENTACAO);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TB_TIPO_USUARIO",
+                columns: table => new
+                {
+                    ID_TIPO_USUARIO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    DESCRICAO = table.Column<string>(type: "NVARCHAR2(50)", maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_TIPO_USUARIO", x => x.ID_TIPO_USUARIO);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbMoto,
+                columns: table => new
+                {
+                    ID_MOTO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    PLACA = table.Column<string>(type: "NVARCHAR2(10)", maxLength: 10, nullable: false),
+                    DATA_REGISTRO = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    ID_CLIENTE = table.Column<int>(type: NumberType, nullable: true),
+                    ID_MODELO_MOTO = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_MOTO", x => x.ID_MOTO);
+                    table.ForeignKey(
+                        name: "FK_TB_MOTO_TB_CLIENTE_ID_CLIENTE",
+                        column: x => x.ID_CLIENTE,
+                        principalTable: "TB_CLIENTE",
+                        principalColumn: "ID_CLIENTE");
+                    table.ForeignKey(
+                        name: "FK_TB_MOTO_TB_MODELO_MOTO_ID_MODELO_MOTO",
+                        column: x => x.ID_MODELO_MOTO,
+                        principalTable: "TB_MODELO_MOTO",
+                        principalColumn: "ID_MODELO_MOTO",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbEstado,
+                columns: table => new
+                {
+                    ID_ESTADO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_PAIS = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_ESTADO", x => x.ID_ESTADO);
+                    table.ForeignKey(
+                        name: "FK_TB_ESTADO_TB_PAIS_ID_PAIS",
+                        column: x => x.ID_PAIS,
+                        principalTable: "TB_PAIS",
+                        principalColumn: "ID_PAIS",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbUsuario,
+                columns: table => new
+                {
+                    ID_USUARIO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    SENHA = table.Column<string>(type: "NVARCHAR2(255)", maxLength: 255, nullable: false),
+                    DATA_CADASTRO = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    EMAIL = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_TIPO_USUARIO = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_USUARIO", x => x.ID_USUARIO);
+                    table.ForeignKey(
+                        name: "FK_TB_USUARIO_TB_TIPO_USUARIO_ID_TIPO_USUARIO",
+                        column: x => x.ID_TIPO_USUARIO,
+                        principalTable: "TB_TIPO_USUARIO",
+                        principalColumn: "ID_TIPO_USUARIO",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbBeacon,
+                columns: table => new
+                {
+                    ID_BEACON = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    UUID = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    BATERIA = table.Column<int>(type: NumberType, nullable: false),
+                    ID_MOTO = table.Column<int>(type: NumberType, nullable: false),
+                    ID_MODELO_BEACON = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_BEACON", x => x.ID_BEACON);
+                    table.ForeignKey(
+                        name: "FK_TB_BEACON_TB_MODELO_BEACON_ID_MODELO_BEACON",
+                        column: x => x.ID_MODELO_BEACON,
+                        principalTable: "TB_MODELO_BEACON",
+                        principalColumn: "ID_MODELO_BEACON",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_TB_BEACON_TB_MOTO_ID_MOTO",
+                        column: x => x.ID_MOTO,
+                        principalTable: TbMoto,
+                        principalColumn: IdMoto,
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbCidade,
+                columns: table => new
+                {
+                    ID_CIDADE = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_ESTADO = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_CIDADE", x => x.ID_CIDADE);
+                    table.ForeignKey(
+                        name: "FK_TB_CIDADE_TB_ESTADO_ID_ESTADO",
+                        column: x => x.ID_ESTADO,
+                        principalTable: TbEstado,
+                        principalColumn: "ID_ESTADO",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TB_LOG_SISTEMA",
+                columns: table => new
+                {
+                    ID_LOG = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    ACAO = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    DATA_HORA = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    ID_USUARIO = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_LOG_SISTEMA", x => x.ID_LOG);
+                    table.ForeignKey(
+                        name: "FK_TB_LOG_SISTEMA_TB_USUARIO_ID_USUARIO",
+                        column: x => x.ID_USUARIO,
+                        principalTable: TbUsuario,
+                        principalColumn: IdUsuario,
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbMovimentacao,
+                columns: table => new
+                {
+                    ID_MOVIMENTACAO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    DATA_MOVIMENTACAO = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    OBSERVACAO = table.Column<string>(type: "CLOB", nullable: false),
+                    ID_USUARIO = table.Column<int>(type: NumberType, nullable: false),
+                    ID_MOTO = table.Column<int>(type: NumberType, nullable: false),
+                    ID_TIPO_MOVIMENTACAO = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_MOVIMENTACAO", x => x.ID_MOVIMENTACAO);
+                    table.ForeignKey(
+                        name: "FK_TB_MOVIMENTACAO_TB_MOTO_ID_MOTO",
+                        column: x => x.ID_MOTO,
+                        principalTable: TbMoto,
+                        principalColumn: IdMoto,
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_TB_MOVIMENTACAO_TB_TIPO_MOVIMENTACAO_ID_TIPO_MOVIMENTACAO",
+                        column: x => x.ID_TIPO_MOVIMENTACAO,
+                        principalTable: "TB_TIPO_MOVIMENTACAO",
+                        principalColumn: "ID_TIPO_MOVIMENTACAO",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_TB_MOVIMENTACAO_TB_USUARIO_ID_USUARIO",
+                        column: x => x.ID_USUARIO,
+                        principalTable: TbUsuario,
+                        principalColumn: IdUsuario,
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TB_REGISTRO_BATERIA",
+                columns: table => new
+                {
+                    ID_REGISTRO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    DATA_HORA = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    NIVEL_BATERIA = table.Column<int>(type: NumberType, nullable: false),
+                    ID_BEACON = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_REGISTRO_BATERIA", x => x.ID_REGISTRO);
+                    table.ForeignKey(
+                        name: "FK_TB_REGISTRO_BATERIA_TB_BEACON_ID_BEACON",
+                        column: x => x.ID_BEACON,
+                        principalTable: TbBeacon,
+                        principalColumn: "ID_BEACON",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbBairro,
+                columns: table => new
+                {
+                    ID_BAIRRO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_CIDADE = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_BAIRRO", x => x.ID_BAIRRO);
+                    table.ForeignKey(
+                        name: "FK_TB_BAIRRO_TB_CIDADE_ID_CIDADE",
+                        column: x => x.ID_CIDADE,
+                        principalTable: TbCidade,
+                        principalColumn: "ID_CIDADE",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbLogradouro,
+                columns: table => new
+                {
+                    ID_LOGRADOURO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: "NVARCHAR2(255)", maxLength: 255, nullable: false),
+                    ID_BAIRRO = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_LOGRADOURO", x => x.ID_LOGRADOURO);
+                    table.ForeignKey(
+                        name: "FK_TB_LOGRADOURO_TB_BAIRRO_ID_BAIRRO",
+                        column: x => x.ID_BAIRRO,
+                        principalTable: TbBairro,
+                        principalColumn: "ID_BAIRRO",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbPatio,
+                columns: table => new
+                {
+                    ID_PATIO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_LOGRADOURO = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_PATIO", x => x.ID_PATIO);
+                    table.ForeignKey(
+                        name: "FK_TB_PATIO_TB_LOGRADOURO_ID_LOGRADOURO",
+                        column: x => x.ID_LOGRADOURO,
+                        principalTable: TbLogradouro,
+                        principalColumn: "ID_LOGRADOURO",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbFilial,
+                columns: table => new
+                {
+                    ID_FILIAL = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_PATIO = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_FILIAL", x => x.ID_FILIAL);
+                    table.ForeignKey(
+                        name: "FK_TB_FILIAL_TB_PATIO_ID_PATIO",
+                        column: x => x.ID_PATIO,
+                        principalTable: TbPatio,
+                        principalColumn: IdPatio,
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbLocalizacao,
+                columns: table => new
+                {
+                    ID_LOCALIZACAO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    POSICAO_X = table.Column<decimal>(type: "DECIMAL(18, 2)", nullable: false),
+                    POSICAO_Y = table.Column<decimal>(type: "DECIMAL(18, 2)", nullable: false),
+                    DATA_HORA = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    ID_MOTO = table.Column<int>(type: NumberType, nullable: false),
+                    ID_PATIO = table.Column<int>(type: NumberType, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_LOCALIZACAO", x => x.ID_LOCALIZACAO);
+                    table.ForeignKey(
+                        name: "FK_TB_LOCALIZACAO_TB_MOTO_ID_MOTO",
+                        column: x => x.ID_MOTO,
+                        principalTable: TbMoto,
+                        principalColumn: IdMoto,
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_TB_LOCALIZACAO_TB_PATIO_ID_PATIO",
+                        column: x => x.ID_PATIO,
+                        principalTable: TbPatio,
+                        principalColumn: IdPatio);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbDepartamento,
+                columns: table => new
+                {
+                    ID_DEPARTAMENTO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    ID_FILIAL = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_DEPARTAMENTO", x => x.ID_DEPARTAMENTO);
+                    table.ForeignKey(
+                        name: "FK_TB_DEPARTAMENTO_TB_FILIAL_ID_FILIAL",
+                        column: x => x.ID_FILIAL,
+                        principalTable: TbFilial,
+                        principalColumn: "ID_FILIAL",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: TbFuncionario,
+                columns: table => new
+                {
+                    ID_FUNCIONARIO = table.Column<int>(type: NumberType, nullable: false)
+                        .Annotation(OracleIdentity, IdentityStartIncrement),
+                    NOME = table.Column<string>(type: NVarChar100, maxLength: 100, nullable: false),
+                    CPF = table.Column<string>(type: "NVARCHAR2(14)", maxLength: 14, nullable: false),
+                    CARGO = table.Column<string>(type: "NVARCHAR2(50)", maxLength: 50, nullable: false),
+                    DATA_ADMISSAO = table.Column<DateTime>(type: TimestampType, nullable: false),
+                    ID_USUARIO = table.Column<int>(type: NumberType, nullable: true),
+                    ID_DEPARTAMENTO = table.Column<int>(type: NumberType, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_FUNCIONARIO", x => x.ID_FUNCIONARIO);
+                    table.ForeignKey(
+                        name: "FK_TB_FUNCIONARIO_TB_DEPARTAMENTO_ID_DEPARTAMENTO",
+                        column: x => x.ID_DEPARTAMENTO,
+                        principalTable: TbDepartamento,
+                        principalColumn: "ID_DEPARTAMENTO",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_TB_FUNCIONARIO_TB_USUARIO_ID_USUARIO",
+                        column: x => x.ID_USUARIO,
+                        principalTable: TbUsuario,
+                        principalColumn: IdUsuario);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_BAIRRO_ID_CIDADE",
+                table: TbBairro,
+                column: "ID_CIDADE");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_BEACON_ID_MODELO_BEACON",
+                table: TbBeacon,
+                column: "ID_MODELO_BEACON");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_BEACON_ID_MOTO",
+                table: TbBeacon,
+                column: IdMoto);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_CIDADE_ID_ESTADO",
+                table: TbCidade,
+                column: "ID_ESTADO");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_DEPARTAMENTO_ID_FILIAL",
+                table: TbDepartamento,
+                column: "ID_FILIAL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_ESTADO_ID_PAIS",
+                table: TbEstado,
+                column: "ID_PAIS");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_FILIAL_ID_PATIO",
+                table: TbFilial,
+                column: IdPatio);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_FUNCIONARIO_ID_DEPARTAMENTO",
+                table: TbFuncionario,
+                column: "ID_DEPARTAMENTO");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_FUNCIONARIO_ID_USUARIO",
+                table: TbFuncionario,
+                column: IdUsuario,
+                unique: true,
+                filter: "\"ID_USUARIO\" IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_LOCALIZACAO_ID_MOTO",
+                table: TbLocalizacao,
+                column: IdMoto);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_LOCALIZACAO_ID_PATIO",
+                table: TbLocalizacao,
+                column: IdPatio);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_LOG_SISTEMA_ID_USUARIO",
+                table: "TB_LOG_SISTEMA",
+                column: IdUsuario);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_LOGRADOURO_ID_BAIRRO",
+                table: TbLogradouro,
+                column: "ID_BAIRRO");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_MOTO_ID_CLIENTE",
+                table: TbMoto,
+                column: "ID_CLIENTE");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_MOTO_ID_MODELO_MOTO",
+                table: TbMoto,
+                column: "ID_MODELO_MOTO");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_MOVIMENTACAO_ID_MOTO",
+                table: TbMovimentacao,
+                column: IdMoto);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_MOVIMENTACAO_ID_TIPO_MOVIMENTACAO",
+                table: TbMovimentacao,
+                column: "ID_TIPO_MOVIMENTACAO");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_MOVIMENTACAO_ID_USUARIO",
+                table: TbMovimentacao,
+                column: IdUsuario);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_PATIO_ID_LOGRADOURO",
+                table: TbPatio,
+                column: "ID_LOGRADOURO");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_REGISTRO_BATERIA_ID_BEACON",
+                table: "TB_REGISTRO_BATERIA",
+                column: "ID_BEACON");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_USUARIO_ID_TIPO_USUARIO",
+                table: TbUsuario,
+                column: "ID_TIPO_USUARIO");
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "TB_FUNCIONARIO");
+
+            migrationBuilder.DropTable(
+                name: "TB_LOCALIZACAO");
+
+            migrationBuilder.DropTable(
+                name: "TB_LOG_SISTEMA");
+
+            migrationBuilder.DropTable(
+                name: "TB_MOVIMENTACAO");
+
+            migrationBuilder.DropTable(
+                name: "TB_REGISTRO_BATERIA");
+
+            migrationBuilder.DropTable(
+                name: "TB_DEPARTAMENTO");
+
+            migrationBuilder.DropTable(
+                name: "TB_TIPO_MOVIMENTACAO");
+
+            migrationBuilder.DropTable(
+                name: "TB_USUARIO");
+
+            migrationBuilder.DropTable(
+                name: "TB_BEACON");
+
+            migrationBuilder.DropTable(
+                name: "TB_FILIAL");
+
+            migrationBuilder.DropTable(
+                name: "TB_TIPO_USUARIO");
+
+            migrationBuilder.DropTable(
+                name: "TB_MODELO_BEACON");
+
+            migrationBuilder.DropTable(
+                name: "TB_MOTO");
+
+            migrationBuilder.DropTable(
+                name: "TB_PATIO");
+
+            migrationBuilder.DropTable(
+                name: "TB_CLIENTE");
+
+            migrationBuilder.DropTable(
+                name: "TB_MODELO_MOTO");
+
+            migrationBuilder.DropTable(
+                name: "TB_LOGRADOURO");
+
+            migrationBuilder.DropTable(
+                name: "TB_BAIRRO");
+
+            migrationBuilder.DropTable(
+                name: "TB_CIDADE");
+
+            migrationBuilder.DropTable(
+                name: "TB_ESTADO");
+
+            migrationBuilder.DropTable(
+                name: "TB_PAIS");
+        }
+    }
+}

@@ -1,0 +1,13 @@
+namespace API_.Net.Models
+{
+    public class Departamento
+    {
+        public int ID_DEPARTAMENTO { get; set; }
+        public string NOME { get; set; } = string.Empty;
+        public int ID_FILIAL { get; set; }
+        
+        // Propriedades de navegação
+        public Filial? Filial { get; set; }
+        public ICollection<Funcionario>? Funcionarios { get; set; }
+    }
+}

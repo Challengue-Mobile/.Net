@@ -1,0 +1,86 @@
+using API_.Net.Models;
+using Swashbuckle.AspNetCore.Filters;
+using System;
+using System.Collections.Generic;
+
+
+
+namespace API_.Net.Examples
+{
+    /// <summary>
+    /// Exemplo de requisição para criar um cliente
+    /// </summary>
+    public class ClienteRequestExample : IExamplesProvider<Cliente>
+    {
+        public Cliente GetExamples()
+        {
+            return new Cliente
+            {
+                NOME = "João da Silva",
+                CPF = "123.456.789-00",
+                EMAIL = "joao@exemplo.com",
+                TELEFONE = "(11) 99999-8888"
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de resposta ao obter um cliente
+    /// </summary>
+    public class ClienteResponseExample : IExamplesProvider<Cliente>
+    {
+        public Cliente GetExamples()
+        {
+            return new Cliente
+            {
+                ID_CLIENTE = 1,
+                NOME = "João da Silva",
+                CPF = "123.456.789-00",
+                DATA_CADASTRO = DateTime.Now.AddDays(-30),
+                EMAIL = "joao@exemplo.com",
+                TELEFONE = "(11) 99999-8888",
+                Motos = new List<Moto>
+                {
+                    new Moto
+                    {
+                        ID_MOTO = 1,
+                        PLACA = "ABC1234",
+                        DATA_REGISTRO = DateTime.Now.AddDays(-30),
+                        ID_MODELO_MOTO = 2
+                    }
+                }
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de lista de clientes
+    /// </summary>
+    public class ClientesListResponseExample : IExamplesProvider<Cliente[]>
+    {
+        public Cliente[] GetExamples()
+        {
+            return new Cliente[]
+            {
+                new Cliente
+                {
+                    ID_CLIENTE = 1,
+                    NOME = "João da Silva",
+                    CPF = "123.456.789-00",
+                    DATA_CADASTRO = DateTime.Now.AddDays(-30),
+                    EMAIL = "joao@exemplo.com",
+                    TELEFONE = "(11) 99999-8888"
+                },
+                new Cliente
+                {
+                    ID_CLIENTE = 2,
+                    NOME = "Maria Souza",
+                    CPF = "987.654.321-00",
+                    DATA_CADASTRO = DateTime.Now.AddDays(-15),
+                    EMAIL = "maria@exemplo.com",
+                    TELEFONE = "(11) 88888-7777"
+                }
+            };
+        }
+    }
+}

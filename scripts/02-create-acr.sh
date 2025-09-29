@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "=== Criando Azure Container Registry ==="
 
-RESOURCE_GROUP="rg-mottoth-devops"
+RESOURCE_GROUP="rg-mottoth-frotas-devops"
 ACR_NAME="acrmottoth$(date +%s)"
 LOCATION="East US"
 

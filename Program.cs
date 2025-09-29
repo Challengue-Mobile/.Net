@@ -1,89 +1,56 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using MottothTracking.Data;
-using System.Text.Json.Serialization;
 
-var builder = WebApplication.CreateBuilder(args);
+namespace MottothTracking;
 
-// Add services to the container.
-builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-        options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
-    });
+public partial class Program { }
 
-// ===== MANTÉM SEU ORACLE EXISTENTE =====
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection")));
-
-// Configure Swagger/OpenAPI (atualiza só o título)
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
+public static class AppBootstrap
 {
-    c.SwaggerDoc("v1", new OpenApiInfo
+    public static void Main(string[] args)
     {
-        Title = "Mottoth Tracking API - Sistema de Frotas",
-        Version = "v1",
-        Description = "Sistema de rastreamento e gestão de frotas de motos com beacons GPS",
-        Contact = new OpenApiContact
+        var builder = WebApplication.CreateBuilder(args);
+
+        // Controllers + Swagger
+        builder.Services.AddControllers();
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+
+        // String de conexão (vem do ACI via env "ConnectionStrings__OracleConnection")
+        var oracleConn = builder.Configuration.GetConnectionString("OracleConnection") ?? "";
+
+        // EF Core + Oracle
+        builder.Services.AddDbContext<ApplicationDbContext>(opt =>
         {
-            Name = "Equipe DevOps Sprint 3", 
-            Email = "contato@fiap.com.br"
-        }
-    });
-});
+            // Requer o provider Oracle EF Core instalado no projeto.
+            // Ex.: dotnet add package Oracle.EntityFrameworkCore
+            opt.UseOracle(oracleConn);
+        });
 
-var app = builder.Build();
+        var app = builder.Build();
 
-// ===== SWAGGER SEMPRE ATIVO (para Azure) =====
-app.UseSwagger();
-app.UseSwaggerUI(c =>
-{
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mottoth Tracking API v1");
-    c.RoutePrefix = "swagger";
-});
+        // Swagger em prod (ok pra sprint)
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
-// ===== HEALTH CHECK OBRIGATÓRIO =====
-app.MapGet("/health", () => Results.Ok(new { 
-    status = "healthy", 
-    timestamp = DateTime.UtcNow,
-    version = "1.0.0",
-    database = "oracle-connected"
-}));
+        // Em container é HTTP:8080; não forçar HTTPS
+        // app.UseHttpsRedirection();
 
-// ===== ENDPOINT RAIZ =====
-app.MapGet("/", () => Results.Ok(new { 
-    message = "Sistema de Rastreamento de Frotas - Mottoth Tracking",
-    swagger = "/swagger",
-    health = "/health",
-    endpoints = new {
-        usuarios = "/api/usuarios",
-        beacons = "/api/beacons", 
-        motos = "/api/motos",
-        movimentacoes = "/api/movimentacoes"
-    }
-}));
+        // Health
+        app.MapGet("/", () => Results.Ok("MottothTracking API OK"))
+            .WithTags("Health");
 
-app.UseHttpsRedirection();
-app.UseAuthorization();
-app.MapControllers();
+        // Ping simples
+        app.MapGet("/api/ping", () =>
+                Results.Json(new { pong = true, when = DateTime.UtcNow }))
+            .WithTags("Health");
 
-// ===== MIGRATIONS (mantém como estava) =====
-if (app.Environment.IsDevelopment())
-{
-    using (var scope = app.Services.CreateScope())
-    {
-        var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-        try 
-        {
-            dbContext.Database.Migrate();
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Migration info: {ex.Message}");
-        }
+        // Controllers (CRUD)
+        app.MapControllers();
+
+        app.Run();
     }
 }
-
-app.Run();

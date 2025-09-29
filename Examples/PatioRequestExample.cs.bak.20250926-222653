@@ -1,0 +1,97 @@
+using API_.Net.Models;
+using Swashbuckle.AspNetCore.Filters;
+using System.Collections.Generic;
+
+
+
+
+namespace API_.Net.Examples
+{
+    /// <summary>
+    /// Exemplo de requisição para criar um pátio
+    /// </summary>
+    public class PatioRequestExample : IExamplesProvider<Patio>
+    {
+        public Patio GetExamples()
+        {
+            return new Patio
+            {
+                NOME = "Pátio Central",
+                ID_LOGRADOURO = 1
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de resposta ao obter um pátio
+    /// </summary>
+    public class PatioResponseExample : IExamplesProvider<Patio>
+    {
+        public Patio GetExamples()
+        {
+            return new Patio
+            {
+                ID_PATIO = 1,
+                NOME = "Pátio Central",
+                ID_LOGRADOURO = 1,
+                Logradouro = new Logradouro
+                {
+                    ID_LOGRADOURO = 1,
+                    NOME = "Avenida Paulista"
+                },
+                Localizacoes = new List<Localizacao>
+                {
+                    new Localizacao
+                    {
+                        ID_LOCALIZACAO = 1,
+                        ID_MOTO = 1
+                    },
+                    new Localizacao
+                    {
+                        ID_LOCALIZACAO = 2,
+                        ID_MOTO = 2
+                    }
+                },
+                Filiais = new List<Filial>
+                {
+                    new Filial
+                    {
+                        ID_FILIAL = 1,
+                        NOME = "Filial São Paulo"
+                    }
+                }
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de lista de pátios
+    /// </summary>
+    public class PatiosListResponseExample : IExamplesProvider<Patio[]>
+    {
+        public Patio[] GetExamples()
+        {
+            return new Patio[]
+            {
+                new Patio
+                {
+                    ID_PATIO = 1,
+                    NOME = "Pátio Central",
+                    ID_LOGRADOURO = 1
+                },
+                new Patio
+                {
+                    ID_PATIO = 2,
+                    NOME = "Pátio Norte",
+                    ID_LOGRADOURO = 2
+                },
+                new Patio
+                {
+                    ID_PATIO = 3,
+                    NOME = "Pátio Sul",
+                    ID_LOGRADOURO = 3
+                }
+            };
+        }
+    }
+}

@@ -1,0 +1,84 @@
+using API_.Net.Models;
+using Swashbuckle.AspNetCore.Filters;
+using System.Collections.Generic;
+
+
+
+
+namespace API_.Net.Examples
+{
+    /// <summary>
+    /// Exemplo de requisição para criar um tipo de usuário
+    /// </summary>
+    public class TipoUsuarioRequestExample : IExamplesProvider<TipoUsuario>
+    {
+        public TipoUsuario GetExamples()
+        {
+            return new TipoUsuario
+            {
+                DESCRICAO = "Administrador"
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de resposta ao obter um tipo de usuário
+    /// </summary>
+    public class TipoUsuarioResponseExample : IExamplesProvider<TipoUsuario>
+    {
+        public TipoUsuario GetExamples()
+        {
+            return new TipoUsuario
+            {
+                ID_TIPO_USUARIO = 1,
+                DESCRICAO = "Administrador",
+                Usuarios = new List<Usuario>
+                {
+                    new Usuario
+                    {
+                        ID_USUARIO = 1,
+                        NOME = "Administrador do Sistema"
+                    },
+                    new Usuario
+                    {
+                        ID_USUARIO = 2,
+                        NOME = "Outro Administrador"
+                    }
+                }
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de lista de tipos de usuário
+    /// </summary>
+    public class TiposUsuarioListResponseExample : IExamplesProvider<TipoUsuario[]>
+    {
+        public TipoUsuario[] GetExamples()
+        {
+            return new TipoUsuario[]
+            {
+                new TipoUsuario
+                {
+                    ID_TIPO_USUARIO = 1,
+                    DESCRICAO = "Administrador"
+                },
+                new TipoUsuario
+                {
+                    ID_TIPO_USUARIO = 2,
+                    DESCRICAO = "Operador"
+                },
+                new TipoUsuario
+                {
+                    ID_TIPO_USUARIO = 3,
+                    DESCRICAO = "Supervisor"
+                },
+                new TipoUsuario
+                {
+                    ID_TIPO_USUARIO = 4,
+                    DESCRICAO = "Visualizador"
+                }
+            };
+        }
+    }
+}

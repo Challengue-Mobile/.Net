@@ -1,0 +1,79 @@
+using API_.Net.Models;
+using Swashbuckle.AspNetCore.Filters;
+using System;
+
+
+namespace API_.Net.Examples
+{
+    /// <summary>
+    /// Exemplo de requisição para registrar um nível de bateria
+    /// </summary>
+    public class RegistroBateriaRequestExample : IExamplesProvider<RegistroBateria>
+    {
+        public RegistroBateria GetExamples()
+        {
+            return new RegistroBateria
+            {
+                NIVEL_BATERIA = 75,
+                ID_BEACON = 1
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de resposta ao obter um registro de bateria
+    /// </summary>
+    public class RegistroBateriaResponseExample : IExamplesProvider<RegistroBateria>
+    {
+        public RegistroBateria GetExamples()
+        {
+            return new RegistroBateria
+            {
+                ID_REGISTRO = 1,
+                DATA_HORA = DateTime.Now.AddHours(-2),
+                NIVEL_BATERIA = 75,
+                ID_BEACON = 1,
+                Beacon = new Beacon
+                {
+                    ID_BEACON = 1,
+                    UUID = "550e8400-e29b-41d4-a716-446655440000",
+                    ID_MOTO = 1
+                }
+            };
+        }
+    }
+
+    /// <summary>
+    /// Exemplo de lista de registros de bateria
+    /// </summary>
+    public class RegistrosBateriaListResponseExample : IExamplesProvider<RegistroBateria[]>
+    {
+        public RegistroBateria[] GetExamples()
+        {
+            return new RegistroBateria[]
+            {
+                new RegistroBateria
+                {
+                    ID_REGISTRO = 1,
+                    DATA_HORA = DateTime.Now.AddHours(-24),
+                    NIVEL_BATERIA = 85,
+                    ID_BEACON = 1
+                },
+                new RegistroBateria
+                {
+                    ID_REGISTRO = 2,
+                    DATA_HORA = DateTime.Now.AddHours(-12),
+                    NIVEL_BATERIA = 80,
+                    ID_BEACON = 1
+                },
+                new RegistroBateria
+                {
+                    ID_REGISTRO = 3,
+                    DATA_HORA = DateTime.Now,
+                    NIVEL_BATERIA = 75,
+                    ID_BEACON = 1
+                }
+            };
+        }
+    }
+}
