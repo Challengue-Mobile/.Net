@@ -10,30 +10,24 @@ namespace MottothTracking.Models
         [Column("ID_LOCALIZACAO")]
         public int Id { get; set; }
 
-        [Required]
+        [Column("LATITUDE")]
+        public double Latitude { get; set; }
+
+        [Column("LONGITUDE")]
+        public double Longitude { get; set; }
+
         [Column("DATA_HORA")]
-        public DateTime DataHora { get; set; }
+        public DateTime DataHora { get; set; } = DateTime.UtcNow;
 
-        [Required]
-        [Column("POSICAO_X")]
-        public decimal PosicaoX { get; set; }
-
-        [Required]
-        [Column("POSICAO_Y")]
-        public decimal PosicaoY { get; set; }
-
-        [Required]
         [Column("ID_MOTO")]
         public int MotoId { get; set; }
+        [ForeignKey(nameof(MotoId))]
+        public Moto Moto { get; set; } = null!;
 
-        [Required]
+        // Controllers esperam Localizacao.Zona e ZonaId
         [Column("ID_ZONA")]
         public int ZonaId { get; set; }
-
-        [ForeignKey("MotoId")]
-        public virtual Moto? Moto { get; set; }
-
-        [ForeignKey("ZonaId")]
-        public virtual Zona? Zona { get; set; }
+        [ForeignKey(nameof(ZonaId))]
+        public Zona Zona { get; set; } = null!;
     }
 }

@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("513fab40-6a1f-467a-9a02-e1dd7fcb110e")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MottothTracking")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ecce6ab4977a4c6984e027b7fcc4a0f3c581d7be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b4871d8a20ed6b4800986858589fa838a2e19cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("MottothTracking")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MottothTracking")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

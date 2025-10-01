@@ -10,22 +10,12 @@ namespace MottothTracking.Models
         [Column("ID_PATIO")]
         public int Id { get; set; }
 
-        [Required]
-        [Column("NOME")]
-        [StringLength(100)]
+        [Required, Column("NOME"), StringLength(100)]
         public string Nome { get; set; } = string.Empty;
 
-        [Required]
-        [Column("ENDERECO")]
-        [StringLength(255)]
-        public string Endereco { get; set; } = string.Empty;
+        [Column("ENDERECO"), StringLength(200)]
+        public string? Endereco { get; set; }
 
-        [Required]
-        [Column("CIDADE")]
-        [StringLength(100)]
-        public string Cidade { get; set; } = string.Empty;
-
-        // Relacionamentos
         public virtual ICollection<Zona> Zonas { get; set; } = new List<Zona>();
     }
 }

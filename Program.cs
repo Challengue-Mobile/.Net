@@ -19,37 +19,46 @@ public static class AppBootstrap
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        // String de conexão (vem do ACI via env "ConnectionStrings__OracleConnection")
-        var oracleConn = builder.Configuration.GetConnectionString("OracleConnection") ?? "";
+        // Connection string vem de:
+        // - env var: ConnectionStrings__Default
+        // - ou appsettings.json (fallback)
+        var sqlConn = builder.Configuration.GetConnectionString("Default") 
+                      ?? throw new InvalidOperationException("ConnectionStrings:Default não configurada.");
 
-        // EF Core + Oracle
         builder.Services.AddDbContext<ApplicationDbContext>(opt =>
         {
-            // Requer o provider Oracle EF Core instalado no projeto.
-            // Ex.: dotnet add package Oracle.EntityFrameworkCore
-            opt.UseOracle(oracleConn);
+            opt.UseSqlServer(sqlConn, sql =>
+            {
+                // Resiliência em caso de falha de conexão
+                sql.EnableRetryOnFailure(maxRetryCount: 5);
+            });
         });
 
         var app = builder.Build();
 
-        // Swagger em prod (ok pra sprint)
+        // Swagger em qualquer ambiente (ok para sprint)
         app.UseSwagger();
         app.UseSwaggerUI();
 
-        // Em container é HTTP:8080; não forçar HTTPS
-        // app.UseHttpsRedirection();
-
         // Health
-        app.MapGet("/", () => Results.Ok("MottothTracking API OK"))
+        app.MapGet("/", () => Results.Ok("MottothTracking API OK")).WithTags("Health");
+        app.MapGet("/api/ping", () => Results.Json(new { pong = true, when = DateTime.UtcNow }))
             .WithTags("Health");
 
-        // Ping simples
-        app.MapGet("/api/ping", () =>
-                Results.Json(new { pong = true, when = DateTime.UtcNow }))
-            .WithTags("Health");
-
-        // Controllers (CRUD)
+        // Controllers
         app.MapControllers();
+
+        // (Opcional) aplica migrations no startup
+        try
+        {
+            using var scope = app.Services.CreateScope();
+            var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            db.Database.Migrate();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[WARN] Migrations não aplicadas: {ex.Message}");
+        }
 
         app.Run();
     }

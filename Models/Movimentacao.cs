@@ -1,3 +1,4 @@
+// ... resto dos usings
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,38 +8,35 @@ namespace MottothTracking.Models
     public class Movimentacao
     {
         [Key]
-        [Column("ID_MOVIMENTACAO")]
+        [Column("ID_MOV")]
         public int Id { get; set; }
 
-        [Required]
-        [Column("DATA_MOVIMENTACAO")]
-        public DateTime DataMovimentacao { get; set; }
-
-        [Required]
-        [Column("TIPO_MOVIMENTACAO")]
-        [StringLength(20)]
-        public string TipoMovimentacao { get; set; } = string.Empty;
-
-        [Column("OBSERVACAO")]
-        public string? Observacao { get; set; }
-
-        [Column("FK_ZONA_ORIGEM")]
-        public int? ZonaOrigemId { get; set; }
-
-        [Column("FK_ZONA_DESTINO")]
-        public int? ZonaDestinoId { get; set; }
-
-        [Required]
         [Column("ID_MOTO")]
         public int MotoId { get; set; }
+        [ForeignKey(nameof(MotoId))]
+        public Moto Moto { get; set; } = null!;
 
-        [ForeignKey("MotoId")]
-        public virtual Moto? Moto { get; set; }
+        [Column("ID_ZONA_ORIGEM")]
+        public int? ZonaOrigemId { get; set; }
+        [ForeignKey(nameof(ZonaOrigemId))]
+        public Zona? ZonaOrigem { get; set; }
 
-        [ForeignKey("ZonaOrigemId")]
-        public virtual Zona? ZonaOrigem { get; set; }
+        [Column("ID_ZONA_DESTINO")]
+        public int? ZonaDestinoId { get; set; }
+        [ForeignKey(nameof(ZonaDestinoId))]
+        public Zona? ZonaDestino { get; set; }
 
-        [ForeignKey("ZonaDestinoId")]
-        public virtual Zona? ZonaDestino { get; set; }
+        [Column("DATA_MOVIMENTACAO")]
+        public DateTime DataMovimentacao { get; set; } = DateTime.UtcNow;
+
+        [Column("ORIGEM"), StringLength(100)]
+        public string? Origem { get; set; }
+
+        [Column("DESTINO"), StringLength(100)]
+        public string? Destino { get; set; }
+
+        // 🔹 NOVO: tipo da movimentação (usado no controller)
+        [Column("TIPO"), StringLength(30)]
+        public string? Tipo { get; set; }
     }
 }

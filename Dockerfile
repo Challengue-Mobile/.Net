@@ -1,30 +1,30 @@
-# ===== build =====
+# ---- Build (SDK .NET 9) ----
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /app
+WORKDIR /src
 
-# copiar csproj e restaurar
-COPY *.csproj ./
-RUN dotnet restore
+# Copia o csproj primeiro para aproveitar cache
+COPY MottothTracking.csproj ./
+RUN dotnet restore MottothTracking.csproj -r linux-x64
 
-# copiar código e publicar
+# Copia o restante e publica (sempre o .csproj, não a .sln)
 COPY . ./
-RUN dotnet publish -c Release -o /out
+RUN dotnet publish MottothTracking.csproj -c Release -r linux-x64 \
+    -o /app/out --no-self-contained
 
-# ===== runtime =====
+# ---- Runtime (ASP.NET 9) ----
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
 
-# criar usuário não-root
-RUN groupadd -r mottothuser && useradd -r -g mottothuser mottothuser \
- && chown -R mottothuser:mottothuser /app
-USER mottothuser
-
-# copiar artefatos publicados
-COPY --from=build /out ./
-
-# expor e bindar 8080
-ENV ASPNETCORE_URLS=http://0.0.0.0:8080
+# Porta de exposição do container
+ENV ASPNETCORE_URLS=http://+:8080
 EXPOSE 8080
 
-# ajuste o nome do DLL se seu AssemblyName for diferente
+# Usuário não-root (opcional, mas recomendado)
+RUN groupadd -r mottothuser && useradd -r -g mottothuser mottothuser
+USER mottothuser
+
+# Copia binários publicados
+COPY --from=build /app/out ./
+
+# Substitua pelo nome do seu assembly se for diferente
 ENTRYPOINT ["dotnet", "MottothTracking.dll"]

@@ -10,20 +10,19 @@ namespace MottothTracking.Models
         [Column("ID_LOG")]
         public int Id { get; set; }
 
-        [Required]
-        [Column("ACAO")]
-        [StringLength(100)]
-        public string Acao { get; set; } = string.Empty;
+        [Column("NIVEL"), StringLength(20)]
+        public string? Nivel { get; set; }
 
-        [Required]
+        [Column("MENSAGEM"), StringLength(500)]
+        public string Mensagem { get; set; } = string.Empty;
+
         [Column("DATA_HORA")]
-        public DateTime DataHora { get; set; }
+        public DateTime DataHora { get; set; } = DateTime.UtcNow;
 
-        [Required]
+        // Controllers esperam LogSistema.Usuario e UsuarioId
         [Column("ID_USUARIO")]
-        public int UsuarioId { get; set; }
-
-        [ForeignKey("UsuarioId")]
-        public virtual Usuario? Usuario { get; set; }
+        public int? UsuarioId { get; set; }
+        [ForeignKey(nameof(UsuarioId))]
+        public Usuario? Usuario { get; set; }
     }
 }

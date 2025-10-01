@@ -21,11 +21,13 @@ namespace MottothTracking.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Movimentacao>>> GetMovimentacoes()
         {
-            return await _context.Movimentacoes
+            var movimentacoes = await _context.Movimentacoes
                 .Include(m => m.Moto)
                 .Include(m => m.ZonaOrigem)
                 .Include(m => m.ZonaDestino)
                 .ToListAsync();
+
+            return Ok(movimentacoes);
         }
 
         // GET: api/Movimentacoes/5
@@ -45,7 +47,7 @@ namespace MottothTracking.Controllers
                 return NotFound();
             }
 
-            return movimentacao;
+            return Ok(movimentacao);
         }
 
         // GET: api/Movimentacoes/ByMoto/{motoId}
@@ -53,12 +55,14 @@ namespace MottothTracking.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Movimentacao>>> GetMovimentacoesByMoto(int motoId)
         {
-            return await _context.Movimentacoes
+            var movimentacoes = await _context.Movimentacoes
                 .Include(m => m.ZonaOrigem)
                 .Include(m => m.ZonaDestino)
                 .Where(m => m.MotoId == motoId)
                 .OrderByDescending(m => m.DataMovimentacao)
                 .ToListAsync();
+
+            return Ok(movimentacoes);
         }
 
         // GET: api/Movimentacoes/ByTipo/{tipo}
@@ -66,13 +70,15 @@ namespace MottothTracking.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Movimentacao>>> GetMovimentacoesByTipo(string tipo)
         {
-            return await _context.Movimentacoes
+            var movimentacoes = await _context.Movimentacoes
                 .Include(m => m.Moto)
                 .Include(m => m.ZonaOrigem)
                 .Include(m => m.ZonaDestino)
-                .Where(m => m.TipoMovimentacao == tipo)
+                .Where(m => m.Tipo == tipo) // Corrigido: TipoMovimentacao → Tipo
                 .OrderByDescending(m => m.DataMovimentacao)
                 .ToListAsync();
+
+            return Ok(movimentacoes);
         }
 
         // POST: api/Movimentacoes
@@ -106,7 +112,7 @@ namespace MottothTracking.Controllers
         {
             if (id != movimentacao.Id)
             {
-                return BadRequest();
+                return BadRequest("ID na URL não corresponde ao ID do objeto.");
             }
 
             if (!ModelState.IsValid)

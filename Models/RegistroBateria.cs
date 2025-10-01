@@ -7,22 +7,19 @@ namespace MottothTracking.Models
     public class RegistroBateria
     {
         [Key]
-        [Column("ID_REGISTRO")]
+        [Column("ID_REG")]
         public int Id { get; set; }
 
-        [Required]
-        [Column("DATA_HORA")]
-        public DateTime DataHora { get; set; }
-
-        [Required]
-        [Column("NIVEL_BATERIA")]
-        public int NivelBateria { get; set; }
-
-        [Required]
         [Column("ID_BEACON")]
         public int BeaconId { get; set; }
+        [ForeignKey(nameof(BeaconId))]
+        public Beacon Beacon { get; set; } = null!;
 
-        [ForeignKey("BeaconId")]
-        public virtual Beacon? Beacon { get; set; }
+        // Controllers usam NivelBateria (mapear para coluna NIVEL)
+        [Column("NIVEL")]
+        public int NivelBateria { get; set; }
+
+        [Column("DATA_HORA")]
+        public DateTime DataHora { get; set; } = DateTime.UtcNow;
     }
 }

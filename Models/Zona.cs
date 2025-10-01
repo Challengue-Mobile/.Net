@@ -10,24 +10,16 @@ namespace MottothTracking.Models
         [Column("ID_ZONA")]
         public int Id { get; set; }
 
-        [Required]
-        [Column("NOME")]
-        [StringLength(50)]
+        [Required, Column("NOME"), StringLength(100)]
         public string Nome { get; set; } = string.Empty;
 
-        [Column("DESCRICAO")]
+        [Column("DESCRICAO"), StringLength(255)]
         public string? Descricao { get; set; }
 
-        [Required]
+        // Controllers esperam Zona.Patio e Zona.PatioId
         [Column("ID_PATIO")]
         public int PatioId { get; set; }
-
-        [ForeignKey("PatioId")]
-        public virtual Patio? Patio { get; set; }
-
-        // Relacionamentos
-        public virtual ICollection<Localizacao> Localizacoes { get; set; } = new List<Localizacao>();
-        public virtual ICollection<Movimentacao> MovimentacoesOrigem { get; set; } = new List<Movimentacao>();
-        public virtual ICollection<Movimentacao> MovimentacoesDestino { get; set; } = new List<Movimentacao>();
+        [ForeignKey(nameof(PatioId))]
+        public Patio Patio { get; set; } = null!;
     }
 }

@@ -1,29 +1,41 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>MottothTracking</RootNamespace>
+      <UserSecretsId>513fab40-6a1f-467a-9a02-e1dd7fcb110e</UserSecretsId>
   </PropertyGroup>
 
-  <ItemGroup>
-    <!-- Entity Framework Core 9 -->
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Oracle.EntityFrameworkCore" Version="9.23.90" />
-    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.9.1" />
+    <ItemGroup>
+        <!-- Entity Framework Core 9 (base + design) -->
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.9" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.9">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.9" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.9" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.9">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
 
-    <!-- Swagger -->
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4" />
-  </ItemGroup>
+        <!-- Provider Oracle para EF Core -->
+        <!-- Driver Oracle gerenciado -->
+        <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.9.1" />
 
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="MottothTracking_Old\appsettings.Development.json" />
-    <_ContentIncludedByDefault Remove="MottothTracking_Old\appsettings.json" />
-    <_ContentIncludedByDefault Remove="MottothTracking_Old\Properties\launchSettings.json" />
-  </ItemGroup>
+        <!-- Swagger/OpenAPI -->
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Excluir configs antigas -->
+        <_ContentIncludedByDefault Remove="MottothTracking_Old\appsettings.Development.json" />
+        <_ContentIncludedByDefault Remove="MottothTracking_Old\appsettings.json" />
+        <_ContentIncludedByDefault Remove="MottothTracking_Old\Properties\launchSettings.json" />
+    </ItemGroup>
+
 </Project>
