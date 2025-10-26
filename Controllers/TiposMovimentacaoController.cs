@@ -5,6 +5,7 @@ using Swashbuckle.AspNetCore.Annotations;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Asp.Versioning;
 
 using API_.Net.Data;
 using API_.Net.Models;
@@ -15,8 +16,8 @@ using API_.Net.DTOs.Requests;      // CreateTipoMovimentacaoDTO / UpdateTipoMovi
 namespace API.Net.Controllers
 {
     
-    [Route("api/[controller]")]
-    [ApiController]
+    [Route("api/v{version:apiVersion}/[controller]")] 
+    [ApiVersion("1.0")] 
     [Produces("application/json")]
     [SwaggerTag("Cria, lê, atualiza e exclui tipos de movimentação")]
     public class TiposMovimentacaoController : ControllerBase

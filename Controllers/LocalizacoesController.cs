@@ -10,14 +10,16 @@ using System;
 using API_.Net.Data;
 using API_.Net.Models;
 using AutoMapper;
+using Asp.Versioning;
+
 using API_.Net.DTOs;               
 using API_.Net.DTOs.Requests;      
 
 
 namespace API.Net.Controllers
 {
-  
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")] 
+    [ApiVersion("1.0")] 
     [ApiController]
     [Produces("application/json")]
     [SwaggerTag("Cria, lê, atualiza e exclui localizações de motos")]

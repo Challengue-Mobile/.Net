@@ -1,0 +1,579 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API .Net</name>
+    </assembly>
+    <members>
+        <member name="T:API_.Net.Migrations.InitialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.InitialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.InitialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.InitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API_.Net.Migrations.ConfigurarPrecisaoLocalizacao">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.ConfigurarPrecisaoLocalizacao.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.ConfigurarPrecisaoLocalizacao.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.ConfigurarPrecisaoLocalizacao.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API_.Net.Controllers.AuthController">
+            <summary>
+            Controller responsável pela autenticação e geração de tokens JWT
+            </summary>
+        </member>
+        <member name="M:API_.Net.Controllers.AuthController.Login(API_.Net.Controllers.LoginRequest)">
+            <summary>
+            Realiza login e gera um token JWT para autenticação
+            </summary>
+            <param name="request">Credenciais do usuário (username e password)</param>
+            <returns>Token JWT e informações do usuário</returns>
+            <response code="200">Login realizado com sucesso - retorna o token JWT</response>
+            <response code="400">Dados de entrada inválidos</response>
+            <response code="401">Credenciais inválidas</response>
+            <remarks>
+            Exemplo de requisição:
+            
+                POST /api/v1/auth/login
+                {
+                  "username": "admin",
+                  "password": "admin123"
+                }
+                
+            Usuários de teste disponíveis:
+            - admin / admin123 (Administrador)
+            - user / user123 (Usuário comum)
+            - gestor / gestor123 (Gestor de frota)
+            
+            **IMPORTANTE:** Em produção, valide as credenciais com banco de dados e use hash de senha!
+            </remarks>
+        </member>
+        <member name="M:API_.Net.Controllers.AuthController.ValidateCredentials(System.String,System.String)">
+            <summary>
+            Valida as credenciais do usuário (método de exemplo)
+            </summary>
+            <remarks>
+            ⚠️ EM PRODUÇÃO:
+            - Buscar usuário no banco de dados
+            - Validar senha usando BCrypt.Verify ou similar
+            - Implementar rate limiting para prevenir brute force
+            - Adicionar logs de auditoria
+            - Implementar bloqueio após múltiplas tentativas falhas
+            </remarks>
+        </member>
+        <member name="M:API_.Net.Controllers.AuthController.GenerateJwtToken(System.String,System.String)">
+            <summary>
+            Gera um token JWT válido
+            </summary>
+        </member>
+        <member name="M:API_.Net.Controllers.AuthController.ValidateToken">
+            <summary>
+            Valida o token JWT atual (endpoint de teste)
+            </summary>
+            <returns>Informações do token decodificado</returns>
+        </member>
+        <member name="T:API_.Net.Controllers.LoginRequest">
+            <summary>
+            Modelo de requisição para login
+            </summary>
+        </member>
+        <member name="P:API_.Net.Controllers.LoginRequest.Username">
+            <summary>
+            Nome de usuário
+            </summary>
+            <example>admin</example>
+        </member>
+        <member name="P:API_.Net.Controllers.LoginRequest.Password">
+            <summary>
+            Senha do usuário
+            </summary>
+            <example>admin123</example>
+        </member>
+        <member name="T:API_.Net.Controllers.LoginResponse">
+            <summary>
+            Modelo de resposta do login
+            </summary>
+        </member>
+        <member name="P:API_.Net.Controllers.LoginResponse.Token">
+            <summary>
+            Token JWT gerado
+            </summary>
+        </member>
+        <member name="P:API_.Net.Controllers.LoginResponse.Username">
+            <summary>
+            Nome do usuário autenticado
+            </summary>
+        </member>
+        <member name="P:API_.Net.Controllers.LoginResponse.Role">
+            <summary>
+            Papel/perfil do usuário
+            </summary>
+        </member>
+        <member name="P:API_.Net.Controllers.LoginResponse.ExpiresIn">
+            <summary>
+            Tempo de expiração do token em segundos
+            </summary>
+        </member>
+        <member name="P:API_.Net.Controllers.LoginResponse.TokenType">
+            <summary>
+            Tipo do token (sempre "Bearer")
+            </summary>
+        </member>
+        <member name="P:API_.Net.Controllers.LoginResponse.Message">
+            <summary>
+            Mensagem de sucesso
+            </summary>
+        </member>
+        <member name="T:API_.Net.Controllers.PredicaoController">
+            <summary>
+            Controller para predições usando Machine Learning (ML.NET)
+            </summary>
+        </member>
+        <member name="M:API_.Net.Controllers.PredicaoController.PreverManutencao(API_.Net.Controllers.PredicaoRequest)">
+            <summary>
+            Prediz a necessidade de manutenção de uma moto usando ML.NET
+            </summary>
+        </member>
+        <member name="M:API_.Net.Controllers.PredicaoController.PreverManutencaoLote(System.Collections.Generic.List{API_.Net.Controllers.PredicaoRequest})">
+            <summary>
+            Realiza predições em lote para múltiplas motos
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.BeaconDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.ClienteDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Common.Link">
+            <summary>
+            Representa um link HATEOAS para navegação na API
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.Common.Link.Href">
+            <summary>
+            URL do recurso
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.Common.Link.Rel">
+            <summary>
+            Relação do link (self, edit, delete, etc.)
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.Common.Link.Method">
+            <summary>
+            Método HTTP para acessar o recurso
+            </summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Common.PagedResult`1">
+            <summary>
+            Resultado paginado para listas de dados
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.Common.PagedResult`1.Items">
+            <summary>
+            Lista de itens da página atual
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.Common.PagedResult`1.Page">
+            <summary>
+            Número da página atual (1-based)
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.Common.PagedResult`1.PageSize">
+            <summary>
+            Quantidade de itens por página
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.Common.PagedResult`1.TotalItems">
+            <summary>
+            Total de itens na consulta
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.Common.PagedResult`1.TotalPages">
+            <summary>
+            Total de páginas calculado
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.Common.PagedResult`1.HasNextPage">
+            <summary>
+            Indica se existe próxima página
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.Common.PagedResult`1.HasPreviousPage">
+            <summary>
+            Indica se existe página anterior
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.Common.PagedResult`1.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="T:API_.Net.DTOs.DepartamentoDto">
+            <summary>DTO de resposta para Departamento (Entity → API)</summary>
+        </member>
+        <member name="P:API_.Net.DTOs.DepartamentoDto.NOME_FILIAL">
+            <summary>Nome da filial (mapeado via Include/Projection)</summary>
+        </member>
+        <member name="P:API_.Net.DTOs.DepartamentoDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="T:API_.Net.DTOs.FiliaisDto">
+            <summary>DTO de resposta (Entity → API)</summary>
+        </member>
+        <member name="P:API_.Net.DTOs.FiliaisDto.NOME_PATIO">
+            <summary>Nome do pátio (preenchido via mapeamento)</summary>
+        </member>
+        <member name="P:API_.Net.DTOs.FiliaisDto.QTD_DEPARTAMENTOS">
+            <summary>Quantidade de departamentos vinculados</summary>
+        </member>
+        <member name="P:API_.Net.DTOs.FiliaisDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="T:API_.Net.DTOs.FuncionarioDto">
+            <summary>DTO de resposta (Entity → API) para funcionário</summary>
+        </member>
+        <member name="P:API_.Net.DTOs.FuncionarioDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="T:API_.Net.DTOs.LocalizacaoDto">
+            <summary>DTO de resposta (Entity → API) para Localização</summary>
+        </member>
+        <member name="P:API_.Net.DTOs.LocalizacaoDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="T:API_.Net.DTOs.ModeloBeaconDto">
+            <summary>DTO de resposta para Modelo de Beacon (Entity → API)</summary>
+        </member>
+        <member name="P:API_.Net.DTOs.ModeloBeaconDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="T:API_.Net.DTOs.ModeloMotoDto">
+            <summary>DTO de resposta para Modelo de Moto (Entity → API)</summary>
+        </member>
+        <member name="P:API_.Net.DTOs.ModeloMotoDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="T:API_.Net.DTOs.MotoDto">
+            <summary>DTO de resposta (Entity → API) para Moto</summary>
+        </member>
+        <member name="P:API_.Net.DTOs.MotoDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="T:API_.Net.DTOs.MovimentacaoDto">
+            <summary>DTO de resposta (Entity → API) para Movimentação</summary>
+        </member>
+        <member name="P:API_.Net.DTOs.MovimentacaoDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.PatiosDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.RegistroBateriaDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.CreateDepartamentoDto">
+            <summary>DTO de entrada para criação de Departamento (API → Entity)</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.UpdateDepartamentoDto">
+            <summary>
+            DTO de entrada para atualização de Departamento (API → Entity).
+            Campos opcionais para suportar atualização parcial; nulos são ignorados no mapeamento.
+            </summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.CreateFilialDto">
+            <summary>DTO de criação (API → Entity)</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.UpdateFilialDto">
+            <summary>DTO de atualização (API → Entity)</summary>
+            <remarks>Campos opcionais para suportar update parcial.</remarks>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.CreateFuncionarioDto">
+            <summary>DTO de criação (API → Entity)</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.UpdateFuncionarioDto">
+            <summary>DTO de atualização (API → Entity). Campos opcionais para update parcial.</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.CreateLocalizacaoDto">
+            <summary>DTO de criação de Localização</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.UpdateLocalizacaoDto">
+            <summary>DTO de atualização de Localização (parcial)</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.CreateModeloBeaconDto">
+            <summary>DTO de criação (API → Entity)</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.UpdateModeloBeaconDto">
+            <summary>DTO de atualização parcial (API → Entity)</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.CreateModeloMotoDto">
+            <summary>DTO de criação (API → Entity)</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.UpdateModeloMotoDto">
+            <summary>DTO de atualização parcial (API → Entity)</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.CreateMotoDto">
+            <summary>DTO de criação (API → Entity)</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.UpdateMotoDto">
+            <summary>DTO de atualização parcial (API → Entity)</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.CreateMovimentacaoDto">
+            <summary>DTO de criação (API → Entity)</summary>
+        </member>
+        <member name="T:API_.Net.DTOs.Requests.UpdateMovimentacaoDto">
+            <summary>DTO de atualização parcial (API → Entity)</summary>
+        </member>
+        <member name="P:API_.Net.DTOs.TipoMovimentacaoDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.TipoUsuarioDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="P:API_.Net.DTOs.UsuarioDto.Links">
+            <summary>
+            Links HATEOAS para navegação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.BeaconRequestExample">
+            <summary>
+            Exemplo de requisição para criar um beacon
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.BeaconResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um beacon
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.BeaconsListResponseExample">
+            <summary>
+            Exemplo de lista de beacons
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ClienteRequestExample">
+            <summary>
+            Exemplo de requisição para criar um cliente
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ClienteResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um cliente
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ClientesListResponseExample">
+            <summary>
+            Exemplo de lista de clientes
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ValidationErrorResponseExample">
+            <summary>
+            Exemplo de resposta para erros de validação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.NotFoundResponseExample">
+            <summary>
+            Exemplo de resposta para erro de não encontrado
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.LocalizacaoRequestExample">
+            <summary>
+            Exemplo de requisição para registrar uma localização
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.LocalizacaoResponseExample">
+            <summary>
+            Exemplo de resposta ao obter uma localização
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.LocalizacoesListResponseExample">
+            <summary>
+            Exemplo de lista de localizações
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ModeloBeaconRequestExample">
+            <summary>
+            Exemplo de requisição para criar um modelo de beacon
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ModeloBeaconResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um modelo de beacon
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ModelosBeaconListResponseExample">
+            <summary>
+            Exemplo de lista de modelos de beacon
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ModeloMotoRequestExample">
+            <summary>
+            Exemplo de requisição para criar um modelo de moto
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ModeloMotoResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um modelo de moto
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.ModelosMotosListResponseExample">
+            <summary>
+            Exemplo de lista de modelos de motos
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.MotoRequestExample">
+            <summary>
+            Exemplo de requisição para criar uma moto
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.MotoResponseExample">
+            <summary>
+            Exemplo de resposta ao obter uma moto
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.MotosListResponseExample">
+            <summary>
+            Exemplo de lista de motos
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.MovimentacaoRequestExample">
+            <summary>
+            Exemplo de requisição para registrar uma movimentação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.MovimentacaoResponseExample">
+            <summary>
+            Exemplo de resposta ao obter uma movimentação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.MovimentacoesListResponseExample">
+            <summary>
+            Exemplo de lista de movimentações
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.PatioRequestExample">
+            <summary>
+            Exemplo de requisição para criar um pátio
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.PatioResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um pátio
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.PatiosListResponseExample">
+            <summary>
+            Exemplo de lista de pátios
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.RegistroBateriaRequestExample">
+            <summary>
+            Exemplo de requisição para registrar um nível de bateria
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.RegistroBateriaResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um registro de bateria
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.RegistrosBateriaListResponseExample">
+            <summary>
+            Exemplo de lista de registros de bateria
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.TipoMovimentacaoRequestExample">
+            <summary>
+            Exemplo de requisição para criar um tipo de movimentação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.TipoMovimentacaoResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um tipo de movimentação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.TiposMovimentacaoListResponseExample">
+            <summary>
+            Exemplo de lista de tipos de movimentação
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.TipoUsuarioRequestExample">
+            <summary>
+            Exemplo de requisição para criar um tipo de usuário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.TipoUsuarioResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um tipo de usuário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.TiposUsuarioListResponseExample">
+            <summary>
+            Exemplo de lista de tipos de usuário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.UsuarioRequestExample">
+            <summary>
+            Exemplo de requisição para criar um usuário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.UsuarioUpdateRequestExample">
+            <summary>
+            Exemplo de requisição para atualizar um usuário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.UsuarioResponseExample">
+            <summary>
+            Exemplo de resposta ao obter um usuário
+            </summary>
+        </member>
+        <member name="T:API_.Net.Examples.UsuariosListResponseExample">
+            <summary>
+            Exemplo de lista de usuários
+            </summary>
+        </member>
+        <member name="T:API.Net.Tests.IntegrationTests.ApiIntegrationTests">
+            <summary>
+            Testes de integração usando WebApplicationFactory
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -12,12 +12,14 @@ using API_.Net.Examples;
 using Microsoft.AspNetCore.Http;
 using AutoMapper;
 using API_.Net.DTOs;                  // ClienteDTO
-using API_.Net.DTOs.Requests;         // CreateClienteDTO / UpdateClienteDTO
+using API_.Net.DTOs.Requests;
+using Asp.Versioning; // CreateClienteDTO / UpdateClienteDTO
 
 namespace API.Net.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/v{version:apiVersion}/[controller]")] 
+    [ApiVersion("1.0")] 
     [Produces("application/json")]
     [SwaggerTag("Cria, lê, atualiza e exclui clientes")]
     public class ClientesController : ControllerBase

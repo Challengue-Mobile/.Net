@@ -11,6 +11,8 @@ using API_.Net.Examples;
 using Microsoft.AspNetCore.Http;
 using AutoMapper;
 using System;
+using Asp.Versioning;  
+
 
 using API_.Net.DTOs;              
 using API_.Net.DTOs.Requests;
@@ -18,8 +20,9 @@ using API_.Net.DTOs.Common;  // ← ADICIONAR ESTA LINHA
 
 namespace API.Net.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    [Route("api/v{version:apiVersion}/[controller]")] 
+    [ApiController] 
+    [ApiVersion("1.0")] 
     [Produces("application/json")]
     [SwaggerTag("Cria, lê, atualiza e exclui beacons")]
     public class BeaconsController : ControllerBase
