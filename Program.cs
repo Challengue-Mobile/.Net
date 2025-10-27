@@ -18,6 +18,8 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
         options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
     });
+// ==================== AUTOMAPPER ====================
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 // ==================== DATABASE ====================
 builder.Services.AddDbContext<AppDbContext>(options =>

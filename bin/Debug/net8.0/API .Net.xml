@@ -28,6 +28,18 @@
         <member name="M:API_.Net.Migrations.ConfigurarPrecisaoLocalizacao.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:API_.Net.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_.Net.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:API_.Net.Controllers.AuthController">
             <summary>
             Controller responsável pela autenticação e geração de tokens JWT

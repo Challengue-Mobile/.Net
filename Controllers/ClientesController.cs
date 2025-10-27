@@ -11,9 +11,9 @@ using Swashbuckle.AspNetCore.Filters;
 using API_.Net.Examples;
 using Microsoft.AspNetCore.Http;
 using AutoMapper;
-using API_.Net.DTOs;                  // ClienteDTO
+using API_.Net.DTOs;
 using API_.Net.DTOs.Requests;
-using Asp.Versioning; // CreateClienteDTO / UpdateClienteDTO
+using Asp.Versioning;
 
 namespace API.Net.Controllers
 {
@@ -44,7 +44,7 @@ namespace API.Net.Controllers
             return Ok(_mapper.Map<IEnumerable<ClienteDto>>(entities));
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("{id:int}", Name = "GetCliente")] // ✅ ADICIONADO Name
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [SwaggerOperation(Summary = "Obtém um cliente pelo ID",
@@ -91,7 +91,13 @@ namespace API.Net.Controllers
             await _context.SaveChangesAsync();
 
             var result = _mapper.Map<ClienteDto>(entity);
-            return CreatedAtAction(nameof(GetCliente), new { id = entity.ID_CLIENTE }, result);
+            
+            // ✅ CORRIGIDO: Adiciona version ao route values
+            return CreatedAtAction(
+                nameof(GetCliente), 
+                new { version = "1", id = entity.ID_CLIENTE }, 
+                result
+            );
         }
 
         [HttpPut("{id:int}")]
