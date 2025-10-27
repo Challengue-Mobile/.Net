@@ -570,6 +570,57 @@
             Exemplo de lista de usuários
             </summary>
         </member>
+        <member name="T:API_.Net.Services.MotoData">
+            <summary>
+            Classe de entrada de dados para o modelo ML
+            </summary>
+        </member>
+        <member name="T:API_.Net.Services.MotoPredicao">
+            <summary>
+            Classe de saída da predição
+            </summary>
+        </member>
+        <member name="T:API_.Net.Services.MLService">
+            <summary>
+            Serviço de Machine Learning para predição de manutenção de motos
+            </summary>
+        </member>
+        <member name="M:API_.Net.Services.MLService.PreverComDetalhes(API_.Net.Services.MotoData)">
+            <summary>
+            Faz a predição com detalhes
+            </summary>
+        </member>
+        <member name="M:API_.Net.Services.MLService.CalcularProbabilidadeHeuristica(API_.Net.Services.MotoData)">
+            <summary>
+            Calcula probabilidade usando lógica heurística baseada em regras
+            </summary>
+        </member>
+        <member name="M:API_.Net.Services.MLService.ObterNivelRisco(System.Single)">
+            <summary>
+            Determina o nível de risco baseado na probabilidade
+            </summary>
+        </member>
+        <member name="M:API_.Net.Services.MLService.Prever(API_.Net.Services.MotoData)">
+            <summary>
+            Faz a predição simples (retorna apenas probabilidade)
+            </summary>
+        </member>
+        <member name="M:API_.Net.Services.MLService.TreinarModelo">
+            <summary>
+            Treina um novo modelo (método auxiliar para criar o modelo inicial)
+            </summary>
+        </member>
+        <member name="T:API_.Net.Services.MLService.DadosTreinamento">
+            <summary>
+            Classe auxiliar para dados de treinamento
+            </summary>
+        </member>
+        <member name="T:API.Net.Tests.IntegrationTests.CustomWebApplicationFactory">
+            <summary>
+            Factory customizada para configurar o ambiente de testes
+            CORREÇÃO DEFINITIVA: Sobrescreve SetContentRoot para evitar erro
+            </summary>
+        </member>
         <member name="T:API.Net.Tests.IntegrationTests.ApiIntegrationTests">
             <summary>
             Testes de integração usando WebApplicationFactory

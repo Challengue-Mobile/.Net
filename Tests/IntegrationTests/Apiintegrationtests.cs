@@ -6,29 +6,94 @@ using Xunit;
 using FluentAssertions;
 using API_.Net.Controllers;
 using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
 namespace API.Net.Tests.IntegrationTests
 {
     /// <summary>
-    /// Testes de integração usando WebApplicationFactory
+    /// Factory customizada para configurar o ambiente de testes
+    /// CORREÇÃO DEFINITIVA: Sobrescreve SetContentRoot para evitar erro
     /// </summary>
-    public class ApiIntegrationTests : IClassFixture<WebApplicationFactory<Program>>
+    public class CustomWebApplicationFactory : WebApplicationFactory<Program>
     {
-        private readonly WebApplicationFactory<Program> _factory;
-        private readonly HttpClient _client;
+        private string? _contentRoot;
 
-        public ApiIntegrationTests(WebApplicationFactory<Program> factory)
+        protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
-            // Corrige o erro "Solution root could not be located"
+            // Encontra a raiz do projeto corretamente
             var projectDir = Directory.GetCurrentDirectory();
-            var contentRoot = Path.GetFullPath(Path.Combine(projectDir, "../../../../API.Net"));
-
-            _factory = factory.WithWebHostBuilder(builder =>
+            
+            Console.WriteLine($"[DEBUG] Current directory: {projectDir}");
+            
+            // Sobe até encontrar a raiz do projeto (onde está o arquivo .csproj)
+            _contentRoot = projectDir;
+            int maxLevels = 10;
+            int currentLevel = 0;
+            
+            while (!File.Exists(Path.Combine(_contentRoot, "API .Net.csproj")) && 
+                   Directory.GetParent(_contentRoot) != null &&
+                   currentLevel < maxLevels)
             {
-                builder.UseContentRoot(contentRoot);
+                _contentRoot = Directory.GetParent(_contentRoot)!.FullName;
+                currentLevel++;
+                Console.WriteLine($"[DEBUG] Checking: {_contentRoot}");
+            }
+
+            if (!File.Exists(Path.Combine(_contentRoot, "API .Net.csproj")))
+            {
+                throw new Exception($"Não foi possível encontrar 'API .Net.csproj'. Último diretório verificado: {_contentRoot}");
+            }
+
+            Console.WriteLine($"[DEBUG] Content root encontrado: {_contentRoot}");
+
+            builder.UseContentRoot(_contentRoot);
+            
+            // Configurar appsettings de teste (se necessário)
+            builder.ConfigureAppConfiguration((context, config) =>
+            {
+                config.AddJsonFile(Path.Combine(_contentRoot, "appsettings.json"), optional: true);
+            });
+            
+            builder.ConfigureServices(services =>
+            {
+                // Aqui você pode configurar serviços de teste
+                // Por exemplo, substituir o banco de dados por um in-memory
+                // ou mockar serviços específicos
             });
 
-            _client = _factory.CreateClient();
+            // CRÍTICO: Define o ambiente como Development
+            builder.UseEnvironment("Development");
+        }
+
+        protected override IHost CreateHost(IHostBuilder builder)
+        {
+            // Garante que o ContentRoot está definido antes de criar o host
+            if (!string.IsNullOrEmpty(_contentRoot))
+            {
+                builder.UseContentRoot(_contentRoot);
+            }
+            
+            return base.CreateHost(builder);
+        }
+    }
+
+    /// <summary>
+    /// Testes de integração usando WebApplicationFactory
+    /// </summary>
+    public class ApiIntegrationTests : IClassFixture<CustomWebApplicationFactory>
+    {
+        private readonly CustomWebApplicationFactory _factory;
+        private readonly HttpClient _client;
+
+        public ApiIntegrationTests(CustomWebApplicationFactory factory)
+        {
+            _factory = factory;
+            _client = _factory.CreateClient(new WebApplicationFactoryClientOptions
+            {
+                AllowAutoRedirect = false
+            });
         }
 
         [Fact]
